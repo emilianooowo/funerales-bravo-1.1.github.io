@@ -1,6 +1,5 @@
 body {
     background-color: var(--color-beige-1);
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -166,9 +165,11 @@ body {
     }
 }
 
+
+
 .menu-trigger {
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     right: 30px;
     width: 60px;
     height: 60px;
@@ -371,9 +372,37 @@ body {
 }
 
 .logos-section {
-    background-color: var(--color-beige-1);
-    margin: 0 auto;
+    position: relative;
+    background-image: url(/imgs/index/prevision-servicios.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
     padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.logos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.logos-section>* {
+    position: relative;
+    z-index: 1;
 }
 
 .logos-container {
@@ -382,6 +411,8 @@ body {
     align-items: flex-start;
     gap: 40px;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .logo-item {
@@ -390,36 +421,46 @@ body {
     align-items: center;
     text-align: center;
     max-width: 300px;
-    flex: 1;
+    flex: 1 1 250px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
 }
 
 .logo-placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
-.logo-item img {
-    width: 200px;
+.logo-item.subsidiary img {
+    width: auto;
     height: 200px;
     object-fit: contain;
-    border-radius: 20px;
 }
 
 .logo-item.central img {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
 }
 
 .logo-legend {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-family: var(--fuente-secundaria);
+    color: white;
+    max-width: 80%;
+}
+
+.logo-legend-cremapets {
+    margin-bottom: 10px;
+    font-family: var(--fuente-secundaria);
+    color: white;
+    max-width: 80%;
 }
 
 .about-btn,
 .about-btn-cremapets {
-    color: var(--color-beige-1);
+    color: var(--color-beige-2);
     background-color: var(--color-cafe-oscuro);
     font-family: var(--fuente-secundaria);
     border: none;
@@ -441,7 +482,6 @@ body {
 .about-btn:hover,
 .about-btn-cremapets:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -454,6 +494,7 @@ body {
         order: -1;
         width: 100%;
         max-width: 100%;
+        margin-bottom: -80px;
     }
 
     .logo-item.subsidiary {
@@ -529,7 +570,77 @@ body {
     }
 }
 
+.bloque-destacado {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.destacado-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    min-width: 250px;
+    min-height: 100px;
+    background-color: var(--color-beige-2);
+}
+
+.icono-medalla {
+    font-size: 2rem;
+    background-color: #fff;
+    padding: 0.5rem 0.7rem;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.texto-destacado h4 {
+    color: black;
+    font-family: var(--fuente-principal);
+}
+
+@media (max-width: 600px) {
+    .bloque-destacado {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destacado-item {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+        text-align: center;
+
+        /* 🔧 Esto es clave */
+        padding: 0.5rem 1rem;
+        /* Reduce padding vertical */
+        min-height: unset;
+        /* Elimina altura mínima */
+        height: auto;
+        /* Deja que la altura dependa del contenido */
+    }
+
+    .icono-medalla {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.6rem;
+        /* Más compacto */
+    }
+
+    .texto-destacado strong,
+    .texto-destacado h4 {
+        font-size: 1rem;
+        /* Opcional: reduce tamaño de fuente */
+    }
+}
+
 .honorarios {
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     padding: 40px 50px;
     position: relative;
@@ -672,7 +783,7 @@ body {
 }
 
 .content-area.active {
-    max-height: 600px;
+    max-height: 900px;
 }
 
 .content {
@@ -833,16 +944,22 @@ h1 {
 .card {
     background-color: var(--color-cafe-oscuro);
     position: relative;
-    height: 350px;
+    height: 300px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.card.expanded {
+    height: auto;
+    min-height: fit-content;
 }
 
 .card-overlay {
@@ -851,14 +968,24 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, .7));
+    transition: background 0.3s ease;
 }
 
-.card-content {
+.card.expanded .card-overlay {}
+
+.card-header {
     position: relative;
     z-index: 2;
     padding: 20px;
     width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-content {
+    flex: 1;
 }
 
 .card h3 {
@@ -866,11 +993,140 @@ h1 {
     margin-bottom: 10px;
     font-weight: bold;
     color: var(--color-beige-1);
+    margin-top: 0;
 }
 
 .card p {
     font-size: 1.2rem;
     color: var(--color-beige-2);
+    margin: 0;
+}
+
+.expand-indicator {
+    color: var(--color-beige-1);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.card.expanded .expand-indicator {
+    transform: rotate(180deg);
+}
+
+.card-details {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1.5s ease;
+    opacity: 0;
+}
+
+.card.expanded .card-details {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px;
+}
+
+.card-details h4 {
+    color: var(--color-beige-1);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.card-details ul {
+    color: var(--color-beige-2);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.card-details li {
+    margin-bottom: 8px;
+}
+
+.card-details .contact-info {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.card-details .contact-info strong {
+    color: var(--color-beige-1);
+}
+
+@media (max-width: 768px) {
+    .tabla-servicios {
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+        gap: 16px;
+    }
+
+    .card {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .expand-indicator {
+        font-size: 1.3rem;
+    }
+
+    .card-details {
+        padding: 15px 15px 20px;
+    }
+
+    .card-details h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .card-details ul {
+        font-size: 1rem;
+        padding-left: 18px;
+    }
+
+    .card-details .contact-info {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla-servicios {
+        padding: 15px 10px;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .card-details h4 {
+        font-size: 1rem;
+    }
+
+    .card-details ul {
+        font-size: 0.95rem;
+    }
+
+    .expand-indicator {
+        font-size: 1.2rem;
+    }
 }
 
 .mapas-instalaciones {
@@ -1069,8 +1325,8 @@ textarea {
 
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 100px;
+    right: 30px;
     width: 60px;
     height: 60px;
     z-index: 999;
@@ -1091,12 +1347,6 @@ textarea {
 .whatsapp-float img {
     width: 28px;
     height: 28px;
-}
-
-@media (max-width: 600px) {
-    .whatsapp-float {
-        bottom: 100px;
-    }
 }
 
 @media (max-width: 1200px) {

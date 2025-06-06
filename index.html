@@ -32,41 +32,104 @@
         </div>
     </section>
 
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-handle"></div>
+        <div class="menu-content">
+            <div class="menu-header">
+                <div class="menu-title">
+                    <h1>Navegación</h1>
+                </div>
+                <div class="menu-subtitle">
+                    <h2>Accede a todas las secciones del sitio</h2>
+                </div>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item cremapets">
+                    <a href="cremapets.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Cremapets</div>
+                            <div class="nav-desc">Servicios de cremación para mascotas</div>
+                        </div>
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="calendario.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Calendario promocional</div>
+                            <div class="nav-desc">Ofertas y promociones</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cementerio.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Cementerio Bravo</div>
+                            <div class="nav-desc">Cementerio privado y ecologico</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="menu-trigger" id="menuTrigger">
+        ☰
+    </button>
+
     <section class="logos-section">
         <div class="logos-container">
 
             <div class="logo-item subsidiary">
                 <div class="logo-placeholder">
-                    <img src="compartido/logos/cremapets-logo-azul.webp" alt="Logo cremapets" />
+                    <img src="compartido/logos/cremapets-logo-blanco.webp" style="border-radius: 60px;"
+                        alt="Logo cremapets" />
                 </div>
-                <h3 class="logo-legend">SERVICIO EXCLUSIVO DE CREMACIÓN DE MASCOTAS</h3>
+                <h2 class="logo-legend-cremapets">SERVICIO EXCLUSIVO DE CREMACIÓN DE MASCOTAS</h2>
                 <a class="about-btn-cremapets" href="cremapets.html">ACERCA DE</a>
             </div>
 
             <div class="logo-item central">
                 <div class="logo-placeholder">
-                    <img src="compartido/logos/logo-negro.webp" alt="Logo funerales_bravo" />
+                    <img src="compartido/logos/logo-blanco.webp" alt="Logo funerales_bravo" />
                 </div>
             </div>
 
             <div class="logo-item subsidiary">
                 <div class="logo-placeholder">
-                    <img src="compartido/logos/cementerio-logo-cafe.webp" alt="Logo cementerio" />
+                    <img src="compartido/logos/cementerio-logo-blanco.webp" style="border-radius: 60px;"
+                        alt="Logo cementerio" />
                 </div>
-                <h3 class="logo-legend">CEMENTERIO PRIVADO EN TAPACHULA, CHIAPAS</h3>
+                <h2 class="logo-legend">CEMENTERIO PRIVADO EN TAPACHULA, CHIAPAS</h2>
                 <a class="about-btn" href="cementerio.html">ACERCA DE</a>
             </div>
+        </div>
 
+        <div class="bloque-destacado">
+            <div class="destacado-item">
+                <div class="icono-medalla"><i class="fas fa-medal"></i></div>
+                <div class="texto-destacado">
+                    <h4>Primera funeraria de la ciudad</h4>
+                </div>
+            </div>
+
+            <div class="destacado-item">
+                <div class="icono-medalla"><i class="fas fa-shield-alt"></i></div>
+                <div class="texto-destacado">
+                    <h4>Más de 70 años de servicio</h4>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="honorarios">
+    <!-- <section class="honorarios">
         <h1>HONORARIOS DE LA EMPRESA</h1>
         <div class="honorarios-imagenes">
             <img src="/imgs/index/+70.png" alt="Más de 70 años de experiencia">
             <img src="/imgs/index/1RA.png" alt="Primera funeraria">
         </div>
-    </section>
+    </section> -->
 
     <section class="tira-servicios">
         <h1 class="main-title">PLANES DE VELACIÓN</h1>
@@ -185,39 +248,62 @@
         </div>
     </section>
 
-
-    <h1>CONOCE NUESTRO CATALOGO DE SERVICIOS</h1>
+    <h1>PAQUETES DE HOMENAJE</h1>
 
     <section class="tabla-servicios">
-        <div class="card" style="background-image: url('/index/imgs/salas-servicios.png');">
+        <div class="card" style="background-image: url('/index/imgs/salas-servicios.png');" onclick="toggleCard(this)">
             <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>SALAS DE ESPERA CLIMATIZADAS</h3>
-                <p>CONOCE NUESTRAS INSTALACIONES MODERNAS Y COMODAS</p>
+            <div class="card-header">
+                <div class="card-content">
+                    <h3>SALAS DE ESPERA CLIMATIZADAS</h3>
+                    <p>CONOCE NUESTRAS INSTALACIONES MODERNAS Y CÓMODAS</p>
+                </div>
+                <div class="expand-indicator">▼</div>
+            </div>
+            <div class="card-details">
+                <h4>Servicios incluidos:</h4>
+                <ul>
+                    <li>Aires acondicionados y calefacción</li>
+                    <li>Asientos cómodos y ergonómicos</li>
+                    <li>Área de recepción 24/7</li>
+                    <li>Servicio de café y agua</li>
+                    <li>Wi-Fi gratuito</li>
+                    <li>Ambiente tranquilo y respetuoso</li>
+                    <li>Servicio de café y agua</li>
+                    <li>Wi-Fi gratuito</li>
+                    <li>Ambiente tranquilo y respetuoso</li>
+                </ul>
+                <div class="contact-info">
+                    <strong>Horarios:</strong> Disponible las 24 horas del día
+                </div>
             </div>
         </div>
 
-        <div class="card" style="background-image: url('/index/imgs/prevision-servicios.png');">
+        <div class="card" style="background-image: url('/index/imgs/prevision-servicios.png');"
+            onclick="toggleCard(this)">
             <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>PLANES DE PREVISIÓN FUNERARIA</h3>
-                <p>COORDINACIÓN DE PREVISIÓN FUNERARIA: ISABEL ARRECIS +52 962 589 5880</p>
+            <div class="card-header">
+                <div class="card-content">
+                    <h3>PLANES DE PREVISIÓN FUNERARIA</h3>
+                    <p>COORDINACIÓN DE PREVISIÓN FUNERARIA: ISABEL ARRECIS +52 962 589 5880</p>
+                </div>
+                <div class="expand-indicator">▼</div>
             </div>
-        </div>
-
-        <div class="card" style="background-image: url('/index/imgs/cremapets-servicios.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>CREMAPETS</h3>
-                <p>SERVICIO DE CREMACIÓN DE MASCOTAS.</p>
-            </div>
-        </div>
-
-        <div class="card" style="background-image: url('/index/imgs/cementerio-servicios.png');">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>CEMENTERIO PRIVADO Y ECOLOGICO</h3>
-                <p>PRIVACIDAD Y AYUDA ECOLOGICA</p>
+            <div class="card-details">
+                <h4>Planes disponibles:</h4>
+                <ul>
+                    <li>Plan Básico - Servicios esenciales</li>
+                    <li>Plan Completo - Servicios integrales</li>
+                    <li>Plan Premium - Servicios de lujo</li>
+                    <li>Planes familiares con descuentos</li>
+                    <li>Financiamiento flexible</li>
+                    <li>Asesoría personalizada</li>
+                </ul>
+                <div class="contact-info">
+                    <strong>Contacto:</strong> Isabel Arrecis<br>
+                    <strong>Teléfono:</strong> +52 962 589 5880<br>
+                    <strong>Horario:</strong> Lunes a Viernes 9:00 AM - 6:00 PM
+                </div>
             </div>
         </div>
     </section>
@@ -312,54 +398,7 @@
         </form>
     </section> -->
 
-    <button class="menu-trigger" id="menuTrigger">
-        ☰
-    </button>
-
     <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="slide-menu" id="slideMenu">
-        <div class="menu-handle"></div>
-        <div class="menu-content">
-            <div class="menu-header">
-                <div class="menu-title">
-                    <h1>Navegación</h1>
-                </div>
-                <div class="menu-subtitle">
-                    <h2>Accede a todas las secciones del sitio</h2>
-                </div>
-            </div>
-
-            <ul class="nav-list">
-                <li class="nav-item cremapets">
-                    <a href="cremapets.html" class="nav-link">
-                        <div class="nav-text">
-                            <div class="nav-title">Cremapets</div>
-                            <div class="nav-desc">Servicios de cremación para mascotas</div>
-                        </div>
-
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="calendario.html" class="nav-link">
-                        <div class="nav-text">
-                            <div class="nav-title">Calendario promocional</div>
-                            <div class="nav-desc">Ofertas y promociones</div>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="cementerio.html" class="nav-link">
-                        <div class="nav-text">
-                            <div class="nav-title">Cementerio Bravo</div>
-                            <div class="nav-desc">Cementerio privado y ecologico</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <div id="footer-placeholder"></div>
     <script src="js/index.js" defer></script>

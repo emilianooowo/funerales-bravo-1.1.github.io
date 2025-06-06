@@ -1,11 +1,10 @@
+//MENU
 const menuTrigger = document.getElementById('menuTrigger');
 const slideMenu = document.getElementById('slideMenu');
 const menuOverlay = document.getElementById('menuOverlay');
 
-// Estado del menú
 let isMenuOpen = false;
 
-// Función para abrir/cerrar menú
 function toggleMenu() {
     isMenuOpen = !isMenuOpen;
 
@@ -22,11 +21,9 @@ function toggleMenu() {
     }
 }
 
-// Event listeners
 menuTrigger.addEventListener('click', toggleMenu);
 menuOverlay.addEventListener('click', toggleMenu);
 
-// Cerrar menú al hacer clic en un enlace
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -36,21 +33,18 @@ navLinks.forEach(link => {
     });
 });
 
-// Cerrar menú con tecla Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isMenuOpen) {
         toggleMenu();
     }
 });
 
-// Prevenir scroll en el menú cuando está abierto
 slideMenu.addEventListener('touchmove', (e) => {
     if (isMenuOpen) {
         e.stopPropagation();
     }
 });
 
-// Manejar swipe down para cerrar en móvil
 let startY = 0;
 let currentY = 0;
 
@@ -67,6 +61,7 @@ slideMenu.addEventListener('touchmove', (e) => {
     }
 });
 
+//FOOTER
 fetch('global.html')
     .then(res => res.text())
     .then(html => {
@@ -92,6 +87,7 @@ window.onbeforeunload = () => {
     }
 }
 
+//TIRA
 document.addEventListener('DOMContentLoaded', function () {
     const stripItems = document.querySelectorAll('.strip-item');
     const contentAreas = document.querySelectorAll('.content-area');
@@ -117,4 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
             targetContent.classList.toggle('active');
         });
     });
+});
+
+//CARDS
+function toggleCard(card) {
+    const allCards = document.querySelectorAll('.card');
+    allCards.forEach(c => {
+        if (c !== card) {
+            c.classList.remove('expanded');
+        }
+    });
+
+    card.classList.toggle('expanded');
+}
+
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.card')) {
+        const allCards = document.querySelectorAll('.card');
+        allCards.forEach(card => {
+            card.classList.remove('expanded');
+        });
+    }
 });
