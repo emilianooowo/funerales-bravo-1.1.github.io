@@ -32,48 +32,6 @@
         </div>
     </section>
 
-
-    <header>
-        <div class="accesos">
-            <a href="/index.html#tira-servicios">
-                <i class=""></i>
-                <span>Planes de velación</span>
-            </a>
-            <a href="/index.html#tira-servicios">
-                <i class=""></i>
-                <span>Homenajes</span>
-            </a>
-            <a href="/cremapets/index.html" class="cremapets" title="Cremapets">
-                <i class="fa-solid fa-bone"></i>
-                <span>Cremapets</span>
-            </a>
-
-            <a href="/calendario/index.html" title="Calendario de Promociones">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Calendario promocional</span>
-            </a>
-
-            <a href="/cementerio/index.html" title="Cementerio Privado">
-                <i class="fa-solid fa-cross"></i>
-                <span>Cementerio bravo</span>
-            </a>
-            <!-- <div class="contacto">
-                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
-                    title="Facebook">
-                    <i class="bi bi-facebook"></i>
-                    <span>FACEBOOK</span>
-                </a>
-                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
-                    title="Instagram">
-                    <i class="bi bi-instagram"></i>
-                    <span>INSTAGRAM</span>
-                </a>
-            </div> -->
-        </div>
-    </header>
-    <!-- Overlay para móvil -->
-    <div class="overlay" id="overlay"></div>
-
     <section class="logos-section">
         <div class="logos-container">
 
@@ -105,8 +63,8 @@
     <section class="honorarios">
         <h1>HONORARIOS DE LA EMPRESA</h1>
         <div class="honorarios-imagenes">
-            <img src="/index/imgs/+70.png" alt="Más de 70 años de experiencia">
-            <img src="/index/imgs/1RA.png" alt="Primera funeraria">
+            <img src="/imgs/index/+70.png" alt="Más de 70 años de experiencia">
+            <img src="/imgs/index/1RA.png" alt="Primera funeraria">
         </div>
     </section>
 
@@ -353,6 +311,56 @@
             <button type="submit" class="submit-btn">ENVIAR</button>
         </form>
     </section> -->
+
+    <button class="menu-trigger" id="menuTrigger">
+        ☰
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-handle"></div>
+        <div class="menu-content">
+            <div class="menu-header">
+                <div class="menu-title">
+                    <h1>Navegación</h1>
+                </div>
+                <div class="menu-subtitle">
+                    <h2>Accede a todas las secciones del sitio</h2>
+                </div>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item cremapets">
+                    <a href="/cremapets/index.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Cremapets</div>
+                            <div class="nav-desc">Servicios de cremación para mascotas</div>
+                        </div>
+                        
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/calendario/index.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Calendario promocional</div>
+                            <div class="nav-desc">Ofertas y promociones</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/cementerio/index.html" class="nav-link">
+                        <div class="nav-text">
+                            <div class="nav-title">Cementerio Bravo</div>
+                            <div class="nav-desc">Cementerio privado y ecologico</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <div id="footer-placeholder"></div>
     <script src="js/index.js" defer></script>

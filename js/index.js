@@ -1,48 +1,69 @@
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const menuAccesos = document.getElementById('menuAccesos');
-const overlay = document.getElementById('overlay');
+const menuTrigger = document.getElementById('menuTrigger');
+const slideMenu = document.getElementById('slideMenu');
+const menuOverlay = document.getElementById('menuOverlay');
 
+// Estado del menú
+let isMenuOpen = false;
+
+// Función para abrir/cerrar menú
 function toggleMenu() {
-    hamburgerBtn.classList.toggle('active');
-    menuAccesos.classList.toggle('active');
-    overlay.classList.toggle('active');
+    isMenuOpen = !isMenuOpen;
 
-    // Prevenir scroll del body cuando el menú está abierto
-    if (menuAccesos.classList.contains('active')) {
+    if (isMenuOpen) {
+        slideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+        menuTrigger.classList.add('active');
         document.body.style.overflow = 'hidden';
     } else {
+        slideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        menuTrigger.classList.remove('active');
         document.body.style.overflow = '';
     }
 }
 
-function closeMenu() {
-    hamburgerBtn.classList.remove('active');
-    menuAccesos.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
 // Event listeners
-hamburgerBtn.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', closeMenu);
+menuTrigger.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
 
-// Cerrar menú al hacer clic en un enlace (opcional)
-const menuLinks = document.querySelectorAll('.accesos a');
-menuLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+// Cerrar menú al hacer clic en un enlace
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        setTimeout(() => {
+            toggleMenu();
+        }, 200);
+    });
 });
 
 // Cerrar menú con tecla Escape
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menuAccesos.classList.contains('active')) {
-        closeMenu();
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+        toggleMenu();
     }
 });
 
-// Manejar cambio de tamaño de ventana
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 768 && menuAccesos.classList.contains('active')) {
-        closeMenu();
+// Prevenir scroll en el menú cuando está abierto
+slideMenu.addEventListener('touchmove', (e) => {
+    if (isMenuOpen) {
+        e.stopPropagation();
+    }
+});
+
+// Manejar swipe down para cerrar en móvil
+let startY = 0;
+let currentY = 0;
+
+slideMenu.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+});
+
+slideMenu.addEventListener('touchmove', (e) => {
+    currentY = e.touches[0].clientY;
+    const diff = currentY - startY;
+
+    if (diff > 50 && e.target.closest('.menu-content').scrollTop === 0) {
+        toggleMenu();
     }
 });
 
