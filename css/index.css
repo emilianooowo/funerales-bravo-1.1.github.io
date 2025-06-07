@@ -373,7 +373,7 @@ body {
 
 .logos-section {
     position: relative;
-    background-image: url(./imgs/index/prevision-servicios.png);
+    background-image: url(../imgs/index/prevision-servicios.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -389,7 +389,7 @@ body {
     z-index: 1;
 }
 
-.logos-section::before {
+/* .logos-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -398,7 +398,7 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
-}
+} */
 
 .logos-section>* {
     position: relative;
