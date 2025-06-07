@@ -373,7 +373,7 @@ body {
 
 .logos-section {
     position: relative;
-    background-image: url(../imgs/index/prevision-servicios.png);
+    background-image: url(./imgs/index/prevision-servicios.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
