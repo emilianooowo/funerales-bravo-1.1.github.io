@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Arboria';
-  src: url('.0/compartido/fonts/arboria-bold.ttf') format('truetype');
+  src: url('../compartido/fonts/arboria-bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
