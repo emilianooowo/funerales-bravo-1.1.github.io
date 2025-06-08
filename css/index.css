@@ -302,6 +302,7 @@ body {
 
 .nav-item:hover {
     background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-2px);
 }
 
 .nav-item.cremapets:hover {
@@ -331,6 +332,17 @@ body {
     color: white;
 }
 
+/* Contenedor del icono */
+.nav-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
 .nav-text {
     flex: 1;
 }
@@ -339,6 +351,7 @@ body {
     font-size: 1rem;
     font-family: var(--fuente-secundaria);
     margin-bottom: 0.2rem;
+    font-weight: 600;
 }
 
 .nav-desc {
@@ -346,6 +359,7 @@ body {
     opacity: 0.7;
     font-family: var(--fuente-secundaria);
 }
+
 
 @media (max-width: 767px) {
     .menu-trigger {
