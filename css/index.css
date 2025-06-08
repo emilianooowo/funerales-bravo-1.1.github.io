@@ -7,7 +7,7 @@ body {
 
 .tira-atencion-inmediata {
     background-color: white;
-    padding: .5rem;
+    padding: .8rem;
     text-align: center;
     z-index: 1000;
     display: flex;

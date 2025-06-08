@@ -84,6 +84,7 @@ body {
     margin-bottom: 15px;
     font-family: var(--fuente-secundaria);
     font-weight: bold;
+    color: var(--color-cafe-oscuro);
 }
 
 .logo-legend-cremapets {
@@ -202,6 +203,7 @@ h1 {
     background: linear-gradient(80deg, #0963D8, #fff);
 }
 
+
 .plan-title {
     font-size: 1.5em;
     color: var(--color-cafe-oscuro);
@@ -233,6 +235,7 @@ h1 {
 
 .plan-includes h3 {
     font-family: var(--fuente-secundaria);
+    color: var(--color-cafe-oscuro);
     font-size: 1.2em;
     border-bottom: 2px solid var(--color-cafe-oscuro);
     padding-bottom: 5px;
