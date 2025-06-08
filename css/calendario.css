@@ -29,6 +29,7 @@ body {
 }
 
 .main-title {
+    color: var(--color-cafe-oscuro);
     margin-bottom: 10px;
 }
 

@@ -1,4 +1,4 @@
-fetch('/compartido/global.html')
+fetch('global.html')
     .then(res => res.text())
     .then(html => {
         const parser = new DOMParser();
