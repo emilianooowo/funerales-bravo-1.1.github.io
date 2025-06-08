@@ -12,8 +12,8 @@ function toggleMenu() {
         slideMenu.classList.add('active');
         menuOverlay.classList.add('active');
         menuTrigger.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    } else {
+    }
+    else {
         slideMenu.classList.remove('active');
         menuOverlay.classList.remove('active');
         menuTrigger.classList.remove('active');
@@ -88,6 +88,7 @@ window.onbeforeunload = () => {
 }
 
 //TIRA
+
 document.addEventListener('DOMContentLoaded', function () {
     const stripItems = document.querySelectorAll('.strip-item');
     const contentAreas = document.querySelectorAll('.content-area');
@@ -97,18 +98,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetId = this.getAttribute('data-target');
             const targetContent = document.getElementById(targetId);
 
+            // Desactiva todas las otras pestañas
             stripItems.forEach(otherItem => {
                 if (otherItem !== this) {
                     otherItem.classList.remove('active');
                 }
             });
 
+            // Oculta todos los otros contenidos
             contentAreas.forEach(content => {
                 if (content !== targetContent) {
                     content.classList.remove('active');
                 }
             });
 
+            // Activa/desactiva la pestaña clickeada y su contenido
             this.classList.toggle('active');
             targetContent.classList.toggle('active');
         });
@@ -124,8 +128,9 @@ function toggleCard(card) {
         }
     });
 
-    card.classList.toggle('expanded');
+    card.classList.toggle('expanded'); // <- aquí se expande o contrae
 }
+
 
 document.addEventListener('click', function (event) {
     if (!event.target.closest('.card')) {

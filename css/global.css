@@ -11,14 +11,14 @@
 
 @font-face {
   font-family: 'Mont';
-  src: url('../compartido/fonts/mont-black.ttf') format('truetype');
+  src: url('../shared/fonts/mont-black.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Arboria';
-  src: url('../compartido/fonts/arboria-bold.ttf') format('truetype');
+  src: url('../shared/fonts/arboria-bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -43,8 +43,7 @@ h4,
 h5,
 h6 {
   font-family: var(--fuente-principal);
-  font-weight: bold;
-  color: var(--color-cafe-oscuro);
+  color: var(--color-beige-1);
 }
 
 p {
@@ -84,6 +83,7 @@ a:hover {
 }
 
 .footer-col h4 {
+  color: var(--color-cafe-oscuro);
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 18px;

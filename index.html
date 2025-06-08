@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUNERALES BRAVO - INICIO</title>
-    <link rel="icon" href="compartido/logos/logo-icono.ico" type="image/x-icon">
+    <link rel="icon" href="./shared/logos/logo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -13,8 +13,14 @@
 </head>
 
 <body>
-    <section id="atencion-inmediata" class="atencion-inmediata">
-        <div class="tira-horizontal">
+    <section id="atencion-inmediata">
+        <div class="tira-atencion-inmediata">
+            <div style="text-align: center;">
+                <h4>
+                    <div class="call-instruction">EMERGENCIAS - LLAMAR AHORA:</div>
+                </h4>
+                <a href="tel:+529622361377" class="phone-button"> +52 962 236 1377</a>
+            </div>
             <h3>ATENCIÓN INMEDIATA</h3>
             <h3>DISPONIBLE LAS 24 HORAS DEL DÍA, LOS 365 DÍAS DEL AÑO.</h3>
             <a href="https://wa.me/+529622361377" target="_blank" class="whatsapp-button">
@@ -22,12 +28,6 @@
                     <i class="bi bi-whatsapp"></i>WhatsApp
                 </button>
             </a>
-            <div style="text-align: center;">
-                <h4>
-                    <div class="call-instruction">EMERGENCIAS - LLAMAR AHORA:</div>
-                </h4>
-                <a href="tel:+529622361377" class="phone-button">+52 962 236 1377</a>
-            </div>
         </div>
     </section>
 
@@ -50,7 +50,6 @@
                             <div class="nav-title">Cremapets</div>
                             <div class="nav-desc">Servicios de cremación para mascotas</div>
                         </div>
-
                     </a>
                 </li>
 
@@ -62,43 +61,62 @@
                         </div>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="cementerio.html" class="nav-link">
                         <div class="nav-text">
                             <div class="nav-title">Cementerio Bravo</div>
-                            <div class="nav-desc">Cementerio privado y ecologico</div>
+                            <div class="nav-desc">Cementerio privado y ecológico</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item instagram">
+                    <a href="https://instagram.com" class="nav-link" target="_blank">
+                        <div class="nav-text">
+                            <i class="fab fa-instagram"></i>
+                            <div class="nav-title">Instagram</div>
+                            <div class="nav-desc">Síguenos en Instagram</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="nav-item facebook">
+                    <a href="https://facebook.com" class="nav-link" target="_blank">
+                        <div class="nav-text">
+                            <i class="fab fa-facebook-f"></i>
+                            <div class="nav-title">Facebook</div>
+                            <div class="nav-desc">Síguenos en Facebook</div>
                         </div>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    <button class="menu-trigger" id="menuTrigger" aria-label="Abrir menú de navegación">☰</button>
+    <button class="menu-trigger" id="menuTrigger">☰</button>
 
     <section class="logos-section">
         <div class="logos-container">
 
             <div class="logo-item subsidiary">
                 <div class="logo-placeholder">
-                    <img src="./compartido/logos/cremapets-logo-blanco.webp" style="border-radius: 60px;"
-                        alt="Logo cremapets" />
+                    <img src="./shared/logos/cremapets-logo-blanco.webp" alt="Logo cremapets" />
                 </div>
-                <h2 class="logo-legend-cremapets">SERVICIO EXCLUSIVO DE CREMACIÓN DE MASCOTAS</h2>
+                <h3 class="logo-legend-cremapets">SERVICIO EXCLUSIVO DE CREMACIÓN DE MASCOTAS</h3>
                 <a class="about-btn-cremapets" href="cremapets.html">ACERCA DE</a>
             </div>
 
             <div class="logo-item central">
                 <div class="logo-placeholder">
-                    <img src="./compartido/logos/logo-blanco.webp" alt="Logo funerales_bravo" />
+                    <img src="./shared/logos/logo-blanco.png" alt="Logo funerales_bravo" />
                 </div>
             </div>
 
             <div class="logo-item subsidiary">
                 <div class="logo-placeholder">
-                    <img src="./compartido/logos/cementerio-logo-blanco.webp" style="border-radius: 60px;"
-                        alt="Logo cementerio" />
+                    <img src="./shared/logos/cementerio-logo-blanco.webp" alt="Logo cementerio" />
                 </div>
-                <h2 class="logo-legend">CEMENTERIO PRIVADO EN TAPACHULA, CHIAPAS</h2>
+                <h3 class="logo-legend">CEMENTERIO PRIVADO EN TAPACHULA, CHIAPAS</h3>
                 <a class="about-btn" href="cementerio.html">ACERCA DE</a>
             </div>
         </div>
@@ -107,26 +125,18 @@
             <div class="destacado-item">
                 <div class="icono-medalla"><i class="fas fa-medal"></i></div>
                 <div class="texto-destacado">
-                    <h4>Primera funeraria de la ciudad</h4>
+                    <h4>1RA FUNERARIA FUNDADA EN TAPACHULA.</h4>
                 </div>
             </div>
 
             <div class="destacado-item">
                 <div class="icono-medalla"><i class="fas fa-shield-alt"></i></div>
                 <div class="texto-destacado">
-                    <h4>Más de 70 años de servicio</h4>
+                    <h4>+70 años en calidad y experiencia nos respaldan</h4>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- <section class="honorarios">
-        <h1>HONORARIOS DE LA EMPRESA</h1>
-        <div class="honorarios-imagenes">
-            <img src="/imgs/index/+70.png" alt="Más de 70 años de experiencia">
-            <img src="/imgs/index/1RA.png" alt="Primera funeraria">
-        </div>
-    </section> -->
 
     <section class="tira-servicios">
         <h1 class="main-title">PLANES DE VELACIÓN</h1>
@@ -136,25 +146,25 @@
                 <div class="strip-item" data-target="content1">
                     <div class="strip-header">
                         <span class="strip-title">BÁSICO</span>
-                        <span class="arrow">▼</span>
+                        <span class="arrow">⮯</span>
                     </div>
                 </div>
                 <div class="strip-item" data-target="content2">
                     <div class="strip-header">
                         <span class="strip-title">ESTÁNDAR</span>
-                        <span class="arrow">▼</span>
+                        <span class="arrow">⮯</span>
                     </div>
                 </div>
                 <div class="strip-item" data-target="content3">
                     <div class="strip-header">
                         <span class="strip-title">PREMIER</span>
-                        <span class="arrow">▼</span>
+                        <span class="arrow">⮯</span>
                     </div>
                 </div>
                 <div class="strip-item" data-target="content4">
                     <div class="strip-header">
                         <span class="strip-title">LUX</span>
-                        <span class="arrow">▼</span>
+                        <span class="arrow">⮯</span>
                     </div>
                 </div>
             </div>
@@ -162,20 +172,61 @@
             <div id="content1" class="content-area">
                 <div class="content">
                     <div class="content-text">
-                        <h3>Nuestros Servicios</h3>
-                        <p>Ofrecemos una amplia gama de servicios profesionales diseñados para satisfacer las
-                            necesidades de tu negocio y llevar tu proyecto al siguiente nivel.</p>
+                        <h3>Plan Básico</h3>
+                        <p>Nuestro plan básico incluye los servicios esenciales para una velación digna y respetuosa,
+                            brindando tranquilidad a las familias en momentos difíciles.</p>
                         <ul>
-                            <li>Desarrollo web personalizado y responsive</li>
-                            <li>Diseño de interfaces de usuario modernas</li>
-                            <li>Optimización para motores de búsqueda (SEO)</li>
-                            <li>Mantenimiento y soporte técnico 24/7</li>
-                            <li>Consultoría en transformación digital</li>
+                            <li>Sala de velación por 24 horas</li>
+                            <li>Ataúd de madera básico</li>
+                            <li>Servicio de floristería básica</li>
+                            <li>Gestión de documentos</li>
+                            <li>Atención personalizada</li>
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=faces"
-                            alt="Servicios profesionales">
+                        <img src="https://images.unsplash.com/photo-1544967882-6abaa7b61b1b?w=400&h=250&fit=crop&crop=faces"
+                            alt="Plan Básico">
+                    </div>
+                </div>
+
+                <div class="extras-container">
+                    <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+                    <div class="extras-grid">
+                        <div class="extra-card">
+                            <h4>+ Cremación</h4>
+                            <p>Servicio de cremación con entrega de cenizas en urna básica</p>
+                            <ul class="extra-features">
+                                <li>Proceso de cremación</li>
+                                <li>Urna básica incluida</li>
+                                <li>Certificado de cremación</li>
+                            </ul>
+                            <div class="extra-price">Desde $8,500</div>
+                            <a href="cotizador.html?plan=basico&extra=cremacion" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Domicilio</h4>
+                            <p>Velación en la comodidad del hogar familiar</p>
+                            <ul class="extra-features">
+                                <li>Instalación en domicilio</li>
+                                <li>Equipo de refrigeración</li>
+                                <li>Decoración básica</li>
+                            </ul>
+                            <div class="extra-price">Desde $4,200</div>
+                            <a href="cotizador.html?plan=basico&extra=domicilio" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Cremación + Domicilio</h4>
+                            <p>Combinación completa de ambos servicios con descuento especial</p>
+                            <ul class="extra-features">
+                                <li>Todos los beneficios anteriores</li>
+                                <li>Descuento por paquete</li>
+                                <li>Gestión integral</li>
+                            </ul>
+                            <div class="extra-price">Desde $11,900</div>
+                            <a href="cotizador.html?plan=basico&extra=combo" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,20 +234,65 @@
             <div id="content2" class="content-area">
                 <div class="content">
                     <div class="content-text">
-                        <h3>Nuestros Productos</h3>
-                        <p>Descubre nuestra línea completa de productos innovadores que impulsarán tu productividad y te
-                            ayudarán a alcanzar tus objetivos comerciales.</p>
+                        <h3>Plan Estándar</h3>
+                        <p>Nuestro plan estándar ofrece servicios mejorados con mayor comodidad y opciones adicionales
+                            para honrar la memoria de su ser querido.</p>
                         <ul>
-                            <li>Plataforma de gestión empresarial integral</li>
-                            <li>Herramientas avanzadas de análisis de datos</li>
-                            <li>Aplicaciones móviles personalizadas</li>
-                            <li>Sistemas de comercio electrónico robustos</li>
-                            <li>Soluciones de automatización inteligente</li>
+                            <li>Sala de velación Premium por 48 horas</li>
+                            <li>Ataúd de madera noble</li>
+                            <li>Arreglos florales premium</li>
+                            <li>Servicio de cafetería</li>
+                            <li>Coordinación de ceremonias</li>
+                            <li>Transporte incluido</li>
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=faces"
-                            alt="Productos innovadores">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&crop=faces"
+                            alt="Plan Estándar">
+                    </div>
+                </div>
+
+                <div class="extras-container">
+                    <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+                    <div class="extras-grid">
+                        <div class="extra-card">
+                            <h4>+ Cremación</h4>
+                            <p>Servicio de cremación con urna de calidad superior</p>
+                            <ul class="extra-features">
+                                <li>Proceso de cremación</li>
+                                <li>Urna de calidad superior</li>
+                                <li>Certificado de cremación</li>
+                                <li>Ceremonia de despedida</li>
+                            </ul>
+                            <div class="extra-price">Desde $9,800</div>
+                            <a href="cotizador.html?plan=estandar&extra=cremacion" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Domicilio</h4>
+                            <p>Velación premium en domicilio con servicios mejorados</p>
+                            <ul class="extra-features">
+                                <li>Instalación premium</li>
+                                <li>Equipo de refrigeración avanzado</li>
+                                <li>Decoración elegante</li>
+                                <li>Servicio de cafetería</li>
+                            </ul>
+                            <div class="extra-price">Desde $5,500</div>
+                            <a href="cotizador.html?plan=estandar&extra=domicilio" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Cremación + Domicilio</h4>
+                            <p>Paquete completo con servicios premium y descuento especial</p>
+                            <ul class="extra-features">
+                                <li>Todos los beneficios anteriores</li>
+                                <li>Descuento por paquete</li>
+                                <li>Gestión integral premium</li>
+                                <li>Coordinación especializada</li>
+                            </ul>
+                            <div class="extra-price">Desde $14,200</div>
+                            <a href="cotizador.html?plan=estandar&extra=combo" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -204,20 +300,69 @@
             <div id="content3" class="content-area">
                 <div class="content">
                     <div class="content-text">
-                        <h3>Soporte Técnico</h3>
-                        <p>Nuestro equipo de soporte especializado está disponible para ayudarte en todo momento con
-                            cualquier consulta o problema técnico que puedas tener.</p>
+                        <h3>Plan Premier</h3>
+                        <p>Nuestro plan premier brinda una experiencia excepcional con servicios de alta calidad y
+                            atención personalizada para momentos especiales.</p>
                         <ul>
-                            <li>Soporte 24/7 por chat, email y teléfono</li>
-                            <li>Base de conocimientos completa y actualizada</li>
-                            <li>Tutoriales interactivos y documentación</li>
-                            <li>Actualizaciones regulares y mejoras</li>
-                            <li>Capacitación personalizada para tu equipo</li>
+                            <li>Sala de velación VIP por 72 horas</li>
+                            <li>Ataúd de maderas finas importadas</li>
+                            <li>Diseño floral exclusivo</li>
+                            <li>Servicio de catering completo</li>
+                            <li>Música ambiental</li>
+                            <li>Transporte ejecutivo</li>
+                            <li>Coordinador personal</li>
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=faces"
-                            alt="Soporte técnico especializado">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=faces"
+                            alt="Plan Premier">
+                    </div>
+                </div>
+
+                <div class="extras-container">
+                    <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+                    <div class="extras-grid">
+                        <div class="extra-card">
+                            <h4>+ Cremación</h4>
+                            <p>Servicio de cremación de lujo con urna artesanal</p>
+                            <ul class="extra-features">
+                                <li>Proceso de cremación premium</li>
+                                <li>Urna artesanal personalizada</li>
+                                <li>Certificado de cremación</li>
+                                <li>Ceremonia de despedida exclusiva</li>
+                                <li>Servicio de columbario</li>
+                            </ul>
+                            <div class="extra-price">Desde $12,500</div>
+                            <a href="cotizador.html?plan=premier&extra=cremacion" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Domicilio</h4>
+                            <p>Velación de lujo en domicilio con servicios exclusivos</p>
+                            <ul class="extra-features">
+                                <li>Instalación de lujo</li>
+                                <li>Equipamiento premium</li>
+                                <li>Decoración exclusiva</li>
+                                <li>Servicio de catering</li>
+                                <li>Personal especializado</li>
+                            </ul>
+                            <div class="extra-price">Desde $7,800</div>
+                            <a href="cotizador.html?plan=premier&extra=domicilio" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Cremación + Domicilio</h4>
+                            <p>Paquete exclusivo con todos los servicios premium</p>
+                            <ul class="extra-features">
+                                <li>Todos los beneficios anteriores</li>
+                                <li>Descuento por paquete</li>
+                                <li>Gestión integral de lujo</li>
+                                <li>Coordinación especializada 24/7</li>
+                                <li>Servicios personalizados</li>
+                            </ul>
+                            <div class="extra-price">Desde $18,900</div>
+                            <a href="cotizador.html?plan=premier&extra=combo" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -225,20 +370,73 @@
             <div id="content4" class="content-area">
                 <div class="content">
                     <div class="content-text">
-                        <h3>Información de Contacto</h3>
-                        <p>Ponte en contacto con nosotros para conocer más sobre nuestros servicios y descubrir cómo
-                            podemos ayudarte a alcanzar tus objetivos.</p>
+                        <h3>Plan Lux</h3>
+                        <p>Nuestro plan más exclusivo ofrece la máxima distinción y servicios excepcionales para honrar
+                            la memoria de manera única y memorable.</p>
                         <ul>
-                            <li>Email: info@empresa.com</li>
-                            <li>Teléfono: +52 55 1234 5678</li>
-                            <li>Dirección: Ciudad de México, México</li>
-                            <li>Horario: Lunes a Viernes 9:00 - 18:00</li>
-                            <li>Redes sociales: @empresa_oficial</li>
+                            <li>Sala de velación Presidencial</li>
+                            <li>Ataúd de diseño exclusivo</li>
+                            <li>Arreglos florales de diseñador</li>
+                            <li>Servicio de banquete gourmet</li>
+                            <li>Sistema de sonido profesional</li>
+                            <li>Transporte de lujo</li>
+                            <li>Equipo de coordinación completo</li>
+                            <li>Servicios personalizados</li>
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=400&h=250&fit=crop&crop=faces"
-                            alt="Contacto y comunicación">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop&crop=faces"
+                            alt="Plan Lux">
+                    </div>
+                </div>
+
+                <div class="extras-container">
+                    <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+                    <div class="extras-grid">
+                        <div class="extra-card">
+                            <h4>+ Cremación</h4>
+                            <p>Servicio de cremación exclusivo con máxima personalización</p>
+                            <ul class="extra-features">
+                                <li>Proceso de cremación exclusivo</li>
+                                <li>Urna de diseño único</li>
+                                <li>Certificado de cremación premium</li>
+                                <li>Ceremonia de despedida VIP</li>
+                                <li>Servicio de columbario premium</li>
+                                <li>Memorial personalizado</li>
+                            </ul>
+                            <div class="extra-price">Desde $16,800</div>
+                            <a href="cotizador.html?plan=lux&extra=cremacion" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Domicilio</h4>
+                            <p>Experiencia de velación domiciliaria de máximo nivel</p>
+                            <ul class="extra-features">
+                                <li>Instalación exclusiva</li>
+                                <li>Equipamiento de lujo</li>
+                                <li>Decoración de diseñador</li>
+                                <li>Servicio de banquete</li>
+                                <li>Personal especializado VIP</li>
+                                <li>Servicios personalizados</li>
+                            </ul>
+                            <div class="extra-price">Desde $11,200</div>
+                            <a href="cotizador.html?plan=lux&extra=domicilio" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
+
+                        <div class="extra-card">
+                            <h4>+ Cremación + Domicilio</h4>
+                            <p>Paquete VIP completo con servicios de máximo nivel</p>
+                            <ul class="extra-features">
+                                <li>Todos los beneficios anteriores</li>
+                                <li>Descuento VIP por paquete</li>
+                                <li>Gestión integral exclusiva</li>
+                                <li>Coordinación especializada 24/7</li>
+                                <li>Servicios completamente personalizados</li>
+                                <li>Atención familiar prioritaria</li>
+                            </ul>
+                            <div class="extra-price">Desde $25,900</div>
+                            <a href="cotizador.html?plan=lux&extra=combo" class="cotizar-btn">Cotiza Ya</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,10 +450,9 @@
             <div class="card-overlay"></div>
             <div class="card-header">
                 <div class="card-content">
-                    <h3>SALAS DE ESPERA CLIMATIZADAS</h3>
-                    <p>CONOCE NUESTRAS INSTALACIONES MODERNAS Y CÓMODAS</p>
+                    <h3>MEMORABLE</h3>
                 </div>
-                <div class="expand-indicator">▼</div>
+                <div class="expand-indicator">⮯</div>
             </div>
             <div class="card-details">
                 <h4>Servicios incluidos:</h4>
@@ -276,15 +473,41 @@
             </div>
         </div>
 
+        <div class="card" style="background-image: url('./imgs/index/salas-servicios.png');" onclick="toggleCard(this)">
+            <div class="card-overlay"></div>
+            <div class="card-header">
+                <div class="card-content">
+                    <h3>ETERNIDAD</h3>
+                </div>
+                <div class="expand-indicator">⮯</div>
+            </div>
+            <div class="card-details">
+                <h4>Servicios incluidos:</h4>
+                <ul>
+                    <li>Aires acondicionados y calefacción</li>
+                    <li>Asientos cómodos y ergonómicos</li>
+                    <li>Área de recepción 24/7</li>
+                    <li>Servicio de café y agua</li>
+                    <li>Wi-Fi gratuito</li>
+                    <li>Ambiente tranquilo y respetuoso</li>
+                    <li>Servicio de café y agua</li>
+                    <li>Wi-Fi gratuito</li>
+                    <li>Ambiente tranquilo y respetuoso</li>
+                </ul>
+                <div class="contact-info">
+                    <strong>Horarios: Disponible las 24 horas del día</strong>
+                </div>
+            </div>
+        </div>
+
         <div class="card" style="background-image: url('./imgs/index/prevision-servicios.png');"
             onclick="toggleCard(this)">
             <div class="card-overlay"></div>
             <div class="card-header">
                 <div class="card-content">
-                    <h3>PLANES DE PREVISIÓN FUNERARIA</h3>
-                    <p>COORDINACIÓN DE PREVISIÓN FUNERARIA: ISABEL ARRECIS +52 962 589 5880</p>
+                    <h3>HONOR</h3>
                 </div>
-                <div class="expand-indicator">▼</div>
+                <div class="expand-indicator">⮯</div>
             </div>
             <div class="card-details">
                 <h4>Planes disponibles:</h4>
@@ -303,6 +526,31 @@
                 </div>
             </div>
         </div>
+        <div class="card" style="background-image: url('./imgs/index/prevision-servicios.png');"
+            onclick="toggleCard(this)">
+            <div class="card-overlay"></div>
+            <div class="card-header">
+                <div class="card-content">
+                    <h3>HONOR</h3>
+                </div>
+                <div class="expand-indicator">⮯</div>
+            </div>
+            <div class="card-details">
+                <h4>Planes disponibles:</h4>
+                <ul>
+                    <li>Plan Básico - Servicios esenciales</li>
+                    <li>Plan Completo - Servicios integrales</li>
+                    <li>Plan Premium - Servicios de lujo</li>
+                    <li>Planes familiares con descuentos</li>
+                    <li>Financiamiento flexible</li>
+                    <li>Asesoría personalizada</li>
+                </ul>
+                <div class="contact-info">
+                    <strong>Contacto:</strong> Isabel Arrecis<br>
+                    <strong>Teléfono:</strong> +52 962 589 5880<br>
+                    <strong>Horario:</strong> Lunes a Viernes 9:00 AM - 6:00 PM
+                </div>
+            </div>
     </section>
 
     <section class="mapas-instalaciones">
@@ -373,27 +621,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section class="contacto">
-        <form action="https://formspree.io/f/mvgrobjn" method="POST" class="form-container">
-            <h2 class="form-title">CONTACTO</h2>
-            <label>
-                <input type="text" name="Nombre" placeholder="INGRESA TU NOMRBE AQUÍ" required>
-            </label>
-            <label>
-                <input type="tel" id="celular" name="celular" placeholder="NÚMERO TELÉFONICO Ej. 962 123 4567"
-                    pattern="[0-9]{10}" inputmode="numeric" required>
-            </label>
-            <label>
-                <input type="email" name="Correo" placeholder="CORREO ELECTRONICO Ej. ejemplo@gmail-hotmail-icloud.com"
-                    required>
-            </label>
-            <label>
-                <textarea name="Mensaje" placeholder="ESCRIBE TU MENSAJE" required></textarea>
-            </label>
-            <button type="submit" class="submit-btn">ENVIAR</button>
-        </form>
-    </section> -->
 
     <div class="menu-overlay" id="menuOverlay"></div>
 
