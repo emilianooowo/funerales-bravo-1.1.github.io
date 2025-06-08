@@ -11,3 +11,11 @@ function checkOrientation() {
 window.addEventListener('load', checkOrientation);
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('orientationchange', checkOrientation);
+
+window.addEventListener('load', () => {
+    document.body.classList.remove('loading');
+    checkOrientation();
+});
+
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('orientationchange', checkOrientation);
