@@ -2,62 +2,75 @@
 const menuTrigger = document.getElementById('menuTrigger');
 const slideMenu = document.getElementById('slideMenu');
 const menuOverlay = document.getElementById('menuOverlay');
+const tooltip = document.querySelector('.menu-tooltip');
 
-let isMenuOpen = false;
+let tooltipTimeout;
+let hasShownTooltip = false;
 
-function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
+function showTooltip() {
+    if (!hasShownTooltip) {
+        tooltip.classList.add('show');
+        hasShownTooltip = true;
 
-    if (isMenuOpen) {
-        slideMenu.classList.add('active');
-        menuOverlay.classList.add('active');
-        menuTrigger.classList.add('active');
-    }
-    else {
-        slideMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        menuTrigger.classList.remove('active');
-        document.body.style.overflow = '';
+        tooltipTimeout = setTimeout(() => {
+            hideTooltip();
+        }, 6000);
     }
 }
 
+function hideTooltip() {
+    tooltip.classList.remove('show');
+    if (tooltipTimeout) {
+        clearTimeout(tooltipTimeout);
+    }
+}
+
+function toggleMenu() {
+    menuTrigger.classList.toggle('active');
+    slideMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+
+    if (slideMenu.classList.contains('active')) {
+        hideTooltip();
+    }
+}
+
+setTimeout(() => {
+    showTooltip();
+}, 1500);
+
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!hasShownTooltip) return;
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        if (!slideMenu.classList.contains('active')) {
+            tooltip.classList.add('show');
+            setTimeout(() => {
+                hideTooltip();
+            }, 1000);
+        }
+    }, 1000);
+});
+
+// Abrir/cerrar menú con el botón
 menuTrigger.addEventListener('click', toggleMenu);
+
+// Cerrar menú al hacer clic en el overlay
 menuOverlay.addEventListener('click', toggleMenu);
 
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        setTimeout(() => {
-            toggleMenu();
-        }, 200);
-    });
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isMenuOpen) {
+// Cerrar menú con tecla ESC
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
         toggleMenu();
     }
 });
 
-slideMenu.addEventListener('touchmove', (e) => {
-    if (isMenuOpen) {
-        e.stopPropagation();
-    }
-});
-
-let startY = 0;
-let currentY = 0;
-
-slideMenu.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].clientY;
-});
-
-slideMenu.addEventListener('touchmove', (e) => {
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
-
-    if (diff > 50 && e.target.closest('.menu-content').scrollTop === 0) {
-        toggleMenu();
+// Ocultar tooltip si el usuario hace clic en cualquier parte
+document.addEventListener('click', function (e) {
+    if (!menuTrigger.contains(e.target)) {
+        hideTooltip();
     }
 });
 
@@ -88,7 +101,6 @@ window.onbeforeunload = () => {
 }
 
 //TIRA
-
 document.addEventListener('DOMContentLoaded', function () {
     const stripItems = document.querySelectorAll('.strip-item');
     const contentAreas = document.querySelectorAll('.content-area');
@@ -183,7 +195,7 @@ function toggleCard(card) {
         }
     });
 
-    card.classList.toggle('expanded'); // <- aquí se expande o contrae
+    card.classList.toggle('expanded');
 }
 
 
