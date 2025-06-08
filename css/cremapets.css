@@ -1,25 +1,41 @@
+.plan-includes h3,
+.plan-table td,
+.plan-table th {
+    border-bottom: 2px solid var(--color-cafe-oscuro);
+    font-family: var(--fuente-secundaria)
+}
+
+.about-btn,
+.about-btn-funerales,
+.logo-legend,
+.plan-includes h3,
+.plan-includes li,
+.plan-table td,
+.plan-table th {
+    font-family: var(--fuente-secundaria)
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 body {
-    background: linear-gradient(210deg, white, #0963D8 100%);
+    background: linear-gradient(210deg, #fff, #0963d8 100%);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
 .logos-section {
     max-width: 1200px;
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 30px;
     width: 100%;
     border-radius: 20px;
     padding: 30px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .5)
 }
 
 .logos-container {
@@ -27,37 +43,41 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.logo-item,
+.rotate-message {
+    flex-direction: column;
+    text-align: center
 }
 
 .logo-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
     max-width: 300px;
     flex: 1;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease forwards;
+    animation: 1s forwards fadeInUp
 }
 
-.logo-item:nth-child(1) {
-    animation-delay: 0.3s;
+.logo-item:first-child {
+    animation-delay: .3s
 }
 
 .logo-item:nth-child(2) {
-    animation-delay: 0.6s;
+    animation-delay: .6s
 }
 
 .logo-item:nth-child(3) {
-    animation-delay: 0.9s;
+    animation-delay: .9s
 }
 
 @keyframes fadeInUp {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0)
     }
 }
 
@@ -65,60 +85,57 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .logo-item img {
     width: 160px;
     height: 160px;
     object-fit: contain;
-    border-radius: 20px;
+    border-radius: 20px
 }
 
 .logo-item.central img {
     width: 250px;
-    height: 250px;
+    height: 250px
 }
 
 .logo-legend {
     margin-bottom: 15px;
-    font-family: var(--fuente-secundaria);
-    font-weight: bold;
-    color: var(--color-cafe-oscuro);
+    font-weight: 700;
+    color: var(--color-cafe-oscuro)
 }
 
 .logo-legend-cremapets {
-    color: var(--color-azul-mascotas);
+    color: var(--color-azul-mascotas)
 }
 
 .about-btn,
 .about-btn-funerales {
     color: var(--color-beige-1);
     background-color: var(--color-cafe-oscuro);
-    font-family: var(--fuente-secundaria);
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
+    transition: .3s;
+    letter-spacing: .5px;
     display: inline-block;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .about-btn-funerales {
     color: var(--color-beige-1);
-    background-color: black;
+    background-color: #000
 }
 
-.about-btn:hover,
-.about-btn-funerales:hover {
+.about-btn-funerales:hover,
+.about-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .5)
 }
 
-/* Mensaje de rotación */
 .rotate-message {
     display: none;
     position: fixed;
@@ -126,32 +143,35 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(380deg, #0963D8 0%, #fff 150%);
-    color: white;
+    background: linear-gradient(380deg, #0963d8 0, #fff 150%);
+    color: #fff;
     z-index: 9999;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
+    padding: 20px
 }
 
 .rotate-icon {
     font-size: 4rem;
     margin-bottom: 20px;
-    animation: rotate 2s infinite;
+    animation: 2s infinite rotate
 }
 
 .rotate-message h1 {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: white;
+    color: #fff
+}
+
+.plan-includes h3,
+.plan-table th,
+.plan-title {
+    color: var(--color-cafe-oscuro)
 }
 
 @keyframes rotate {
-
     100% {
-        transform: rotate(-90deg);
+        transform: rotate(-90deg)
     }
 }
 
@@ -160,7 +180,7 @@ body {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 
 .main-content {
@@ -168,27 +188,27 @@ body {
     border-radius: 20px;
     padding: 40px;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 40px
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .plans-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 40px
 }
 
 .plan {
     border-radius: 15px;
     padding: 25px;
-    border: 1px solid black;
+    border: 1px solid #000;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .plan::before {
@@ -198,112 +218,96 @@ h1 {
     left: 0;
     right: 0;
     height: 10px;
-    background: linear-gradient(80deg, #0963D8, #fff);
+    background: linear-gradient(80deg, #0963d8, #fff)
 }
-
 
 .plan-title {
     font-size: 1.5em;
-    color: var(--color-cafe-oscuro);
     margin-bottom: 10px;
-    text-align: center;
+    text-align: center
 }
 
 .plan-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse
 }
 
-.plan-table th,
-.plan-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 2px solid var(--color-cafe-oscuro);
-    font-family: var(--fuente-secundaria);
-}
-
+.plan-table td,
 .plan-table th {
-    color: var(--color-cafe-oscuro);
-    font-family: var(--fuente-secundaria);
+    padding: 12px;
+    text-align: left
 }
 
 .plan-includes {
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .plan-includes h3 {
-    font-family: var(--fuente-secundaria);
-    color: var(--color-cafe-oscuro);
     font-size: 1.2em;
-    border-bottom: 2px solid var(--color-cafe-oscuro);
-    padding-bottom: 5px;
+    padding-bottom: 5px
 }
 
 .plan-includes ul {
     list-style: none;
-    padding: 0;
+    padding: 0
 }
 
 .plan-includes li {
-    font-family: var(--fuente-secundaria);
-    padding: 8px 0;
+    padding: 8px 0 8px 25px;
     position: relative;
-    padding-left: 25px;
-    color: #555;
+    color: #555
 }
 
 .plan-includes li::before {
     content: '•';
     position: absolute;
     left: 0;
-    font-size: 1em;
+    font-size: 1em
 }
 
-/* Galería de urnas */
 .photo-album {
     width: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, .85);
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px
 }
 
 .album-title {
     text-align: center;
     font-size: 2rem;
     color: var(--color-beige-1);
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
 .album-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 1rem
 }
 
 .album-photo img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: transform 0.2s;
+    transition: transform .2s
 }
 
-@media (max-width: 768px) {
-
+@media (max-width:768px) {
     .rotate-message {
-        display: flex;
+        display: flex
     }
 
     .main-container {
-        display: none;
+        display: none
     }
 
-    @media (orientation: landscape) {
+    @media (orientation:landscape) {
         .rotate-message {
-            display: none;
+            display: none
         }
 
         .main-container {
-            display: flex;
+            display: flex
         }
 
         .plans-container {
@@ -312,88 +316,87 @@ h1 {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 15px;
-            padding-bottom: 15px;
             margin: 0 -20px 30px;
-            padding: 0 20px 15px;
+            padding: 0 20px 15px
         }
 
         .plans-container::-webkit-scrollbar {
             height: 6px;
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, .05)
         }
 
         .plans-container::-webkit-scrollbar-thumb {
             background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 3px;
+            border-radius: 3px
         }
 
         .plan {
             flex: 0 0 90%;
             scroll-snap-align: start;
-            font-size: 0.9em;
+            font-size: .9em
         }
 
         .plan-title {
-            font-size: 1.3em;
+            font-size: 1.3em
         }
 
-        .plan-table th,
-        .plan-table td {
+        .plan-table td,
+        .plan-table th {
             padding: 8px;
-            font-size: 0.95em;
+            font-size: .95em
         }
 
         .plan-includes h3 {
-            font-size: 1.1em;
+            font-size: 1.1em
         }
 
         .plan-includes li {
-            font-size: 0.95em;
+            font-size: .95em
         }
 
         .main-content {
-            padding: 20px;
+            padding: 20px
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2em
         }
 
         .subtitle {
-            font-size: 1em;
+            font-size: 1em
         }
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width:992px) {
 
     .main-content,
     .photo-album {
-        padding: 25px;
+        padding: 25px
     }
 
     .album-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width:576px) {
 
     .main-content,
     .photo-album {
-        padding: 20px 15px;
+        padding: 20px 15px
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem
     }
 
     .subtitle {
-        font-size: 0.95rem;
+        font-size: .95rem
     }
 
     .album-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 10px
     }
 }

@@ -119,6 +119,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//EXTRAS
+const extrasData = [
+    {
+        title: "+ Cremación",
+        description: "Servicio de cremación con entrega de cenizas en urna básica",
+        features: ["Proceso de cremación", "Urna básica incluida", "Certificado de cremación"],
+        price: "Desde $8,500",
+        extraQuery: "cremacion"
+    },
+    {
+        title: "+ Domicilio",
+        description: "Velación en la comodidad del hogar familiar",
+        features: ["Instalación en domicilio", "Equipo de refrigeración", "Decoración básica"],
+        price: "Desde $4,200",
+        extraQuery: "domicilio"
+    },
+    {
+        title: "+ Cremación + Domicilio",
+        description: "Combinación completa de ambos servicios con descuento especial",
+        features: ["Todos los beneficios anteriores", "Descuento por paquete", "Gestión integral"],
+        price: "Desde $11,900",
+        extraQuery: "combo"
+    }
+];
+
+const planes = ["basico", "estandar", "premier", "lux"];
+
+function renderExtrasFor(plan) {
+    const container = document.getElementById(`extras-${plan}`);
+    if (!container) return;
+
+    container.innerHTML = `
+    <div class="extras-container">
+      <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+      <div class="extras-grid">
+        ${extrasData.map(extra => `
+          <div class="extra-card">
+            <h4>${extra.title}</h4>
+            <p>${extra.description}</p>
+            <ul class="extra-features">
+              ${extra.features.map(f => `<li>${f}</li>`).join("")}
+            </ul>
+            <div class="extra-price">${extra.price}</div>
+            <a href="cotizador.html?plan=${plan}&extra=${extra.extraQuery}" class="cotizar-btn">Cotiza Ya</a>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    planes.forEach(plan => renderExtrasFor(plan));
+});
+
 //CARDS
 function toggleCard(card) {
     const allCards = document.querySelectorAll('.card');
