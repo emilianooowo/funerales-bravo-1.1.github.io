@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
             tooltip.classList.add('show');
             setTimeout(() => {
                 hideTooltip();
-            }, 1000);
+            }, 3000);
         }
     }, 1000);
 });
