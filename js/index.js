@@ -54,20 +54,16 @@ window.addEventListener('scroll', () => {
     }, 1000);
 });
 
-// Abrir/cerrar menú con el botón
 menuTrigger.addEventListener('click', toggleMenu);
 
-// Cerrar menú al hacer clic en el overlay
 menuOverlay.addEventListener('click', toggleMenu);
 
-// Cerrar menú con tecla ESC
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
         toggleMenu();
     }
 });
 
-// Ocultar tooltip si el usuario hace clic en cualquier parte
 document.addEventListener('click', function (e) {
     if (!menuTrigger.contains(e.target)) {
         hideTooltip();
@@ -101,34 +97,171 @@ window.onbeforeunload = () => {
 }
 
 //TIRA
+
 document.addEventListener('DOMContentLoaded', function () {
-    const stripItems = document.querySelectorAll('.strip-item');
-    const contentAreas = document.querySelectorAll('.content-area');
+    // Usar el contenedor correcto según tu HTML
+    const stripContainer = document.querySelector('.strip-container');
+    const strip = document.querySelector('.strip');
 
-    stripItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const targetId = this.getAttribute('data-target');
-            const targetContent = document.getElementById(targetId);
+    if (!stripContainer || !strip) {
+        console.error('Contenedores no encontrados');
+        return;
+    }
 
-            // Desactiva todas las otras pestañas
-            stripItems.forEach(otherItem => {
-                if (otherItem !== this) {
-                    otherItem.classList.remove('active');
-                }
-            });
+    let isMobile = window.innerWidth <= 768;
 
-            // Oculta todos los otros contenidos
-            contentAreas.forEach(content => {
-                if (content !== targetContent) {
-                    content.classList.remove('active');
-                }
-            });
+    // Obtener elementos originales
+    const originalStripItems = Array.from(document.querySelectorAll('.strip-item'));
+    const originalContentAreas = Array.from(document.querySelectorAll('.content-area'));
 
-            // Activa/desactiva la pestaña clickeada y su contenido
-            this.classList.toggle('active');
-            targetContent.classList.toggle('active');
+    if (originalStripItems.length === 0 || originalContentAreas.length === 0) {
+        console.error('No se encontraron elementos strip-item o content-area');
+        return;
+    }
+
+    function isMobileView() {
+        return window.innerWidth <= 768;
+    }
+
+    function applyMobileLayout() {
+        // Crear estructura móvil: item1 -> content1 -> item2 -> content2...
+        const mobileContainer = document.createElement('div');
+        mobileContainer.className = 'strip-container mobile-layout';
+
+        originalStripItems.forEach((item, index) => {
+            // Clonar elementos para evitar problemas de referencia
+            const itemClone = item.cloneNode(true);
+            const contentClone = originalContentAreas[index].cloneNode(true);
+
+            mobileContainer.appendChild(itemClone);
+            mobileContainer.appendChild(contentClone);
         });
-    });
+
+        // Reemplazar el contenedor original
+        stripContainer.parentNode.replaceChild(mobileContainer, stripContainer);
+
+        // Actualizar referencia global
+        window.currentContainer = mobileContainer;
+    }
+
+    function applyDesktopLayout() {
+        // Crear estructura desktop: strip con todos los items + todos los contents
+        const desktopContainer = document.createElement('div');
+        desktopContainer.className = 'strip-container desktop-layout';
+
+        const stripDiv = document.createElement('div');
+        stripDiv.className = 'strip';
+
+        // Agregar todos los strip-items al strip
+        originalStripItems.forEach(item => {
+            const itemClone = item.cloneNode(true);
+            stripDiv.appendChild(itemClone);
+        });
+
+        desktopContainer.appendChild(stripDiv);
+
+        // Agregar todos los content-areas después del strip
+        originalContentAreas.forEach(content => {
+            const contentClone = content.cloneNode(true);
+            desktopContainer.appendChild(contentClone);
+        });
+
+        // Reemplazar el contenedor original
+        const currentContainer = document.querySelector('.strip-container');
+        currentContainer.parentNode.replaceChild(desktopContainer, currentContainer);
+
+        // Actualizar referencia global
+        window.currentContainer = desktopContainer;
+    }
+
+    function setupAccordionBehavior() {
+        const currentContainer = window.currentContainer || document.querySelector('.strip-container');
+
+        // Usar delegación de eventos
+        currentContainer.addEventListener('click', function (e) {
+            const clickedItem = e.target.closest('.strip-item');
+
+            if (!clickedItem) return;
+
+            const targetId = clickedItem.getAttribute('data-target');
+            const targetContent = currentContainer.querySelector(`#${targetId}`);
+
+            if (!targetContent) {
+                console.warn(`Contenido ${targetId} no encontrado`);
+                return;
+            }
+
+            // Obtener todos los elementos actuales
+            const currentStripItems = currentContainer.querySelectorAll('.strip-item');
+            const currentContentAreas = currentContainer.querySelectorAll('.content-area');
+
+            // Verificar si ya está activo
+            const isCurrentlyActive = clickedItem.classList.contains('active');
+
+            // Desactivar todos
+            currentStripItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            currentContentAreas.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Activar el clickeado si no estaba activo
+            if (!isCurrentlyActive) {
+                clickedItem.classList.add('active');
+                targetContent.classList.add('active');
+            }
+        });
+    }
+
+    function initLayout() {
+        // Determinar y aplicar layout
+        if (isMobileView()) {
+            applyMobileLayout();
+        } else {
+            applyDesktopLayout();
+        }
+
+        // Configurar event listeners
+        setupAccordionBehavior();
+    }
+
+    // Función de debounce para resize
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Inicializar
+    try {
+        initLayout();
+    } catch (error) {
+        console.error('Error al inicializar:', error);
+    }
+
+    // Manejar resize
+    const handleResize = debounce(() => {
+        const wasMobile = isMobile;
+        isMobile = isMobileView();
+
+        if (wasMobile !== isMobile) {
+            try {
+                initLayout();
+            } catch (error) {
+                console.error('Error en resize:', error);
+            }
+        }
+    }, 250);
+
+    window.addEventListener('resize', handleResize);
 });
 
 //EXTRAS
@@ -189,21 +322,82 @@ document.addEventListener("DOMContentLoaded", () => {
 //CARDS
 function toggleCard(card) {
     const allCards = document.querySelectorAll('.card');
+    const isExpanded = card.classList.contains('expanded');
+
     allCards.forEach(c => {
-        if (c !== card) {
+        if (c !== card && c.classList.contains('expanded')) {
             c.classList.remove('expanded');
+            const items = c.querySelectorAll('.card-details li');
+            items.forEach(item => {
+                item.style.transitionDelay = '0s';
+            });
         }
     });
 
-    card.classList.toggle('expanded');
-}
+    if (!isExpanded) {
+        card.classList.add('expanded');
+        const items = card.querySelectorAll('.card-details li');
+        items.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+        });
+    } else {
+        card.classList.remove('expanded');
+    }
 
+    if (!isExpanded) {
+        setTimeout(() => {
+            card.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }, 400);
+    }
+}
 
 document.addEventListener('click', function (event) {
     if (!event.target.closest('.card')) {
-        const allCards = document.querySelectorAll('.card');
+        const allCards = document.querySelectorAll('.card.expanded');
         allCards.forEach(card => {
             card.classList.remove('expanded');
+            const items = card.querySelectorAll('.card-details li');
+            items.forEach(item => {
+                item.style.transitionDelay = '0s';
+            });
         });
     }
+});
+
+if ('ontouchstart' in window) {
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('touchstart', function () {
+            if (!this.classList.contains('expanded')) {
+                this.style.transform = 'scale(0.98)';
+                this.style.transition = 'transform 0.1s ease';
+            }
+        }, { passive: true });
+
+        card.addEventListener('touchend', function () {
+            if (!this.classList.contains('expanded')) {
+                this.style.transform = '';
+                this.style.transition = '';
+            }
+        }, { passive: true });
+    });
+}
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
 });

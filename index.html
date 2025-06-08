@@ -15,7 +15,7 @@
 <body>
     <section id="atencion-inmediata">
         <div class="tira-atencion-inmediata">
-            <div style="text-align: center;">
+            <div>
                 <h4>
                     <div class="call-instruction">EMERGENCIAS - LLAMAR AHORA:</div>
                 </h4>
@@ -157,8 +157,9 @@
     </section>
 
     <section class="tira-servicios">
-        <h1 class="main-title">PLANES DE VELACIÓN</h1>
-
+        <div class="section-title">
+            <h1>PLANES DE VELACIÓN</h1>
+        </div>
         <div class="strip-container">
             <div class="strip">
                 <div class="strip-item" data-target="content1">
@@ -283,112 +284,79 @@
         </div>
     </section>
 
-    <h1>PAQUETES DE HOMENAJE</h1>
-
     <section class="tabla-servicios">
-        <div class="card" style="background-image: url('./imgs/index/fondo5.png');" onclick="toggleCard(this)">
-            <div class="card-overlay"></div>
-            <div class="card-header">
-                <div class="card-content">
-                    <h3>MEMORABLE</h3>
-                </div>
-                <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-            </div>
-            <div class="card-details">
-                <h4>Servicios incluidos:</h4>
-                <ul>
-                    <li>Aires acondicionados y calefacción</li>
-                    <li>Asientos cómodos y ergonómicos</li>
-                    <li>Área de recepción 24/7</li>
-                    <li>Servicio de café y agua</li>
-                    <li>Wi-Fi gratuito</li>
-                    <li>Ambiente tranquilo y respetuoso</li>
-                    <li>Servicio de café y agua</li>
-                    <li>Wi-Fi gratuito</li>
-                    <li>Ambiente tranquilo y respetuoso</li>
-                </ul>
-                <div class="contact-info">
-                    <strong>Horarios:</strong> Disponible las 24 horas del día
-                </div>
-            </div>
+        <div class="section-title">
+            <h1>PAQUETES DE HOMENAJE</h1>
         </div>
 
-        <div class="card" style="background-image: url('./imgs/index/fondo2.png');" onclick="toggleCard(this)">
-            <div class="card-overlay"></div>
-            <div class="card-header">
-                <div class="card-content">
-                    <h3>ETERNIDAD</h3>
+        <div class="cards-container">
+            <div class="card" style="background-image: url('./imgs/index/fondo5.png');" onclick="toggleCard(this)">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <div class="card-content">
+                        <h3>MEMORABLE</h3>
+                    </div>
+                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
                 </div>
-                <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-            </div>
-            <div class="card-details">
-                <h4>Servicios incluidos:</h4>
-                <ul>
-                    <li>Aires acondicionados y calefacción</li>
-                    <li>Asientos cómodos y ergonómicos</li>
-                    <li>Área de recepción 24/7</li>
-                    <li>Servicio de café y agua</li>
-                    <li>Wi-Fi gratuito</li>
-                    <li>Ambiente tranquilo y respetuoso</li>
-                    <li>Servicio de café y agua</li>
-                    <li>Wi-Fi gratuito</li>
-                    <li>Ambiente tranquilo y respetuoso</li>
-                </ul>
-                <div class="contact-info">
-                    <strong>Horarios: Disponible las 24 horas del día</strong>
+                <div class="card-details">
+                    <h4>Servicios incluidos:</h4>
+                    <ul>
+                        <li style="--i: 1">Aires acondicionados y calefacción</li>
+                        <li style="--i: 2">Asientos cómodos y ergonómicos</li>
+                        <li style="--i: 3">Área de recepción 24/7</li>
+                        <li style="--i: 4">Servicio de café y agua</li>
+                        <li style="--i: 5">Wi-Fi gratuito</li>
+                        <li style="--i: 6">Ambiente tranquilo y respetuoso</li>
+                        <li style="--i: 7">Música ambiental personalizada</li>
+                        <li style="--i: 8">Iluminación suave y cálida</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <div class="card" style="background-image: url('./imgs/index/fondo3.png');" onclick="toggleCard(this)">
-            <div class="card-overlay"></div>
-            <div class="card-header">
-                <div class="card-content">
-                    <h3>HONOR</h3>
+            <div class="card" style="background-image: url('./imgs/index/fondo2.png');" onclick="toggleCard(this)">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <div class="card-content">
+                        <h3>ETERNIDAD</h3>
+                    </div>
+                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
                 </div>
-                <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
+                <div class="card-details">
+                    <h4>Servicios incluidos:</h4>
+                    <ul>
+                        <li style="--i: 1">Aires acondicionados y calefacción</li>
+                        <li style="--i: 2">Asientos cómodos y ergonómicos</li>
+                        <li style="--i: 3">Área de recepción 24/7</li>
+                        <li style="--i: 4">Servicio de café y agua premium</li>
+                        <li style="--i: 5">Wi-Fi gratuito de alta velocidad</li>
+                        <li style="--i: 6">Ambiente tranquilo y respetuoso</li>
+                        <li style="--i: 7">Servicio de florería incluido</li>
+                        <li style="--i: 8">Coordinación de ceremonias</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card-details">
-                <h4>Planes disponibles:</h4>
-                <ul>
-                    <li>Plan Básico - Servicios esenciales</li>
-                    <li>Plan Completo - Servicios integrales</li>
-                    <li>Plan Premium - Servicios de lujo</li>
-                    <li>Planes familiares con descuentos</li>
-                    <li>Financiamiento flexible</li>
-                    <li>Asesoría personalizada</li>
-                </ul>
-                <div class="contact-info">
-                    <strong>Contacto:</strong> Isabel Arrecis<br>
-                    <strong>Teléfono:</strong> +52 962 589 5880<br>
-                    <strong>Horario:</strong> Lunes a Viernes 9:00 AM - 6:00 PM
+
+            <div class="card" style="background-image: url('./imgs/index/fondo3.png');" onclick="toggleCard(this)">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <div class="card-content">
+                        <h3>HONOR</h3>
+                    </div>
+                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="card-details">
+                    <h4>Planes disponibles:</h4>
+                    <ul>
+                        <li style="--i: 1">Plan Básico - Servicios esenciales</li>
+                        <li style="--i: 2">Plan Completo - Servicios integrales</li>
+                        <li style="--i: 3">Plan Premium - Servicios de lujo</li>
+                        <li style="--i: 4">Planes familiares con descuentos</li>
+                        <li style="--i: 5">Financiamiento flexible</li>
+                        <li style="--i: 6">Asesoría personalizada</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="card" style="background-image: url('./imgs/index/fondo4.png');" onclick="toggleCard(this)">
-            <div class="card-overlay"></div>
-            <div class="card-header">
-                <div class="card-content">
-                    <h3>EXTRAS</h3>
-                </div>
-                <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-            </div>
-            <div class="card-details">
-                <h4>Planes disponibles:</h4>
-                <ul>
-                    <li>Plan Básico - Servicios esenciales</li>
-                    <li>Plan Completo - Servicios integrales</li>
-                    <li>Plan Premium - Servicios de lujo</li>
-                    <li>Planes familiares con descuentos</li>
-                    <li>Financiamiento flexible</li>
-                    <li>Asesoría personalizada</li>
-                </ul>
-                <div class="contact-info">
-                    <strong>Contacto:</strong> Isabel Arrecis<br>
-                    <strong>Teléfono:</strong> +52 962 589 5880<br>
-                    <strong>Horario:</strong> Lunes a Viernes 9:00 AM - 6:00 PM
-                </div>
-            </div>
     </section>
 
     <section class="mapas-instalaciones">
