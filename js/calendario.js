@@ -1,23 +1,3 @@
-fetch('global.html')
-    .then(res => res.text())
-    .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        const footer = doc.querySelector('footer');
-        if (footer) document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
-
-        document.body.style.visibility = 'visible';
-    })
-    .catch(err => {
-        console.error('Error al cargar global.html:', err);
-        document.body.style.visibility = 'visible';
-    });
-
-function redirectTo(url) {
-    window.location.href = url;
-}
-
 const toggleBtn = document.getElementById('toggleCalendar');
 const calendarSection = document.getElementById('calendarSection');
 const downloadBtn = document.getElementById('downloadBtn');
@@ -50,34 +30,70 @@ function showToast(message) {
     }, 3000);
 }
 
-downloadBtn.addEventListener('click', function () {
-    showToast('¡Calendario descargado exitosamente!');
+// Función para descargar la imagen
+async function downloadImage() {
+    try {
+        const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
 
-    const link = document.createElement('a');
-    link.href = '/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
-    link.download = 'CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
-    link.click();
-});
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'CALENDARIO-2025-FUNERALES-BRAVO.jpg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
 
-shareBtn.addEventListener('click', function () {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Calendario de Promociones',
-            text: 'Mira nuestro calendario de promociones especiales',
-            url: window.location.href
-        }).then(() => {
-            showToast('¡Calendario compartido exitosamente!');
-        }).catch((error) => {
-            copyToClipboard();
-        });
-    } else {
+        showToast('¡Calendario descargado exitosamente!');
+    } catch (error) {
+        console.error('Error al descargar:', error);
+        showToast('Error al descargar el calendario');
+    }
+}
+
+downloadBtn.addEventListener('click', downloadImage);
+
+// Función para compartir solo la imagen
+async function shareImage() {
+    try {
+        const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+
+        // Verificar si el navegador soporta Web Share API con archivos
+        if (navigator.canShare && navigator.share) {
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+            const file = new File([blob], 'CALENDARIO-2025-FUNERALES-BRAVO.jpg', { type: blob.type });
+
+            if (navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                    title: 'Calendario de Promociones - Funerales Bravo',
+                    text: 'Mira nuestro calendario de promociones especiales',
+                    files: [file]
+                });
+                showToast('¡Calendario compartido exitosamente!');
+                return;
+            }
+        }
+
+        // Fallback: copiar enlace de la imagen
+        const fullImageUrl = window.location.origin + '/' + imageUrl;
+        await navigator.clipboard.writeText(fullImageUrl);
+        showToast('¡Enlace de la imagen copiado al portapapeles!');
+
+    } catch (error) {
+        console.error('Error al compartir:', error);
+        // Último fallback
         copyToClipboard();
     }
-});
+}
+
+shareBtn.addEventListener('click', shareImage);
 
 function copyToClipboard() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-        showToast('¡Enlace copiado al portapapeles!');
+    const imageUrl = window.location.origin + '/imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+    navigator.clipboard.writeText(imageUrl).then(() => {
+        showToast('¡Enlace de la imagen copiado al portapapeles!');
     }).catch(() => {
         showToast('Compartir no disponible en este navegador');
     });
@@ -85,8 +101,20 @@ function copyToClipboard() {
 
 window.addEventListener('load', function () {
     const cards = document.querySelectorAll('.promotion-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
+});
+
+// Agregar estilos iniciales para las cards
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.promotion-card');
     cards.forEach((card) => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease';
     });
 });
