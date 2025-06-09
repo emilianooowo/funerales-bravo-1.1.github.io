@@ -190,74 +190,114 @@ h1 {
     text-align: center;
 }
 
-.plans-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px
+.basic-plan {
+    background-color: #6d432f;
+    color: white;
+}
+
+.premium-plan {
+    background-color: #cee6f2;
+    color: var(--color-cafe-oscuro);
 }
 
 .plan {
     border-radius: 15px;
     padding: 25px;
-    border: 1px solid #000;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
 }
 
-.plan::before {
+.plan.basic-plan::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 10px;
-    background: linear-gradient(80deg, #0963d8, #fff)
+    background: linear-gradient(80deg, #6d432f, #fff);
 }
 
-.plan-title {
+.plan.premium-plan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(80deg, #0963d8, #fff);
+}
+
+.plan.premium-plan .plan-title {
     font-size: 1.5em;
     margin-bottom: 10px;
-    text-align: center
+    color: var(--color-cafe-oscuro);
+}
+
+.plan.basic-plan .plan-title {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .plan-table {
     width: 100%;
-    border-collapse: collapse
+    border-collapse: collapse;
 }
 
 .plan-table td,
 .plan-table th {
     padding: 12px;
-    text-align: left
+    text-align: left;
 }
 
 .plan-includes {
-    margin-top: 20px
+    margin-top: 20px;
 }
 
-.plan-includes h3 {
+.basic-plan .plan-includes h3 {
+    color: white;
     font-size: 1.2em;
-    padding-bottom: 5px
+    padding-bottom: 5px;
 }
 
+/* Reset general para evitar conflictos */
 .plan-includes ul {
     list-style: none;
-    padding: 0
+    padding: 0;
 }
 
 .plan-includes li {
     padding: 8px 0 8px 25px;
     position: relative;
-    color: #555
+}
+
+/* Color de texto personalizado por plan */
+.basic-plan .plan-includes li {
+    color: white;
+}
+
+.basic-plan th{
+    color: white;
+}
+
+.premium-plan .plan-includes li {
+    color: var(--color-cafe-oscuro);
 }
 
 .plan-includes li::before {
     content: '•';
     position: absolute;
     left: 0;
-    font-size: 1em
+    font-size: 1em;
 }
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
 
 .photo-album {
     width: 100%;

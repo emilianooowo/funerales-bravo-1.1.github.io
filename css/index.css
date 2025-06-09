@@ -344,7 +344,6 @@ body {
     font-family: var(--fuente-secundaria);
 }
 
-
 @media (max-width: 767px) {
     .menu-trigger {
         font-size: 1.5rem;
@@ -354,6 +353,18 @@ body {
         right: 75px;
         font-size: 1.2rem;
         padding: 6px 10px;
+    }
+
+    .slide-menu {
+        transform: translateY(100%);
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .slide-menu.active {
+        transform: translateY(0);
     }
 }
 

@@ -41,6 +41,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--color-beige-1);
   font-family: var(--fuente-principal);
 }
 

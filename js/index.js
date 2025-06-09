@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
             tooltip.classList.add('show');
             setTimeout(() => {
                 hideTooltip();
-            }, 3000);
+            }, 4000);
         }
     }, 1000);
 });
@@ -97,9 +97,7 @@ window.onbeforeunload = () => {
 }
 
 //TIRA
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Usar el contenedor correcto según tu HTML
     const stripContainer = document.querySelector('.strip-container');
     const strip = document.querySelector('.strip');
 
@@ -109,27 +107,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let isMobile = window.innerWidth <= 768;
+    let currentContainer = stripContainer;
 
-    // Obtener elementos originales
-    const originalStripItems = Array.from(document.querySelectorAll('.strip-item'));
-    const originalContentAreas = Array.from(document.querySelectorAll('.content-area'));
-
-    if (originalStripItems.length === 0 || originalContentAreas.length === 0) {
-        console.error('No se encontraron elementos strip-item o content-area');
-        return;
-    }
+    const planes = ['basico', 'estandar', 'premier', 'lux'];
 
     function isMobileView() {
         return window.innerWidth <= 768;
     }
 
+    function renderExtrasFor(plan) {
+        const container = document.getElementById(`extras-${plan}`);
+        if (!container) return;
+
+        container.innerHTML = `
+        <div class="extras-container">
+            <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+            <div class="extras-grid">
+                ${extrasData.map(extra => `
+                    <div class="extra-card">
+                        <h4>${extra.title}</h4>
+                        <p>${extra.description}</p>
+                        <ul class="extra-features">
+                            ${extra.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                        <div class="extra-price">${extra.price}</div>
+                        <a href="cotizador.html?plan=${plan}&extra=${extra.extraQuery}" class="cotizar-btn">Cotiza Ya</a>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        `;
+    }
+
     function applyMobileLayout() {
-        // Crear estructura móvil: item1 -> content1 -> item2 -> content2...
+        const originalStripItems = Array.from(stripContainer.querySelectorAll('.strip-item'));
+        const originalContentAreas = Array.from(stripContainer.querySelectorAll('.content-area'));
+
         const mobileContainer = document.createElement('div');
         mobileContainer.className = 'strip-container mobile-layout';
 
         originalStripItems.forEach((item, index) => {
-            // Clonar elementos para evitar problemas de referencia
             const itemClone = item.cloneNode(true);
             const contentClone = originalContentAreas[index].cloneNode(true);
 
@@ -137,22 +154,23 @@ document.addEventListener('DOMContentLoaded', function () {
             mobileContainer.appendChild(contentClone);
         });
 
-        // Reemplazar el contenedor original
         stripContainer.parentNode.replaceChild(mobileContainer, stripContainer);
+        currentContainer = mobileContainer;
 
-        // Actualizar referencia global
-        window.currentContainer = mobileContainer;
+        // Render extras después de insertar el contenido
+        planes.forEach(renderExtrasFor);
     }
 
     function applyDesktopLayout() {
-        // Crear estructura desktop: strip con todos los items + todos los contents
+        const originalStripItems = Array.from(stripContainer.querySelectorAll('.strip-item'));
+        const originalContentAreas = Array.from(stripContainer.querySelectorAll('.content-area'));
+
         const desktopContainer = document.createElement('div');
         desktopContainer.className = 'strip-container desktop-layout';
 
         const stripDiv = document.createElement('div');
         stripDiv.className = 'strip';
 
-        // Agregar todos los strip-items al strip
         originalStripItems.forEach(item => {
             const itemClone = item.cloneNode(true);
             stripDiv.appendChild(itemClone);
@@ -160,27 +178,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         desktopContainer.appendChild(stripDiv);
 
-        // Agregar todos los content-areas después del strip
         originalContentAreas.forEach(content => {
             const contentClone = content.cloneNode(true);
             desktopContainer.appendChild(contentClone);
         });
 
-        // Reemplazar el contenedor original
-        const currentContainer = document.querySelector('.strip-container');
-        currentContainer.parentNode.replaceChild(desktopContainer, currentContainer);
+        stripContainer.parentNode.replaceChild(desktopContainer, stripContainer);
+        currentContainer = desktopContainer;
 
-        // Actualizar referencia global
-        window.currentContainer = desktopContainer;
+        // Render extras después de insertar el contenido
+        planes.forEach(renderExtrasFor);
     }
 
     function setupAccordionBehavior() {
-        const currentContainer = window.currentContainer || document.querySelector('.strip-container');
-
-        // Usar delegación de eventos
         currentContainer.addEventListener('click', function (e) {
             const clickedItem = e.target.closest('.strip-item');
-
             if (!clickedItem) return;
 
             const targetId = clickedItem.getAttribute('data-target');
@@ -191,63 +203,62 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Obtener todos los elementos actuales
             const currentStripItems = currentContainer.querySelectorAll('.strip-item');
             const currentContentAreas = currentContainer.querySelectorAll('.content-area');
 
-            // Verificar si ya está activo
             const isCurrentlyActive = clickedItem.classList.contains('active');
 
-            // Desactivar todos
-            currentStripItems.forEach(item => {
-                item.classList.remove('active');
-            });
+            currentStripItems.forEach(item => item.classList.remove('active'));
+            currentContentAreas.forEach(content => content.classList.remove('active'));
 
-            currentContentAreas.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Activar el clickeado si no estaba activo
             if (!isCurrentlyActive) {
                 clickedItem.classList.add('active');
                 targetContent.classList.add('active');
+
+                requestAnimationFrame(() => {
+                    targetContent.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                });
             }
         });
     }
 
     function initLayout() {
-        // Determinar y aplicar layout
         if (isMobileView()) {
             applyMobileLayout();
         } else {
             applyDesktopLayout();
         }
 
-        // Configurar event listeners
         setupAccordionBehavior();
+
+        if (!isMobileView()) {
+            const firstItem = currentContainer.querySelector('.strip-item[data-target="content1"]');
+            const firstContent = currentContainer.querySelector('#content1');
+
+            if (firstItem && firstContent) {
+                firstItem.classList.add('active');
+                firstContent.classList.add('active');
+            }
+        }
     }
 
-    // Función de debounce para resize
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
             clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
+            timeout = setTimeout(() => func(...args), wait);
         };
     }
 
-    // Inicializar
     try {
         initLayout();
     } catch (error) {
         console.error('Error al inicializar:', error);
     }
 
-    // Manejar resize
     const handleResize = debounce(() => {
         const wasMobile = isMobile;
         isMobile = isMobileView();
@@ -263,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', handleResize);
 });
+
 
 //EXTRAS
 const extrasData = [
