@@ -300,7 +300,7 @@ function initSlidingMenu() {
 
             <ul class="nav-list">
                 <li class="nav-item cremapets">
-                    <a href="./pages/cremapets.html" class="nav-link">
+                    <a href="../pages/cremapets.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-heart"></i>
                         </div>
@@ -312,7 +312,7 @@ function initSlidingMenu() {
                 </li>
 
                 <li class="nav-item">
-                    <a href="./pages/calendario.html" class="nav-link">
+                    <a href="../pages/calendario.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-calendar3"></i>
                         </div>
@@ -324,7 +324,7 @@ function initSlidingMenu() {
                 </li>
 
                 <li class="nav-item">
-                    <a href="./pages/cementerio.html" class="nav-link">
+                    <a href="../pages/cementerio.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-tree"></i>
                         </div>
@@ -359,7 +359,7 @@ function initSlidingMenu() {
                     </a>
                 </li>
                 <li class="nav-item inicio">
-                    <a href="/index.html" class="nav-link">
+                    <a href="../index.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-house-door-fill"></i>
                         </div>
