@@ -814,17 +814,17 @@ body {
 
 .card:nth-child(1) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../imgs/index/fondo2.webp');
+        url('/imgs/index/fondo2.webp');
 }
 
 .card:nth-child(2) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../imgs/index/fondo3.webp');
+        url('/imgs/index/fondo3.webp');
 }
 
 .card:nth-child(3) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../imgs/index/fondo4.webp');
+        url('/imgs/index/fondo4.webp');
 }
 
 .card-content {

@@ -1,5 +1,4 @@
 function initSlidingMenu() {
-    // 1. INYECTAR CSS
     const css = `
         .menu-trigger {
             position: fixed;
@@ -300,7 +299,7 @@ function initSlidingMenu() {
 
             <ul class="nav-list">
                 <li class="nav-item cremapets">
-                    <a href="../pages/cremapets.html" class="nav-link">
+                    <a href="cremapets.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-heart"></i>
                         </div>
@@ -312,7 +311,7 @@ function initSlidingMenu() {
                 </li>
 
                 <li class="nav-item">
-                    <a href="../pages/calendario.html" class="nav-link">
+                    <a href="calendario.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-calendar3"></i>
                         </div>
@@ -359,7 +358,7 @@ function initSlidingMenu() {
                     </a>
                 </li>
                 <li class="nav-item inicio">
-                    <a href="../index.html" class="nav-link">
+                    <a href="index.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-house-door-fill"></i>
                         </div>
