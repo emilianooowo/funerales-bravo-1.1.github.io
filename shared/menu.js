@@ -152,16 +152,20 @@ function initSlidingMenu() {
             transform: translateY(-2px);
         }
 
-        .nav-item.cremapets:hover {
-            background: var(--color-azul-mascotas, #4a90e2);
-        }
-
-        .nav-item.instagram:hover {
+        .nav-item.instagram {
             background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
         }
 
-        .nav-item.facebook:hover {
+        .nav-item.facebook {
             background: #1877f2;
+        }
+
+        .nav-item.whatsapp {
+            background: #25D366;
+        }
+
+        .nav-item.cremapets {
+            background: var(--color-azul-mascotas, #4a90e2);
         }
 
         .nav-item.inicio {
@@ -323,7 +327,7 @@ function initSlidingMenu() {
                 </li>
 
                 <li class="nav-item">
-                    <a href="../pages/cementerio.html" class="nav-link">
+                    <a href="cementerio.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-tree"></i>
                         </div>
@@ -357,6 +361,12 @@ function initSlidingMenu() {
                         </div>
                     </a>
                 </li>
+
+                <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
+                    aria-label="Chatea con nosotros por WhatsApp">
+                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+
                 <li class="nav-item inicio">
                     <a href="index.html" class="nav-link">
                         <div class="nav-icon">
