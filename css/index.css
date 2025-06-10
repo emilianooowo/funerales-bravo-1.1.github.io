@@ -147,7 +147,7 @@ body {
 
 .logos-section {
     position: relative;
-    background-image: url(../imgs/index/cementerio-servicios.png);
+    background-image: url(../imgs/index/cementerio-servicios.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -375,13 +375,13 @@ body {
     height: 100%;
 
     background: linear-gradient(110deg,
-        rgba(255, 255, 200, 0) 0%,
-        rgba(255, 245, 180, 0.2) 30%,
-        rgba(255, 255, 220, 0.35) 40%,
-        rgba(255, 255, 240, 0.4) 50%,
-        rgba(255, 240, 200, 0.25) 60%,
-        rgba(255, 225, 150, 0.1) 70%,
-        rgba(255, 255, 200, 0) 100%);
+            rgba(255, 255, 200, 0) 0%,
+            rgba(255, 245, 180, 0.2) 30%,
+            rgba(255, 255, 220, 0.35) 40%,
+            rgba(255, 255, 240, 0.4) 50%,
+            rgba(255, 240, 200, 0.25) 60%,
+            rgba(255, 225, 150, 0.1) 70%,
+            rgba(255, 255, 200, 0) 100%);
 
     transform: skewX(-25deg);
     animation: shine 2s ease-in-out infinite;
@@ -814,17 +814,17 @@ body {
 
 .card:nth-child(1) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('/imgs/index/salas-servicios.png');
+        url('../imgs/index/fondo2.webp');
 }
 
 .card:nth-child(2) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('/imgs/index/fondo2.png');
+        url('../imgs/index/fondo3.webp');
 }
 
 .card:nth-child(3) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('/imgs/index/fondo3.png');
+        url('../imgs/index/fondo4.webp');
 }
 
 .card-content {
@@ -1195,10 +1195,11 @@ body {
     transform: scale(1.1);
 }
 
-.whatsapp-float img {
-    width: 30px;
-    height: 30px;
+.whatsapp-float i {
+    font-size: 30px;
+    color: white;
 }
+
 
 @media (max-width: 968px) {
     .content-grid {
@@ -1531,6 +1532,7 @@ body {
     text-align: center;
     font-size: 1rem;
     font-family: var(--fuente-secundaria);
+    color: var(--color-beige-1);
 }
 
 @media (max-width: 1024px) {

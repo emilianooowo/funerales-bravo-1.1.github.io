@@ -5,8 +5,8 @@ function initSlidingMenu() {
             position: fixed;
             bottom: 20px;
             right: 30px;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: white;
             border: none;
             border-radius: 50%;

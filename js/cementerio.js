@@ -1,13 +1,13 @@
 const galleryData = {
     naturaleza: [
-        { src: './imgs/cementerio/urna-71.jpg', title: 'urna 1' },
-        { src: './imgs/cementerio/urna-03.jpg', title: 'urna 2' },
-        { src: './imgs/cementerio/urna-26.jpg', title: 'urna 3' },
-        { src: './imgs/cementerio/urna-34.jpg', title: 'urna 4' },
-        { src: './imgs/cementerio/urna-50.jpg', title: 'urna 5' },
-        { src: './imgs/cementerio/urna-57.jpg', title: 'urna 6' },
-        { src: './imgs/cementerio/urna-59.jpg', title: 'urna 7' },
-        { src: './imgs/cementerio/urna-82.jpg', title: 'urna 8' }
+        { src: './imgs/cementerio/urna-71.webp', title: 'urna 1' },
+        { src: './imgs/cementerio/urna-03.webp', title: 'urna 2' },
+        { src: './imgs/cementerio/urna-26.webp', title: 'urna 3' },
+        { src: './imgs/cementerio/urna-34.webp', title: 'urna 4' },
+        { src: './imgs/cementerio/urna-50.webp', title: 'urna 5' },
+        { src: './imgs/cementerio/urna-57.webp', title: 'urna 6' },
+        { src: './imgs/cementerio/urna-59.webp', title: 'urna 7' },
+        { src: './imgs/cementerio/urna-82.webp', title: 'urna 8' }
     ],
     arquitectura: [
         { src: 'https://picsum.photos/400/400?random=9', title: 'Rascacielos Moderno' },

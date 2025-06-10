@@ -3,12 +3,12 @@
 const galleryData = [
     { src: './imgs/cremapets/urna-perro-1.webp', title: 'urna 1' },
     { src: './imgs/cremapets/urna-gato-2.webp', title: 'urna 2' },
-    { src: './imgs/cremapets/urna-gato-3.jpg', title: 'urna 1' },
-    { src: './imgs/cremapets/urna-perro-2.jpg', title: 'urna 2' },
-    { src: './imgs/cremapets/urna-perro-3.jpg', title: 'urna 1' },
-    { src: './imgs/cremapets/urna-perro-4.jpg', title: 'urna 2' },
-    { src: './imgs/cremapets/urna-perro-5.jpg', title: 'urna 1' },
-    { src: './imgs/cremapets/urna-perro-6.jpg', title: 'urna 2' },
+    { src: './imgs/cremapets/urna-gato-3.webp', title: 'urna 1' },
+    { src: './imgs/cremapets/urna-perro-2.webp', title: 'urna 2' },
+    { src: './imgs/cremapets/urna-perro-3.webp', title: 'urna 1' },
+    { src: './imgs/cremapets/urna-perro-4.webp', title: 'urna 2' },
+    { src: './imgs/cremapets/urna-perro-5.webp', title: 'urna 1' },
+    { src: './imgs/cremapets/urna-perro-6.webp', title: 'urna 2' },
 ];
 
 const galleryGrid = document.getElementById('galleryGrid');
