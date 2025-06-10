@@ -141,10 +141,11 @@ function initSlidingMenu() {
         }
 
         .nav-item {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             transition: all 0.3s ease;
             overflow: hidden;
+            color: #fff;
         }
 
         .nav-item:hover {
@@ -168,8 +169,12 @@ function initSlidingMenu() {
             background: var(--color-azul-mascotas, #4a90e2);
         }
 
+        .nav-item:not(.instagram):not(.facebook):not(.whatsapp):not(.cremapets) {
+            background: #6c757d;
+        }
+
         .nav-item.inicio {
-            background: var(--color-dorado, #d4af37);
+            background: #28a745;
         }
 
         .nav-item.inicio:hover {
@@ -362,10 +367,17 @@ function initSlidingMenu() {
                     </a>
                 </li>
 
-                <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
-                    aria-label="Chatea con nosotros por WhatsApp">
-                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                </a>
+                <li class="nav-item whatsapp">
+                    <a href="https://wa.me/9622361377" class="nav-link" target="_blank">
+                        <div class="nav-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div class="nav-text">
+                            <div class="nav-title">WhatsApp</div>
+                            <div class="nav-desc">Háblanos por WhatsApp</div>
+                        </div>
+                    </a>
+                </li>
 
                 <li class="nav-item inicio">
                     <a href="index.html" class="nav-link">

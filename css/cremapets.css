@@ -152,11 +152,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
 .plan.basic-plan::before {
     content: '';
     position: absolute;
