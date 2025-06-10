@@ -17,15 +17,6 @@ const galleryData = {
         { src: 'https://picsum.photos/400/400?random=13', title: 'Teatro Clásico' },
         { src: 'https://picsum.photos/400/400?random=14', title: 'Museo Contemporáneo' }
     ],
-    retratos: [
-        { src: 'https://picsum.photos/400/400?random=15', title: 'Mirada Profunda' },
-        { src: 'https://picsum.photos/400/400?random=16', title: 'Sonrisa Sincera' },
-        { src: 'https://picsum.photos/400/400?random=17', title: 'Perfil Elegante' },
-        { src: 'https://picsum.photos/400/400?random=18', title: 'Expresión Artística' },
-        { src: 'https://picsum.photos/400/400?random=19', title: 'Luz Natural' },
-        { src: 'https://picsum.photos/400/400?random=20', title: 'Blanco y Negro' },
-        { src: 'https://picsum.photos/400/400?random=21', title: 'Retrato Vintage' }
-    ],
     abstracto: [
         { src: 'https://picsum.photos/400/400?random=22', title: 'Formas Geométricas' },
         { src: 'https://picsum.photos/400/400?random=23', title: 'Colores Vibrantes' },
