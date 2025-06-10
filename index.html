@@ -31,88 +31,6 @@
         </div>
     </section>
 
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="slide-menu" id="slideMenu">
-        <div class="menu-content">
-            <div class="menu-header">
-                <div class="menu-title">
-                    <h1>Navegación</h1>
-                </div>
-                <div class="menu-subtitle">
-                    <h2>Accede a todas las secciones del sitio</h2>
-                </div>
-            </div>
-
-            <ul class="nav-list">
-                <li class="nav-item cremapets">
-                    <a href="cremapets.html" class="nav-link">
-                        <div class="nav-icon">
-                            <i class="bi bi-heart"></i>
-                        </div>
-                        <div class="nav-text">
-                            <div class="nav-title">Cremapets</div>
-                            <div class="nav-desc">Servicios de cremación para mascotas</div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="calendario.html" class="nav-link">
-                        <div class="nav-icon">
-                            <i class="bi bi-calendar3"></i>
-                        </div>
-                        <div class="nav-text">
-                            <div class="nav-title">Calendario promocional</div>
-                            <div class="nav-desc">Ofertas y promociones</div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="cementerio.html" class="nav-link">
-                        <div class="nav-icon">
-                            <i class="bi bi-tree"></i>
-                        </div>
-                        <div class="nav-text">
-                            <div class="nav-title">Cementerio Bravo</div>
-                            <div class="nav-desc">Cementerio privado y ecológico</div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item instagram">
-                    <a href="https://www.instagram.com/funerales_bravo/" class="nav-link" target="_blank">
-                        <div class="nav-icon">
-                            <i class="bi bi-instagram"></i>
-                        </div>
-                        <div class="nav-text">
-                            <div class="nav-title">Instagram</div>
-                            <div class="nav-desc">Síguenos en Instagram</div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item facebook">
-                    <a href="https://www.facebook.com/FuneralesBravoTapachula/" class="nav-link" target="_blank">
-                        <div class="nav-icon">
-                            <i class="bi bi-facebook"></i>
-                        </div>
-                        <div class="nav-text">
-                            <div class="nav-title">Facebook</div>
-                            <div class="nav-desc">Síguenos en Facebook</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <button class="menu-trigger" id="menuTrigger">
-        ☰
-        <div class="menu-tooltip">Accede a más funciones</div>
-    </button>
-
     <section class="logos-section">
         <div class="logos-container">
 
@@ -135,7 +53,7 @@
                     <img src="./shared/logos/cementerio-logo-blanco.webp" alt="Logo cementerio" />
                 </div>
                 <h3 class="logo-legend">CEMENTERIO PRIVADO EN TAPACHULA, CHIAPAS</h3>
-                <a class="about-btn" href="index.html">ACERCA DE</a>
+                <a class="about-btn" href="cementerio.html">ACERCA DE</a>
             </div>
         </div>
 
@@ -284,76 +202,61 @@
         </div>
     </section>
 
-    <section class="tabla-servicios">
+    <section class="cards-section">
         <div class="section-title">
-            <h1>PAQUETES DE HOMENAJE</h1>
+            <h2>PAQUETES DE HOMENAJE</h2>
         </div>
-
         <div class="cards-container">
-            <div class="card" style="background-image: url('./imgs/index/fondo5.png');" onclick="toggleCard(this)">
-                <div class="card-overlay"></div>
-                <div class="card-header">
-                    <div class="card-content">
-                        <h3>MEMORABLE</h3>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">HONOR</h3>
+                    <div class="card-description">
+                        <ul class="card-list">
+                            <li>Desarrollo Frontend con HTML5, CSS3 y JavaScript</li>
+                            <li>Frameworks modernos: React, Vue, Angular</li>
+                            <li>Backend robusto con Node.js y Python</li>
+                            <li>Bases de datos MySQL y MongoDB</li>
+                            <li>Optimización SEO y velocidad de carga</li>
+                            <li>Integración con APIs y servicios externos</li>
+                        </ul>
                     </div>
-                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-                </div>
-                <div class="card-details">
-                    <h4>Servicios incluidos:</h4>
-                    <ul>
-                        <li style="--i: 1">Aires acondicionados y calefacción</li>
-                        <li style="--i: 2">Asientos cómodos y ergonómicos</li>
-                        <li style="--i: 3">Área de recepción 24/7</li>
-                        <li style="--i: 4">Servicio de café y agua</li>
-                        <li style="--i: 5">Wi-Fi gratuito</li>
-                        <li style="--i: 6">Ambiente tranquilo y respetuoso</li>
-                        <li style="--i: 7">Música ambiental personalizada</li>
-                        <li style="--i: 8">Iluminación suave y cálida</li>
-                    </ul>
+                    <div class="card-subtitle">Desde $3,900</div>
                 </div>
             </div>
 
-            <div class="card" style="background-image: url('./imgs/index/fondo2.png');" onclick="toggleCard(this)">
-                <div class="card-overlay"></div>
-                <div class="card-header">
-                    <div class="card-content">
-                        <h3>ETERNIDAD</h3>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">MEMORIA</h3>
+                    <div class="card-description">
+                        <ul class="card-list">
+                            <li>Research y análisis de usuarios</li>
+                            <li>Wireframes y prototipos interactivos</li>
+                            <li>Diseño visual y sistemas de diseño</li>
+                            <li>Pruebas de usabilidad A/B testing</li>
+                            <li>Diseño responsive para todos los dispositivos</li>
+                            <li>Herramientas: Figma, Adobe XD, Sketch</li>
+                        </ul>
                     </div>
-                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-                </div>
-                <div class="card-details">
-                    <h4>Servicios incluidos:</h4>
-                    <ul>
-                        <li style="--i: 1">Aires acondicionados y calefacción</li>
-                        <li style="--i: 2">Asientos cómodos y ergonómicos</li>
-                        <li style="--i: 3">Área de recepción 24/7</li>
-                        <li style="--i: 4">Servicio de café y agua premium</li>
-                        <li style="--i: 5">Wi-Fi gratuito de alta velocidad</li>
-                        <li style="--i: 6">Ambiente tranquilo y respetuoso</li>
-                        <li style="--i: 7">Servicio de florería incluido</li>
-                        <li style="--i: 8">Coordinación de ceremonias</li>
-                    </ul>
+                    <div class="card-subtitle">Desde $3,900</div>
                 </div>
             </div>
 
-            <div class="card" style="background-image: url('./imgs/index/fondo3.png');" onclick="toggleCard(this)">
-                <div class="card-overlay"></div>
-                <div class="card-header">
-                    <div class="card-content">
-                        <h3>HONOR</h3>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">ETERNIDAD</h3>
+                    <div class="card-description">
+
+                        <ul class="card-list">
+                            <li>Auditoría digital y análisis competitivo</li>
+                            <li>Estrategia de marketing digital</li>
+                            <li>Automatización de procesos</li>
+                            <li>Migración a la nube y hosting</li>
+                            <li>Capacitación de equipos</li>
+                            <li>Métricas y analítica avanzada</li>
+                            <li>Plan de crecimiento escalable</li>
+                        </ul>
                     </div>
-                    <div class="expand-indicator"><i class="fas fa-chevron-down"></i></div>
-                </div>
-                <div class="card-details">
-                    <h4>Planes disponibles:</h4>
-                    <ul>
-                        <li style="--i: 1">Plan Básico - Servicios esenciales</li>
-                        <li style="--i: 2">Plan Completo - Servicios integrales</li>
-                        <li style="--i: 3">Plan Premium - Servicios de lujo</li>
-                        <li style="--i: 4">Planes familiares con descuentos</li>
-                        <li style="--i: 5">Financiamiento flexible</li>
-                        <li style="--i: 6">Asesoría personalizada</li>
-                    </ul>
+                    <div class="card-subtitle">Desde $3,900</div>
                 </div>
             </div>
         </div>
@@ -506,6 +409,11 @@
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <script src="js/index.js" defer></script>
+
+    <script src="/shared/menu.js"></script>
+    <script>
+        initSlidingMenu();
+    </script>
 
     <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
         aria-label="Chatea con nosotros por WhatsApp">

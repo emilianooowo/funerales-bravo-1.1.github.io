@@ -1,3 +1,4 @@
+//SHOW CALENDAR
 const toggleBtn = document.getElementById('toggleCalendar');
 const calendarSection = document.getElementById('calendarSection');
 const downloadBtn = document.getElementById('downloadBtn');
@@ -30,7 +31,6 @@ function showToast(message) {
     }, 3000);
 }
 
-// Función para descargar la imagen
 async function downloadImage() {
     try {
         const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
@@ -54,12 +54,10 @@ async function downloadImage() {
 
 downloadBtn.addEventListener('click', downloadImage);
 
-// Función para compartir solo la imagen
 async function shareImage() {
     try {
         const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
 
-        // Verificar si el navegador soporta Web Share API con archivos
         if (navigator.canShare && navigator.share) {
             const response = await fetch(imageUrl);
             const blob = await response.blob();
@@ -76,14 +74,8 @@ async function shareImage() {
             }
         }
 
-        // Fallback: copiar enlace de la imagen
-        const fullImageUrl = window.location.origin + '/' + imageUrl;
-        await navigator.clipboard.writeText(fullImageUrl);
-        showToast('¡Enlace de la imagen copiado al portapapeles!');
-
     } catch (error) {
         console.error('Error al compartir:', error);
-        // Último fallback
         copyToClipboard();
     }
 }
@@ -109,7 +101,7 @@ window.addEventListener('load', function () {
     });
 });
 
-// Agregar estilos iniciales para las cards
+//CARDS STYLES
 document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.promotion-card');
     cards.forEach((card) => {

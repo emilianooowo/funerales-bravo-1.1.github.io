@@ -5,50 +5,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEMENTERIO BRAVO</title>
-    <link rel="icon" href="/cementerio/imgs/cementerio-logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/cementerio/cementerio.css">
-    <link rel="stylesheet" href="/compartido/global.css">
+    <link rel="icon" href="./shared/logos/cementerio-logo-cafe.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./css/cementerio.css">
+    <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header>
-        <div class="logo-header-container">
-            <a href="index.html">
-                <img src="/compartido/logos/logo-amplio-blanco.webp" alt="Funerales Bravo Logo" class="logo-header">
-            </a>
+    <div class="notch-indicator">
+        <a href="index.html" class="notch-text">Funerales Bravo</a>
+        <a href="cementerio.html" class="notch-text active">Cementerio Bravo</a>
+        <a href="cremapets.html" class="notch-text">Cremapets Bravo</a>
+    </div>
+
+    <div class="main-content">
+        <div class="left-section">
+            <div class="logo">
+                <img src="./shared/logos/cementerio-logo-cafe.webp" alt="">
+            </div>
+            <div class="description">
+                Le presentamos nuestro cementerio privado, el más nuevo en la
+                ciudad de Tapachula, un espacio rodeado de
+                árboles y flores, amplios jardines, áreas verdes.
+            </div>
         </div>
-        <div class="accesos">
-            <a href="index.html" class="inicio" title="Inicio">
-                <i class="bi bi-house-door-fill"></i>
-                <span>INICIO</span>
-            </a>
-            <a href="cremapets.html" class="cremapets" title="Cremapets">
-                <i class="bi bi-heart-fill"></i>
-                <span>CREMAPETS</span>
-            </a>
-            <a href="calendario.html" title="Calendario de Promociones">
-                <i class="bi bi-calendar-event-fill"></i>
-                <span>CALENDARIO DE PROMOCIONES</span>
-            </a>
-            <div class="contacto">
-                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
-                    title="Facebook">
-                    <i class="bi bi-facebook"></i>
-                    <span>FACEBOOK</span>
-                </a>
-                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
-                    title="Instagram">
-                    <i class="bi bi-instagram"></i>
-                    <span>INSTAGRAM</span>
+
+        <div class="right-section">
+            <div class="services-container">
+                <h2 class="services-title">Servicios de Cementerio Bravo</h2>
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>PREVISIÓN ESPACIO ECOLOGÍCO</th>
+                            <th>PREVISIÓN DE COLUMBARIO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 PERSONA</td>
+                            <td>SINGULAR</td>
+                        </tr>
+                        <tr>
+                            <td>2 PERSONAS</td>
+                            <td>FAIMLIAR (4)</td>
+                        </tr>
+                        <tr>
+                            <td>4 PERSONAS</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="cementerio.html#servicios">
+                    <span class="about-btn">Acerca de</span>
                 </a>
             </div>
         </div>
-    </header>
+    </div>
 
-    <div id="footer-placeholder"></div>
-    <script src="/cementerio/cementerio.js"></script>
+    <div class="bottom-banner">
+        <div class="banner-content">
+            <div class="banner-text">CONTAMOS CON ESPACIOS TIPO:</div>
+            <div class="banner-images">
+                <div class="banner-image" style="background-image: url('./imgs/index/cementerio-location.png');">
+                    <span>Jardín</span>
+                </div>
+                <div class="banner-image" style="background-image: url('./imgs/cementerio/mural.png');">
+                    <span>Mural</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cementerio-section">
+        <div class="falling-leaves">
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+            <div class="falling-leaf"></div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <h2 class="title">Cementerio Ecológico</h2>
+                <h3 class="subtitle">Donde la vida continúa floreciendo</h3>
+
+                <p class="description">
+                    Honramos la memoria de tus seres queridos de manera única y sostenible.
+                    En lugar de lápidas tradicionales, plantamos árboles que crecen alimentados
+                    por urnas biodegradables de fibra de coco.
+                </p>
+
+                <div class="highlight">
+                    <p>
+                        En 12 meses, las urnas se integran completamente con la tierra,
+                        nutriendo el árbol y creando un legado vivo que perdura para siempre.
+                    </p>
+                </div>
+
+                <p class="description">
+                    Un espacio natural, seguro y espiritual donde cada abrazo a un árbol
+                    tiene un significado profundo. Porque siempre es posible volver a empezar.
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img src="./imgs/cementerio/ecologico.png" alt="Cementerio Ecológico" class="tree-image">
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery-container">
+        <h1 class="gallery-title">GALERIA</h1>
+
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="naturaleza">URNAS</button>
+            <button class="category-btn" data-category="arquitectura">JARDINES</button>
+            <button class="category-btn" data-category="retratos">MURALES</button>
+            <button class="category-btn" data-category="abstracto">CEMENTERIO</button>
+        </div>
+
+        <div class="gallery-grid show" id="galleryGrid">
+            <div class="loading">Cargando imágenes...</div>
+        </div>
+    </div>
+
+    <script src="./js/cementerio.js"></script>
+    <script src="/shared/menu.js"></script>
+    <script>
+        initSlidingMenu();
+    </script>
+
 </body>
 
 </html>

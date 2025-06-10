@@ -1,101 +1,3 @@
-//MENU
-const menuTrigger = document.getElementById('menuTrigger');
-const slideMenu = document.getElementById('slideMenu');
-const menuOverlay = document.getElementById('menuOverlay');
-const tooltip = document.querySelector('.menu-tooltip');
-
-let tooltipTimeout;
-let hasShownTooltip = false;
-
-function showTooltip() {
-    if (!hasShownTooltip) {
-        tooltip.classList.add('show');
-        hasShownTooltip = true;
-
-        tooltipTimeout = setTimeout(() => {
-            hideTooltip();
-        }, 6000);
-    }
-}
-
-function hideTooltip() {
-    tooltip.classList.remove('show');
-    if (tooltipTimeout) {
-        clearTimeout(tooltipTimeout);
-    }
-}
-
-function toggleMenu() {
-    menuTrigger.classList.toggle('active');
-    slideMenu.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-
-    if (slideMenu.classList.contains('active')) {
-        hideTooltip();
-    }
-}
-
-setTimeout(() => {
-    showTooltip();
-}, 1500);
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (!hasShownTooltip) return;
-
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-        if (!slideMenu.classList.contains('active')) {
-            tooltip.classList.add('show');
-            setTimeout(() => {
-                hideTooltip();
-            }, 4000);
-        }
-    }, 1000);
-});
-
-menuTrigger.addEventListener('click', toggleMenu);
-
-menuOverlay.addEventListener('click', toggleMenu);
-
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
-        toggleMenu();
-    }
-});
-
-document.addEventListener('click', function (e) {
-    if (!menuTrigger.contains(e.target)) {
-        hideTooltip();
-    }
-});
-
-//FOOTER
-fetch('global.html')
-    .then(res => res.text())
-    .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        const header = doc.querySelector('header');
-        if (header) document.getElementById('header-placeholder').innerHTML = header.outerHTML;
-
-        const footer = doc.querySelector('footer');
-        if (footer) document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
-
-        document.body.style.visibility = 'visible';
-    })
-    .catch(err => {
-        console.error('Error al cargar global.html:', err);
-        document.body.style.visibility = 'visible';
-    });
-
-window.onbeforeunload = () => {
-    for (const form of document.getElementsByTagName('form')) {
-        form.reset();
-    }
-}
-
 //TIRA
 document.addEventListener('DOMContentLoaded', function () {
     const stripContainer = document.querySelector('.strip-container');
@@ -157,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         stripContainer.parentNode.replaceChild(mobileContainer, stripContainer);
         currentContainer = mobileContainer;
 
-        // Render extras después de insertar el contenido
         planes.forEach(renderExtrasFor);
     }
 
@@ -186,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
         stripContainer.parentNode.replaceChild(desktopContainer, stripContainer);
         currentContainer = desktopContainer;
 
-        // Render extras después de insertar el contenido
         planes.forEach(renderExtrasFor);
     }
 
@@ -214,13 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isCurrentlyActive) {
                 clickedItem.classList.add('active');
                 targetContent.classList.add('active');
-
-                requestAnimationFrame(() => {
-                    targetContent.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest'
-                    });
-                });
             }
         });
     }
@@ -274,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', handleResize);
 });
-
 
 //EXTRAS
 const extrasData = [
@@ -332,84 +224,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //CARDS
-function toggleCard(card) {
-    const allCards = document.querySelectorAll('.card');
-    const isExpanded = card.classList.contains('expanded');
+function initAccordion() {
+    const cards = document.querySelectorAll('.card');
 
-    allCards.forEach(c => {
-        if (c !== card && c.classList.contains('expanded')) {
-            c.classList.remove('expanded');
-            const items = c.querySelectorAll('.card-details li');
-            items.forEach(item => {
-                item.style.transitionDelay = '0s';
-            });
-        }
-    });
+    cards.forEach(card => {
+        const title = card.querySelector('.card-title');
 
-    if (!isExpanded) {
-        card.classList.add('expanded');
-        const items = card.querySelectorAll('.card-details li');
-        items.forEach((item, index) => {
-            item.style.setProperty('--i', index);
-        });
-    } else {
-        card.classList.remove('expanded');
-    }
+        title.addEventListener('click', function () {
+            if (window.innerWidth <= 768) {
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                    }
+                });
 
-    if (!isExpanded) {
-        setTimeout(() => {
-            card.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-        }, 400);
-    }
-}
-
-document.addEventListener('click', function (event) {
-    if (!event.target.closest('.card')) {
-        const allCards = document.querySelectorAll('.card.expanded');
-        allCards.forEach(card => {
-            card.classList.remove('expanded');
-            const items = card.querySelectorAll('.card-details li');
-            items.forEach(item => {
-                item.style.transitionDelay = '0s';
-            });
-        });
-    }
-});
-
-if ('ontouchstart' in window) {
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('touchstart', function () {
-            if (!this.classList.contains('expanded')) {
-                this.style.transform = 'scale(0.98)';
-                this.style.transition = 'transform 0.1s ease';
+                card.classList.toggle('active');
             }
-        }, { passive: true });
-
-        card.addEventListener('touchend', function () {
-            if (!this.classList.contains('expanded')) {
-                this.style.transform = '';
-                this.style.transition = '';
-            }
-        }, { passive: true });
+        });
     });
 }
 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+initAccordion();
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-        }
-    });
-}, observerOptions);
+window.addEventListener('resize', function () {
+    const cards = document.querySelectorAll('.card');
 
-document.querySelectorAll('.card').forEach(card => {
-    observer.observe(card);
+    if (window.innerWidth > 768) {
+        cards.forEach(card => {
+            card.classList.remove('active');
+        });
+    }
 });

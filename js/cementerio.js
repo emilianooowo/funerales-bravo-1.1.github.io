@@ -1,19 +1,91 @@
-fetch('/compartido/global.html')
-    .then(res => res.text())
-    .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
+const galleryData = {
+    naturaleza: [
+        { src: './imgs/cementerio/urna-71.jpg', title: 'urna 1' },
+        { src: './imgs/cementerio/urna-03.jpg', title: 'urna 2' },
+        { src: './imgs/cementerio/urna-26.jpg', title: 'urna 3' },
+        { src: './imgs/cementerio/urna-34.jpg', title: 'urna 4' },
+        { src: './imgs/cementerio/urna-50.jpg', title: 'urna 5' },
+        { src: './imgs/cementerio/urna-57.jpg', title: 'urna 6' },
+        { src: './imgs/cementerio/urna-59.jpg', title: 'urna 7' },
+        { src: './imgs/cementerio/urna-82.jpg', title: 'urna 8' }
+    ],
+    arquitectura: [
+        { src: 'https://picsum.photos/400/400?random=9', title: 'Rascacielos Moderno' },
+        { src: 'https://picsum.photos/400/400?random=10', title: 'Catedral Gótica' },
+        { src: 'https://picsum.photos/400/400?random=11', title: 'Puente Colgante' },
+        { src: 'https://picsum.photos/400/400?random=12', title: 'Casa Minimalista' },
+        { src: 'https://picsum.photos/400/400?random=13', title: 'Teatro Clásico' },
+        { src: 'https://picsum.photos/400/400?random=14', title: 'Museo Contemporáneo' }
+    ],
+    retratos: [
+        { src: 'https://picsum.photos/400/400?random=15', title: 'Mirada Profunda' },
+        { src: 'https://picsum.photos/400/400?random=16', title: 'Sonrisa Sincera' },
+        { src: 'https://picsum.photos/400/400?random=17', title: 'Perfil Elegante' },
+        { src: 'https://picsum.photos/400/400?random=18', title: 'Expresión Artística' },
+        { src: 'https://picsum.photos/400/400?random=19', title: 'Luz Natural' },
+        { src: 'https://picsum.photos/400/400?random=20', title: 'Blanco y Negro' },
+        { src: 'https://picsum.photos/400/400?random=21', title: 'Retrato Vintage' }
+    ],
+    abstracto: [
+        { src: 'https://picsum.photos/400/400?random=22', title: 'Formas Geométricas' },
+        { src: 'https://picsum.photos/400/400?random=23', title: 'Colores Vibrantes' },
+        { src: 'https://picsum.photos/400/400?random=24', title: 'Texturas Suaves' },
+        { src: 'https://picsum.photos/400/400?random=25', title: 'Líneas Dinámicas' },
+        { src: 'https://picsum.photos/400/400?random=26', title: 'Composición Fluida' },
+        { src: 'https://picsum.photos/400/400?random=27', title: 'Arte Digital' },
+        { src: 'https://picsum.photos/400/400?random=28', title: 'Movimiento Abstracto' },
+        { src: 'https://picsum.photos/400/400?random=29', title: 'Espacio Negativo' }
+    ]
+};
 
-        const footer = doc.querySelector('footer');
-        if (footer) document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+const galleryGrid = document.getElementById('galleryGrid');
+const categoryButtons = document.querySelectorAll('.category-btn');
+let currentCategory = 'naturaleza';
 
-        document.body.style.visibility = 'visible';
-    })
-    .catch(err => {
-        console.error('Error al cargar global.html:', err);
-        document.body.style.visibility = 'visible';
-    });
+function showCategory(category) {
+    galleryGrid.classList.remove('show');
 
-function redirectTo(url) {
-    window.location.href = url;
+    setTimeout(() => {
+        galleryGrid.innerHTML = '';
+
+        galleryData[category].forEach((item, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.innerHTML = `
+                        <img src="${item.src}" alt="${item.title}" loading="lazy">
+                        <div class="item-title">${item.title}</div>
+                    `;
+
+            galleryItem.addEventListener('click', () => {
+                console.log(`Clicked on: ${item.title}`);
+            });
+
+            galleryGrid.appendChild(galleryItem);
+        });
+
+        galleryGrid.classList.add('show');
+    }, 250);
 }
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        const category = button.getAttribute('data-category');
+        currentCategory = category;
+        showCategory(category);
+    });
+});
+
+showCategory(currentCategory);
+
+function preloadImages() {
+    Object.values(galleryData).flat().forEach(item => {
+        const img = new Image();
+        img.src = item.src;
+    });
+}
+
+window.addEventListener('load', preloadImages);
