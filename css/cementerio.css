@@ -38,209 +38,296 @@ body {
     transform: scale(1.05);
 }
 
-.main-content {
-    display: flex;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 60px;
-    align-items: flex-start;
-}
-
-.left-section {
-    flex: 1;
+.header-section {
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.logo-container {
+    margin-bottom: 2rem;
 }
 
 .logo img {
     width: auto;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.description {
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    color: var(--color-beige-1);
-    font-size: 1.2rem;
-    font-family: var(--fuente-secundaria);
-}
-
-.right-section {
-    flex: 1;
-}
-
-.services-container {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
-}
-
-.services-title {
-    font-size: 24px;
-    color: var(--color-cafe-oscuro);
-    font-family: var(--fuente-principal);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.services-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 25px;
-}
-
-.services-table th,
-.services-table td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 2px solid #f1f3f4;
-    width: 50%;
-}
-
-.services-table th {
-    background: var(--color-cafe-oscuro);
-    color: var(--color-beige-1);
-    font-family: var(--fuente-principal);
-}
-
-.services-table td {
-    color: var(--color-cafe-oscuro);
-    font-family: var(--fuente-secundaria);
-
-}
-
-.about-btn {
-    background: var(--color-cafe-oscuro);
-    color: var(--color-beige-1);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-family: var(--fuente-secundaria);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-    display: inline-block;
-}
-
-.about-btn:hover {
-    transform: translateY(-5px);
-}
-
-.bottom-banner {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    padding: 25px 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 250px;
     max-width: 100%;
 }
 
-.banner-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
-    width: 100%;
-}
-
-.banner-text {
-    color: white;
-    font-size: 1.5rem;
-    padding: 10px;
+.main-title {
+    font-size: 3rem;
+    color: var(--color-cafe-oscuro);
+    margin: 2rem 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     font-family: var(--fuente-secundaria);
 }
 
-.banner-images {
-    display: flex;
-    gap: 15px;
+.description {
+    font-size: 1.2rem;
+    color: black;
+    max-width: 700px;
+    line-height: 1.8;
+    margin: 0 auto;
 }
 
-.banner-image {
-    width: 400px;
-    height: 150px;
-    border-radius: 10px;
+.prevision-section {
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('../imgs/cementerio/prevision.png') center/cover;
     display: flex;
     align-items: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    color: #333;
+}
+
+.title-prevision {
+    font-size: 3.5rem;
     font-weight: bold;
-    font-size: 12px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--color-beige-1);
+}
+
+.description-prevision {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 500px;
+    color: var(--color-beige-1);
+    font-family: var(--fuente-secundaria);
+}
+
+.pricing-table {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.table-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
     text-align: center;
-    transition: transform 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.1rem;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+td {
+    font-size: 1.1rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.includes {
+    font-size: .9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.columbario-section {
+    min-height: 80vh;
+    padding: 4rem;
     position: relative;
     overflow: hidden;
 }
 
-.banner-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+.columbario-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.columbario-title {
+    text-align: center;
+    color: var(--color-cafe-oscuro);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.columbario-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.mural-container {
+    position: relative;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.columbario-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.banner-image span {
-    position: relative;
-    z-index: 1;
-    color: white;
+.columbario-info {
+    color: var(--color-cafe-oscuro);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-cafe-oscuro);
+}
+
+.info-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--color-cafe-oscuro);
+}
+
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.price-option {
+    background: rgba(255, 255, 255, 0.095);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.option-name {
+    font-size: 1.75rem;
+    color: var(--color-cafe-oscuro);
+    font-family: var(--fuente-secundaria);
+}
+
+.option-price {
     font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.option-details {
+    font-size: 1.2rem;
+    line-height: 1.8;
     font-family: var(--fuente-secundaria);
 }
 
 @media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .banner-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .banner-text {
-        margin-bottom: 20px;
-        font-size: 1.25rem;
-    }
-
-    .banner-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .banner-image {
-        width: 90vw;
+    .prevision-section {
         height: auto;
-        aspect-ratio: 8 / 3;
+        min-height: 80vh;
+        padding: 2rem 5%;
     }
 
-    .notch-indicator {
-        flex-wrap: wrap;
-        width: 90%;
+    .content-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .pricing-table {
+        padding: 1.5rem;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .columbario-title {
+        font-size: 2.2rem;
+    }
+
+    .columbario-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .columbario-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columbario-info {
+        order: 1;
+    }
+
+    .mural-container {
+        order: 2;
+    }
+
+    .columbario-image {
+        height: 550px;
     }
 }
+
 
 .cementerio-section {
     height: fit-content;
@@ -250,10 +337,10 @@ body {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    font-family: 'Arial', sans-serif;
     position: relative;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .container {
@@ -453,260 +540,68 @@ body {
     }
 }
 
-
-.prevision-section {
-    height: 80vh;
-    width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../imgs/cementerio/prevision.png') center/cover;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-family: 'Arial', sans-serif;
-}
-
-.content-container {
+.cemetery-location-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 700px;
+    min-height: 100vh;
 }
 
-.left-content {
+.location-content {
+    padding: 60px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: calc(100vw - 600px);
 }
 
-.title-prevision {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-    line-height: 1.1;
+.location-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--color-beige-1);
 }
 
-.description-prevision {
+.location-title i {
+    margin-right: 15px;
+    color: var(--color-beige-1);
+    font-size: 2rem;
+}
+
+.location-description p{
+    margin-bottom: 40px;
     font-size: 1.2rem;
-    line-height: 1.6;
-    opacity: 0.9;
-    max-width: 500px;
-    color: var(--color-beige-1);
-    font-family: var(--fuente-secundaria);
+    color: var(--color-beige-2);
 }
 
-.pricing-table {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.table-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-table {
+.map-container {
     width: 100%;
-    border-collapse: collapse;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
 }
 
-th,
-td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 1.1rem;
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-th {
-    background: rgba(255, 255, 255, 0.1);
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-td {
-    font-size: 1.1rem;
-}
-
-.price {
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 1.1rem;
-}
-
-.includes {
-    font-size: .9rem;
-    opacity: 0.8;
-    line-height: 1.4;
-}
-
-.columbario-section {
-    min-height: 80vh;
-    background: rgba(244, 234, 219, 0.6);
-    padding: 4rem 5%;
-    position: relative;
+.img-container {
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
-.columbario-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.columbario-title {
-    text-align: center;
-    color: var(--color-cafe-oscuro);
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-
-.columbario-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.mural-container {
-    position: relative;
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.columbario-image {
+.img-container img {
     width: 100%;
-    height: 600px;
+    height: 100vh;
     object-fit: cover;
-    border-radius: 10px;
-}
-
-.columbario-info {
-    color: var(--color-cafe-oscuro);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.info-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.info-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--color-cafe-oscuro);
-}
-
-.info-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: var(--color-cafe-oscuro);
-}
-
-.pricing-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.price-option {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 1.5rem;
-}
-
-.option-name {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: var(--color-cafe-oscuro);
-}
-
-.option-price {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #395db1;
-    margin-bottom: 0.5rem;
-}
-
-.option-details {
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-    .prevision-section {
-        height: auto;
-        min-height: 80vh;
-        padding: 2rem 5%;
-    }
-
-    .content-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .title {
-        font-size: 2.5rem;
-    }
-
-    .description {
-        font-size: 1.1rem;
-    }
-
-    .pricing-table {
-        padding: 1.5rem;
-    }
-
-    th,
-    td {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-    }
-
-    .columbario-title {
-        font-size: 2.2rem;
-    }
-
-    .columbario-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .columbario-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .columbario-info {
-        order: 1;
-    }
-
-    .mural-container {
-        order: 2;
-    }
-
-    .columbario-image {
-        height: 550px;
-    }
+    object-position: center;
+    display: block;
 }
 
 .gallery-container {
@@ -851,12 +746,6 @@ td {
     z-index: 10;
 }
 
-.loading {
-    text-align: center;
-    color: #666;
-    font-size: 1.2rem;
-    padding: 40px;
-}
 
 @media (max-width: 768px) {
     .gallery-container {

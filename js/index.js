@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  const elementosAnimados = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .scale-in');
+  elementosAnimados.forEach(el => {
+    observer.observe(el);
+  });
+});
+
+
 //TIRA
 document.addEventListener('DOMContentLoaded', function () {
     const stripContainer = document.querySelector('.strip-container');
@@ -202,6 +221,7 @@ function renderExtrasFor(plan) {
     container.innerHTML = `
     <div class="extras-container">
       <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
+      <h5 class="extras-subtitle">*Todos los servicios adicionales aplican para todos los planes de velación*</h5>
       <div class="extras-grid">
         ${extrasData.map(extra => `
           <div class="extra-card">
@@ -218,6 +238,7 @@ function renderExtrasFor(plan) {
     </div>
   `;
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     planes.forEach(plan => renderExtrasFor(plan));

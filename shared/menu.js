@@ -6,7 +6,7 @@ function initSlidingMenu() {
             right: 30px;
             width: 60px;
             height: 60px;
-            background: white;
+            background: black;
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -15,7 +15,7 @@ function initSlidingMenu() {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: black;
+            color: white;
             font-size: 1.1rem;
         }
 
@@ -24,8 +24,11 @@ function initSlidingMenu() {
             right: 70px;
             top: 50%;
             transform: translateY(-50%);
-            background: #E91E63;
-            color: white;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            color: black;
             padding: 10px 14px;
             border-radius: 10px;
             font-size: 1.2rem;
@@ -46,7 +49,7 @@ function initSlidingMenu() {
             top: 50%;
             transform: translateY(-50%);
             border: 10px solid transparent;
-            border-left-color: #E91E63;
+            border-left-color:rgb(255, 0, 0);
         }
 
         .menu-tooltip.show {
@@ -78,28 +81,13 @@ function initSlidingMenu() {
             }
         }
 
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
         .slide-menu {
             position: fixed;
             bottom: 0;
-            background: var(--color-beige-2, #f5f5dc);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             z-index: 1000;
             max-height: 80vh;
@@ -118,16 +106,16 @@ function initSlidingMenu() {
             text-align: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(0, 0, 0, 1);
+            border-bottom: 2px solid white;
         }
 
         .menu-title h1 {
-            color: rgb(0, 0, 0);
+            color: white;
             margin: 0;
         }
 
         .menu-subtitle h2 {
-            color: rgb(0, 0, 0);
+            color: white;
             font-family: var(--fuente-secundaria);
             margin: 0.5rem 0 0 0;
         }
@@ -141,16 +129,11 @@ function initSlidingMenu() {
         }
 
         .nav-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 12px;
             transition: all 0.3s ease;
             overflow: hidden;
             color: #fff;
-        }
-
-        .nav-item:hover {
-            background: rgba(0, 0, 0, 0.7);
-            transform: translateY(-2px);
         }
 
         .nav-item.instagram {
@@ -166,23 +149,22 @@ function initSlidingMenu() {
         }
 
         .nav-item.cremapets {
-            background: var(--color-azul-mascotas, #4a90e2);
+            background: linear-gradient(20deg, #fff, #0963d8 100%);
         }
 
-        .nav-item:not(.instagram):not(.facebook):not(.whatsapp):not(.cremapets) {
-            background: #6c757d;
+        .nav-item.cementerio {
+            background: linear-gradient(210deg, var(--color-beige-1), var(--color-cafe-oscuro) 100%);
         }
 
-        .nav-item.inicio {
-            background: #28a745;
+        .nav-item:not(.instagram):not(.facebook):not(.whatsapp):not(.cremapets):not(.cementerio) {
+            background:rgb(0, 0, 0);
         }
 
-        .nav-item.inicio:hover {
-            background: var(--color-dorado, #d4af37);
+        .nav-item:hover {
             transform: translateY(-2px);
         }
 
-        .nav-item.inicio .nav-link {
+        .nav-item .nav-link {
             color: white;
         }
 
@@ -195,16 +177,10 @@ function initSlidingMenu() {
             transition: all 0.3s ease;
         }
 
-        .nav-item.cremapets:hover .nav-link,
-        .nav-item.instagram:hover .nav-link,
-        .nav-item.facebook:hover .nav-link {
-            color: white;
-        }
-
         .nav-icon {
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            width: 40px;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+            width: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -331,7 +307,7 @@ function initSlidingMenu() {
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item cementerio">
                     <a href="cementerio.html" class="nav-link">
                         <div class="nav-icon">
                             <i class="bi bi-tree"></i>

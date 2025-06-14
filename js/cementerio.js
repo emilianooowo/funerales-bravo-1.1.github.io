@@ -1,5 +1,5 @@
 const galleryData = {
-    naturaleza: [
+    urnas: [
         { src: './imgs/cementerio/urna-71.webp', title: 'urna 1' },
         { src: './imgs/cementerio/urna-03.webp', title: 'urna 2' },
         { src: './imgs/cementerio/urna-26.webp', title: 'urna 3' },
@@ -9,29 +9,18 @@ const galleryData = {
         { src: './imgs/cementerio/urna-59.webp', title: 'urna 7' },
         { src: './imgs/cementerio/urna-82.webp', title: 'urna 8' }
     ],
-    arquitectura: [
-        { src: 'https://picsum.photos/400/400?random=9', title: 'Rascacielos Moderno' },
-        { src: 'https://picsum.photos/400/400?random=10', title: 'Catedral Gótica' },
-        { src: 'https://picsum.photos/400/400?random=11', title: 'Puente Colgante' },
-        { src: 'https://picsum.photos/400/400?random=12', title: 'Casa Minimalista' },
-        { src: 'https://picsum.photos/400/400?random=13', title: 'Teatro Clásico' },
-        { src: 'https://picsum.photos/400/400?random=14', title: 'Museo Contemporáneo' }
-    ],
-    abstracto: [
-        { src: 'https://picsum.photos/400/400?random=22', title: 'Formas Geométricas' },
-        { src: 'https://picsum.photos/400/400?random=23', title: 'Colores Vibrantes' },
-        { src: 'https://picsum.photos/400/400?random=24', title: 'Texturas Suaves' },
-        { src: 'https://picsum.photos/400/400?random=25', title: 'Líneas Dinámicas' },
-        { src: 'https://picsum.photos/400/400?random=26', title: 'Composición Fluida' },
-        { src: 'https://picsum.photos/400/400?random=27', title: 'Arte Digital' },
-        { src: 'https://picsum.photos/400/400?random=28', title: 'Movimiento Abstracto' },
-        { src: 'https://picsum.photos/400/400?random=29', title: 'Espacio Negativo' }
+    cementerio: [
+        { src: './imgs/cementerio/img-cementerio-1.webp', title: 'cementerio' },
+        { src: './imgs/cementerio/img-cementerio-3.webp', title: 'cementerio' },
+        { src: './imgs/cementerio/img-cementerio-4.webp', title: 'cementerio' },
+        { src: './imgs/cementerio/img-cementerio-5.webp', title: 'cementerio' },
+        { src: './imgs/cementerio/img-cementerio-6.webp', title: 'cementerio' },
     ]
 };
 
 const galleryGrid = document.getElementById('galleryGrid');
 const categoryButtons = document.querySelectorAll('.category-btn');
-let currentCategory = 'naturaleza';
+let currentCategory = 'urnas';
 
 function showCategory(category) {
     galleryGrid.classList.remove('show');

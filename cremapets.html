@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CREMAPETS BRAVO</title>
-    <link rel="icon" href="./imgs/cremapets/cremapets-logo-azul.ico" type="image/x-icon">
-    <link href="./css/cremapets.css" rel="stylesheet">
-    <link href="./shared/global.css" rel="stylesheet">
+    <link rel="icon" href="imgs/cremapets/cremapets-logo-azul.ico" type="image/x-icon">
+    <link href="css/cremapets.css" rel="stylesheet">
+    <link href="shared/global.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -21,116 +21,103 @@
             <a href="cementerio.html" class="notch-text">Cementerio Bravo</a>
         </div>
 
-        <div class="main-container">
-            <div class="header-section">
-                <div class="logo-container">
-                    <div class="logo">
-                        <img src="./shared/logos/cremapets-logo-negro.webp" alt="">
-                    </div>
+        <div class="header-section">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="shared/logos/cremapets-logo-negro.webp" alt="CremaPets Logo">
                 </div>
-                <h1 class="main-title">Planes de Cremación</h1>
-                <p class="description">
-                    Ofrecemos servicios de cremación dignos y respetuosos para tu mascota,
-                    con diferentes opciones que se adaptan a tus necesidades y presupuesto.
-                    Cada plan está diseñado para honrar la memoria de tu compañero fiel
-                    con el cuidado y la calidad que merece.
-                </p>
             </div>
+            <h1 class="main-title">Planes de Cremación</h1>
+            <p class="description">
+                Ofrecemos servicios de cremación dignos y respetuosos para tu mascota,
+                con diferentes opciones que se adaptan a tus necesidades y presupuesto.
+                Cada plan está diseñado para honrar la memoria de tu compañero fiel
+                con el cuidado y la calidad que merece.
+            </p>
+        </div>
 
-            <div class="main-content">
-                <div class="plans-container">
-                    <div class="plan basic-plan">
-                        <h2 class="plan-title">Servicio Básico</h2>
-                        <table class="plan-table">
-                            <thead>
-                                <tr>
-                                    <th>Peso de la Mascota</th>
-                                    <th>Precio</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Hasta 10 kg</td>
-                                    <td>$1,500 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>11 a 20 kg</td>
-                                    <td>$2,000 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>21 a 30 kg</td>
-                                    <td>$3,200 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>31 a 40 kg</td>
-                                    <td>$3,900 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>41 a 60 kg</td>
-                                    <td>$4,900 MXN</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="plan-includes">
-                            <h3>Incluye:</h3>
-                            <ul>
+        <!-- Plans Section -->
+        <div class="plans-section">
+            <div class="plans-container">
+                <!-- Plan Básico -->
+                <div class="plan basico">
+                    <div class="plan-content">
+                        <div class="plan-info">
+                            <h2 class="plan-title">Servicio Básico</h2>
+
+                            <h3 class="includes-title">Incluye:</h3>
+                            <ul class="includes-list">
                                 <li>Servicio de cremación</li>
                                 <li>Bolsa artesanal de yute</li>
+                                <li>Certificado básico</li>
                             </ul>
                         </div>
+                        <div class="plan-images basico">
+                            <div class="image-placeholder"><img src="imgs/cremapets/bolsa-de-yute.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/certificado.jpg" alt=""></div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="plan premium-plan">
-                        <h2 class="plan-title">Plan Premium</h2>
-                        <table class="plan-table">
-                            <thead>
-                                <tr>
-                                    <th>Peso de la Mascota</th>
-                                    <th>Precio</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Hasta 10 kg</td>
-                                    <td>$2,100 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>11 - 20 kg</td>
-                                    <td>$2,700 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>21 - 30 kg</td>
-                                    <td>$3,800 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>31 a 40 kg</td>
-                                    <td>$4,500 MXN</td>
-                                </tr>
-                                <tr>
-                                    <td>Más de 41 kg</td>
-                                    <td>$5,500 MXN</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="plan-includes">
-                            <h3>Incluye:</h3>
-                            <ul>
+                <!-- Plan Premium -->
+                <div class="plan premium">
+                    <div class="plan-content">
+                        <div class="plan-info">
+                            <h2 class="plan-title">Plan Premium</h2>
+
+                            <h3 class="includes-title">Incluye:</h3>
+                            <ul class="includes-list">
                                 <li>Servicio de cremación</li>
                                 <li>Traslado local (7 am - 8 pm)</li>
-                                <li>Urna básica de madera, personalizada</li>
+                                <li>Urna básica personalizada</li>
                                 <li>Certificado de cremación</li>
                                 <li>Fotografía con dedicatoria</li>
-                                <li>Documentación impresa</li>
-                                <li>Entrega al día siguiente en nuestras instalaciones</li>
+                                <li>Entrega al día siguiente</li>
                             </ul>
+                        </div>
+                        <div class="plan-images premium">
+                            <div class="image-placeholder"><img src="imgs/cremapets/bolsa-de-yute.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/certificado.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/urna-perro-1.webp" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/dedicatoria.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plan Deluxe -->
+                <div class="plan deluxe">
+                    <div class="plan-content">
+                        <div class="plan-info">
+                            <h2 class="plan-title">Plan Deluxe</h2>
+
+                            <h3 class="includes-title">Incluye:</h3>
+                            <ul class="includes-list">
+                                <li>Servicio de cremación premium</li>
+                                <li>Traslado 24/7</li>
+                                <li>Urna premium personalizada</li>
+                                <li>Certificado oficial</li>
+                                <li>Sesión fotográfica profesional</li>
+                                <li>Memorial digital</li>
+                                <li>Entrega a domicilio</li>
+                                <li>Seguimiento post-servicio</li>
+                            </ul>
+                        </div>
+                        <div class="plan-images deluxe">
+                            <div class="image-placeholder"><img src="imgs/cremapets/bolsa-de-yute.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/certificado.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/urna-perro-1.webp" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/dedicatoria.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/domicilio.jpg" alt=""></div>
+                            <div class="image-placeholder"><img src="imgs/cremapets/sesion.jpg" alt=""></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
         <div class="gallery-container">
-            <h1 class="gallery-title">GALERÍA DE URNAS</h1>
+            <h1 class="gallery-title">GALERÍA DE URNAS PERSONALIZADAS</h1>
 
             <div class="gallery-grid show" id="galleryGrid">
                 <div class="loading">Cargando imágenes...</div>
@@ -139,8 +126,8 @@
 
     </div>
 
-    <script src="./js/cremapets.js"></script>
-    <script src="./shared/menu.js"></script>
+    <script src="js/cremapets.js"></script>
+    <script src="shared/menu.js"></script>
     <script>
         initSlidingMenu();
     </script>
