@@ -3,41 +3,6 @@ body {
     min-height: 100vh;
 }
 
-.notch-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin: 10px auto;
-    width: fit-content;
-    border-radius: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    font-family: var(--fuente-principal);
-}
-
-.notch-text {
-    font-size: .9rem;
-    color: black;
-    padding: 8px 20px;
-    margin: 0 5px;
-    border-radius: 15px;
-    transition: all .3s ease;
-}
-
-.notch-text.active {
-    background: rgba(255, 255, 255, 0.5);
-    color: var(--color-cafe-oscuro);
-    opacity: 1;
-}
-
-.notch-text:not(.active) {
-    opacity: 0.6;
-}
-
-.notch-text:hover {
-    transform: scale(1.05);
-}
-
 .header-section {
     min-height: 90vh;
     display: flex;
@@ -48,37 +13,25 @@ body {
     padding: 2rem;
 }
 
-.logo-container {
-    margin-bottom: 2rem;
-}
-
 .logo img {
     width: auto;
     height: 250px;
     max-width: 100%;
+    margin-bottom: 30px;
 }
 
-.main-title {
-    font-size: 3rem;
-    color: var(--color-cafe-oscuro);
-    margin: 2rem 0 1rem 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: var(--fuente-secundaria);
-}
-
-.description {
+.description-inicio {
     font-size: 1.2rem;
-    color: black;
+    color: var(--color-cafe-oscuro);
     max-width: 700px;
-    line-height: 1.8;
-    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .prevision-section {
     height: 80vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('../imgs/cementerio/prevision.png') center/cover;
+        url('../imgs/cementerio/img-cementerio-3.webp') center/cover;
     display: flex;
     align-items: center;
     color: white;
@@ -320,14 +273,9 @@ td {
     }
 
     .mural-container {
-        order: 2;
-    }
-
-    .columbario-image {
-        height: 550px;
+        display: none;
     }
 }
-
 
 .cementerio-section {
     height: fit-content;
@@ -543,11 +491,11 @@ td {
 .cemetery-location-section {
     display: grid;
     grid-template-columns: 1fr 700px;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .location-content {
-    padding: 60px 50px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -569,7 +517,7 @@ td {
     font-size: 2rem;
 }
 
-.location-description p{
+.location-description p {
     margin-bottom: 40px;
     font-size: 1.2rem;
     color: var(--color-beige-2);
@@ -590,18 +538,156 @@ td {
     border: none;
 }
 
-.img-container {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
 .img-container img {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit: cover;
     object-position: center;
     display: block;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+    .cemetery-location-section {
+        grid-template-columns: 1fr 500px;
+    }
+
+    .location-content {
+        padding: 50px 40px;
+        max-width: calc(100vw - 500px);
+    }
+
+    .location-title {
+        font-size: 1.8rem;
+    }
+
+    .location-title i {
+        font-size: 1.8rem;
+    }
+
+    .location-description p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cemetery-location-section {
+        grid-template-columns: 1fr 400px;
+    }
+
+    .location-content {
+        padding: 40px 30px;
+        max-width: calc(100vw - 400px);
+    }
+
+    .location-title {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .location-title i {
+        font-size: 1.6rem;
+        margin-right: 10px;
+    }
+
+    .location-description p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .map-container {
+        height: 300px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cemetery-location-section {
+        display: block;
+        min-height: auto;
+    }
+
+    .location-content {
+        padding: 40px 20px;
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+
+    .location-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .location-title i {
+        font-size: 1.5rem;
+    }
+
+    .location-description p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .map-container {
+        height: 280px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .img-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .location-content {
+        padding: 10px 15px;
+        padding-top: 50px;
+    }
+
+    .location-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .location-title i {
+        margin-right: 0;
+        font-size: 1.8rem;
+    }
+
+    .location-description p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .map-container {
+        height: 250px;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    .location-content {
+        min-height: auto;
+        padding: 30px 20px;
+        justify-content: center;
+    }
+
+    .location-title {
+        margin-bottom: 15px;
+    }
+
+    .location-description p {
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        height: 200px;
+    }
 }
 
 .gallery-container {

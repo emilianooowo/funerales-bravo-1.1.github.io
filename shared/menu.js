@@ -24,10 +24,7 @@ function initSlidingMenu() {
             right: 70px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.4);
-            border: 1px solid rgba(0, 0, 0, 0.18);
+            background: white;
             color: black;
             padding: 10px 14px;
             border-radius: 10px;
@@ -38,7 +35,7 @@ function initSlidingMenu() {
             transition: all 0.4s ease;
             pointer-events: none;
             font-family: var(--fuente-secundaria);
-            border: 1px solid white;
+            border: 1px solid red;
             z-index: 1002;
         }
 
@@ -106,16 +103,16 @@ function initSlidingMenu() {
             text-align: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid black;
         }
 
         .menu-title h1 {
-            color: white;
+            color: black;
             margin: 0;
         }
 
         .menu-subtitle h2 {
-            color: white;
+            color: black;
             font-family: var(--fuente-secundaria);
             margin: 0.5rem 0 0 0;
         }
