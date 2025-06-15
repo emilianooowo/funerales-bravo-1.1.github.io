@@ -28,10 +28,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-}
-
-html{
-  scroll-behavior: smooth;
+  padding: 0;
 }
 
 body {
@@ -39,22 +36,54 @@ body {
   scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-beige-1);
+h1 {
+  font-size: 2.5rem;
   font-family: var(--fuente-principal);
 }
 
+h2 {
+  font-size: 2rem;
+  font-family: var(--fuente-principal);
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-family: var(--fuente-principal);
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-family: var(--fuente-principal);
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-family: var(--fuente-principal);
+}
+
+h6 {
+  font-size: 1rem;
+  font-family: var(--fuente-principal);
+
+}
+
+
 p {
   font-family: var(--fuente-secundaria);
-  color: var(--color-beige-2);
-  font-size: 1.6rem;
 }
+
+p,
+li,
+a,
+span {
+  font-family: var(--fuente-secundaria);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 
 a {
   text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }

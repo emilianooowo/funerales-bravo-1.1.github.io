@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
     });
-  }, {
-    threshold: 0.2
-  });
 
-  const elementosAnimados = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .scale-in');
-  elementosAnimados.forEach(el => {
-    observer.observe(el);
-  });
+    const elementosAnimados = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .scale-in');
+    elementosAnimados.forEach(el => {
+        observer.observe(el);
+    });
 });
 
 
@@ -191,23 +191,23 @@ document.addEventListener('DOMContentLoaded', function () {
 const extrasData = [
     {
         title: "+ Cremación",
+        price: "$8,500",
         description: "Servicio de cremación con entrega de cenizas en urna básica",
         features: ["Proceso de cremación", "Urna básica incluida", "Certificado de cremación"],
-        price: "Desde $8,500",
         extraQuery: "cremacion"
     },
     {
         title: "+ Domicilio",
+        price: "$4,200",
         description: "Velación en la comodidad del hogar familiar",
         features: ["Instalación en domicilio", "Equipo de refrigeración", "Decoración básica"],
-        price: "Desde $4,200",
         extraQuery: "domicilio"
     },
     {
         title: "+ Cremación + Domicilio",
+        price: "$11,900",
         description: "Combinación completa de ambos servicios con descuento especial",
         features: ["Todos los beneficios anteriores", "Descuento por paquete", "Gestión integral"],
-        price: "Desde $11,900",
         extraQuery: "combo"
     }
 ];
@@ -220,17 +220,16 @@ function renderExtrasFor(plan) {
 
     container.innerHTML = `
     <div class="extras-container">
-      <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
-      <h5 class="extras-subtitle">*Todos los servicios adicionales aplican para todos los planes de velación*</h5>
+      <h2 class="extras-title">Servicios Adicionales Disponibles</h2>
+      <h4 class="extras-subtitle">*Todos los servicios adicionales aplican para todos los planes de velación*</h4>
       <div class="extras-grid">
         ${extrasData.map(extra => `
           <div class="extra-card">
-            <h4>${extra.title}</h4>
-            <p>${extra.description}</p>
+            <h5>${extra.title}</h5>
+            <div class="extra-price">${extra.price}</div>
             <ul class="extra-features">
               ${extra.features.map(f => `<li>${f}</li>`).join("")}
             </ul>
-            <div class="extra-price">${extra.price}</div>
             <a href="cotizador.html?plan=${plan}&extra=${extra.extraQuery}" class="cotizar-btn">Cotiza Ya</a>
           </div>
         `).join("")}
