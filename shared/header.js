@@ -41,7 +41,7 @@ class HeaderComponent {
                 width: 95%;
                 max-width: 1080px;
                 padding: 15px 30px;
-                background: var(--color-cafe-oscuro);
+                background: rgba(0, 0, 0, 0.5);
                 border-radius: 20px;
                 transition: all 0.3s ease;
                 text-align: center;
@@ -140,8 +140,8 @@ class HeaderComponent {
             @media (max-width: 768px) {
                 .glassmorphism-header {
                     top: 30px;
-                    right: 30px;
-                    left: auto;
+                    left: 20px;
+                    right: auto;
                     transform: none;
                     width: 60px;
                     height: 60px;
@@ -150,8 +150,7 @@ class HeaderComponent {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background: var(--color-cafe-oscuro);
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                    background: rgba(0, 0, 0, 0.5);
                 }
 
                 .header-content {
@@ -187,14 +186,13 @@ class HeaderComponent {
                 .nav-menu {
                     position: fixed;
                     top: 100px;
-                    right: 30px;
+                    left: 30px;
                     width: 200px;
                     flex-direction: column;
                     gap: 30px;
-                    background: white;
+                    background: rgba(0, 0, 0, 0.8);
                     border-radius: 15px;
                     padding: 20px;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
                     opacity: 0;
                     visibility: hidden;
                     transform: translateY(-10px);
@@ -210,7 +208,7 @@ class HeaderComponent {
                 .nav-link {
                     width: 100%;
                     padding: 15px 25px;
-                    color: #333;
+                    color: white;
                     font-size: 1.1rem;
                     font-weight: 600;
                     text-align: center;
@@ -220,9 +218,8 @@ class HeaderComponent {
                 }
 
                 .nav-link.active {
-                    background: var(--color-cafe-oscuro);
-                    color: white;
-                    border-color: var(--color-cafe-oscuro);
+                    background: white;
+                    color: black;
                 }
             }
 

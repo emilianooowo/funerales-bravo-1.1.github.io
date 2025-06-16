@@ -69,7 +69,7 @@
 
 .hero-section {
     height: 85vh;
-    background: url('../imgs/index/cementerio-servicios.webp') center / cover fixed;
+    background: url('../imgs/index/cementerio-servicios.webp') center / cover;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -105,49 +105,18 @@
 .highlights {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 10px;
     max-width: 600px;
 }
 
 .highlight-box {
     position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
     text-align: left;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.highlight-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 150%;
-    height: 100%;
-    background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.08) 40%,
-            rgba(255, 255, 255, 0.15) 50%,
-            rgba(255, 255, 255, 0.08) 60%,
-            rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-20deg);
-    animation: shimmer 3s infinite linear;
-    pointer-events: none;
-}
-
-@keyframes shimmer {
-    0% {
-        left: -100%;
-    }
-
-    100% {
-        left: 100%;
-    }
 }
 
 .highlight-content {
@@ -566,7 +535,7 @@
 
     .planes-container {
         min-width: auto;
-        width: 100%;
+        margin: 0 auto;
     }
 
     .plan-box {
@@ -579,7 +548,7 @@
 
     .boton-principal {
         width: 100%;
-        padding: 1rem 0;
+        padding: 12px;
         font-size: 1.2rem;
     }
 }
@@ -613,7 +582,7 @@
 
     .boton-principal {
         font-size: 1rem;
-        padding: 0.8rem 0;
+        padding: 20px 10px;
     }
 }
 
@@ -1512,7 +1481,7 @@
     }
 
     .contact-info li {
-        padding: 8px;
+        padding: 10px;
     }
 
     .contactar {
@@ -1603,6 +1572,42 @@
     font-size: .825rem;
     font-family: var(--fuente-secundaria);
     color: black;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        gap: 24px;
+        padding: 0 20px;
+    }
+
+    .footer-col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col h5 {
+        text-align: center;
+    }
+
+    .footer-col ul li a {
+        justify-content: center;
+    }
+
+    .social-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-list li a {
+        justify-content: center;
+    }
+
+    .copyright {
+        font-size: 0.75rem;
+        padding: 16px;
+    }
 }
 
 .whatsapp-float {
