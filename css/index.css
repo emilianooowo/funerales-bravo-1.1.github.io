@@ -69,7 +69,7 @@
 
 .hero-section {
     height: 85vh;
-    background: url('../imgs/index/cementerio-servicios.webp') center / cover;
+    background: url('../imgs/index/cementerio-servicios.webp') center / cover fixed;
     display: flex;
     flex-direction: column;
     position: relative;
