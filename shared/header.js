@@ -14,9 +14,10 @@ class HeaderComponent {
     getMenuItems() {
         const items = [
             { name: 'Inicio', href: 'index.html', page: 'inicio' },
-            { name: 'Cementerio', href: 'cementerio.html', page: 'cementerio' },
-            { name: 'CremaPets', href: 'cremapets.html', page: 'cremapets' },
+            { name: 'Cementerio', href: 'index.html#cementerio', page: 'cementerio' },
+            { name: 'CremaPets', href: 'index.html#cremapets', page: 'cremapets' },
             { name: 'Calendario', href: 'calendario.html', page: 'calendario' },
+            { name: 'Cotizador', href: 'cotizador.html', page: 'cotizador' },
             { name: 'Catálogo', href: 'index.html#servicios', page: 'catalogo' },
             { name: 'Contacto', href: 'index.html#contacto', page: 'contacto' }
         ];
@@ -286,17 +287,14 @@ class HeaderComponent {
         const mobileOverlay = document.getElementById('mobileOverlay');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // Toggle menu
         hamburger.addEventListener('click', () => {
             this.toggleMenu();
         });
 
-        // Close menu when clicking overlay
         mobileOverlay.addEventListener('click', () => {
             this.closeMenu();
         });
 
-        // Close menu when clicking nav links on mobile
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -305,14 +303,12 @@ class HeaderComponent {
             });
         });
 
-        // Close menu on window resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 this.closeMenu();
             }
         });
 
-        // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 this.closeMenu();
@@ -349,21 +345,16 @@ class HeaderComponent {
     }
 
     init() {
-        // Inject CSS
         document.head.insertAdjacentHTML('beforeend', this.generateCSS());
 
-        // Inject HTML
         document.body.insertAdjacentHTML('afterbegin', this.generateHTML());
 
-        // Add event listeners
         this.addEventListeners();
     }
 }
 
-// Initialize header when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new HeaderComponent();
 });
 
-// Export for manual initialization if needed
 window.HeaderComponent = HeaderComponent;

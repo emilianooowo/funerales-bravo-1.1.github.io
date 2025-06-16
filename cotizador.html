@@ -1,368 +1,127 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNERALES BRAVO - COTIZACION</title>
+    <title>COTIZACIÓN - FUNERALES BRAVO</title>
+    <link rel="icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/cotizador.css">
+    <link rel="stylesheet" href="shared/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <h1>Cotización de Servicios Funerarios</h1>
-
-    <form id="cotizacionForm">
-        <h2>Información del Solicitante</h2>
-        <label>Nombre completo:
-            <input type="text" id="nombre" required>
-        </label><br><br>
-
-        <label>Email:
-            <input type="email" id="email" required>
-        </label><br><br>
-
-        <label>Teléfono:
-            <input type="tel" id="telefono" required>
-        </label><br><br>
-
-        <label>Nombre del difunto:
-            <input type="text" id="nombreDifunto" required>
-        </label><br><br>
-
-        <h2>Servicios Funerarios</h2>
-
-        <h3>Paquetes de Servicios</h3>
-        <label>
-            <input type="radio" name="paquete" value="basico" data-precio="15000">
-            Paquete Básico - $15,000
-            <br><small>Incluye: Ataúd básico, traslado, velación 12 hrs, trámites básicos</small>
-        </label><br><br>
-
-        <label>
-            <input type="radio" name="paquete" value="intermedio" data-precio="25000">
-            Paquete Intermedio - $25,000
-            <br><small>Incluye: Ataúd intermedio, traslado, velación 24 hrs, flores, trámites completos</small>
-        </label><br><br>
-
-        <label>
-            <input type="radio" name="paquete" value="premium" data-precio="45000">
-            Paquete Premium - $45,000
-            <br><small>Incluye: Ataúd premium, traslado, velación 48 hrs, flores, música, trámites VIP</small>
-        </label><br><br>
-
-        <label>
-            <input type="radio" name="paquete" value="lujo" data-precio="75000">
-            Paquete de Lujo - $75,000
-            <br><small>Incluye: Ataúd de lujo, traslado especial, velación extendida, servicios completos</small>
-        </label><br><br>
-
-        <h3>Servicios Adicionales</h3>
-        <label>
-            <input type="checkbox" id="embalsamiento" value="3500">
-            Embalsamiento - $3,500
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="cremacion" value="8000">
-            Cremación - $8,000
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="urna" value="2500">
-            Urna decorativa - $2,500
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="traslado_extra" value="1500">
-            Traslado a otra ciudad - $1,500
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="flores_extra" value="800">
-            Arreglos florales adicionales - $800
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="musica" value="1200">
-            Servicio de música en vivo - $1,200
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="fotografia" value="2000">
-            Servicio fotográfico - $2,000
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="video" value="3000">
-            Video conmemorativo - $3,000
-        </label><br><br>
-
-        <h3>Opciones de Pago</h3>
-        <label>
-            <input type="radio" name="tipoPago" value="contado" checked>
-            Pago de contado (10% descuento)
-        </label><br>
-
-        <label>
-            <input type="radio" name="tipoPago" value="12meses">
-            Financiamiento 12 meses (5% interés)
-        </label><br>
-
-        <label>
-            <input type="radio" name="tipoPago" value="24meses">
-            Financiamiento 24 meses (12% interés)
-        </label><br><br>
-
-        <h3>Método de Contacto Preferido</h3>
-        <label>
-            <input type="radio" name="contacto" value="email" checked>
-            Email
-        </label><br>
-
-        <label>
-            <input type="radio" name="contacto" value="whatsapp">
-            WhatsApp
-        </label><br>
-
-        <label>
-            <input type="radio" name="contacto" value="llamada">
-            Llamada telefónica
-        </label><br><br>
-
-        <button type="button" onclick="calcularCotizacion()">Calcular Cotización</button>
-        <button type="reset" onclick="limpiarFormulario()">Limpiar</button>
-    </form>
-
-    <div id="resultado" style="display: none;">
-        <h2>Resumen de Cotización</h2>
-        <div id="resumenCliente"></div>
-        <div id="resumenServicios"></div>
-        <div id="resumenPago"></div>
-
-        <button onclick="enviarSolicitud()"
-            style="background-color: #4CAF50; color: white; padding: 15px 30px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
-            Enviar Solicitud a Oficinas
-        </button>
-
-        <div id="mensajeEnvio"
-            style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px;">
-            <h3>¡Solicitud Enviada!</h3>
-            <p>Su cotización ha sido enviada a nuestras oficinas. Un representante lo contactará dentro de las próximas
-                2 horas a través del método seleccionado.</p>
-            <p><strong>Número de referencia:</strong> <span id="numeroReferencia"></span></p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="shared/logos/logo-negro.webp" class="logo" alt="logo funerales bravo">
+            </div>
+            <h2 class="main-title">CALCULADORA DE COTIZACIONES</h2>
+            <p class="subtitle">Usa nuestra calculadora de cotizaciones y encuentra la opción que mejor se adapta a ti.
+            </p>
         </div>
+
+        <form action="https://formspree.io/f/mvgrobjn" method="POST" id="cotizacion-form">
+            <h2>Selecciona un servicio</h2>
+            <label>
+                <select name="servicio" id="servicio" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="funerario">Funerario</option>
+                    <option value="cementerio">Cementerio</option>
+                </select>
+            </label>
+
+            <!-- FUNERARIO -->
+            <div id="opciones-funerario" class="hidden">
+                <label>Tipo de servicio funerario:
+                    <select id="tipo-funerario">
+                        <option value="">-- Selecciona --</option>
+                        <option value="velacion">Velación</option>
+                        <option value="homenaje">Homenaje</option>
+                    </select>
+                </label>
+
+                <div id="planes-velacion" class="hidden">
+                    <label>Plan velación:
+                        <select id="plan-velacion">
+                            <option value="">-- Selecciona --</option>
+                            <option value="basico">Básico</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="premium">Premium</option>
+                            <option value="vip">VIP</option>
+                        </select>
+                    </label>
+
+                    <label>Extras:
+                        <input type="checkbox" id="extra-domicilio" value="domicilio"> Servicio a domicilio
+                        <input type="checkbox" id="extra-cremacion" value="cremacion"> Cremación
+                        <input type="checkbox" id="extra-combo" value="cremacion-domicilio"> Cremación con domicilio
+                    </label>
+                </div>
+
+                <div id="planes-homenaje" class="hidden">
+                    <label>Plan homenaje:
+                        <select id="plan-homenaje">
+                            <option value="">-- Selecciona --</option>
+                            <option value="clasico">Clásico</option>
+                            <option value="especial">Especial</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <!-- CEMENTERIO -->
+            <div id="opciones-cementerio" class="hidden">
+                <label>Tipo de cementerio:
+                    <select id="tipo-cementerio">
+                        <option value="">-- Selecciona --</option>
+                        <option value="tierra">Espacio de tierra</option>
+                        <option value="columbario">Columbario</option>
+                    </select>
+                </label>
+
+                <div id="planes-tierra" class="hidden">
+                    <label>¿Cuántas peronas?:
+                        <select id="plan-tierra">
+                            <option value="">-- Selecciona --</option>
+                            <option value="1p">1 persona</option>
+                            <option value="2p">2 personas</option>
+                            <option value="4p">4 personas</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div id="planes-columbario" class="hidden">
+                    <label>Plan columbario:
+                        <select id="plan-columbario">
+                            <option value="">-- Selecciona --</option>
+                            <option value="singular">Singular</option>
+                            <option value="familiar">Familiar</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <h2>Información de contacto</h2>
+            <label>Nombre: <input type="text" name="nombre" required></label>
+            <label>Apellido: <input type="text" name="apellido" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Teléfono: <input type="tel" name="telefono"></label>
+
+            <!-- CAMPO OCULTO PARA INFO COMBINADA -->
+            <input type="hidden" name="detalle_servicio" id="detalle-servicio">
+            <input type="hidden" name="condicion_especial" id="condicion-especial">
+
+            <button type="submit">Enviar cotización</button>
+        </form>
+
     </div>
 
-    <script>
-        let cotizacionActual = {};
+    <script src="js/cotizador.js"></script>
 
-        function calcularCotizacion() {
-            // Obtener datos del solicitante
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const telefono = document.getElementById('telefono').value;
-            const nombreDifunto = document.getElementById('nombreDifunto').value;
-
-            if (!nombre || !email || !telefono || !nombreDifunto) {
-                alert('Por favor completa todos los campos obligatorios');
-                return;
-            }
-
-            // Verificar que se haya seleccionado un paquete
-            const paqueteSeleccionado = document.querySelector('input[name="paquete"]:checked');
-            if (!paqueteSeleccionado) {
-                alert('Por favor selecciona un paquete de servicios');
-                return;
-            }
-
-            // Calcular servicios seleccionados
-            let subtotal = 0;
-            let serviciosSeleccionados = [];
-
-            // Paquete principal
-            const precioPaquete = parseInt(paqueteSeleccionado.dataset.precio);
-            const nombrePaquete = paqueteSeleccionado.nextSibling.textContent.trim().split('\n')[0];
-            serviciosSeleccionados.push(nombrePaquete);
-            subtotal += precioPaquete;
-
-            // Servicios adicionales
-            const serviciosAdicionales = [
-                { id: 'embalsamiento', nombre: 'Embalsamiento', precio: 3500 },
-                { id: 'cremacion', nombre: 'Cremación', precio: 8000 },
-                { id: 'urna', nombre: 'Urna decorativa', precio: 2500 },
-                { id: 'traslado_extra', nombre: 'Traslado a otra ciudad', precio: 1500 },
-                { id: 'flores_extra', nombre: 'Arreglos florales adicionales', precio: 800 },
-                { id: 'musica', nombre: 'Servicio de música en vivo', precio: 1200 },
-                { id: 'fotografia', nombre: 'Servicio fotográfico', precio: 2000 },
-                { id: 'video', nombre: 'Video conmemorativo', precio: 3000 }
-            ];
-
-            serviciosAdicionales.forEach(servicio => {
-                if (document.getElementById(servicio.id).checked) {
-                    serviciosSeleccionados.push(`${servicio.nombre} - $${servicio.precio.toLocaleString()}`);
-                    subtotal += servicio.precio;
-                }
-            });
-
-            // Tipo de pago
-            const tipoPago = document.querySelector('input[name="tipoPago"]:checked').value;
-            const contactoPreferido = document.querySelector('input[name="contacto"]:checked').value;
-
-            let total = subtotal;
-            let detallePago = {};
-
-            if (tipoPago === 'contado') {
-                total = subtotal * 0.9; // 10% descuento
-                detallePago = {
-                    tipo: 'Pago de contado',
-                    descuento: subtotal * 0.1,
-                    total: total,
-                    mensualidad: 0
-                };
-            } else if (tipoPago === '12meses') {
-                const interes = subtotal * 0.05; // 5% interés
-                total = subtotal + interes;
-                const mensualidad = total / 12;
-                detallePago = {
-                    tipo: 'Financiamiento 12 meses',
-                    interes: interes,
-                    total: total,
-                    mensualidad: mensualidad
-                };
-            } else if (tipoPago === '24meses') {
-                const interes = subtotal * 0.12; // 12% interés
-                total = subtotal + interes;
-                const mensualidad = total / 24;
-                detallePago = {
-                    tipo: 'Financiamiento 24 meses',
-                    interes: interes,
-                    total: total,
-                    mensualidad: mensualidad
-                };
-            }
-
-            // Guardar cotización actual
-            cotizacionActual = {
-                cliente: { nombre, email, telefono, nombreDifunto },
-                servicios: serviciosSeleccionados,
-                subtotal: subtotal,
-                pago: detallePago,
-                contactoPreferido: contactoPreferido,
-                fecha: new Date().toLocaleDateString()
-            };
-
-            // Mostrar resultado
-            mostrarResultado();
-        }
-
-        function mostrarResultado() {
-            const resultado = document.getElementById('resultado');
-            const resumenCliente = document.getElementById('resumenCliente');
-            const resumenServicios = document.getElementById('resumenServicios');
-            const resumenPago = document.getElementById('resumenPago');
-
-            // Información del cliente
-            resumenCliente.innerHTML = `
-                <h3>Información del Solicitante</h3>
-                <p><strong>Nombre:</strong> ${cotizacionActual.cliente.nombre}</p>
-                <p><strong>Email:</strong> ${cotizacionActual.cliente.email}</p>
-                <p><strong>Teléfono:</strong> ${cotizacionActual.cliente.telefono}</p>
-                <p><strong>Difunto:</strong> ${cotizacionActual.cliente.nombreDifunto}</p>
-                <p><strong>Fecha:</strong> ${cotizacionActual.fecha}</p>
-                <p><strong>Contacto preferido:</strong> ${cotizacionActual.contactoPreferido}</p>
-            `;
-
-            // Servicios
-            let serviciosHTML = '<h3>Servicios Solicitados</h3><ul>';
-            cotizacionActual.servicios.forEach(servicio => {
-                serviciosHTML += `<li>${servicio}</li>`;
-            });
-            serviciosHTML += '</ul>';
-            serviciosHTML += `<p><strong>Subtotal:</strong> $${cotizacionActual.subtotal.toLocaleString()}</p>`;
-
-            resumenServicios.innerHTML = serviciosHTML;
-
-            // Información de pago
-            let pagoHTML = `<h3>Detalles de Pago</h3>`;
-            pagoHTML += `<p><strong>Modalidad:</strong> ${cotizacionActual.pago.tipo}</p>`;
-
-            if (cotizacionActual.pago.descuento) {
-                pagoHTML += `<p><strong>Descuento:</strong> -$${cotizacionActual.pago.descuento.toLocaleString()}</p>`;
-            }
-
-            if (cotizacionActual.pago.interes) {
-                pagoHTML += `<p><strong>Intereses:</strong> +$${cotizacionActual.pago.interes.toLocaleString()}</p>`;
-            }
-
-            pagoHTML += `<p><strong>Total a pagar:</strong> $${cotizacionActual.pago.total.toLocaleString()}</p>`;
-
-            if (cotizacionActual.pago.mensualidad > 0) {
-                pagoHTML += `<p><strong>Pago mensual:</strong> $${cotizacionActual.pago.mensualidad.toLocaleString()}</p>`;
-            }
-
-            resumenPago.innerHTML = pagoHTML;
-
-            resultado.style.display = 'block';
-            resultado.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function limpiarFormulario() {
-            document.getElementById('cotizacionForm').reset();
-            document.getElementById('resultado').style.display = 'none';
-            document.getElementById('mensajeEnvio').style.display = 'none';
-            cotizacionActual = {};
-        }
-
-        function enviarSolicitud() {
-            if (!cotizacionActual.cliente) {
-                alert('No hay cotización para enviar');
-                return;
-            }
-
-            // Generar número de referencia
-            const numeroRef = 'SF-' + Date.now().toString().slice(-8);
-            document.getElementById('numeroReferencia').textContent = numeroRef;
-
-            // Simular envío de datos
-            setTimeout(() => {
-                document.getElementById('mensajeEnvio').style.display = 'block';
-                document.getElementById('mensajeEnvio').scrollIntoView({ behavior: 'smooth' });
-
-                // Opcional: Aquí podrías enviar los datos a un servidor real
-                console.log('Cotización enviada:', {
-                    ...cotizacionActual,
-                    numeroReferencia: numeroRef
-                });
-
-            }, 1000);
-
-            // Deshabilitar el botón para evitar envíos duplicados
-            event.target.disabled = true;
-            event.target.textContent = 'Enviando...';
-
-            setTimeout(() => {
-                event.target.textContent = 'Solicitud Enviada ✓';
-            }, 1000);
-        }
-
-        // Event listeners para recalcular automáticamente
-        document.addEventListener('DOMContentLoaded', function () {
-            const inputs = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
-
-            inputs.forEach(input => {
-                input.addEventListener('change', function () {
-                    if (cotizacionActual.cliente && document.querySelector('input[name="paquete"]:checked')) {
-                        calcularCotizacion();
-                    }
-                });
-            });
-        });
-
-        // Validación de teléfono
-        document.getElementById('telefono').addEventListener('input', function (e) {
-            // Permitir solo números, espacios y guiones
-            e.target.value = e.target.value.replace(/[^0-9\s\-]/g, '');
-        });
-    </script>
+    <script src="shared/header.js"></script>
 </body>
 
 </html>

@@ -175,11 +175,9 @@
 
 .lista-servicios-section,
 .cards-section,
-.tira-servicios,
-.servicios-section {
+.tira-servicios {
     background: #f4f4f4;
     padding: 50px 0;
-
 }
 
 .contenido.catalogo,
@@ -446,7 +444,7 @@
 }
 
 .plan-box {
-    padding: 1.5rem;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -846,6 +844,11 @@
         font-size: 1rem;
         padding: 14px 25px;
     }
+}
+
+.servicios-section {
+    background: #f4f4f4;
+    padding-top: 50px;
 }
 
 .servicios-intro {
