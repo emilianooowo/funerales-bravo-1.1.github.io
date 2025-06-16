@@ -1,5 +1,5 @@
 .tira-atencion-inmediata {
-    padding: 0.8rem;
+    padding-top: 80px;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -24,7 +24,6 @@
     align-items: center;
     justify-content: center;
     font-family: var(--fuente-secundaria);
-    font-size: 1.1rem;
     padding: 0.75rem 1.5rem;
     border-radius: 10px;
     text-decoration: none;
@@ -205,10 +204,21 @@
     }
 }
 
-.lista-servicios-section {
+.lista-servicios-section,
+.cards-section,
+.tira-servicios,
+.servicios-section {
+    background: #f4f4f4;
+    padding: 50px 0;
+
+}
+
+.contenido.catalogo,
+.homenaje,
+.velacion {
     max-width: 1080px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    width: 100%;
 }
 
 .titulo-principal {
@@ -249,7 +259,7 @@
 }
 
 .btn-info {
-    padding: 8px 16px;
+    padding: 8px 8px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -283,29 +293,14 @@
     color: white;
 }
 
-.btn-funerarios:hover {
-    background: white;
-    color: black;
-}
-
 .btn-mascotas {
     background: linear-gradient(210deg, #fff, #0963d8 50%);
-    color: white;
-}
-
-.btn-mascotas:hover {
-    background: var(--color-azul-mascotas);
     color: white;
 }
 
 .btn-cementerio {
     background: linear-gradient(210deg, var(--color-beige-1), var(--color-cafe-oscuro) 50%);
     color: var(--color-beige-1);
-}
-
-.btn-cementerio:hover {
-    background: var(--color-beige-1);
-    color: var(--color-cafe-oscuro);
 }
 
 .servicios-lista {
@@ -411,206 +406,215 @@
 .main-section {
     max-width: 1200px;
     margin: 0 auto;
-    background: transparent;
     overflow: hidden;
-    padding: 0 20px;
+    padding: 40px 0;
 }
 
-.cremapets-content {
-    display: flex;
-    height: 550px;
-}
-
-.left-content {
-    flex: 0 0 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.logo-cremapets {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo-cremapets img {
-    width: auto;
-    height: 150px;
-}
-
-.cremapets-subtitle {
-    color: var(--color-azul-mascotas);
-    padding-bottom: 5px;
-}
-
-.description {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: black;
-    font-family: var(--fuente-secundaria);
-}
-
-.feature-list {
-    list-style: none;
-    margin-bottom: 10px;
-    padding: 0;
-}
-
-.feature-list li {
-    padding: 8px 0;
-    padding-left: 10px;
-    position: relative;
-    font-family: var(--fuente-secundaria);
-    opacity: .8;
-}
-
-.cta-leyenda {
-    color: black;
-}
-
-.cta-button-cremapets-mini {
-    background: linear-gradient(120deg, #0963d8, #fff 150%);
-    color: white;
-    padding: 10px 16px;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-align: center;
-    font-family: var(--fuente-secundaria);
-    width: fit-content;
-}
-
-.cta-button-cremapets-mini:hover {
-    transform: translateY(-3px);
-}
-
-.right-content {
-    flex: 0 0 50%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-grid {
+.contenido-cremapets {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 500px;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
 }
 
-.image-item {
-    aspect-ratio: 1;
-    overflow: hidden;
+.logo-container {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: auto;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container {
+    padding: 2rem;
     border-radius: 8px;
+    flex: 1;
 }
 
-.image-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.info-titulo {
+    margin-bottom: 1rem;
+    color: var(--color-azul-mascotas);
+}
+
+.info-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.info-lista li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-lista li:last-child {
+    border-bottom: none;
+}
+
+.planes-container {
+    padding: 2rem;
     border-radius: 8px;
+    min-width: 400px;
 }
 
-@media (max-width: 768px) {
-    .cremapets-content {
-        height: auto;
-        flex-direction: column;
-        gap: 30px;
+.planes-titulo {
+    margin-bottom: 1.5rem;
+    color: var(--color-azul-mascotas);
+    text-align: center;
+}
+
+.planes-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.plan-box {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.plan-titulo {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: var(--fuente-secundaria);
+}
+
+.plan-box.basico {
+    background: #a0633b;
+}
+
+.plan-box.premium {
+    background: #5ba0f2;
+}
+
+.plan-box.vip {
+    background: #a569bd;
+}
+
+.boton-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.boton-principal {
+    background: var(--color-azul-mascotas);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: var(--fuente-principal);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-principal:hover {
+    background: #0851b8;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .contenido-cremapets {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .left-content {
-        flex: none;
+    .logo-container,
+    .info-container,
+    .planes-container {
+        padding: 1rem;
         text-align: center;
     }
 
-    .right-content {
-        flex: none;
+    .logo img {
+        height: 180px;
+        margin: 0 auto;
     }
 
-    .logo-cremapets img {
-        height: 120px;
+    .planes-container {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido-cremapets {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .image-grid {
-        max-width: 400px;
-        gap: 12px;
+    .logo-container,
+    .info-container,
+    .planes-container {
+        padding: 1rem;
+    }
+
+    .logo img {
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .planes-container {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .plan-box {
+        padding: 1rem;
+    }
+
+    .plan-titulo {
+        font-size: 1.1rem;
+    }
+
+    .boton-principal {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .main-section {
-        padding: 0 15px;
+    .contenido-cremapets {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    .logo-cremapets img {
-        height: 150px;
+    .logo img {
+        height: 120px;
     }
 
-    .description {
-        font-size: 14px;
-        margin-bottom: 20px;
+    .info-container {
+        padding: 0.8rem;
     }
 
-    .feature-list {
-        margin-bottom: 25px;
+    .planes-container {
+        padding: 1rem 0.5rem;
     }
 
-    .feature-list li {
-        font-size: 14px;
-        padding: 6px 0;
+    .plan-box {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
     }
 
-    .cta-button-cremapets {
-        padding: 12px 18px;
-        font-size: 14px;
-        text-align: center;
+    .plan-titulo {
+        font-size: 1rem;
     }
 
-    .image-grid {
-        max-width: 400px;
-        gap: 10px;
+    .boton-principal {
+        font-size: 1rem;
+        padding: 0.8rem 0;
     }
-
-    .cta-leyenda {
-        font-size: 0.85rem;
-        margin-bottom: 15px;
-    }
-
-    .cta-button-cremapets-mini {
-        font-size: 1.1rem;
-        padding: 8px 14px;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 360px) {
-    .main-section {
-        padding: 0 10px;
-    }
-
-    .logo-cremapets img {
-        height: 80px;
-    }
-
-    .description {
-        font-size: 13px;
-    }
-
-    .feature-list li {
-        font-size: 13px;
-    }
-
-    .image-grid {
-        max-width: 280px;
-        gap: 8px;
-    }
-
 }
 
 .cementerio-container {
@@ -619,7 +623,8 @@
     position: relative;
     margin-top: 150px;
     padding: 0 20px;
-    margin-bottom: 150px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .dual-section {
@@ -876,7 +881,6 @@
 
 .servicios-intro {
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .servicios-intro h1 {
@@ -904,11 +908,6 @@
         font-size: 1rem;
         padding: 0 1.5rem;
     }
-}
-
-.tira-servicios {
-    max-width: 1080px;
-    margin: 0 auto;
 }
 
 .strip-container {
@@ -1237,12 +1236,6 @@
     }
 }
 
-.cards-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .section-title {
     color: var(--color-dorado);
     text-align: center;
@@ -1404,7 +1397,9 @@
 
 .container-contacto {
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .contacto-grid {
@@ -1533,7 +1528,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    max-width: 720px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -1612,8 +1607,8 @@
 
 .whatsapp-float {
     position: fixed;
-    bottom: 100px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     width: 60px;
     height: 60px;
     z-index: 999;

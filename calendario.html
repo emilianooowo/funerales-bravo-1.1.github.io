@@ -21,9 +21,12 @@
             <h1 class="main-title">CALENDARIO DE PROMOCIONES</h1>
             <p class="subtitle">Conoce todas nuestras promociones durante este año 2025</p>
 
-            <button class="calendar-button" id="toggleCalendar">
-                MOSTRAR CALENDARIO
-            </button>
+            <div class="calendar-button-wrapper">
+                <button class="calendar-button" id="toggleCalendar">
+                    MOSTRAR CALENDARIO
+                </button>
+            </div>
+
         </div>
 
         <div class="calendar-section" id="calendarSection">
@@ -43,50 +46,49 @@
 
         <div class="promotions-grid">
             <div class="promotion-card fixed-promotions">
-                <h3>
-                    <i class="fas fa-star"></i>
-                    Promociones Fijas
-                </h3>
+                <h4>
+                    <i class="fas fa-thumbtack"></i> Promociones Fijas
+                </h4>
 
                 <div class="promotion-item">
-                    <h4>Descuento de Lealtad</h4>
+                    <h5>Descuento de Lealtad</h5>
                     <p>Clientes frecuentes obtienen beneficios especiales durante todo el año</p>
                     <span class="promotion-discount">15% OFF</span>
                 </div>
 
                 <div class="promotion-item">
-                    <h4>Miércoles de Descuento</h4>
+                    <h5>Miércoles de Descuento</h5>
                     <p>Todos los miércoles disfruta de precios especiales en productos seleccionados</p>
                     <span class="promotion-discount">20% OFF</span>
                 </div>
 
                 <div class="promotion-item">
-                    <h4>Compra Mínima</h4>
+                    <h5>Compra Mínima</h5>
                     <p>En compras superiores a $500 obtén descuentos adicionales</p>
                     <span class="promotion-discount">10% OFF</span>
                 </div>
             </div>
 
             <div class="promotion-card seasonal-promotions">
-                <h3>
+                <h4>
                     <i class="fas fa-calendar-week"></i>
                     Promociones por Temporada
-                </h3>
+                </h4>
 
                 <div class="promotion-item">
-                    <h4>Especial de Verano</h4>
+                    <h5>Especial de Verano</h5>
                     <p>Durante los meses de calor, refréscate con nuestras ofertas especiales</p>
                     <span class="promotion-discount">25% OFF</span>
                 </div>
 
                 <div class="promotion-item">
-                    <h4>Back to School</h4>
+                    <h5>Back to School</h5>
                     <p>Preparáte para el regreso a clases con descuentos increíbles</p>
                     <span class="promotion-discount">30% OFF</span>
                 </div>
 
                 <div class="promotion-item">
-                    <h4>Promociones Navideñas</h4>
+                    <h5>Promociones Navideñas</h5>
                     <p>La época más especial del año con los mejores precios</p>
                     <span class="promotion-discount">40% OFF</span>
                 </div>
@@ -95,7 +97,7 @@
     </div>
 
     <script src="js/calendario.js"></script>
-    <script src="shared/menu.js"></script>
+    <script src="shared/header.js"></script>
     <script>
         initSlidingMenu();
     </script>
