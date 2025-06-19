@@ -228,11 +228,17 @@ main,
 
 .hero-section {
     height: 60vh;
-    background: url('../imgs/index/cementerio-servicios.webp') center / cover fixed;
+    background: url('../imgs/index/cementerio-servicios.webp') center / cover;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (min-width: 993px) {
+    .hero-section {
+        background-attachment: fixed;
+    }
 }
 
 .hero-content {
@@ -357,11 +363,13 @@ main,
 @media (max-width: 992px) {
     .tira-atencion-inmediata {
         background: white;
+        color: black;
     }
 
     .hero-section {
         height: auto;
         padding: 60px 20px;
+        background-attachment: scroll;
     }
 
     .hero-content {
@@ -410,7 +418,6 @@ main,
         margin: 0 auto;
     }
 }
-
 
 .main-section {
     max-width: 1200px;
