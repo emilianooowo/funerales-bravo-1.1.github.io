@@ -13,12 +13,50 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="shared/logos/logo-negro.webp" class="logo" alt="logo funerales bravo">
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header"><a href="index.html"><img src="shared/logos/logo-header.webp" alt=""></a></div>
+            <nav class="nav-buttons">
+                <a href="index.html" class="nav-btn">Inicio</a>
+                <a href="index.html#servicios" class="nav-btn">Servicios</a>
+                <a href="cementerio.html" class="nav-btn cementerio">Cementerio</a>
+                <a href="cremapets.html" class="nav-btn cremapets">Cremapets</a>
+                <a href="calendario.html" class="nav-btn">Promociones</a>
+                <a href="index.html#contacto" class="nav-btn">Contacto</a>
+                <a href="cotizador.html" class="nav-btn">Cotizador</a>
+                <a href="https://wa.me/1234567890" class="nav-btn whatsapp-btn"><i class="bi bi-whatsapp"></i></a>
+                <a href="" class="nav-btn facebook"><i class="bi bi-facebook"></i></a>
+                <a href="" class="nav-btn instagram"><i class="bi bi-instagram"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html#servicios"><i class="bi bi-list-check"></i> Catalogo de servicios</a>
+            <a href="calendario.html"><i class="bi bi-calendar"></i> Calendario de promociones</a>
+            <a href="cremapets.html"><i class="bi bi-heart-fill"></i> Cremapets</a>
+            <a href="cementerio.html"><i class="bi bi-people-fill"></i> Cementerio privado</a>
+            <a href="index.html#contacto"><i class="bi bi-envelope-fill"></i> Contacto</a>
+
+            <div class="mobile-social-separator"></div>
+
+            <div class="mobile-social-links">
+                <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
             </div>
-            <h2 class="main-title">CALENDARIO DE PROMOCIONES</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="encabezado">
+            <h1 class="main-title">CALENDARIO DE PROMOCIONES</h1>
             <p class="subtitle">Conoce todas nuestras promociones durante este año 2025</p>
 
             <div class="calendar-button-wrapper">
@@ -95,10 +133,46 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h6>NAVEGACIÓN</h6>
+                <ul>
+                    <li class="cremapets"><a href="cremapets.html">CREMAPETS</a></li>
+                    <li class="cementerio"><a href="cementerio.html">CEMENTERIO BRAVO</a></li>
+                    <li><a href="calendario.html">CALENDARIO DE PROMOCIONES</a></li>
+                    <li><a href="cotizador.html">CALCULA TU COTIZACIÓN</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h6>SÍGUENOS EN REDES SOCIALES</h6>
+                <ul class="social-list">
+                    <li>
+                        <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"
+                            aria-label="Facebook">
+                            <i class="bi bi-facebook"></i> FACEBOOK
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/funerales_bravo/" target="_blank" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i> INSTAGRAM
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/9622361377" target="_blank" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i> WHATSAPP
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 Funerales Bravo. Todos los derechos reservados. | Tapachula, Chiapas, México
+        </div>
+    </footer>
+
     <script src="js/calendario.js"></script>
-    <script src="shared/header.js"></script>
-    <script>
-        initSlidingMenu();
-    </script>
 
 </html>

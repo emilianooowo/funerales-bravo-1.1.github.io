@@ -15,115 +15,181 @@
 <body>
     <section id="atencion-inmediata">
         <div class="tira-atencion-inmediata">
+            <h5>LLAMA YA</h5>
             <div class="phone-container">
-                <p class="call-instruction">EMERGENCIAS - LLAMAR AHORA:</p>
                 <a href="tel:+529622361377" class="button phone-button">+52 962 236 1377</a>
             </div>
             <h5>ATENCIÓN INMEDIATA</h5>
             <h6>DISPONIBLE LAS 24 HORAS DEL DÍA, LOS 365 DÍAS DEL AÑO.</h6>
-            <a href="https://wa.me/+529622361377" target="_blank" class="button whatsapp-button">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
         </div>
     </section>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header"><a href="index.html"><img src="shared/logos/logo-header.webp" alt=""></a></div>
+            <nav class="nav-buttons" id="navButtons">
+                <a href="index.html#servicios" class="nav-btn">Servicios</a>
+                <a href="cementerio.html" class="nav-btn cementerio">Cementerio</a>
+                <a href="cremapets.html" class="nav-btn cremapets">Cremapets</a>
+                <a href="calendario.html" class="nav-btn">Promociones</a>
+                <a href="index.html#contacto" class="nav-btn">Contacto</a>
+                <a href="cotizador.html" class="nav-btn">Cotizador</a>
+                <a href="https://wa.me/1234567890" class="nav-btn whatsapp-btn"><i class="bi bi-whatsapp"></i></a>
+                <a href="" class="nav-btn facebook"><i class="bi bi-facebook"></i></a>
+                <a href="" class="nav-btn instagram"><i class="bi bi-instagram"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html#servicios"><i class="bi bi-list-check"></i> Catalogo de servicios</a>
+            <a href="calendario.html"><i class="bi bi-calendar"></i> Calendario de promociones</a>
+            <a href="cremapets.html"><i class="bi bi-heart-fill"></i> Cremapets</a>
+            <a href="cementerio.html"><i class="bi bi-people-fill"></i> Cementerio privado</a>
+            <a href="index.html#contacto"><i class="bi bi-envelope-fill"></i> Contacto</a>
+
+            <div class="mobile-social-separator"></div>
+
+            <div class="mobile-social-links">
+                <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </div>
 
     <section class="hero-section" id="inicio">
         <div class="hero-content">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    Cremación<br>
+                    Velación<br>
+                    Traslados
+                </h1>
 
-            <div class="logo-section">
-                <img src="./shared/logos/logo-blanco.webp" alt="Logo funeraria" class="logo-img" />
-            </div>
+                <h6 class="hero-description">
+                    Descubre todos nuestros servicios funerarios, nuestro cementerio privado y nuestro servicio
+                    exclusivo
+                    de cremación de mascotas.
+                </h6>
 
-            <div class="main-content">
-                <div class="highlights">
-
-                    <article class="highlight-box">
-                        <div class="highlight-content">
-                            <i class="fa fa-cross" aria-hidden="true"></i>
-                            <div>
-                                <h5>1RA FUNERARIA EN TAPACHULA</h5>
-                                <p>
-                                    Fuimos la primera funeraria en abrir sus puertas en Tapachula,
-                                    estableciendo un legado de confianza y respeto.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="highlight-box">
-                        <div class="highlight-content">
-                            <i class="fa fa-award" aria-hidden="true"></i>
-                            <div>
-                                <h5>+70 AÑOS EN EL SERVICIO</h5>
-                                <p>
-                                    Durante 73 años hemos acompañado a las familias de Tapachula, brindando
-                                    servicios funerarios con respeto, compromiso y calidad.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-
+                <div class="hero-buttons">
+                    <a href="index.html#servicios" class="btn-catalogo">Ver Catálogo</a>
+                    <a href="index.html#contacto"><button class="btn-contacto">Contáctanos</button></a>
                 </div>
             </div>
 
+            <div class="hero-right">
+                <div class="counter-section">
+                    <div class="counter-main">
+                        <span class="plus-sign">+</span>
+                        <span class="counter-number" id="experienceCounter">0</span>
+                    </div>
+                    <h6 class="counter-text">años de experiencia en el servicio funerario</h6>
+                </div>
+
+                <div class="year-counter">
+                    <span class="year-number" id="yearCounter">0</span>
+                    <h6 class="year-text">primera funeraria fundada en la ciudad</h6>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="cremapets" class="main-section">
-        <div class="contenido-cremapets">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="shared/logos/cremapets-logo-azul.png" alt="">
-                </div>
-            </div>
+    <section class="sobre-nosotros">
+        <h1 class="section-title">SOBRE NOSOTROS</h1>
+        <div class="tabs-nav">
+            <button class="tab-button active" onclick="showTab('historia')">Historia</button>
+            <button class="tab-button" onclick="showTab('mision')">Misión</button>
+            <button class="tab-button" onclick="showTab('vision')">Visión</button>
+        </div>
 
-            <div class="info-container">
-                <h3 class="info-titulo">Nuestros Servicios</h3>
-                <ul class="info-lista">
-                    <li>Atención veterinaria especializada</li>
-                    <li>Consultas médicas regulares</li>
-                    <li>Vacunación completa</li>
-                    <li>Servicios de emergencia 24/7</li>
-                    <li>Cirugías especializadas</li>
-                    <li>Cuidado dental profesional</li>
-                </ul>
-            </div>
+        <div id="historia" class="tab-content active">
+            <div class="content-section">
+                <h2>Historia</h2>
+                <p>Fundada en 1952 por la familia González, nuestra funeraria nació con el propósito de acompañar a las
+                    familias en sus momentos más difíciles. Don Miguel González estableció los cimientos de lo que hoy
+                    es una institución respetada en la comunidad.</p>
 
-            <div class="planes-container">
-                <h3 class="planes-titulo">Planes Disponibles</h3>
-                <div class="planes-grid">
-                    <div class="plan-box basico">
-                        <h4 class="plan-titulo">Plan Básico</h4>
+                <p>Durante más de siete décadas, hemos evolucionado manteniendo nuestros valores fundamentales: respeto,
+                    dignidad y compromiso. Lo que comenzó como un pequeño negocio familiar se ha convertido en una
+                    empresa que combina tradición con servicios modernos.</p>
+
+                <div class="historia-fotos">
+                    <div class="foto-item">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=300&h=200&fit=crop"
+                            alt="Edificio histórico">
+                        <div class="foto-caption">Primeras instalaciones - 1952</div>
                     </div>
-                    <div class="plan-box premium">
-                        <h4 class="plan-titulo">Plan Premium</h4>
-                    </div>
-                    <div class="plan-box vip">
-                        <h4 class="plan-titulo">Plan VIP</h4>
+                    <div class="foto-item">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop"
+                            alt="Instalaciones actuales">
+                        <div class="foto-caption">Instalaciones actuales</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="boton-container">
-            <a href="cremapets.html">
-                <span class="boton-principal">
-                    Ver Más Detalles
-                </span>
-            </a>
+        <div id="mision" class="tab-content">
+            <div class="content-section">
+                <h2>Misión</h2>
+                <p>Brindar servicios funerarios integrales de la más alta calidad, acompañando a las familias con
+                    respeto, dignidad y profesionalismo en sus momentos de duelo.</p>
 
+                <p>Trabajamos para aliviar la carga emocional y logística que conlleva la pérdida de un ser querido,
+                    proporcionando orientación experta y apoyo durante todo el proceso.</p>
+
+                <div class="valores-grid">
+                    <div class="valor-item">
+                        <h3>Respeto</h3>
+                        <p>Tratamos a cada familia con la máxima dignidad</p>
+                    </div>
+                    <div class="valor-item">
+                        <h3>Profesionalismo</h3>
+                        <p>Servicios de calidad respaldados por experiencia</p>
+                    </div>
+                    <div class="valor-item">
+                        <h3>Empatía</h3>
+                        <p>Comprendemos el dolor y brindamos apoyo genuino</p>
+                    </div>
+                    <div class="valor-item">
+                        <h3>Transparencia</h3>
+                        <p>Comunicación clara y honesta siempre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="vision" class="tab-content">
+            <div class="content-section">
+                <h2>Visión</h2>
+                <p>Ser la funeraria líder en la región, reconocida por la excelencia en nuestros servicios y la calidez
+                    humana de nuestro trato.</p>
+
+                <p>Aspiramos a que cada familia encuentre en nosotros un aliado comprensivo que les brinde paz y
+                    tranquilidad en sus momentos más difíciles.</p>
+
+                <p>Buscamos expandir nuestros servicios de manera responsable, manteniendo la personalización que nos
+                    caracteriza mientras adoptamos nuevas tecnologías para servir mejor a nuestra comunidad.</p>
+            </div>
         </div>
     </section>
 
     <section id="servicios" class="lista-servicios-section">
         <div class="contenido catalogo">
-            <h1 class="titulo-principal fade-up">Catálogo de Servicios</h1>
+            <h2 class="titulo-principal">Catálogo de Servicios</h2>
 
             <div class="servicios-container">
                 <div class="columna">
-                    <article class="servicio-grupo left-1 slide-left">
+                    <article class="servicio-grupo">
                         <header class="subtitulo subtitulo-funerarios">
-                            <h4>SERVICIOS FUNERARIOS</h4>
+                            <h3>SERVICIOS FUNERARIOS</h3>
                             <a href="#servicios-integrales" class="btn-info btn-funerarios scale-in">MÁS INFORMACIÓN
                                 →</a>
                         </header>
@@ -139,9 +205,9 @@
                 </div>
 
                 <div class="columna">
-                    <article class="servicio-grupo right-1 slide-left">
+                    <article class="servicio-grupo">
                         <header class="subtitulo subtitulo-mascotas">
-                            <h4>CREMACIÓN DE MASCOTAS</h4>
+                            <h3>CREMACIÓN DE MASCOTAS</h3>
                             <a href="#cremapets" class="btn-info btn-mascotas scale-in">MÁS INFORMACIÓN →</a>
                         </header>
                         <ul class="servicios-lista">
@@ -152,9 +218,9 @@
                         </ul>
                     </article>
 
-                    <article class="servicio-grupo right-2 slide-left">
+                    <article class="servicio-grupo">
                         <header class="subtitulo subtitulo-cementerio">
-                            <h4>CEMENTERIO PRIVADO</h4>
+                            <h3>CEMENTERIO PRIVADO</h3>
                             <a href="#cementerio" class="btn-info btn-cementerio scale-in">MÁS INFORMACIÓN →</a>
                         </header>
                         <ul class="servicios-lista">
@@ -166,6 +232,452 @@
                     </article>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <div class="section-divider-leaves">
+        <div class="curved-line-wave">
+            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="line-path-wave"
+                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
+            </svg>
+        </div>
+    </div>
+
+    <section id="servicios-integrales" class="servicios-section">
+        <div class="container">
+            <div class="servicios-intro">
+                <h1 class="section-title">SERVICIOS FUNERARIOS INTEGRALES</h1>
+                <p>Brindamos servicios funerarios completos y de calidad, respaldados por nuestras subsidiarias
+                    especializadas que nos permiten ofrecer una atención integral y personalizada para cada familia en
+                    momentos difíciles.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="prevision">
+        <h2 class="servicios-title">Servicios de Previsión Funeraria</h2>
+
+        <div class="content-wrapper">
+            <div class="menu">
+                <button class="menu-button active" onclick="showContent('empresarial')">Empresarial</button>
+                <button class="menu-button" onclick="showContent('elite')">Elite</button>
+                <button class="menu-button" onclick="showContent('platino')">Platino</button>
+                <button class="menu-button" onclick="showContent('diamante')">Diamante</button>
+                <button class="menu-button faq" onclick="showContent('preguntas')">Dudas sobre previsión</button>
+            </div>
+
+            <div class="content">
+                <div id="empresarial" class="service-content active">
+                    <h2 class="service-title">Plan Empresarial $40,000 MXN- Incluye:</h2>
+                    <ul class="service-list">
+                        <li>Ataúd de madera básico</li>
+                        <li>Servicio de velación 24 horas</li>
+                        <li>Transporte del difunto</li>
+                        <li>Trámites legales básicos</li>
+                        <li>Flores naturales básicas</li>
+                        <li>Preparación del cuerpo</li>
+                        <li>Esquelas básicas</li>
+                    </ul>
+                    <div class="home-service-box">
+                        <h4>Servicio a Domicilio</h4>
+                        <p>Incluye traslado y preparativos en el hogar del cliente</p>
+                        <p><strong>$3,500 MXN</strong></p>
+                        <div class="home-service-disclaimer">
+                            * El servicio a domicilio es un servicio adicional
+                        </div>
+                    </div>
+                </div>
+
+                <div id="elite" class="service-content">
+                    <h2 class="service-title">Plan Elite $40,000 MXN - Qué Incluye</h2>
+                    <ul class="service-list">
+                        <li>Ataúd de madera fina con herrajes</li>
+                        <li>Servicio de velación 48 horas</li>
+                        <li>Transporte en carroza fúnebre</li>
+                        <li>Trámites legales completos</li>
+                        <li>Arreglos florales premium</li>
+                        <li>Preparación y tanatopraxia</li>
+                        <li>Esquelas personalizadas</li>
+                        <li>Servicio de cafetería básico</li>
+                        <li>Música ambiental</li>
+                    </ul>
+                    <div class="home-service-box">
+                        <h4>Servicio a Domicilio</h4>
+                        <p>Incluye traslado y preparativos en el hogar del cliente</p>
+                        <p><strong>$3,500 MXN</strong></p>
+                        <div class="home-service-disclaimer">
+                            * El servicio a domicilio es un servicio adicional
+                        </div>
+                    </div>
+                </div>
+
+                <div id="platino" class="service-content">
+                    <h2 class="service-title">Plan Platino $40,000 MXN - Qué Incluye</h>
+                        <ul class="service-list">
+                            <li>Ataúd de lujo con acabados especiales</li>
+                            <li>Velación en salón VIP</li>
+                            <li>Transporte en carroza de lujo</li>
+                            <li>Asesoría legal especializada</li>
+                            <li>Arreglos florales de diseñador</li>
+                            <li>Tanatopraxia especializada</li>
+                            <li>Video homenaje personalizado</li>
+                            <li>Servicio de cafetería completo</li>
+                            <li>Música en vivo opcional</li>
+                            <li>Coordinador personal</li>
+                            <li>Transmisión en vivo del servicio</li>
+                        </ul>
+                        <div class="home-service-box">
+                            <h4>Servicio a Domicilio</h4>
+                            <p>Incluye traslado y preparativos en el hogar del cliente</p>
+                            <p><strong>$3,500 MXN</strong></p>
+                            <div class="home-service-disclaimer">
+                                * El servicio a domicilio es un servicio adicional
+                            </div>
+                        </div>
+                </div>
+
+                <div id="diamante" class="service-content">
+                    <h3 class="service-title">Plan Diamante $40,000 MXN - Qué Incluye</h3>
+                    <ul class="service-list">
+                        <li>Ataúd de materiales exclusivos</li>
+                        <li>Velación en suite presidencial</li>
+                        <li>Carroza de colección</li>
+                        <li>Asesoría legal premium 24/7</li>
+                        <li>Decoración floral de alta gama</li>
+                        <li>Restauración facial completa</li>
+                        <li>Producción audiovisual profesional</li>
+                        <li>Catering gourmet</li>
+                        <li>Orquesta o mariachi en vivo</li>
+                        <li>Coordinador y asistente personal</li>
+                        <li>Transmisión profesional HD</li>
+                        <li>Servicio de limousinas para familia</li>
+                        <li>Recordatorios personalizados</li>
+                        <li>Servicio de seguridad privada</li>
+                    </ul>
+                    <div class="home-service-box">
+                        <h4>Servicio a Domicilio</h4>
+                        <p>Incluye traslado y preparativos en el hogar del cliente</p>
+                        <p><strong>$3,500 MXN</strong></p>
+                        <div class="home-service-disclaimer">
+                            * El servicio a domicilio es un servicio adicional
+                        </div>
+                    </div>
+                </div>
+
+                <div id="preguntas" class="service-content">
+                    <h3 class="service-title">Preguntas Frecuentes sobre Servicios de Previsión Funeraria</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Qué es un servicio de previsión funeraria?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Un servicio de previsión funeraria es un plan que permite contratar y pagar por adelantado
+                            todos los servicios relacionados con el funeral, garantizando que tus seres queridos no
+                            tengan que preocuparse por estos gastos en momentos difíciles.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Para qué sirve contratar este servicio?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Sirve para asegurar que tendrás un servicio funerario digno al precio actual, protegiendo a
+                            tu familia de gastos inesperados y del estrés de tomar decisiones importantes en momentos de
+                            dolor.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Puedo cambiar de plan después de contratarlo?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Sí, puedes actualizar tu plan pagando la diferencia correspondiente. Sin embargo, no es
+                            posible hacer downgrades una vez contratado el servicio.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Qué pasa si me mudo a otra ciudad?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Nuestros servicios tienen cobertura nacional. Puedes usar tu plan en cualquiera de nuestras
+                            sucursales a nivel nacional sin costo adicional.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Hay limite de edad para contratar el servicio?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Pueden contratar personas de 18 a 75 años. Para personas mayores de 75 años, se requiere
+                            evaluación médica previa.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            ¿Puedo incluir familiares en mi plan?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Sí, ofrecemos planes familiares que pueden incluir cónyuge, hijos y padres. Consulta con
+                            nuestros asesores para conocer las opciones disponibles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="tira-servicios">
+        <div class="contenido velacion">
+            <h2 class="servicios-title"> PLANES DE VELACIÓN</h2>
+            <div class="strip-container">
+                <div class="strip">
+                    <div class="strip-item" data-target="content1">
+                        <div class="strip-header">
+                            <h3 class="strip-title">BÁSICO</h3>
+                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="strip-item" data-target="content2">
+                        <div class="strip-header">
+                            <h3 class="strip-title">ESTÁNDAR</h>
+                                <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="strip-item" data-target="content3">
+                        <div class="strip-header">
+                            <h3 class="strip-title">PREMIER</h3>
+                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="strip-item" data-target="content4">
+                        <div class="strip-header">
+                            <h3 class="strip-title">LUX</h3>
+                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content1" class="content-area">
+                    <div class="content">
+                        <div class="content-text">
+                            <h2>Plan Básico - <span class="content-text price">$25,000 MXN</span></h2>
+                            <p>Nuestro plan básico incluye los servicios esenciales para una velación digna y
+                                respetuosa,
+                                brindando tranquilidad a las familias en momentos difíciles.</p>
+                            <ul>
+                                <li>Sala de velación por 24 horas</li>
+                                <li>Ataúd de madera básico</li>
+                                <li>Servicio de floristería básica</li>
+                                <li>Gestión de documentos</li>
+                                <li>Atención personalizada</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="extras-basico"></div>
+                </div>
+
+                <div id="content2" class="content-area">
+                    <div class="content">
+                        <div class="content-text">
+                            <h2>Plan Estándar - <span class="content-text price">$25,000 MXN</span></h2>
+                            <p>Nuestro plan estándar ofrece servicios mejorados con mayor comodidad y opciones
+                                adicionales
+                                para honrar la memoria de su ser querido.</p>
+                            <ul>
+                                <li>Sala de velación Premium por 48 horas</li>
+                                <li>Ataúd de madera noble</li>
+                                <li>Arreglos florales premium</li>
+                                <li>Servicio de cafetería</li>
+                                <li>Coordinación de ceremonias</li>
+                                <li>Transporte incluido</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="extras-estandar"></div>
+                </div>
+
+                <div id="content3" class="content-area">
+                    <div class="content">
+                        <div class="content-text">
+                            <h2>Plan Premier - <span class="content-text price">$25,000 MXN</span></h2>
+                            <p>Nuestro plan premier brinda una experiencia excepcional con servicios de alta calidad y
+                                atención personalizada para momentos especiales.</p>
+                            <ul>
+                                <li>Sala de velación VIP por 72 horas</li>
+                                <li>Ataúd de maderas finas importadas</li>
+                                <li>Diseño floral exclusivo</li>
+                                <li>Servicio de catering completo</li>
+                                <li>Música ambiental</li>
+                                <li>Transporte ejecutivo</li>
+                                <li>Coordinador personal</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="extras-premier"></div>
+                </div>
+
+                <div id="content4" class="content-area">
+                    <div class="content">
+                        <div class="content-text">
+                            <h2>Plan Lux - <span class="content-text price">$25,000 MXN</span></h2>
+                            <p>Nuestro plan más exclusivo ofrece la máxima distinción y servicios excepcionales para
+                                honrar
+                                la memoria de manera única y memorable.</p>
+                            <ul>
+                                <li>Sala de velación Presidencial</li>
+                                <li>Ataúd de diseño exclusivo</li>
+                                <li>Arreglos florales de diseñador</li>
+                                <li>Servicio de banquete gourmet</li>
+                                <li>Sistema de sonido profesional</li>
+                                <li>Transporte de lujo</li>
+                                <li>Equipo de coordinación completo</li>
+                                <li>Servicios personalizados</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="extras-lux"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <div class="homenaje">
+            <h2 class="servicios-title">PAQUETES DE HOMENAJE</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">HONOR</h3>
+                        <div class="card-description">
+                            <div class="card-subtitle">$3,900</div>
+                            <ul class="card-list">
+                                <li>Desarrollo Frontend con HTML5, CSS3 y JavaScript</li>
+                                <li>Frameworks modernos: React, Vue, Angular</li>
+                                <li>Backend robusto con Node.js y Python</li>
+                                <li>Bases de datos MySQL y MongoDB</li>
+                                <li>Optimización SEO y velocidad de carga</li>
+                                <li>Integración con APIs y servicios externos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">MEMORIA</h3>
+                        <div class="card-description">
+                            <div class="card-subtitle"> $3,900</div>
+                            <ul class="card-list">
+                                <li>Research y análisis de usuarios</li>
+                                <li>Wireframes y prototipos interactivos</li>
+                                <li>Diseño visual y sistemas de diseño</li>
+                                <li>Pruebas de usabilidad A/B testing</li>
+                                <li>Diseño responsive para todos los dispositivos</li>
+                                <li>Herramientas: Figma, Adobe XD, Sketch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">ETERNIDAD</h3>
+                        <div class="card-description">
+                            <div class="card-subtitle"> $3,900</div>
+                            <ul class="card-list">
+                                <li>Estrategia de marketing digital</li>
+                                <li>Automatización de procesos</li>
+                                <li>Migración a la nube y hosting</li>
+                                <li>Capacitación de equipos</li>
+                                <li>Métricas y analítica avanzada</li>
+                                <li>Plan de crecimiento escalable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider-leaves">
+        <div class="curved-line-wave">
+            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="line-path-wave"
+                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
+            </svg>
+        </div>
+    </div>
+
+    <section id="servicios-integrales" class="servicios-section">
+        <div class="container">
+            <div class="servicios-intro">
+                <h1 class="section-title">SERVICIOS ADICIONALES DE FUNERALES BRAVO</h1>
+                <p>Complementa tu servicio de cremación de mascotas o cementerio privado con nuestras opciones
+                    adicionales, diseñadas para ofrecer el acompañamiento y la personalización que cada homenaje
+                    requiere.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cremapets" class="main-section">
+        <div class="contenido-cremapets">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="shared/logos/cremapets-logo-azul.webp" alt="CremaPets Logo">
+                </div>
+            </div>
+
+            <div class="info-container">
+                <h2 class="info-titulo">Nuestros Servicios</h2>
+                <ul class="info-lista">
+                    <li>Atención veterinaria especializada</li>
+                    <li>Consultas médicas regulares</li>
+                    <li>Vacunación completa</li>
+                    <li>Servicios de emergencia 24/7</li>
+                    <li>Cirugías especializadas</li>
+                    <li>Cuidado dental profesional</li>
+                </ul>
+            </div>
+
+            <div class="planes-container">
+                <h2 class="planes-titulo">Planes Disponibles</h2>
+                <div class="planes-grid">
+                    <div class="plan-box basico">
+                        <p class="plan-titulo">Plan Básico</p>
+                    </div>
+                    <div class="plan-box premium">
+                        <p class="plan-titulo">Plan Premium</p>
+                    </div>
+                    <div class="plan-box vip">
+                        <p class="plan-titulo">Plan VIP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boton-container">
+            <a href="cremapets.html" class="boton-principal">
+                Más información
+            </a>
         </div>
     </section>
 
@@ -241,199 +753,20 @@
         </section>
     </div>
 
-    <section id="servicios-integrales" class="servicios-section">
-        <div class="container">
-            <div class="servicios-intro">
-                <h1>SERVICIOS FUNERARIOS INTEGRALES</h1>
-                <p>Brindamos servicios funerarios completos y de calidad, respaldados por nuestras subsidiarias
-                    especializadas que nos permiten ofrecer una atención integral y personalizada para cada familia en
-                    momentos difíciles.</p>
-            </div>
+    <div class="section-divider-leaves">
+        <div class="curved-line-wave">
+            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="line-path-wave"
+                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
+            </svg>
         </div>
-    </section>
-
-    <section class="tira-servicios">
-        <div class="contenido velacion">
-            <h1 class="section-title"> PLANES DE VELACIÓN</h1>
-            <div class="strip-container">
-                <div class="strip">
-                    <div class="strip-item" data-target="content1">
-                        <div class="strip-header">
-                            <h5 class="strip-title">BÁSICO</h5>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                    </div>
-                    <div class="strip-item" data-target="content2">
-                        <div class="strip-header">
-                            <h5 class="strip-title">ESTÁNDAR</h5>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                    </div>
-                    <div class="strip-item" data-target="content3">
-                        <div class="strip-header">
-                            <h5 class="strip-title">PREMIER</h5>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                    </div>
-                    <div class="strip-item" data-target="content4">
-                        <div class="strip-header">
-                            <h5 class="strip-title">LUX</h5>
-                            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="content1" class="content-area">
-                    <div class="content">
-                        <div class="content-text">
-                            <h2>Plan Básico</h2>
-                            <p>Nuestro plan básico incluye los servicios esenciales para una velación digna y
-                                respetuosa,
-                                brindando tranquilidad a las familias en momentos difíciles.</p>
-                            <ul>
-                                <li>Sala de velación por 24 horas</li>
-                                <li>Ataúd de madera básico</li>
-                                <li>Servicio de floristería básica</li>
-                                <li>Gestión de documentos</li>
-                                <li>Atención personalizada</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="extras-basico"></div>
-                </div>
-
-                <div id="content2" class="content-area">
-                    <div class="content">
-                        <div class="content-text">
-                            <h2>Plan Estándar</h2>
-                            <p>Nuestro plan estándar ofrece servicios mejorados con mayor comodidad y opciones
-                                adicionales
-                                para honrar la memoria de su ser querido.</p>
-                            <ul>
-                                <li>Sala de velación Premium por 48 horas</li>
-                                <li>Ataúd de madera noble</li>
-                                <li>Arreglos florales premium</li>
-                                <li>Servicio de cafetería</li>
-                                <li>Coordinación de ceremonias</li>
-                                <li>Transporte incluido</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="extras-estandar"></div>
-                </div>
-
-                <div id="content3" class="content-area">
-                    <div class="content">
-                        <div class="content-text">
-                            <h2>Plan Premier</h2>
-                            <p>Nuestro plan premier brinda una experiencia excepcional con servicios de alta calidad y
-                                atención personalizada para momentos especiales.</p>
-                            <ul>
-                                <li>Sala de velación VIP por 72 horas</li>
-                                <li>Ataúd de maderas finas importadas</li>
-                                <li>Diseño floral exclusivo</li>
-                                <li>Servicio de catering completo</li>
-                                <li>Música ambiental</li>
-                                <li>Transporte ejecutivo</li>
-                                <li>Coordinador personal</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="extras-premier"></div>
-                </div>
-
-                <div id="content4" class="content-area">
-                    <div class="content">
-                        <div class="content-text">
-                            <h2>Plan Lux</h2>
-                            <p>Nuestro plan más exclusivo ofrece la máxima distinción y servicios excepcionales para
-                                honrar
-                                la memoria de manera única y memorable.</p>
-                            <ul>
-                                <li>Sala de velación Presidencial</li>
-                                <li>Ataúd de diseño exclusivo</li>
-                                <li>Arreglos florales de diseñador</li>
-                                <li>Servicio de banquete gourmet</li>
-                                <li>Sistema de sonido profesional</li>
-                                <li>Transporte de lujo</li>
-                                <li>Equipo de coordinación completo</li>
-                                <li>Servicios personalizados</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="extras-lux"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cards-section">
-        <div class="homenaje">
-            <h1 class="section-title">PAQUETES DE HOMENAJE</h1>
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">HONOR</h3>
-                        <div class="card-description">
-                            <div class="card-subtitle">$3,900</div>
-                            <ul class="card-list">
-                                <li>Desarrollo Frontend con HTML5, CSS3 y JavaScript</li>
-                                <li>Frameworks modernos: React, Vue, Angular</li>
-                                <li>Backend robusto con Node.js y Python</li>
-                                <li>Bases de datos MySQL y MongoDB</li>
-                                <li>Optimización SEO y velocidad de carga</li>
-                                <li>Integración con APIs y servicios externos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">MEMORIA</h3>
-                        <div class="card-description">
-                            <div class="card-subtitle"> $3,900</div>
-                            <ul class="card-list">
-                                <li>Research y análisis de usuarios</li>
-                                <li>Wireframes y prototipos interactivos</li>
-                                <li>Diseño visual y sistemas de diseño</li>
-                                <li>Pruebas de usabilidad A/B testing</li>
-                                <li>Diseño responsive para todos los dispositivos</li>
-                                <li>Herramientas: Figma, Adobe XD, Sketch</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">ETERNIDAD</h3>
-                        <div class="card-description">
-                            <div class="card-subtitle"> $3,900</div>
-                            <ul class="card-list">
-                                <li>Estrategia de marketing digital</li>
-                                <li>Automatización de procesos</li>
-                                <li>Migración a la nube y hosting</li>
-                                <li>Capacitación de equipos</li>
-                                <li>Métricas y analítica avanzada</li>
-                                <li>Plan de crecimiento escalable</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+    
     <section id="contacto" class="contacto-section">
         <div class="container-contacto">
+            <h1 class="section-title">CONTACTO Y UBICACIÓN</h1>
             <div class="contacto-grid">
                 <div class="contacto-info">
-                    <h2>INFORMACIÓN DE CONTACTO</h2>
                     <ul class="contact-info">
                         <li>
                             <strong>
@@ -489,17 +822,17 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h5>NAVEGACIÓN</h5>
+                <h6>NAVEGACIÓN</h6>
                 <ul>
                     <li class="cremapets"><a href="cremapets.html">CREMAPETS</a></li>
-                    <li><a href="cementerio.html">CEMENTERIO BRAVO</a></li>
+                    <li class="cementerio"><a href="cementerio.html">CEMENTERIO BRAVO</a></li>
                     <li><a href="calendario.html">CALENDARIO DE PROMOCIONES</a></li>
                     <li><a href="cotizador.html">CALCULA TU COTIZACIÓN</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h5>SÍGUENOS EN REDES SOCIALES</h5>
+                <h6>SÍGUENOS EN REDES SOCIALES</h6>
                 <ul class="social-list">
                     <li>
                         <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"
@@ -529,8 +862,6 @@
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <script src="js/index.js" defer></script>
-
-    <script src="shared/header.js"></script>
 
     <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
         aria-label="Chatea con nosotros por WhatsApp">

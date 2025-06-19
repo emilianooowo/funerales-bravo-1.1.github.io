@@ -1,3 +1,45 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});
+
+function observeElements() {
+    const dividers = document.querySelectorAll('.section-divider, .section-divider-alt, .section-divider-leaves');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                // Opcional: dejar de observar después de animar
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3 // Se activa cuando el 30% del elemento es visible
+    });
+
+    dividers.forEach(divider => {
+        observer.observe(divider);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', observeElements);
 
 //IMGS
 const galleryData = [
@@ -44,75 +86,18 @@ window.addEventListener('load', () => {
     preloadImages();
 });
 
+function showPlan(planName) {
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allTabButtons = document.querySelectorAll('.tab');
 
-//MENU
-const menuTrigger = document.getElementById('menuTrigger');
-const slideMenu = document.getElementById('slideMenu');
-const menuOverlay = document.getElementById('menuOverlay');
-const tooltip = document.querySelector('.menu-tooltip');
+    allTabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
 
-let tooltipTimeout;
-let hasShownTooltip = false;
+    allTabButtons.forEach(btn => {
+        btn.classList.remove('active');
+    });
 
-function showTooltip() {
-    if (!hasShownTooltip) {
-        tooltip.classList.add('show');
-        hasShownTooltip = true;
-
-        tooltipTimeout = setTimeout(() => {
-            hideTooltip();
-        }, 6000);
-    }
+    document.getElementById(planName).classList.add('active');
+    event.target.classList.add('active');
 }
-
-function hideTooltip() {
-    tooltip.classList.remove('show');
-    if (tooltipTimeout) {
-        clearTimeout(tooltipTimeout);
-    }
-}
-
-function toggleMenu() {
-    menuTrigger.classList.toggle('active');
-    slideMenu.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-
-    if (slideMenu.classList.contains('active')) {
-        hideTooltip();
-    }
-}
-
-setTimeout(() => {
-    showTooltip();
-}, 1500);
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (!hasShownTooltip) return;
-
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-        if (!slideMenu.classList.contains('active')) {
-            tooltip.classList.add('show');
-            setTimeout(() => {
-                hideTooltip();
-            }, 4000);
-        }
-    }, 1000);
-});
-
-menuTrigger.addEventListener('click', toggleMenu);
-
-menuOverlay.addEventListener('click', toggleMenu);
-
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && slideMenu.classList.contains('active')) {
-        toggleMenu();
-    }
-});
-
-document.addEventListener('click', function (e) {
-    if (!menuTrigger.contains(e.target)) {
-        hideTooltip();
-    }
-});

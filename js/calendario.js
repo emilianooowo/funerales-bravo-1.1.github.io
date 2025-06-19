@@ -1,4 +1,3 @@
-//SHOW CALENDAR
 const toggleBtn = document.getElementById('toggleCalendar');
 const calendarSection = document.getElementById('calendarSection');
 const downloadBtn = document.getElementById('downloadBtn');
@@ -101,12 +100,23 @@ window.addEventListener('load', function () {
     });
 });
 
-//CARDS STYLES
 document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.promotion-card');
-    cards.forEach((card) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease';
-    });
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 });

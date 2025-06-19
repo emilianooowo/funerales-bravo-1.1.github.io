@@ -1,12 +1,13 @@
 :root {
-  --color-cafe-oscuro: #34291E;
-  --color-beige-1: #F4EADB;
+  --color-cafe-oscuro: rgb(52, 41, 30);
+  --color-beige-1: rgb(244, 234, 219);
   --color-beige-2: #E8DDCC;
-  --color-dorado: #B4873A;
+  --color-dorado: rgb(180, 135, 58);
   --color-azul-mascotas: #0963D8;
 
-  --fuente-principal: 'Mont', sans-serif;
-  --fuente-secundaria: 'Arboria', sans-serif;
+  --fuente-principal: 'Trajan Pro Regular', sans-serif;
+  --fuente-cremapets: 'Mont', sans-serif;
+  --fuente-cremapets-p: 'Arboria', sans-serif;
 }
 
 @font-face {
@@ -23,6 +24,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Trajan Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Trajan Pro Regular'), url('../shared/fonts/TrajanPro-Regular.woff') format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -37,38 +45,43 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-family: var(--fuente-principal);
-}
-
-h2 {
   font-size: 2rem;
   font-family: var(--fuente-principal);
 }
 
-h3 {
-  font-size: 1.75rem;
+h2 {
+  font-size: 1.8rem;
   font-family: var(--fuente-principal);
+  font-weight: 100;
+}
+
+h3 {
+  font-size: 1.65rem;
+  font-family: var(--fuente-principal);
+  font-weight: 100;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: var(--fuente-principal);
+  font-weight: 100;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-family: var(--fuente-principal);
+  font-weight: 100;
 }
 
 h6 {
   font-size: 1rem;
   font-family: var(--fuente-principal);
-
+  font-weight: 100;
 }
 
 p {
-  font-family: var(--fuente-secundaria);
+  font-family: var(--fuente-cremapets-p);
+  font-weight: 100;
 }
 
 p,
@@ -76,7 +89,7 @@ li,
 a,
 span {
   font-family: var(--fuente-secundaria);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.5;
 }
 
@@ -84,4 +97,84 @@ a {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+}
+
+.section-divider-leaves {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.curved-line-wave {
+  width: 100%;
+  height: 50px;
+}
+
+.curved-line-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.line-path-wave {
+  fill: none;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  opacity: 0;
+}
+
+.section-divider-leaves.animate .line-path-wave {
+  animation: drawLineWave 7s ease-out forwards;
+}
+
+@keyframes drawLineWave {
+  0% {
+    stroke-dashoffset: 400;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-divider-leaves {
+    display: none;
+  }
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-dorado), transparent);
+  transform: translateY(-50%);
+  box-shadow:
+    0 -8px 0 var(--color-dorado),
+    0 8px 0 var(--color-dorado),
+    -20px 0 0 var(--color-dorado),
+    20px 0 0 var(--color-dorado);
+}
+
+.section-title::before {
+  left: -80px;
+}
+
+.section-title::after {
+  right: -80px;
 }
