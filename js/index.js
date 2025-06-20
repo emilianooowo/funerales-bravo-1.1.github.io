@@ -5,12 +5,11 @@ function observeElements() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-                // Opcional: dejar de observar después de animar
-                // observer.unobserve(entry.target);
+
             }
         });
     }, {
-        threshold: 0.3 // Se activa cuando el 30% del elemento es visible
+        threshold: 0.3
     });
 
     dividers.forEach(divider => {
@@ -19,6 +18,7 @@ function observeElements() {
 }
 
 document.addEventListener('DOMContentLoaded', observeElements);
+
 
 function animateCounter(element, start, end, duration, callback) {
     let startTime = null;
