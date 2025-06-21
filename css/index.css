@@ -317,14 +317,14 @@ main,
 }
 
 .hero-description .mascota-text {
-    color: var(--color-azul-mascotas);
+    color: white;
     cursor: pointer;
     text-decoration: underline;
     transition: color 0.3s ease;
 }
 
 .hero-description .mascota-text:hover {
-    color: #357abd;
+    color: var(--color-dorado);
 }
 
 .hero-buttons {
@@ -466,6 +466,11 @@ main,
     padding: 5px;
 }
 
+.galeria{
+    text-decoration: underline;
+    color: var(--color-azul-mascotas);
+}
+
 .planes-container {
     min-width: 300px;
 }
@@ -592,7 +597,7 @@ main,
 .sobre-nosotros {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 0 0 50px;
 }
 
 .tabs-nav {
@@ -724,7 +729,7 @@ main,
 .contenido.catalogo,
 .velacion,
 .prevision {
-    max-width: 1080px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 30px 20px;
@@ -809,6 +814,7 @@ main,
     padding: 6px 0;
     position: relative;
     margin-left: 20px;
+    text-decoration: underline;
 }
 
 
@@ -1194,7 +1200,7 @@ main,
 
 .section-title {
     text-align: center;
-    margin: 80px auto;
+    margin: 40px auto;
     position: relative;
     width: 50%;
 }
@@ -1223,18 +1229,10 @@ main,
     right: -80px;
 }
 
-.content {
-    flex: 1;
-    padding-left: 20px;
-}
-
 .content-wrapper {
     display: flex;
-    gap: 20px;
-}
-
-.menu {
-    flex: 0 0 200px;
+    gap: 40px;
+    margin-left: 5rem;
 }
 
 .menu-button {
@@ -1274,6 +1272,7 @@ main,
 
 .service-content {
     display: none;
+    max-width: 600px;
 }
 
 .service-content.active {
@@ -1283,7 +1282,11 @@ main,
 .service-title {
     margin-bottom: 15px;
     border-bottom: 1px solid black;
-    padding-bottom: 5px;
+}
+
+.price{
+    color: var(--color-dorado);
+    font-size: 1.8rem;
 }
 
 .service-list {
@@ -1306,8 +1309,7 @@ main,
 }
 
 .home-service-box {
-    background-color: #fff;
-    border: 2px solid #ddd;
+    border: 2px solid var(--color-dorado);
     border-radius: 8px;
     padding: 15px;
     margin-top: 20px;

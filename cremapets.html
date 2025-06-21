@@ -71,7 +71,7 @@
             <div class="tabs">
                 <button class="tab basic active" onclick="showPlan('basic')">Básico</button>
                 <button class="tab premium" onclick="showPlan('premium')">Premium</button>
-                <button class="tab deluxe" onclick="showPlan('deluxe')">Deluxe</button>
+                <button class="tab deluxe" onclick="showPlan('deluxe')">Lux</button>
             </div>
 
             <div id="basic" class="tab-content active">
@@ -79,14 +79,16 @@
                     <div class="features basic">
                         <h3>¿Qué incluye el Plan Básico?</h3>
                         <ul>
-                            <li>Recogida a domicilio</li>
-                            <li>Entrega a domicilio</li>
-                            <li>Lavado básico</li>
-                            <li>Secado estándar</li>
-                            <li>Doblado básico</li>
-                            <li>Detergente incluido</li>
-                            <li>Servicio en 24-48 horas</li>
-                            <li>Bolsa de transporte</li>
+                            <li>Servicio de cremación</li>
+                            <li>Bolsa artesanal de yute</li>
+                        </ul>
+                        <h3>No incluye:</h3>
+                        <ul>
+                            <li>Urna</li>
+                            <li>Certificado de cremación</li>
+                            <li>Fotografías ni documentación</li>
+                            <li>No aplica recolección a domicilio</li>
+                            <li>La entrega de cenizas se realizará en la funeraria</li>
                         </ul>
                     </div>
                     <div class="pricing basic">
@@ -131,17 +133,14 @@
                 <div class="plan-content">
                     <div class="features premium">
                         <h3>¿Qué incluye el Plan Premium?</h3>
+                        <h5>Todo lo del plan básico más:</h5>
                         <ul>
-                            <li>Todo lo del Plan Básico</li>
-                            <li>Lavado con suavizante premium</li>
-                            <li>Planchado profesional</li>
-                            <li>Doblado perfecto</li>
-                            <li>Tratamiento de manchas</li>
-                            <li>Perfumado de ropa</li>
-                            <li>Servicio en 12-24 horas</li>
-                            <li>Bolsa premium</li>
-                            <li>Atención prioritaria</li>
-                            <li>Garantía de calidad</li>
+                            <li>Traslado local (7 am - 8 pm)</li>
+                            <li>Urna básica de madera o personalizada</li>
+                            <li>Certificación de cremación</li>
+                            <li>Fotografía con dedicatoria</li>
+                            <li>Documentación impresa</li>
+                            <li>Entrega al día siguiente en nuestras instalaciones</li>
                         </ul>
                     </div>
                     <div class="pricing premium">
@@ -185,7 +184,7 @@
             <div id="deluxe" class="tab-content">
                 <div class="plan-content">
                     <div class="features deluxe">
-                        <h3>¿Qué incluye el Plan Deluxe?</h3>
+                        <h3>¿Qué incluye el Plan Lux?</h3>
                         <ul>
                             <li>Todo lo del Plan Premium</li>
                             <li>Lavado con productos de lujo</li>
@@ -249,7 +248,7 @@
         </div>
     </div>
 
-    <div class="gallery-container">
+    <div class="gallery-container" id="galeria">
         <h1 class="gallery-title">GALERÍA</h1>
         <div class="gallery-grid show" id="galleryGrid"></div>
     </div>

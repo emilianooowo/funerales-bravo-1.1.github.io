@@ -141,6 +141,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 targetContent.classList.add('active');
             }
         });
+
+        // Asegurarse que haya uno abierto por defecto si ninguno lo está
+        ensureOneOpen();
+    }
+
+    function ensureOneOpen() {
+        const stripItems = currentContainer.querySelectorAll('.strip-item');
+        const contentAreas = currentContainer.querySelectorAll('.content-area');
+        const anyActive = Array.from(stripItems).some(item => item.classList.contains('active'));
+
+        if (!anyActive && stripItems.length > 0) {
+            stripItems[0].classList.add('active');
+            const firstTargetId = stripItems[0].getAttribute('data-target');
+            const firstContent = currentContainer.querySelector(`#${firstTargetId}`);
+            if (firstContent) firstContent.classList.add('active');
+        }
     }
 
     function renderExtrasFor(plan) {
@@ -150,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         container.innerHTML = `
             <div class="extras-container">
                 <h4 class="extras-title">Servicios Adicionales Disponibles</h4>
-                <h5 class="extras-subtitle">*Todos los servicios aidicionales aplican para todos los planes de velación*</h5>
+                <h5 class="extras-subtitle">*Todos los servicios adicionales aplican para todos los planes de velación*</h5>
                 <div class="extras-grid">
                     ${extrasData.map(extra => `
                         <div class="extra-card">
