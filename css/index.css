@@ -304,16 +304,10 @@ main,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 2rem;
 }
 
 .hero-title {
     font-size: 3.5rem;
-    line-height: 1.2;
-}
-
-.hero-description {
-    line-height: 1.6;
 }
 
 .hero-description .mascota-text {
@@ -330,7 +324,7 @@ main,
 .hero-buttons {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .btn-catalogo {
@@ -613,11 +607,12 @@ main,
     font-family: var(--fuente-principal);
     cursor: pointer;
     border-bottom: 2px solid transparent;
+    color: black;
     transition: color 0.2s ease;
 }
 
 .tab-button.active {
-    border-bottom-color: var(--color-cafe-oscuro);
+    border-bottom-color: var(--color-dorado);
 }
 
 .tab-content {
@@ -1190,7 +1185,7 @@ main,
 
 .servicios-title {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     color: var(--color-dorado);
 }
 
@@ -1200,7 +1195,7 @@ main,
 
 .section-title {
     text-align: center;
-    margin: 40px auto;
+    margin: 30px auto;
     position: relative;
     width: 50%;
 }
@@ -1232,7 +1227,6 @@ main,
 .content-wrapper {
     display: flex;
     gap: 40px;
-    margin-left: 5rem;
 }
 
 .menu-button {
@@ -1402,6 +1396,11 @@ main,
     overflow: hidden;
     min-height: 500px;
     position: relative;
+}
+
+.subtitulo-homenaje{
+    text-align: center;
+    margin: 15px;
 }
 
 .card:nth-child(1) {
