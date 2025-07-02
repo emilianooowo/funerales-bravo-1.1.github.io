@@ -1,12 +1,15 @@
 header {
     background: white;
-    padding: 5px;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.25);
+    padding: 2px;
 }
 
-.header-content {
+.header-content,
+main,
+.gallery-container {
     max-width: 1080px;
     margin: 0 auto;
 }
@@ -19,6 +22,7 @@ header {
 
 .logo-header img {
     height: 50px;
+    width: auto;
 }
 
 .nav-buttons {
@@ -32,12 +36,13 @@ header {
     transition: all 0.2s ease;
     text-decoration: none;
     display: inline-block;
+    border-radius: 22px;
 }
 
 .nav-btn.whatsapp-btn,
 .facebook,
 .instagram {
-    padding: 5px 15px;
+    padding: 5px 10px;
 }
 
 .nav-btn:hover {
@@ -265,17 +270,14 @@ header {
     width: 100%;
     max-width: 800px;
     height: auto;
-    border-radius: 15px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    min-height: 400px;
 }
 
 .calendar-image img {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 600px;
 }
 
 .action-buttons {
@@ -311,8 +313,8 @@ header {
 .promotions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
     margin-top: 40px;
+    gap: 10px;
 }
 
 .promotion-card h4 {
@@ -326,37 +328,28 @@ header {
 }
 
 .promotion-item {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 15px;
-    margin-bottom: 20px;
-}
-
-.seasonal-promotions .promotion-item {
-    border-left-color: var(--color-dorado);
-    color: white;
+    padding: 10px;
 }
 
 .promotion-item h5 {
     margin-bottom: 10px;
-    color: white;
 }
 
 .promotion-item p {
-    color: white;
     margin-bottom: 15px;
 }
 
 .promotion-discount {
-    background: white;
     padding: 8px 15px;
     border-radius: 10px;
     display: inline-block;
     margin-top: 10px;
     transition: all 0.3s ease;
+    color: white;
 }
 
-.seasonal-promotions .promotion-discount {
-    background: var(--color-dorado);
+.promotion-discount {
+    background: black;
 }
 
 @media (max-width: 768px) {

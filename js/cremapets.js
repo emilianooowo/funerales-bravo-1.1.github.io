@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function observeElements() {
-    const dividers = document.querySelectorAll('.section-divider, .section-divider-alt, .section-divider-leaves');
+    const dividers = document.querySelectorAll('.section-divider-leaves');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

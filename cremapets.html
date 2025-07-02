@@ -19,7 +19,7 @@
             <div class="logo-header"><a href="index.html"><img src="shared/logos/logo-header.webp" alt=""></a></div>
             <nav class="nav-buttons">
                 <a href="index.html" class="nav-btn">Inicio</a>
-                <a href="index.html#servicios" class="nav-btn">Servicios</a>
+                <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
                 <a href="cementerio.html" class="nav-btn cementerio">Cementerio</a>
                 <a href="calendario.html" class="nav-btn">Promociones</a>
                 <a href="cotizador.html" class="nav-btn">Cotizador</a>
@@ -40,7 +40,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <a href="index.html" class="nav-btn"><i class="bi bi-house"></i>Inicio</a>
-            <a href="index.html#servicios"><i class="bi bi-list-check"></i> Catalogo de servicios</a>
+            <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
             <a href="calendario.html"><i class="bi bi-calendar"></i> Calendario de promociones</a>
             <a href="cementerio.html"><i class="bi bi-people-fill"></i> Cementerio privado</a>
             <a href="cotizador.html" class="nav-btn"><i class="bi bi-calculator"></i> Cotizador</a>
@@ -55,19 +55,19 @@
         </div>
     </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-logo">
-                <img src="shared/logos/cremapets-logo-azul.webp" alt="Logo cremapets">
-            </div>
-            <div class="hero-title">
-                <h1>Vidas que dejan huella...</h1>
-                <p>Honramos el amor y los recuerdos que compartieron. Conoce nuestros planes de cremación pensados para
-                    ti y tu mascota.</p>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero-logo">
+            <img src="shared/logos/cremapets-logo-blanco.webp" alt="Logo cremapets">
+        </div>
+        <div class="hero-title">
+            <h2>Honramos el amor y los recuerdos que compartieron. Conoce nuestros planes de cremación pensados para
+                ti y tu mascota.</h2>
+        </div>
+    </section>
 
+    <main>
         <section class="plans-container">
+            <h2 class="planes-title">Planes disponibles</h2>
             <div class="tabs">
                 <button class="tab basic active" onclick="showPlan('basic')">Básico</button>
                 <button class="tab premium" onclick="showPlan('premium')">Premium</button>
@@ -239,15 +239,6 @@
         </section>
     </main>
 
-    <div class="section-divider-leaves">
-        <div class="curved-line-wave">
-            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="line-path-wave"
-                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
-            </svg>
-        </div>
-    </div>
-
     <div class="gallery-container" id="galeria">
         <h1 class="gallery-title">GALERÍA</h1>
         <div class="gallery-grid show" id="galleryGrid"></div>
@@ -256,17 +247,18 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h6>NAVEGACIÓN</h6>
+                <h3>NAVEGACIÓN</h3>
                 <ul>
-                    <li class="cremapets"><a href="cremapets.html">CREMAPETS</a></li>
-                    <li class="cementerio"><a href="cementerio.html">CEMENTERIO BRAVO</a></li>
-                    <li><a href="calendario.html">CALENDARIO DE PROMOCIONES</a></li>
-                    <li><a href="cotizador.html">CALCULA TU COTIZACIÓN</a></li>
+                    <li><a href="servicios.html">Servicios funeraios</a></li>
+                    <li class="cremapets"><a href="cremapets.html">Cremapets</a></li>
+                    <li class="cementerio"><a href="cementerio.html">Cementerio Bravo</a></li>
+                    <li><a href="calendario.html">Calendario promocional</a></li>
+                    <li><a href="cotizador.html">Cotiza</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h6>SÍGUENOS EN REDES SOCIALES</h6>
+                <h3>SÍGUENOS EN REDES SOCIALES</h3>
                 <ul class="social-list">
                     <li>
                         <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"

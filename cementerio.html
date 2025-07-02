@@ -17,7 +17,7 @@
             <div class="logo-header"><a href="index.html"><img src="shared/logos/logo-header.webp" alt=""></a></div>
             <nav class="nav-buttons">
                 <a href="index.html" class="nav-btn">Inicio</a>
-                <a href="index.html#servicios" class="nav-btn">Servicios</a>
+                <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
                 <a href="cremapets.html" class="nav-btn cremapets">Cremapets</a>
                 <a href="calendario.html" class="nav-btn">Promociones</a>
                 <a href="index.html#contacto" class="nav-btn">Contacto</a>
@@ -38,7 +38,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <a href="index.html" class="nav-btn"><i class="bi bi-house"></i>Inicio</a>
-            <a href="index.html#servicios"><i class="bi bi-list-check"></i> Catalogo de servicios</a>
+            <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
             <a href="calendario.html"><i class="bi bi-calendar"></i> Calendario de promociones</a>
             <a href="cremapets.html"><i class="bi bi-heart-fill"></i> Cremapets</a>
             <a href="cotizador.html" class="nav-btn"><i class="bi bi-calculator"></i> Cotizador</a>
@@ -53,19 +53,16 @@
         </div>
     </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-logo">
-                <img src="shared/logos/cementerio-logo-cafe.webp" alt="Logo Cementerio">
-            </div>
-            <div class="hero-title">
-                <h1>Tranquilidad para tu familia, respeto por la naturaleza.</h1>
-                <p>Ofrecemos un espacio de descanso digno y en armonía con el entorno natural, donde cada detalle está
-                    pensado para brindar paz, privacidad y acompañamiento a las familias en los momentos más delicados.
-                </p>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero-logo">
+            <img src="shared/logos/cementerio-logo-blanco.webp" alt="Logo Cementerio">
+        </div>
+        <div class="hero-title">
+            <h2>Tranquilidad para tu familia, respeto por la naturaleza en nuestro cementerio privado y ecologico.</h2>
+        </div>
+    </section>
 
+    <main>
         <section class="plans-container">
             <div class="main-tabs">
                 <button class="main-tab active" onclick="showMainTab('espacio-ecologico')">Espacio Ecológico</button>
@@ -86,12 +83,12 @@
                     <button class="sub-tab" onclick="showSubTab('eco', '4-personas')">4 Personas</button>
                 </div>
 
-                <!-- Desktop: Grid con todas las tarjetas -->
                 <div class="desktop-grid">
                     <div id="eco-1-persona" class="sub-tab-content active">
                         <div class="plan-card">
                             <h3>Espacio Individual</h3>
                             <div class="capacity">Para 1 Persona</div>
+                            <div class="price">$45,000</div>
 
                             <div class="features-list">
                                 <ul>
@@ -107,8 +104,6 @@
                             </div>
 
                             <div class="price-section">
-                                <div class="price-label">Precio Total</div>
-                                <div class="price">$45,000</div>
                                 <button class="cotizar-btn">Cotizar Ahora</button>
                             </div>
                         </div>
@@ -118,6 +113,7 @@
                         <div class="plan-card">
                             <h3>Espacio Doble</h3>
                             <div class="capacity">Para 2 Personas</div>
+                            <div class="price">$75,000</div>
 
                             <div class="features-list">
                                 <ul>
@@ -134,8 +130,6 @@
                             </div>
 
                             <div class="price-section">
-                                <div class="price-label">Precio Total</div>
-                                <div class="price">$75,000</div>
                                 <button class="cotizar-btn">Cotizar Ahora</button>
                             </div>
                         </div>
@@ -145,6 +139,7 @@
                         <div class="plan-card">
                             <h3>Espacio Familiar</h3>
                             <div class="capacity">Para 4 Personas</div>
+                            <div class="price">$125,000</div>
 
                             <div class="features-list">
                                 <ul>
@@ -162,8 +157,6 @@
                             </div>
 
                             <div class="price-section">
-                                <div class="price-label">Precio Total</div>
-                                <div class="price">$125,000</div>
                                 <button class="cotizar-btn">Cotizar Ahora</button>
                             </div>
                         </div>
@@ -171,7 +164,6 @@
                 </div>
             </div>
 
-            <!-- Contenido Columbario -->
             <div id="columbario" class="main-tab-content">
                 <div class="section-header">
                     <h2>Previsión de Columbario</h2>
@@ -181,18 +173,17 @@
                         queridos.</p>
                 </div>
 
-                <!-- Sub-pestañas para Columbario -->
                 <div class="sub-tabs">
                     <button class="sub-tab active" onclick="showSubTab('col', '1-persona')">1 Persona</button>
                     <button class="sub-tab" onclick="showSubTab('col', '4-personas')">4 Personas</button>
                 </div>
 
-                <!-- Desktop: Grid con todas las tarjetas -->
                 <div class="desktop-grid">
                     <div id="col-1-persona" class="sub-tab-content active">
                         <div class="plan-card">
                             <h3>Nicho Individual</h3>
                             <div class="capacity">Para 1 Persona</div>
+                            <div class="price">$28,000</div>
 
                             <div class="features-list">
                                 <ul>
@@ -210,8 +201,6 @@
                             </div>
 
                             <div class="price-section">
-                                <div class="price-label">Precio Total</div>
-                                <div class="price">$28,000</div>
                                 <button class="cotizar-btn">Cotizar Ahora</button>
                             </div>
                         </div>
@@ -221,6 +210,7 @@
                         <div class="plan-card">
                             <h3>Nicho Familiar</h3>
                             <div class="capacity">Para 4 Personas</div>
+                            <div class="price">$95,000</div>
 
                             <div class="features-list">
                                 <ul>
@@ -240,8 +230,6 @@
                             </div>
 
                             <div class="price-section">
-                                <div class="price-label">Precio Total</div>
-                                <div class="price">$95,000</div>
                                 <button class="cotizar-btn">Cotizar Ahora</button>
                             </div>
                         </div>
@@ -297,15 +285,6 @@
         </div>
     </section>
 
-    <div class="section-divider-leaves">
-        <div class="curved-line-wave">
-            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="line-path-wave"
-                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
-            </svg>
-        </div>
-    </div>
-
     <div class="gallery-container">
         <h1 class="gallery-title">GALERIA</h1>
 
@@ -328,100 +307,6 @@
         </div>
     </div>
 
-    <div class="section-divider-leaves">
-        <div class="curved-line-wave">
-            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="line-path-wave"
-                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
-            </svg>
-        </div>
-    </div>
-
-    <section class="faq-section">
-        <h2 class="faq-title">Preguntas Frecuentes</h2>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    ¿Qué incluye el mantenimiento perpetuo?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        El mantenimiento perpetuo incluye limpieza regular del área, cuidado de jardines, poda de
-                        plantas, reposición de flores según temporada, limpieza de placas conmemorativas y mantenimiento
-                        general de las instalaciones.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    ¿Puedo personalizar la placa conmemorativa?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí, todas nuestras placas son completamente personalizables. Puede incluir nombres, fechas,
-                        frases especiales, símbolos religiosos o diseños específicos. Nuestro equipo de diseño le
-                        ayudará a crear una placa única y significativa.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    ¿Cuáles son las opciones de pago?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Ofrecemos múltiples opciones de pago: pago único, planes de financiamiento a 12, 24 o 36 meses
-                        sin intereses, y opciones de previsión con pagos mensuales. Aceptamos efectivo, transferencias,
-                        cheques y tarjetas de crédito.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    ¿Hay restricciones de visitas?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Nuestras instalaciones están abiertas todos los días de 6:00 AM a 6:00 PM. No hay restricciones
-                        en el número de visitas, y usted puede acceder libremente a su espacio reservado durante estos
-                        horarios.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    ¿Qué documentos necesito para adquirir un espacio?
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Necesita identificación oficial vigente, comprobante de domicilio no mayor a 3 meses, y CURP. En
-                        caso de financiamiento, también requerimos comprobantes de ingresos. Nuestro equipo legal lo
-                        guiará en todo el proceso.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider-leaves">
-        <div class="curved-line-wave">
-            <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="line-path-wave"
-                    d="M 0 25 Q 12.5 10 25 25 Q 37.5 40 50 25 Q 62.5 10 75 25 Q 87.5 40 100 25" />
-            </svg>
-        </div>
-    </div>
-
     <section class="ubicacion-section">
         <h2 class="ubicacion-title">Ubicación de nuestro cementerio</h2>
 
@@ -436,14 +321,6 @@
                     </p>
 
                     <div class="contacto-info">
-                        <div class="contacto-item">
-                            <span class="contacto-icon"><i class="bi bi-telephone"></i></span>
-                            <span>(993) 123-4567</span>
-                        </div>
-                        <div class="contacto-item">
-                            <span class="contacto-icon"><i class="bi bi-envelope"></i></span>
-                            <span>info@ejemplo.com</span>
-                        </div>
                         <div class="contacto-item">
                             <span class="contacto-icon"><i class="bi bi-clock"></i></span>
                             <span>Lun - Dom: 8:00 AM - 6:00 PM</span>
@@ -464,17 +341,18 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h6>NAVEGACIÓN</h6>
+                <h3>NAVEGACIÓN</h3>
                 <ul>
-                    <li class="cremapets"><a href="cremapets.html">CREMAPETS</a></li>
-                    <li class="cementerio"><a href="cementerio.html">CEMENTERIO BRAVO</a></li>
-                    <li><a href="calendario.html">CALENDARIO DE PROMOCIONES</a></li>
-                    <li><a href="cotizador.html">CALCULA TU COTIZACIÓN</a></li>
+                    <li><a href="servicios.html">Servicios funeraios</a></li>
+                    <li class="cremapets"><a href="cremapets.html">Cremapets</a></li>
+                    <li class="cementerio"><a href="cementerio.html">Cementerio Bravo</a></li>
+                    <li><a href="calendario.html">Calendario promocional</a></li>
+                    <li><a href="cotizador.html">Cotiza</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h6>SÍGUENOS EN REDES SOCIALES</h6>
+                <h3>SÍGUENOS EN REDES SOCIALES</h3>
                 <ul class="social-list">
                     <li>
                         <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"

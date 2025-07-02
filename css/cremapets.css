@@ -1,13 +1,10 @@
-.line-path-wave {
-    stroke: var(--color-azul-mascotas);
-}
-
 header {
     background: white;
-    padding: 5px;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.25);
+    padding: 2px;
 }
 
 .header-content,
@@ -25,6 +22,7 @@ main,
 
 .logo-header img {
     height: 50px;
+    width: auto;
 }
 
 .nav-buttons {
@@ -38,12 +36,13 @@ main,
     transition: all 0.2s ease;
     text-decoration: none;
     display: inline-block;
+    border-radius: 22px;
 }
 
 .nav-btn.whatsapp-btn,
 .facebook,
 .instagram {
-    padding: 5px 15px;
+    padding: 5px 10px;
 }
 
 .nav-btn:hover {
@@ -177,72 +176,68 @@ main,
     }
 }
 
-main {
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-
 .hero {
-    padding: 20px;
-    margin-bottom: 40px;
-    align-items: center;
-    gap: 30px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../imgs/index/cremapets-servicios.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    color: white;
     display: flex;
+    flex-direction: column;
+    min-height: 30vh;
+    padding: 20px;
 }
 
 .hero-logo img {
-    height: 200px;
-    padding-bottom: 15px;
+    height: 250px;
+    width: auto;
 }
 
-.hero-title {
-    flex: 2;
-}
-
-.hero-title h1 {
-    padding-bottom: 15px;
-    font-family: var(--fuente-cremapets);
-    color: var(--color-azul-mascotas);
-}
-
-.hero p {
+.hero-title h2 {
+    color: white;
     font-family: var(--fuente-cremapets-p);
     width: 60%;
+    margin: 0 auto;
+}
+
+.planes-title {
+    font-family: var(--fuente-cremapets-p);
+    color: var(--color-azul-mascotas);
+    margin: 50px 0 10px 0;
 }
 
 .tabs {
     margin-bottom: 2rem;
-    padding: 0.5rem;
+    gap: 0;
     display: flex;
 }
 
 .tab {
-    padding: 10px 25px;
+    padding: 10px 30px;
     border: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--fuente-cremapets-p);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 }
 
-.tab.active {
-    border: 1px solid;
-    color: currentColor;
-}
 
 .tab.active.basic {
-    border-color: #a0633b;
-    color: #a0633b;
+    color: white;
+    background: #a0633b;
 }
 
 .tab.active.premium {
-    border-color: #5ba0f2;
-    color: #5ba0f2;
+    color: white;
+    background: #5ba0f2;
 }
 
 .tab.active.deluxe {
-    border-color: #a569bd;
-    color: #a569bd;
+    color: white;
+    background: #a569bd;
 }
 
 .tab-content {
@@ -370,6 +365,7 @@ main {
 .price-table td {
     padding: 15px;
     border-bottom: 1px solid #000;
+    font-size: 1.3rem;
 }
 
 .gallery-container {
@@ -463,6 +459,11 @@ main {
     }
 }
 
+footer {
+    background: var(--color-dorado);
+    padding: 30px 0 0;
+}
+
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -478,10 +479,10 @@ main {
     text-align: left;
 }
 
-.footer-col h6 {
-    color: black;
+.footer-col h3 {
+    color: white;
     margin-bottom: 20px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     width: 100%;
 }
 
@@ -498,7 +499,7 @@ main {
 }
 
 .footer-col ul li a {
-    color: black;
+    color: white;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -508,6 +509,10 @@ main {
 
 .footer-col ul li a:hover {
     transform: translateX(5px);
+    border-radius: 22px;
+    background: white;
+    color: black;
+    padding: 5px 10px;
 }
 
 .footer-col ul li.cremapets a {
@@ -517,18 +522,16 @@ main {
 .footer-col ul li.cremapets a:hover {
     color: white;
     background-color: var(--color-azul-mascotas);
-    padding: 5px 10px;
     transform: translateX(0);
 }
 
 .footer-col ul li.cementerio a {
-    color: var(--color-dorado);
+    color: var(--color-beige-1);
 }
 
 .footer-col ul li.cementerio a:hover {
     color: var(--color-beige-1);
-    background-color: var(--color-dorado);
-    padding: 5px 10px;
+    background-color: var(--color-cafe-oscuro);
     transform: translateX(0);
 }
 
@@ -548,7 +551,7 @@ main {
     padding: 20px;
     text-align: center;
     font-family: var(--fuente-secundaria);
-    color: black;
+    color: white;
 }
 
 @media (max-width: 768px) {
