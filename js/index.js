@@ -1,48 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const imagenes = document.querySelectorAll('.imagen-instalacion');
-    const totalImagenes = imagenes.length;
-    const seccionNosotros = document.getElementById('seccionNosotros');
-    const contenedorImagenes = document.getElementById('contenedorImagenes');
-    const contenidoTexto = document.getElementById('contenidoTexto');
-
-    let imagenActual = 0;
-    let intervaloCarrusel;
-
-    const cambiarImagen = () => {
-        imagenes[imagenActual].classList.remove('activa');
-        imagenActual = (imagenActual + 1) % totalImagenes;
-        imagenes[imagenActual].classList.add('activa');
-    };
-
-    const iniciarCarrusel = () => {
-        if (!intervaloCarrusel) {
-            intervaloCarrusel = setInterval(cambiarImagen, 3000);
-        }
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                contenedorImagenes.classList.add('animar');
-                contenidoTexto.classList.add('animar');
-
-                setTimeout(() => {
-                    requestAnimationFrame(() => {
-                        iniciarCarrusel();
-                    });
-                }, 700);
-            }
-        });
-    }, {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    if (seccionNosotros) {
-        observer.observe(seccionNosotros);
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -61,5 +16,73 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.style.overflow = '';
             });
         });
+    }
+});
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+
+            if (target.classList.contains('section-header')) {
+                target.classList.add('animate');
+
+                const children = target.querySelectorAll('.section-title');
+                children.forEach(child => child.classList.add('animate'));
+            }
+
+            else if (target.classList.contains('cards-container')) {
+                const cards = target.querySelectorAll('.card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 500);
+                });
+            }
+
+            else if (target.classList.contains('section-title') || target.classList.contains('card')) {
+                target.classList.add('animate');
+            }
+
+            else if (target.id === 'herramientasGrid') {
+                const dividerLine = target.querySelector('.herramientas-divider-line');
+                dividerLine.classList.add('animate');
+
+                setTimeout(() => {
+                    const leftContent = target.querySelector('.herramientas-left-content');
+                    leftContent.classList.add('animate');
+                }, 200);
+
+                setTimeout(() => {
+                    const cards = target.querySelectorAll('.herramientas-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 200);
+                    });
+                }, 1000);
+            }
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.section-header, .cards-container').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.section-title, .card').forEach(el => {
+        if (!el.closest('.section-header') && !el.closest('.cards-container')) {
+            observer.observe(el);
+        }
+    });
+
+    const herramientasGrid = document.getElementById('herramientasGrid');
+    if (herramientasGrid) {
+        observer.observe(herramientasGrid);
     }
 });

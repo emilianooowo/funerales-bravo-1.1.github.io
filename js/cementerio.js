@@ -1,54 +1,26 @@
-function observeElements() {
-    const dividers = document.querySelectorAll('.section-divider, .section-divider-alt, .section-divider-leaves');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                // Opcional: dejar de observar después de animar
-                // observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.6 // Se activa cuando el 30% del elemento es visible
-    });
-
-    dividers.forEach(divider => {
-        observer.observe(divider);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', observeElements);
-
-document.addEventListener('scroll', () => {
-    const dividers = document.querySelectorAll('.section-divider-leaves');
-    dividers.forEach(divider => {
-        const rect = divider.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-        if (!isVisible) {
-            divider.classList.remove('animate');
-        }
-    });
-});
-
 const galleryData = {
     urnas: [
-        { src: './imgs/cementerio/urna-71.webp', title: 'urna 1' },
-        { src: './imgs/cementerio/urna-03.webp', title: 'urna 2' },
-        { src: './imgs/cementerio/urna-26.webp', title: 'urna 3' },
-        { src: './imgs/cementerio/urna-34.webp', title: 'urna 4' },
-        { src: './imgs/cementerio/urna-50.webp', title: 'urna 5' },
-        { src: './imgs/cementerio/urna-57.webp', title: 'urna 6' },
-        { src: './imgs/cementerio/urna-59.webp', title: 'urna 7' },
-        { src: './imgs/cementerio/urna-82.webp', title: 'urna 8' }
+        { src: 'imgs/cementerio/urna-b-1.webp', title: 'urna 1' },
+        { src: 'imgs/cementerio/urna-p-1.webp', title: 'urna 2' },
+        { src: 'imgs/cementerio/urna-p-2.webp', title: 'urna 3' },
+        { src: 'imgs/cementerio/urna-p-3.webp', title: 'urna 4' },
+        { src: 'imgs/cementerio/urna-p-4.webp', title: 'urna 5' },
+        { src: 'imgs/cementerio/urna-p-5.webp', title: 'urna 6' },
+        { src: 'imgs/cementerio/urna-p-6.webp', title: 'urna 7' },
+        { src: 'imgs/cementerio/urna-p-7.webp', title: 'urna 8' }
     ],
     cementerio: [
-        { src: './imgs/cementerio/img-cementerio-1.webp', title: 'cementerio' },
-        { src: './imgs/cementerio/img-cementerio-3.webp', title: 'cementerio' },
-        { src: './imgs/cementerio/img-cementerio-4.webp', title: 'cementerio' },
-        { src: './imgs/cementerio/img-cementerio-5.webp', title: 'cementerio' },
-        { src: './imgs/cementerio/img-cementerio-6.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/cementerio-1.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/cementerio-2.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/cementerio-3.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/cementerio-4.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/col-0.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/col-1.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/eco-0.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/eco-1.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/eco-2.webp', title: 'cementerio' },
+        { src: 'imgs/cementerio/nicho.webp', title: 'cementerio' },
+
     ]
 };
 
@@ -191,99 +163,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-function showMainTab(tabName) {
-    const mainContents = document.querySelectorAll('.main-tab-content');
-    mainContents.forEach(content => {
-        content.classList.remove('active');
-    });
-
-    const mainTabs = document.querySelectorAll('.main-tab');
-    mainTabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    document.getElementById(tabName).classList.add('active');
-    event.target.classList.add('active');
-
-    const activeMainTab = document.getElementById(tabName);
-    const firstSubTab = activeMainTab.querySelector('.sub-tab');
-    if (firstSubTab && window.innerWidth <= 768) {
-        const subTabs = activeMainTab.querySelectorAll('.sub-tab');
-        subTabs.forEach(tab => tab.classList.remove('active'));
-        firstSubTab.classList.add('active');
-
-        const subContents = activeMainTab.querySelectorAll('.sub-tab-content');
-        subContents.forEach(content => content.classList.remove('active'));
-        if (subContents[0]) {
-            subContents[0].classList.add('active');
-        }
-    }
-}
-
-function showSubTab(category, subTab) {
-    if (window.innerWidth > 768) return;
-
-    const subContents = document.querySelectorAll(`#${category}-1-persona, #${category}-2-personas, #${category}-4-personas`);
-    subContents.forEach(content => {
-        content.classList.remove('active');
-    });
-
-    const activeMainTab = document.querySelector('.main-tab-content.active');
-    const subTabs = activeMainTab.querySelectorAll('.sub-tab');
-    subTabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    document.getElementById(`${category}-${subTab}`).classList.add('active');
-    event.target.classList.add('active');
-}
-
-window.addEventListener('resize', function () {
-    const isMobile = window.innerWidth <= 768;
-    const subContents = document.querySelectorAll('.sub-tab-content');
-
-    if (!isMobile) {
-        subContents.forEach(content => {
-            content.classList.add('active');
-        });
-    } else {
-        const activeMainTab = document.querySelector('.main-tab-content.active');
-        if (activeMainTab) {
-            const subTabs = activeMainTab.querySelectorAll('.sub-tab');
-            const subContentsInTab = activeMainTab.querySelectorAll('.sub-tab-content');
-
-            subContentsInTab.forEach(content => content.classList.remove('active'));
-            subTabs.forEach(tab => tab.classList.remove('active'));
-
-            if (subTabs[0]) subTabs[0].classList.add('active');
-            if (subContentsInTab[0]) subContentsInTab[0].classList.add('active');
-        }
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) {
-        const subContents = document.querySelectorAll('.sub-tab-content');
-        subContents.forEach(content => {
-            content.classList.add('active');
-        });
-    }
-});
-
-function toggleFaq(element) {
-    const faqItem = element.parentElement;
-    const answer = faqItem.querySelector('.faq-answer');
-    const icon = element.querySelector('.faq-icon');
-
-    document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-            item.classList.remove('active');
-            item.querySelector('.faq-answer').classList.remove('active');
-        }
-    });
-
-    faqItem.classList.toggle('active');
-    answer.classList.toggle('active');
-}

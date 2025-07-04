@@ -12,23 +12,6 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-header"><a href="index.html"><img src="shared/logos/logo-header.webp" alt=""></a></div>
-            <nav class="nav-buttons">
-                <a href="index.html" class="nav-btn">Inicio</a>
-                <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
-                <a href="cremapets.html" class="nav-btn cremapets">Cremapets</a>
-                <a href="calendario.html" class="nav-btn">Promociones</a>
-                <a href="index.html#contacto" class="nav-btn">Contacto</a>
-                <a href="cotizador.html" class="nav-btn">Cotizador</a>
-                <a href="https://wa.me/1234567890" class="nav-btn whatsapp-btn"><i class="bi bi-whatsapp"></i></a>
-                <a href="" class="nav-btn facebook"><i class="bi bi-facebook"></i></a>
-                <a href="" class="nav-btn instagram"><i class="bi bi-instagram"></i></a>
-            </nav>
-        </div>
-    </header>
-
     <button class="hamburger-btn" id="hamburgerBtn">
         <span></span>
         <span></span>
@@ -37,251 +20,116 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="index.html" class="nav-btn"><i class="bi bi-house"></i>Inicio</a>
-            <a href="servicios.html" class="nav-btn">Servicios funerarios</a>
-            <a href="calendario.html"><i class="bi bi-calendar"></i> Calendario de promociones</a>
-            <a href="cremapets.html"><i class="bi bi-heart-fill"></i> Cremapets</a>
-            <a href="cotizador.html" class="nav-btn"><i class="bi bi-calculator"></i> Cotizador</a>
-            <a href="index.html#contacto"><i class="bi bi-envelope-fill"></i> Contacto</a>
+            <a href="index.html#servicios"> Catalogo de servicios</a>
+            <a href="calendario.html">Calendario de promociones</a>
+            <a href="cremapets.html"> Cremapets</a>
+            <a href="cementerio.html"> Cementerio privado</a>
+            <a href="cotizador.html"> Cotizador</a>
+            <a href="index.html#contacto"> Contacto</a>
 
             <div class="mobile-social-separator"></div>
 
             <div class="mobile-social-links">
-                <a href="https://www.instagram.com/gruporm.mx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/funerales_bravo/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"><i
+                        class="bi bi-facebook"></i></a>
             </div>
         </div>
     </div>
 
-    <section class="hero">
-        <div class="hero-logo">
-            <img src="shared/logos/cementerio-logo-blanco.webp" alt="Logo Cementerio">
+    <header>
+        <div class="header-main">
+            <div class="logo-header">
+                <img src="shared/logos/logo-header.webp" alt="Funeraria Logo">
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cremapets.html" class="cremapets-link">Cremapets</a></li>
+                    <li><a href="cementerio.html">Cementerio</a></li>
+                    <li><a href="calendario.html">Promociones</a></li>
+                    <li><a href="cotizador.html">Cotizador</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
+                    title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
+                    title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://wa.me/529622361377" class="whatsapp" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
         </div>
-        <div class="hero-title">
-            <h2>Tranquilidad para tu familia, respeto por la naturaleza en nuestro cementerio privado y ecologico.</h2>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="shared/logos/cementerio-logo-negro.webp" alt="">
+                </div>
+            </div>
+            <div class="welcome-content">
+                <h1 class="welcome-title">Cementerio Bravo</h1>
+                <p class="welcome-description">
+                    Ofrecemos espacios dignos y bien cuidados para que sus seres queridos descansen en paz.
+                    Nuestros jardines paisajísticos y áreas familiares están diseñados para brindar confort
+                    y serenidad a las familias que nos visitan.
+                </p>
+                <p class="cta-text">
+                    Descubre más información sobre nuestros servicios y espacios disponibles a continuación.
+                </p>
+            </div>
         </div>
     </section>
 
-    <main>
-        <section class="plans-container">
-            <div class="main-tabs">
-                <button class="main-tab active" onclick="showMainTab('espacio-ecologico')">Espacio Ecológico</button>
-                <button class="main-tab" onclick="showMainTab('columbario')">Columbario</button>
-            </div>
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-content">
+                <div class="service-item">
+                    <h2 class="service-title">PLAN DE PREVISIÓN CON NICHO</h2>
+                    <p class="service-description">
 
-            <div id="espacio-ecologico" class="main-tab-content active">
-                <div class="section-header">
-                    <h2>Previsión de Espacio Ecológico</h2>
-                    <p>Espacios naturales dedicados al descanso eterno, en perfecta armonía con el medio ambiente.
-                        Nuestros terrenos están especialmente preparados y certificados para brindar un lugar digno y
-                        sereno, rodeado de jardines y áreas verdes que honran la memoria de sus seres queridos.</p>
-                </div>
-
-                <div class="sub-tabs">
-                    <button class="sub-tab active" onclick="showSubTab('eco', '1-persona')">1 Persona</button>
-                    <button class="sub-tab" onclick="showSubTab('eco', '2-personas')">2 Personas</button>
-                    <button class="sub-tab" onclick="showSubTab('eco', '4-personas')">4 Personas</button>
-                </div>
-
-                <div class="desktop-grid">
-                    <div id="eco-1-persona" class="sub-tab-content active">
-                        <div class="plan-card">
-                            <h3>Espacio Individual</h3>
-                            <div class="capacity">Para 1 Persona</div>
-                            <div class="price">$45,000</div>
-
-                            <div class="features-list">
-                                <ul>
-                                    <li>Terreno de 2m x 1m preparado</li>
-                                    <li>Placa conmemorativa de mármol</li>
-                                    <li>Mantenimiento perpetuo incluido</li>
-                                    <li>Acceso vehicular pavimentado</li>
-                                    <li>Jardín perimetral</li>
-                                    <li>Seguridad 24/7</li>
-                                    <li>Certificado de propiedad</li>
-                                    <li>Asesoría legal incluida</li>
-                                </ul>
-                            </div>
-
-                            <div class="price-section">
-                                <button class="cotizar-btn">Cotizar Ahora</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="eco-2-personas" class="sub-tab-content">
-                        <div class="plan-card">
-                            <h3>Espacio Doble</h3>
-                            <div class="capacity">Para 2 Personas</div>
-                            <div class="price">$75,000</div>
-
-                            <div class="features-list">
-                                <ul>
-                                    <li>Terreno de 3m x 2m preparado</li>
-                                    <li>Dos placas conmemorativas</li>
-                                    <li>Mantenimiento perpetuo incluido</li>
-                                    <li>Acceso vehicular pavimentado</li>
-                                    <li>Jardín amplio con flores</li>
-                                    <li>Seguridad 24/7</li>
-                                    <li>Banco de descanso incluido</li>
-                                    <li>Certificado de propiedad</li>
-                                    <li>Asesoría legal incluida</li>
-                                </ul>
-                            </div>
-
-                            <div class="price-section">
-                                <button class="cotizar-btn">Cotizar Ahora</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="eco-4-personas" class="sub-tab-content">
-                        <div class="plan-card">
-                            <h3>Espacio Familiar</h3>
-                            <div class="capacity">Para 4 Personas</div>
-                            <div class="price">$125,000</div>
-
-                            <div class="features-list">
-                                <ul>
-                                    <li>Terreno de 4m x 3m preparado</li>
-                                    <li>Cuatro placas conmemorativas</li>
-                                    <li>Mantenimiento perpetuo incluido</li>
-                                    <li>Acceso vehicular pavimentado</li>
-                                    <li>Jardín familiar con árboles</li>
-                                    <li>Seguridad 24/7</li>
-                                    <li>Área de descanso familiar</li>
-                                    <li>Mesa para ofrendas</li>
-                                    <li>Certificado de propiedad</li>
-                                    <li>Asesoría legal incluida</li>
-                                </ul>
-                            </div>
-
-                            <div class="price-section">
-                                <button class="cotizar-btn">Cotizar Ahora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="columbario" class="main-tab-content">
-                <div class="section-header">
-                    <h2>Previsión de Columbario</h2>
-                    <p>Espacios dignos y seguros diseñados especialmente para el resguardo de urnas funerarias. Nuestros
-                        nichos están construidos con materiales de la más alta calidad en ambientes serenos y
-                        climatizados, ofreciendo un lugar de paz y recogimiento para honrar la memoria de sus seres
-                        queridos.</p>
-                </div>
-
-                <div class="sub-tabs">
-                    <button class="sub-tab active" onclick="showSubTab('col', '1-persona')">1 Persona</button>
-                    <button class="sub-tab" onclick="showSubTab('col', '4-personas')">4 Personas</button>
-                </div>
-
-                <div class="desktop-grid">
-                    <div id="col-1-persona" class="sub-tab-content active">
-                        <div class="plan-card">
-                            <h3>Nicho Individual</h3>
-                            <div class="capacity">Para 1 Persona</div>
-                            <div class="price">$28,000</div>
-
-                            <div class="features-list">
-                                <ul>
-                                    <li>Nicho de mármol premium</li>
-                                    <li>Placa grabada personalizada</li>
-                                    <li>Sellado hermético profesional</li>
-                                    <li>Mantenimiento perpetuo</li>
-                                    <li>Ambiente climatizado</li>
-                                    <li>Acceso controlado y seguro</li>
-                                    <li>Iluminación especial LED</li>
-                                    <li>Espacio para fotografía</li>
-                                    <li>Música ambiental</li>
-                                    <li>Certificado de ubicación</li>
-                                </ul>
-                            </div>
-
-                            <div class="price-section">
-                                <button class="cotizar-btn">Cotizar Ahora</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="col-4-personas" class="sub-tab-content">
-                        <div class="plan-card">
-                            <h3>Nicho Familiar</h3>
-                            <div class="capacity">Para 4 Personas</div>
-                            <div class="price">$95,000</div>
-
-                            <div class="features-list">
-                                <ul>
-                                    <li>Nicho familiar de granito</li>
-                                    <li>Cuatro placas grabadas</li>
-                                    <li>Sellado hermético profesional</li>
-                                    <li>Mantenimiento perpetuo</li>
-                                    <li>Ambiente climatizado</li>
-                                    <li>Acceso controlado y seguro</li>
-                                    <li>Iluminación especial LED</li>
-                                    <li>Área familiar de descanso</li>
-                                    <li>Música ambiental</li>
-                                    <li>Servicio de flores incluido</li>
-                                    <li>Área de meditación privada</li>
-                                    <li>Certificado de ubicación</li>
-                                </ul>
-                            </div>
-
-                            <div class="price-section">
-                                <button class="cotizar-btn">Cotizar Ahora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <section class="cementerio-section">
-
-        <div class="falling-leaves">
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-            <div class="falling-leaf"></div>
-        </div>
-
-        <div class="container">
-            <div class="content">
-                <h2 class="title">Cementerio Ecológico</h2>
-                <h5 class="subtitle">Donde la vida continúa floreciendo</h5>
-
-                <p class="description">
-                    Honramos la memoria de tus seres queridos de manera única y sostenible.
-                    En lugar de lápidas tradicionales, plantamos árboles que crecen alimentados
-                    por urnas biodegradables de fibra de coco.
-                </p>
-
-                <div class="highlight">
-                    <p>
-                        En 12 meses, las urnas se integran completamente con la tierra,
-                        nutriendo el árbol y creando un legado vivo que perdura para siempre.
                     </p>
                 </div>
+                <div class="service-item">
+                    <h2 class="service-title">PLAN DE PREVISIÓN ECOLOGICO</h2>
+                    <p class="service-description">
 
-                <p class="description">
-                    Un espacio natural, seguro y espiritual donde cada abrazo a un árbol
-                    tiene un significado profundo. Porque siempre es posible volver a empezar.
+                    </p>
+                </div>
+            </div>
+            <div class="services-image"></div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-content">
+                <h2 class="info-title">PLAN DE PREVISIÓN DE COLUMBARIO</h2>
+                <p class="info-description">
+                    Espacio adecuado para el resguardo de una urna donde se contienen las cenizas de una persona
+                    fallecida y cremada, el columbario esta empotrado sobre un muro al aire libre. Hecho con materiales
+                    de la mejor y más alta calidad, con un diseño único, conservador y elegante.
                 </p>
+                <ul class="info-features">
+                    <li>Titulo de propiedad a perpetuidad</li>
+                    <li>Personal de servicio en instalaciones</li>
+                    <li>Servicio básico de cafetería</li>
+                    <li>Vigilancia las 24 horas</li>
+                    <li>Amplios jardines y cómodas áreas para su tranquiliadad</li>
+                    <li>Capilla privada (PROXIMAMENTE)</li>
+                </ul>
             </div>
-
-            <div class="image-container">
-                <img src="imgs/cementerio/img-cementerio-6.webp" alt="Cementerio Ecológico" class="tree-image">
-            </div>
+            <div class="info-image"></div>
         </div>
     </section>
 
@@ -308,7 +156,7 @@
     </div>
 
     <section class="ubicacion-section">
-        <h2 class="ubicacion-title">Ubicación de nuestro cementerio</h2>
+        <h1 class="ubicacion-title">Ubicación de nuestro cementerio</h1>
 
         <div class="ubicacion-container">
             <div class="ubicacion-content">
@@ -338,44 +186,32 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>NAVEGACIÓN</h3>
-                <ul>
-                    <li><a href="servicios.html">Servicios funeraios</a></li>
-                    <li class="cremapets"><a href="cremapets.html">Cremapets</a></li>
-                    <li class="cementerio"><a href="cementerio.html">Cementerio Bravo</a></li>
-                    <li><a href="calendario.html">Calendario promocional</a></li>
-                    <li><a href="cotizador.html">Cotiza</a></li>
-                </ul>
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="shared/logos/logo-blanco.webp" alt="Logo Funerales Bravo">
             </div>
 
-            <div class="footer-col">
-                <h3>SÍGUENOS EN REDES SOCIALES</h3>
-                <ul class="social-list">
-                    <li>
-                        <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"
-                            aria-label="Facebook">
-                            <i class="bi bi-facebook"></i> FACEBOOK
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/funerales_bravo/" target="_blank" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i> INSTAGRAM
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://wa.me/9622361377" target="_blank" aria-label="WhatsApp">
-                            <i class="bi bi-whatsapp"></i> WHATSAPP
-                        </a>
-                    </li>
-                </ul>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <p><a href="servicios.html">Previsión Funeraria</a></p>
+                <p><a href="cremapets.html">Cremación de Mascotas</a></p>
+                <p><a href="cementerio.html">Cementerio</a></p>
+                <p><a href="calendario.html">Calendario promocional</a></p>
+                <p><a href="chat.html">Dudas y aclaraciones</a></p>
+                <p><a href="cotizador.html">Cotizador</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p><a href="#"><i class="bi bi-facebook"></i> Facebook</a></p>
+                <p><a href="#"><i class="bi bi-instagram"></i>Instagram</a></p>
+                <p><a href="#"><i class="bi bi-whatsapp"></i>WhatsApp</a></p>
             </div>
         </div>
 
-        <div class="copyright">
-            &copy; 2025 Funerales Bravo. Todos los derechos reservados. | Tapachula, Chiapas, México
+        <div class="footer-bottom">
+            <p>&copy; 2025 Funerales Bravo. Todos los derechos reservados.</p>
         </div>
     </footer>
 
