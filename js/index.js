@@ -68,6 +68,16 @@ const observer = new IntersectionObserver((entries) => {
                     });
                 }, 1000);
             }
+
+            else if (target.classList.contains('timeline-container')) {
+                const timelineLine = target.querySelector('.timeline-line');
+                if (timelineLine) timelineLine.classList.add('animate');
+
+                const timelineItems = target.querySelectorAll('.timeline-item');
+                timelineItems.forEach(item => item.classList.add('animate'));
+
+                observer.unobserve(target);
+            }
         }
     });
 }, observerOptions);
@@ -81,8 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Observar herramientas
     const herramientasGrid = document.getElementById('herramientasGrid');
     if (herramientasGrid) {
         observer.observe(herramientasGrid);
+    }
+
+    // Observar timeline
+    const timelineContainer = document.querySelector('.timeline-container');
+    if (timelineContainer) {
+        observer.observe(timelineContainer);
     }
 });

@@ -1,0 +1,415 @@
+.cotizador-section {
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.cotizador-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cotizador-titulo {
+    margin-bottom: 20px;
+}
+
+.cotizador-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.cotizador-planes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cotizador-plan-btn {
+    background-color: var(--color-dorado);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    font-family: var(--fuente-principal);
+}
+
+.cotizador-plan-btn:hover {
+    background-color: var(--color-cafe-oscuro);
+}
+
+.cotizador-plan-btn.selected {
+    background-color: #27ae60;
+}
+
+.cotizador-resumen {
+    background-color: white;
+    padding: 20px;
+    height: fit-content;
+}
+
+.cotizador-resumen h3 {
+    margin-bottom: 10px;
+}
+
+.cotizador-resumen-item {
+    margin-bottom: 5px;
+}
+
+.cotizador-resumen-item strong {
+    color: #27ae60;
+}
+
+.cotizador-opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.cotizador-opcion {
+    display: flex;
+    flex-direction: column;
+}
+
+.cotizador-opcion label {
+    margin-bottom: 10px;
+}
+
+.cotizador-opcion select {
+    padding: 12px;
+    font-size: 1em;
+    font-family: var(--fuente-principal);
+}
+
+.cotizador-contacto {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.cotizador-contacto h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.cotizador-contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cotizador-contacto-full {
+    grid-column: 1 / -1;
+}
+
+.cotizador-contacto input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-family: var(--fuente-principal);
+}
+
+.cotizador-contacto label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cotizador-enviar-btn {
+    background-color: var(--color-dorado);
+    font-family: var(--fuente-principal);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.cotizador-enviar-btn:hover {
+    background-color: #27ae60;
+}
+
+.cotizador-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cotizador-popup-content {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.cotizador-popup-content h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.cotizador-popup-content p {
+    margin-bottom: 30px;
+}
+
+.precio-original {
+    margin-left: 10px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.cotizador-descuento {
+    margin-top: 5px;
+    color: #ff1900;
+}
+
+.cotizador-popup-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cotizador-popup-btn {
+    padding: 12px 30px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+}
+
+.cotizador-popup-btn.acepto {
+    background-color: #27ae60;
+    color: white;
+}
+
+.cotizador-popup-btn.cancelar {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.cotizador-popup-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .cotizador-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cotizador-opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .cotizador-contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cotizador-popup-buttons {
+        flex-direction: column;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.calendar-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-button {
+    border: none;
+    background: var(--color-dorado);
+    color: white;
+    padding: 20px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+}
+
+.calendar-section {
+    padding: 40px;
+    margin-bottom: 30px;
+    display: none;
+    animation: slideDown .8s ease-out;
+}
+
+.calendar-section.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calendar-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-image img {
+    max-width: 100%;
+    height: 600px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.action-btn {
+    padding: 15px 35px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fuente-principal);
+}
+
+.download-btn {
+    background: var(--color-dorado);
+    color: white;
+}
+
+.share-btn {
+    background: black;
+    color: white;
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.promotion-card h4 {
+    margin-bottom: 25px;
+    text-align: center;
+    gap: 12px;
+}
+
+.seasonal-promotions h4 {
+    color: var(--color-dorado);
+}
+
+.promotion-item {
+    padding: 10px;
+}
+
+.promotion-item h5 {
+    margin-bottom: 10px;
+}
+
+.promotion-item p {
+    margin-bottom: 15px;
+}
+
+.promotion-discount {
+    padding: 8px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.promotion-discount {
+    background: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .encabezado {
+        padding: 30px 20px;
+    }
+
+    .main-title {
+        font-size: 2em;
+    }
+
+    .calendar-button {
+        padding: 15px 35px;
+        font-size: 1.2em;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 200px;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        width: 160px;
+        justify-content: center;
+        margin-bottom: 10px;
+        padding: 12px 20px;
+    }
+
+    .promotions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .promotion-card {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras - Funerales Bravo</title>
+    <link rel="shortcut icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/extras.css">
+    <link rel="stylesheet" href="shared/global.css">
+</head>
+
+<body>
+    <section class="cotizador-section" id="cotizador">
+        <div class="cotizador-container">
+            <h1 class="cotizador-titulo">Cotizador de Previsión Funeraria</h1>
+
+            <div class="cotizador-grid">
+                <div class="cotizador-planes">
+                    <h2>Seleccione su Plan</h2>
+                    <button class="cotizador-plan-btn" data-plan="basico" data-precio="28000">
+                        Plan Básico Empresarial<br>$28,000 MXN
+                    </button>
+                    <button class="cotizador-plan-btn" data-plan="platino" data-precio="38000">
+                        Plan Platino<br>$38,000 MXN
+                    </button>
+                    <button class="cotizador-plan-btn" data-plan="diamante" data-precio="52000">
+                        Plan Diamante<br>$52,000 MXN
+                    </button>
+                </div>
+
+                <div class="cotizador-resumen">
+                    <h3>Resumen de Cotización</h3>
+                    <div class="cotizador-resumen-item">
+                        <strong>Plan Seleccionado:</strong> <span id="plan-seleccionado">--Ninguno--</span>
+                    </div>
+                    <div class="cotizador-resumen-item">
+                        <strong>Costo Total:</strong>
+                        <span id="costo-total">$0 MXN</span>
+                        <span id="precio-original" class="precio-original" style="display:none;">$0 MXN</span>
+                    </div>
+                    <p class="cotizador-descuento" id="mensaje-descuento" style="display:none;">
+                        10&nbsp;% de descuento aplicado
+                    </p>
+                    <div class="cotizador-resumen-item">
+                        <strong>Anticipo:</strong> <span id="anticipo-monto">$0 MXN</span>
+                    </div>
+                    <div class="cotizador-resumen-item">
+                        <strong>Mensualidad:</strong> <span id="mensualidad">$0 MXN</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cotizador-opciones">
+                <div class="cotizador-opcion">
+                    <label for="anticipo-porcentaje">Porcentaje de Anticipo:</label>
+                    <select id="anticipo-porcentaje">
+                        <option value="">--Ninguno--</option>
+                        <option value="5000">$5,000.00 MXN (mínimo)</option>
+                        <option value="10000">$10,000.00 MXN</option>
+                        <option value="15000">$15,000.00 MXN</option>
+                        <option value="20000">$20,000.00 MXN</option>
+                        <option value="25000">$25,000.00 MXN</option>
+                        <option value="30000">$30,000.00 MXN</option>
+                        <option value="35000">$35,000.00 MXN</option>
+                        <option value="40000">$40,000.00 MXN</option>
+                        <option value="45000">$45,000.00 MXN</option>
+                        <option value="50000">$50,000.00 MXN</option>
+                    </select>
+                </div>
+
+                <div class="cotizador-opcion">
+                    <label for="meses-pago">Meses para Pagar:</label>
+                    <select id="meses-pago">
+                        <option value="">--Ninguno--</option>
+                        <option value="12">12 meses</option>
+                        <option value="24">24 meses</option>
+                        <option value="36">36 meses</option>
+                        <option value="48">48 meses</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cotizador-contacto">
+                <h3>Información de Contacto</h3>
+                <div class="cotizador-contacto-grid">
+                    <div>
+                        <label for="nombre-completo">Nombre Completo:</label>
+                        <input type="text" id="nombre-completo" required>
+                    </div>
+                    <div>
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" required>
+                    </div>
+                    <div class="cotizador-contacto-full">
+                        <label for="telefono">Teléfono Celular:</label>
+                        <input type="tel" id="telefono" required>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cotizador-enviar-btn" onclick="mostrarPopup()">Enviar Cotización</button>
+        </div>
+    </section>
+
+    <div class="cotizador-popup" id="cotizador-popup">
+        <div class="cotizador-popup-content">
+            <h3>Confirmación de Cotización</h3>
+            <p>Esta es una cotización aproximada. Al continuar, usted da su consentimiento para enviar sus datos y ser
+                contactado lo más pronto posible por nuestro equipo.</p>
+            <div class="cotizador-popup-buttons">
+                <button class="cotizador-popup-btn acepto" onclick="enviarCotizacion()">Estoy de Acuerdo</button>
+                <button class="cotizador-popup-btn cancelar" onclick="cerrarPopup()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="promociones">
+        <div class="encabezado">
+            <h1 class="main-title">CALENDARIO DE PROMOCIONES</h1>
+            <p class="subtitle">Conoce todas nuestras promociones durante este año 2025</p>
+
+            <div class="calendar-button-wrapper">
+                <button class="calendar-button" id="toggleCalendar">
+                    MOSTRAR CALENDARIO
+                </button>
+            </div>
+        </div>
+
+        <div class="calendar-section" id="calendarSection">
+            <div class="calendar-image" id="calendarImage">
+                <img src="imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg" alt="calendario-anual">
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn download-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i> DESCARGAR CALENDARIO
+                </button>
+                <button class="action-btn share-btn" id="shareBtn">
+                    <i class="fas fa-share-alt"></i> COMPARTIR CALENDARIO
+                </button>
+            </div>
+        </div>
+
+        <div class="promotions-grid">
+            <div class="promotion-card fixed-promotions">
+                <h4>
+                    <i class="fas fa-thumbtack"></i> Promociones Fijas
+                </h4>
+
+                <div class="promotion-item">
+                    <h5>Descuento de Lealtad</h5>
+                    <p>Clientes frecuentes obtienen beneficios especiales durante todo el año</p>
+                    <span class="promotion-discount">15% OFF</span>
+                </div>
+
+                <div class="promotion-item">
+                    <h5>Miércoles de Descuento</h5>
+                    <p>Todos los miércoles disfruta de precios especiales en productos seleccionados</p>
+                    <span class="promotion-discount">20% OFF</span>
+                </div>
+
+                <div class="promotion-item">
+                    <h5>Compra Mínima</h5>
+                    <p>En compras superiores a $500 obtén descuentos adicionales</p>
+                    <span class="promotion-discount">10% OFF</span>
+                </div>
+            </div>
+
+            <div class="promotion-card seasonal-promotions">
+                <h4>
+                    <i class="fas fa-calendar-week"></i>
+                    Promociones por Temporada
+                </h4>
+
+                <div class="promotion-item">
+                    <h5>Especial de Verano</h5>
+                    <p>Durante los meses de calor, refréscate con nuestras ofertas especiales</p>
+                    <span class="promotion-discount">25% OFF</span>
+                </div>
+
+                <div class="promotion-item">
+                    <h5>Back to School</h5>
+                    <p>Preparáte para el regreso a clases con descuentos increíbles</p>
+                    <span class="promotion-discount">30% OFF</span>
+                </div>
+
+                <div class="promotion-item">
+                    <h5>Promociones Navideñas</h5>
+                    <p>La época más especial del año con los mejores precios</p>
+                    <span class="promotion-discount">40% OFF</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/extras.js"></script>
+</body>
+
+</html>
