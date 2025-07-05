@@ -80,7 +80,6 @@ h6 {
 }
 
 p {
-  font-family: var(--fuente-cremapets-p);
   font-weight: 100;
 }
 
@@ -88,9 +87,9 @@ p,
 li,
 a,
 span {
-  font-family: var(--fuente-secundaria);
+  font-family: var(--fuente-principal);
   font-size: 1.05rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 a {
