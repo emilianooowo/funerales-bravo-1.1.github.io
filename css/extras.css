@@ -30,6 +30,7 @@
     background-color: var(--color-dorado);
     color: white;
     border: none;
+    border-radius: 5px;
     padding: 15px;
     font-size: 1.2em;
     cursor: pointer;
@@ -81,6 +82,7 @@
 
 .cotizador-opcion select {
     padding: 12px;
+    border-radius: 5px;
     font-size: 1em;
     font-family: var(--fuente-principal);
 }
@@ -106,6 +108,8 @@
 }
 
 .cotizador-contacto input {
+    border-radius: 5px;
+    border: 1px solid #000;
     width: 100%;
     padding: 10px;
     font-size: 1em;
@@ -127,6 +131,7 @@
     cursor: pointer;
     display: block;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .cotizador-enviar-btn:hover {
@@ -183,6 +188,7 @@
 .cotizador-popup-btn {
     padding: 12px 30px;
     border: none;
+    border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
     font-family: var(--fuente-principal);
@@ -196,10 +202,6 @@
 .cotizador-popup-btn.cancelar {
     background-color: #95a5a6;
     color: white;
-}
-
-.cotizador-popup-btn:hover {
-    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
@@ -259,6 +261,7 @@
     font-size: 1.2em;
     cursor: pointer;
     font-family: var(--fuente-principal);
+    border-radius: 5px;
 }
 
 .calendar-section {

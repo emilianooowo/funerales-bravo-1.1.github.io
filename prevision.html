@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsión funeraria</title>
+    <link rel="icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/prevision.css">
+    <link rel="stylesheet" href="shared/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html">Inicio</a>
+            <a href="cementerio.html"> Cementerio</a>
+            <a href="cremapets.html"> Cremapets</a>
+            <a href="extras.html#promociones">Promociones</a>
+            <a href="extras.html#cotizador"> Cotizador</a>
+            <a href="index.html#contacto"> Contacto</a>
+
+            <div class="mobile-social-separator"></div>
+
+            <div class="mobile-social-links">
+                <a href="https://www.instagram.com/funerales_bravo/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank"><i
+                        class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-main">
+            <div class="logo-header">
+                <img src="shared/logos/logo-header.webp" alt="Funeraria Logo">
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cementerio.html">Cementerio</a></li>
+                    <li><a href="cremapets.html" class="cremapets-link">Cremapets</a></li>
+                    <li><a href="extras.html#promociones">Promociones</a></li>
+                    <li><a href="extras.html#cotizador">Cotizador</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
+                    title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
+                    title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://wa.me/529622361377" class="whatsapp" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="container">
+            <h1 class="main-title">Previsión funeraria</h1>
+            <h3 class="subtitle">¿En qué consiste?</h3>
+            <p class="description">Anticípese a los momentos difíciles con un plan vitalicio, transferible y
+                personalizado. Congele el precio, evite gastos imprevistos y reciba atención profesional con el respaldo
+                de Funerales Bravo.</p>
+    </section>
+
+    <div class="beneficios">
+        <h2 class="features-subtitle">Beneficios:</h2>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <div class="feature-content">
+                    <h4 class="feature-title">Ahorro</h4>
+                    <p class="feature-description"> Permite reducir hasta un 50% en comparación con un servicio de
+                        uso inmediato, evitando trámites complicados en momentos difíciles.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4 class="feature-title">Cobertura total</h4>
+                    <p class="feature-description"> Incluye todos los servicios necesarios, con atención profesional
+                        y acompañamiento completo.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="bi bi-sliders"></i>
+                </div>
+                <div class="feature-content">
+                    <h4 class="feature-title">Personalización</h4>
+                    <p class="feature-description">El plan se adapta a sus necesidades y posibilidades, con opciones
+                        flexibles de pago.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="bi bi-cash-coin"></i>
+                </div>
+                <div class="feature-content">
+                    <h4 class="feature-title">Inversión segura</h4>
+                    <p class="feature-description"> El precio se congela al momento de contratar, protegiendo su
+                        economía a futuro.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="funeral-section">
+        <div class="planes-contenido">
+            <div class="section-header">
+                <h1 class="section-title">Planes de Previsión Funeraria</h1>
+                <div class="title-line"></div>
+                <p class="section-description">
+                    Nuestros servicios se ofrecen de dos formas para adaptarse a sus necesidades:
+                    en nuestras modernas instalaciones o en la comodidad de su domicilio.
+                    Cada plan está diseñado para brindar el apoyo y la dignidad que su familia merece
+                    en estos momentos difíciles.
+                </p>
+            </div>
+
+            <div class="plans-buttons">
+                <button class="plan-btn basico" data-plan="basico">Básico empresarial</button>
+                <button class="plan-btn empresarial" data-plan="empresarial">Platino</button>
+                <button class="plan-btn platino" data-plan="platino">Diamante</button>
+            </div>
+
+            <div id="plan-basico" class="plan-content">
+                <div class="services-container">
+                    <div class="service-column">
+                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
+                        <ul class="service-list">
+                            <li>Velación en sala básica por 24 horas</li>
+                            <li>Ataúd de madera básico</li>
+                            <li>Arreglo floral sencillo</li>
+                            <li>Servicio de cafetería básico</li>
+                            <li>Trámites legales básicos</li>
+                            <li>Traslado al cementerio</li>
+                        </ul>
+                        <div class="service-gallery">
+                            <img src="imgs/index/sala-memorial.jpg"
+                                alt="Sala de velación memorial" class="gallery-image">
+                            <img src="imgs/index/sala-serenity.jpg"
+                                alt="Área de descanso serenity" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="service-column right">
+                        <h3 class="service-title">Servicio a Domicilio</h3>
+                        <ul class="service-list">
+                            <li>Velación en el hogar por 24 horas</li>
+                            <li>Ataúd de madera básico</li>
+                            <li>Arreglo floral sencillo</li>
+                            <li>Servicio de cafetería básico</li>
+                            <li>Acondicionamiento del espacio</li>
+                            <li>Equipo de sonido básico</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
+            </div>
+
+            <div id="plan-empresarial" class="plan-content">
+                <div class="services-container">
+                    <div class="service-column">
+                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
+                        <ul class="service-list">
+                            <li>Velación en sala premium por 48 horas</li>
+                            <li>Ataúd de madera fina</li>
+                            <li>Arreglos florales múltiples</li>
+                            <li>Servicio de cafetería completo</li>
+                            <li>Trámites legales completos</li>
+                            <li>Traslado en carroza especial</li>
+                            <li>Servicio de música en vivo</li>
+                        </ul>
+                        <div class="service-gallery">
+                            <img src="imgs/index/sala-memorial.jpg"
+                                alt="Sala de velación memorial" class="gallery-image">
+                            <img src="imgs/index/sala-serenity.jpg"
+                                alt="Área de descanso serenity" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="service-column right">
+                        <h3 class="service-title">Servicio a Domicilio</h3>
+                        <ul class="service-list">
+                            <li>Velación en el hogar por 48 horas</li>
+                            <li>Ataúd de madera fina</li>
+                            <li>Arreglos florales múltiples</li>
+                            <li>Servicio de cafetería completo</li>
+                            <li>Acondicionamiento completo del espacio</li>
+                            <li>Equipo de sonido profesional</li>
+                            <li>Asistencia 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
+            </div>
+
+            <div id="plan-platino" class="plan-content">
+                <div class="services-container">
+                    <div class="service-column">
+                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
+                        <ul class="service-list">
+                            <li>Velación en sala VIP por 72 horas</li>
+                            <li>Ataúd de lujo importado</li>
+                            <li>Decoración floral exclusiva</li>
+                            <li>Servicio de catering gourmet</li>
+                            <li>Gestión legal completa</li>
+                            <li>Carroza de lujo</li>
+                            <li>Servicio de música y video</li>
+                            <li>Coordinador personal</li>
+                        </ul>
+                        <div class="service-gallery">
+                            <img src="imgs/index/sala-memorial.jpg"
+                                alt="Sala de velación memorial" class="gallery-image">
+                            <img src="imgs/index/sala-serenity.jpg"
+                                alt="Área de descanso serenity" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="service-column right">
+                        <h3 class="service-title">Servicio a Domicilio</h3>
+                        <ul class="service-list">
+                            <li>Velación en el hogar por 72 horas</li>
+                            <li>Ataúd de lujo importado</li>
+                            <li>Decoración floral exclusiva</li>
+                            <li>Servicio de catering gourmet</li>
+                            <li>Transformación completa del espacio</li>
+                            <li>Equipo audiovisual profesional</li>
+                            <li>Servicio de seguridad</li>
+                            <li>Coordinador personal 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery-container">
+        <h1 class="gallery-title">GALERIA</h1>
+
+        <div class="gallery-grid show" id="galleryGrid">
+            <div class="loading">Cargando imágenes...</div>
+        </div>
+
+        <div id="lightboxOverlay" class="lightbox-overlay hidden">
+            <span id="lightboxClose" class="lightbox-close">&times;</span>
+            <img id="lightboxImage" class="lightbox-image" src="" alt="">
+            <div class="lightbox-nav">
+                <button id="prevBtn">&#10094;</button>
+                <button id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="shared/logos/logo-footer.webp" alt="Logo Funerales Bravo">
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="prevision.html">Previsión Funeraria</a></p>
+                <p><a href="cementerio.html">Cremación de Mascotas</a></p>
+                <p><a href="cementerio.html">Cementerio</a></p>
+                <p> <a href="extras.html#promociones">Calendario promocional</a></p>
+                <p> <a href="extras.html#cotizador"> Cotizador</a></p>
+                <p> <a href="index.html#contacto"> Contacto</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p><a href="https://www.facebook.com/FuneralesBravoTapachula/"><i class="bi bi-facebook"></i>
+                        Facebook</a></p>
+                <p><a href="https://www.instagram.com/funerales_bravo/"><i class="bi bi-instagram"></i>Instagram</a></p>
+                <p><a href="https://wa.me/529622361377"><i class="bi bi-whatsapp"></i>WhatsApp</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Funerales Bravo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
+        aria-label="Chatea con nosotros por WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script src="js/prevision.js"></script>
+</body>
+
+</html>

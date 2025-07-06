@@ -1,91 +1,25 @@
-const galleryData = {
-    urnas: [
-        { src: 'imgs/cementerio/urna-b-1.webp', title: 'urna 1' },
-        { src: 'imgs/cementerio/urna-p-1.webp', title: 'urna 2' },
-        { src: 'imgs/cementerio/urna-p-2.webp', title: 'urna 3' },
-        { src: 'imgs/cementerio/urna-p-3.webp', title: 'urna 4' },
-        { src: 'imgs/cementerio/urna-p-4.webp', title: 'urna 5' },
-        { src: 'imgs/cementerio/urna-p-5.webp', title: 'urna 6' },
-        { src: 'imgs/cementerio/urna-p-6.webp', title: 'urna 7' },
-        { src: 'imgs/cementerio/urna-p-7.webp', title: 'urna 8' }
-    ],
-    cementerio: [
-        { src: 'imgs/cementerio/cementerio-1.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/cementerio-2.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/cementerio-3.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/cementerio-4.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/col-0.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/col-1.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/eco-0.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/eco-1.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/eco-2.webp', title: 'cementerio' },
-        { src: 'imgs/cementerio/nicho.webp', title: 'cementerio' },
-
-    ]
-};
+const galleryData = [
+    { src: 'imgs/cementerio/cementerio-1.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/cementerio-2.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/cementerio-3.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/cementerio-4.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/col-0.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/col-1.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/eco-0.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/eco-1.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/eco-2.webp', title: 'cementerio' },
+    { src: 'imgs/cementerio/nicho.webp', title: 'cementerio' }
+];
 
 const galleryGrid = document.getElementById('galleryGrid');
-const categoryButtons = document.querySelectorAll('.category-btn');
-let currentCategory = 'urnas';
-
-function showCategory(category) {
-    galleryGrid.classList.remove('show');
-
-    setTimeout(() => {
-        galleryGrid.innerHTML = '';
-
-        galleryData[category].forEach((item, index) => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                        <img src="${item.src}" alt="${item.title}" loading="lazy">
-                        <div class="item-title">${item.title}</div>
-                    `;
-
-            galleryItem.addEventListener('click', () => {
-                console.log(`Clicked on: ${item.title}`);
-            });
-
-            galleryGrid.appendChild(galleryItem);
-        });
-
-        galleryGrid.classList.add('show');
-    }, 250);
-}
-
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-
-        button.classList.add('active');
-
-        const category = button.getAttribute('data-category');
-        currentCategory = category;
-        showCategory(category);
-    });
-});
-
-showCategory(currentCategory);
-
-function preloadImages() {
-    Object.values(galleryData).flat().forEach(item => {
-        const img = new Image();
-        img.src = item.src;
-    });
-}
-
-window.addEventListener('load', preloadImages);
-
-let currentImages = [];
+let currentImages = galleryData;
 let currentIndex = 0;
 
-function showCategory(category) {
+function showGallery() {
     galleryGrid.classList.remove('show');
 
     setTimeout(() => {
         galleryGrid.innerHTML = '';
-
-        currentImages = galleryData[category];
 
         currentImages.forEach((item, index) => {
             const galleryItem = document.createElement('div');
@@ -100,11 +34,31 @@ function showCategory(category) {
             });
 
             galleryGrid.appendChild(galleryItem);
+
+            observer.observe(galleryItem);
         });
 
         galleryGrid.classList.add('show');
     }, 250);
 }
+
+function preloadImages() {
+    galleryData.forEach(item => {
+        const img = new Image();
+        img.src = item.src;
+    });
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.4
+});
 
 function openLightbox(index) {
     currentIndex = index;
@@ -143,7 +97,39 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+const observerInfo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const container = entry.target;
+
+            const line = container.querySelector('.animated-line');
+            const title = container.querySelector('.info-title');
+            const description = container.querySelector('.info-description');
+            const features = container.querySelector('.info-features');
+            const image = document.querySelector('.info-image');
+
+            line.classList.add('animate-in');
+
+            line.addEventListener('transitionend', () => {
+                title.classList.add('animate-in');
+                setTimeout(() => {
+                    description.classList.add('animate-in');
+                    features.classList.add('animate-in');
+                    image.classList.add('animate-in');
+                }, 400);
+            }, { once: true });
+
+            observerInfo.unobserve(container);
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.info-content').forEach(el => observerInfo.observe(el));
+
 document.addEventListener('DOMContentLoaded', function () {
+    showGallery();
+    preloadImages();
+
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 

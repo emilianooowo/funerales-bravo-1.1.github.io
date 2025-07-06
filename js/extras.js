@@ -106,12 +106,6 @@ function enviarCotizacion() {
     form.submit();
 }
 
-window.onbeforeunload = () => {
-    for (const form of document.getElementsByTagName('form')) {
-        form.reset();
-    }
-}
-
 const toggleBtn = document.getElementById('toggleCalendar');
 const calendarSection = document.getElementById('calendarSection');
 const downloadBtn = document.getElementById('downloadBtn');
@@ -146,7 +140,7 @@ function showToast(message) {
 
 async function downloadImage() {
     try {
-        const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+        const imageUrl = './imgs/index/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
         const response = await fetch(imageUrl);
         const blob = await response.blob();
 
@@ -169,7 +163,7 @@ downloadBtn.addEventListener('click', downloadImage);
 
 async function shareImage() {
     try {
-        const imageUrl = './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+        const imageUrl = './imgs/index/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
 
         if (navigator.canShare && navigator.share) {
             const response = await fetch(imageUrl);
@@ -196,7 +190,7 @@ async function shareImage() {
 shareBtn.addEventListener('click', shareImage);
 
 function copyToClipboard() {
-    const imageUrl = window.location.origin + './imgs/calendario/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
+    const imageUrl = window.location.origin + './imgs/index/CALENDARIO-PROMOCIONES-FUNERALES-BRAVO.jpg';
     navigator.clipboard.writeText(imageUrl).then(() => {
         showToast('¡Enlace de la imagen copiado al portapapeles!');
     }).catch(() => {

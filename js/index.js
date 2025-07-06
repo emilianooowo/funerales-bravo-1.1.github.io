@@ -91,13 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Observar herramientas
     const herramientasGrid = document.getElementById('herramientasGrid');
     if (herramientasGrid) {
         observer.observe(herramientasGrid);
     }
 
-    // Observar timeline
     const timelineContainer = document.querySelector('.timeline-container');
     if (timelineContainer) {
         observer.observe(timelineContainer);

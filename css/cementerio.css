@@ -8,6 +8,8 @@
     padding: 60px;
     text-align: center;
     position: relative;
+    background: #000;
+    color: #fff;
 }
 
 .hero-content {
@@ -39,26 +41,51 @@
 }
 
 .welcome-title {
+    position: relative;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s ease 0.3s forwards;
     margin-bottom: 15px;
 }
 
+.welcome-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-dorado);
+    animation: expandLine 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes expandLine {
+    to {
+        width: 100%;
+    }
+}
+
 .welcome-description {
     margin-bottom: 15px;
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease 0.9s forwards;
+    transform: translateY(-30px);
+    animation: fadeInDown 1s ease 0.9s forwards;
 }
 
 .cta-text {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease 1.2s forwards;
+    transform: translateY(-30px);
+    animation: fadeInDown 1s ease 1.2s forwards;
 }
 
 @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
     to {
         opacity: 1;
         transform: translateY(0);
@@ -80,7 +107,7 @@
 .services-image {
     width: 100%;
     height: 600px;
-    background: url('../imgs/cementerio/cementerio-2.webp');
+    background: url('../imgs/cementerio/cementerio-3.webp');
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease;
@@ -118,7 +145,7 @@
 }
 
 .info-section {
-    padding: 150px 0;
+    padding: 40px 0;
     background: black;
 }
 
@@ -136,19 +163,13 @@
 }
 
 .info-title {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
     color: white;
 }
 
-.info-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--color-dorado);
+.info-description {
+    margin-bottom: 15px;
 }
 
 .info-features {
@@ -157,7 +178,7 @@
 }
 
 .info-features li {
-    padding: 10px 0;
+    padding: 5px 0;
     position: relative;
     padding-left: 20px;
     color: white;
@@ -181,6 +202,44 @@
     background: url(../imgs/cementerio/col-0.webp);
     background-size: cover;
     background-position: center;
+}
+
+.animated-line {
+    height: 1.5px;
+    width: 0;
+    background: var(--color-dorado);
+    transition: width .8s ease;
+    margin-bottom: 20px;
+}
+
+.info-title,
+.info-description,
+.info-features {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.info-image {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1.5s ease;
+}
+
+.animated-line.animate-in {
+    width: 100%;
+}
+
+.info-title.animate-in,
+.info-description.animate-in,
+.info-features.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-image.animate-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 @media (max-width: 768px) {
@@ -274,38 +333,6 @@
     flex-wrap: wrap;
 }
 
-.category-btn {
-    padding: 12px 30px;
-    border: 1px solid var(--color-cafe-oscuro);
-    background: none;
-    font-family: var(--fuente-principal);
-    color: var(--color-cafe-oscuro);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.category-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    transition: left 0.5s;
-}
-
-.category-btn:hover {
-    transform: translateY(-3px);
-}
-
-.category-btn.active {
-    background: var(--color-cafe-oscuro);
-    color: white;
-}
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -326,45 +353,12 @@
     aspect-ratio: 1;
     transform: scale(0.9);
     opacity: 0;
-    animation: fadeInScale 0.6s ease forwards;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.gallery-item:hover {
-    scale: 1.01;
-}
-
-.gallery-item:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.gallery-item:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.gallery-item:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.gallery-item:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.gallery-item:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.gallery-item:nth-child(6) {
-    animation-delay: 0.6s;
-}
-
-.gallery-item:nth-child(7) {
-    animation-delay: 0.7s;
-}
-
-.gallery-item:nth-child(8) {
-    animation-delay: 0.8s;
+.gallery-item.animate-in {
+    animation: fadeInScale 0.6s ease forwards;
 }
 
 @keyframes fadeInScale {
@@ -372,6 +366,10 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.gallery-item:hover {
+    scale: 1.01;
 }
 
 .gallery-item img {
