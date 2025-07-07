@@ -29,7 +29,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-family: var(--fuente-principal);
 }
 
@@ -63,17 +63,14 @@ h6 {
   font-weight: 100;
 }
 
-p {
-  font-weight: 100;
-}
-
 p,
 li,
 a,
 span {
   font-family: var(--fuente-principal);
-  font-size: 1.05rem;
-  line-height: 1.4;
+  font-size: .9rem;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
 }
 
 a {
@@ -199,7 +196,7 @@ header {
 
 .logo-header img {
   width: auto;
-  height: 50px;
+  height: 40px;
 }
 
 .nav-menu {
@@ -240,7 +237,7 @@ header {
 
 .social-icons a {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transition: color 0.2s ease;
 }
 
@@ -260,7 +257,7 @@ header {
 }
 
 footer {
-  background: #000;
+  background: #1b1b1b;
   color: white;
   padding: 50px 0 20px;
 }

@@ -6,10 +6,14 @@
 
 .hero-section {
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: relative;
-    background: #000;
+    background: #1b1b1b;
     color: #fff;
+    min-height: 60vh;
 }
 
 .hero-content {
@@ -93,21 +97,21 @@
 }
 
 .services-section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .services-container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
     gap: 60px;
+    align-items: center;
 }
 
 .services-image {
-    width: 100%;
-    height: 600px;
-    background: url('../imgs/cementerio/cementerio-3.webp');
+    flex: 1;
+    height: 650px;
+    background: url('../imgs/cementerio/cementerio-0.webp');
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease;
@@ -115,14 +119,15 @@
 }
 
 .services-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
 }
 
 .service-item {
-    padding: 40px;
-    border-left: 2px solid var(--color-dorado);
+    padding: 20px;
+    border-left: 1.5px solid var(--color-dorado);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateX(50px);
@@ -133,8 +138,13 @@
     animation-delay: 0.3s;
 }
 
+.service-item:hover {
+    transform: translateX(0);
+}
+
 .service-title {
     margin-bottom: 20px;
+    color: var(--color-dorado);
 }
 
 @keyframes slideInRight {
@@ -144,9 +154,32 @@
     }
 }
 
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .services-image {
+        height: 300px;
+    }
+
+    .service-item {
+        padding: 30px 20px;
+    }
+
+    .service-title {
+        font-size: 1.2em;
+    }
+
+    .service-description {
+        font-size: 1em;
+    }
+}
+
 .info-section {
     padding: 40px 0;
-    background: black;
+    background: #1b1b1b;
 }
 
 .info-container {
@@ -276,25 +309,6 @@
         line-height: 1.5;
     }
 
-    .services-container {
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .services-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .services-image {
-        height: 250px;
-    }
-
-    .service-item {
-        padding: 20px;
-        border-left: 4px solid var(--color-dorado);
-    }
-
     .info-container {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -315,9 +329,9 @@
 }
 
 .gallery-container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .gallery-title {
@@ -369,7 +383,7 @@
 }
 
 .gallery-item:hover {
-    scale: 1.01;
+    scale: 1.03;
 }
 
 .gallery-item img {
@@ -455,8 +469,8 @@
 }
 
 .ubicacion-section {
-    padding: 60px 0;
-    background: #000;
+    padding: 40px 0;
+    background: #1b1b1b;
     color: white;
 }
 

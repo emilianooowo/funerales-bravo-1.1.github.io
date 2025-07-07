@@ -2,8 +2,6 @@
     padding: 60px;
     text-align: center;
     position: relative;
-    background: #000;
-    color: #fff;
 }
 
 .hero-content {
@@ -117,9 +115,8 @@
 }
 
 .cremation-section {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
-    background: white;
     padding: 40px;
 }
 
@@ -402,9 +399,9 @@
 
 
 .gallery-container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .gallery-title {
@@ -456,7 +453,7 @@
 }
 
 .gallery-item:hover {
-    scale: 1.01;
+    scale: 1.03;
 }
 
 .gallery-item img {
