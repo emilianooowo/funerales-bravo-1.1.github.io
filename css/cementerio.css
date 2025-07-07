@@ -4,82 +4,127 @@
     padding: 0 20px;
 }
 
-.hero-section {
-    padding: 60px;
+header {
+    background-color: rgb(52, 41, 30);
+    color: white;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-header img {
+    height: 50px;
+    width: auto;
+}
+
+.menu-pc-toggle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #1b1b1b;
-    color: #fff;
-    min-height: 60vh;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+    z-index: 1001;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo img {
-    width: auto;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.welcome-content {
-    text-align: left;
-}
-
-.welcome-title {
-    position: relative;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease 0.3s forwards;
-    margin-bottom: 15px;
-}
-
-.welcome-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
+.menu-pc-bar {
+    width: 20px;
     height: 1.5px;
-    background: var(--color-dorado);
-    animation: expandLine 0.8s ease-out 0.5s forwards;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.menu-pc-toggle.active .menu-pc-bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-pc-toggle.active .menu-pc-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-pc-toggle.active .menu-pc-bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.menu-pc-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 150px;
+    background-color: var(--color-cafe-oscuro);
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-60px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-pc-dropdown.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-pc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-pc-item {
+    border-bottom: 1px solid #878787;
+}
+
+.menu-pc-item:last-child {
+    border-bottom: none;
+}
+
+.menu-pc-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-pc-link:hover {
+    background-color: #000000;
+}
+
+.menu-pc-link.cremapets-link:hover {
+    background-color: var(--color-azul-mascotas);
+    color: #fff;
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDownFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes expandLine {
     to {
         width: 100%;
     }
-}
-
-.welcome-description {
-    margin-bottom: 15px;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: fadeInDown 1s ease 0.9s forwards;
-}
-
-.cta-text {
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: fadeInDown 1s ease 1.2s forwards;
 }
 
 @keyframes fadeInUp {
@@ -89,11 +134,99 @@
     }
 }
 
-@keyframes fadeInDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+.features-subtitle.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
     }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-content {
+        text-align: center;
+    }
+}
+
+.main-section {
+    background-image:
+        linear-gradient(to top, transparent, rgb(52, 41, 30)),
+        url('../imgs/cementerio/title-cementerio.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    min-height: 80vh;
+}
+
+.logo-main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-main img {
+    height: 180px;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+
+.main-title {
+    margin-bottom: 35px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+.main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-dorado);
+    transform: translateX(-50%);
+    animation: expandLine 0.8s ease-out 0.5s forwards;
+}
+
+.subtitle {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideDownFade 0.8s ease-out 0.3s forwards;
+}
+
+.description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideDownFade 0.8s ease-out 0.6s forwards;
 }
 
 .services-section {

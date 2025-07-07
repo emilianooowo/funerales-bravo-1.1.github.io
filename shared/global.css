@@ -1,9 +1,9 @@
 :root {
-  --color-cafe-oscuro: #34291e;
+  --color-cafe-oscuro: rgb(52, 41, 30);
   --color-beige-1: rgb(244, 234, 219);
   --color-beige-2: #E8DDCC;
   --color-dorado: #b4873a;
-  --color-azul-mascotas: #0963D8;
+  --color-azul-mascotas: rgb(9, 99, 216);
 
   --fuente-principal: 'Trajan Pro Regular', sans-serif;
 }
