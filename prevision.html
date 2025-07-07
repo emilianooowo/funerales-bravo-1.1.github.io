@@ -41,33 +41,31 @@
     <header>
         <div class="header-main">
             <div class="logo-header">
-                <img src="shared/logos/logo-header.webp" alt="Funeraria Logo">
+                <a href="index.html">
+                    <img src="shared/logos/logo-header-blanco.webp" alt="Funeraria Logo">
+                </a>
             </div>
 
             <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="cementerio.html">Cementerio</a></li>
-                    <li><a href="cremapets.html" class="cremapets-link">Cremapets</a></li>
-                    <li><a href="extras.html#promociones">Promociones</a></li>
-                    <li><a href="extras.html#cotizador">Cotizador</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+                <button class="menu-pc-toggle" id="menuToggle">
+                    <span class="menu-pc-bar"></span>
+                    <span class="menu-pc-bar"></span>
+                    <span class="menu-pc-bar"></span>
+                </button>
 
-            <div class="social-icons">
-                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
-                    title="Instagram">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
-                    title="Facebook">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="https://wa.me/529622361377" class="whatsapp" title="WhatsApp">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-            </div>
+                <div class="menu-pc-dropdown" id="menuDropdown">
+                    <ul class="menu-pc-list">
+                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
+                        <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
+                        <li class="menu-pc-item"><a href="cremapets.html"
+                                class="menu-pc-link cremapets-link">Cremapets</a></li>
+                        <li class="menu-pc-item"><a href="extras.html#promociones" class="menu-pc-link">Promociones</a>
+                        </li>
+                        <li class="menu-pc-item"><a href="extras.html#cotizador" class="menu-pc-link">Cotizador</a></li>
+                        <li class="menu-pc-item"><a href="index.html#contacto" class="menu-pc-link">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -89,7 +87,7 @@
                     <i class="bi bi-wallet2"></i>
                 </div>
                 <div class="feature-content">
-                    <h4 class="feature-title">Ahorro</h4>
+                    <h3 class="feature-title">Ahorro</h3>
                     <p class="feature-description"> Permite reducir hasta un 50% en comparación con un servicio de
                         uso inmediato.</p>
                 </div>
@@ -100,7 +98,7 @@
                     <i class="bi bi-shield-check"></i>
                 </div>
                 <div class="feature-content">
-                    <h4 class="feature-title">Cobertura total</h4>
+                    <h3 class="feature-title">Cobertura total</h3>
                     <p class="feature-description"> Incluye todos los servicios necesarios.</p>
                 </div>
             </div>
@@ -110,7 +108,7 @@
                     <i class="bi bi-sliders"></i>
                 </div>
                 <div class="feature-content">
-                    <h4 class="feature-title">Personalización</h4>
+                    <h3 class="feature-title">Personalización</h3>
                     <p class="feature-description">El plan se adapta a sus necesidades, con opciones
                         flexibles de pago.</p>
                 </div>
@@ -121,7 +119,7 @@
                     <i class="bi bi-cash-coin"></i>
                 </div>
                 <div class="feature-content">
-                    <h4 class="feature-title">Inversión segura</h4>
+                    <h3 class="feature-title">Inversión segura</h3>
                     <p class="feature-description"> El precio se congela al momento de contratar.</p>
                 </div>
             </div>
@@ -134,129 +132,74 @@
                 <h1 class="section-title">Planes de Previsión Funeraria</h1>
                 <div class="title-line"></div>
                 <p class="section-description">
-                    Nuestros servicios se ofrecen de dos formas para adaptarse a sus necesidades:
-                    en nuestras modernas instalaciones o en la comodidad de su domicilio.
-                    Cada plan está diseñado para brindar el apoyo y la dignidad que su familia merece
-                    en estos momentos difíciles.
-                </p>
+                    Nuestros servicios se ofrecen de dos formas para adaptarse a sus necesidades:</p>
+                <li class="service-list">En nuestras instalaciones </li>
+                <li class="service-list">En la comodidad de su domicilio</li>
+                <h2 class="service-title">Todos los planes incluyen (ya sea a domicilio o en las instalaciones):</h2>
+                <ul class="service-list">
+                    <li>Apoyo para gestión de Trámite para el Acta de Defunción y orden de inhumación</li>
+                    <li>Féretro (varía según el plan)</li>
+                    <li>Preparado Estético y embalsamado del Ser Amado</li>
+                    <li>Obituario digital y recuerdo a la memoria</li>
+                    <li>Servicio de Carroza para traslados y Cortejo Fúnebre</li>
+                    <li>1 Kit de Velación (Cristo, 4 Candelabros, 1 Base para Féretro por 24 Horas)</li>
+                </ul>
             </div>
 
-            <div class="plans-buttons">
-                <button class="plan-btn basico" data-plan="basico">Básico empresarial</button>
-                <button class="plan-btn empresarial" data-plan="empresarial">Platino</button>
-                <button class="plan-btn platino" data-plan="platino">Diamante</button>
+            <div class="comparison-intro">
+                <p>Compara nuestros planes y elige el que más se adecue a tus necesidades. <br><br>Selecciona el mismo o dos planes
+                    diferentes y el tipo de servicio (instalaciones o domicilio) para ver una comparación detallada.</p>
             </div>
 
-            <div id="plan-basico" class="plan-content">
-                <div class="services-container">
-                    <div class="service-column">
-                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
-                        <ul class="service-list">
-                            <li>Velación en sala básica por 24 horas</li>
-                            <li>Ataúd de madera básico</li>
-                            <li>Arreglo floral sencillo</li>
-                            <li>Servicio de cafetería básico</li>
-                            <li>Trámites legales básicos</li>
-                            <li>Traslado al cementerio</li>
-                        </ul>
-                        <div class="service-gallery">
-                            <img src="imgs/index/sala-memorial.jpg" alt="Sala de velación memorial"
-                                class="gallery-image">
-                            <img src="imgs/index/sala-serenity.jpg" alt="Área de descanso serenity"
-                                class="gallery-image">
-                        </div>
+            <div class="comparison-container">
+                <div class="comparison-selectors">
+                    <div class="selector-group">
+                        <h4>Primer Plan</h4>
+                        <select class="plan-selector" id="plan1">
+                            <option value="">Selecciona un plan</option>
+                            <option value="basico">Básico Empresarial</option>
+                            <option value="platino">Platino</option>
+                            <option value="diamante">Diamante</option>
+                        </select>
+                        <select class="service-selector" id="service1">
+                            <option value="">Tipo de servicio</option>
+                            <option value="instalaciones">En instalaciones</option>
+                            <option value="domicilio">A domicilio</option>
+                        </select>
                     </div>
-                    <div class="divider-line"></div>
-                    <div class="service-column right">
-                        <h3 class="service-title">Servicio a Domicilio</h3>
-                        <ul class="service-list">
-                            <li>Velación en el hogar por 24 horas</li>
-                            <li>Ataúd de madera básico</li>
-                            <li>Arreglo floral sencillo</li>
-                            <li>Servicio de cafetería básico</li>
-                            <li>Acondicionamiento del espacio</li>
-                            <li>Equipo de sonido básico</li>
-                        </ul>
+
+                    <div class="selector-group">
+                        <h4>Segundo Plan</h4>
+                        <select class="plan-selector" id="plan2">
+                            <option value="">Selecciona un plan</option>
+                            <option value="basico">Básico Empresarial</option>
+                            <option value="platino">Platino</option>
+                            <option value="diamante">Diamante</option>
+                        </select>
+                        <select class="service-selector" id="service2">
+                            <option value="">Tipo de servicio</option>
+                            <option value="instalaciones">En instalaciones</option>
+                            <option value="domicilio">A domicilio</option>
+                        </select>
                     </div>
                 </div>
-                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
-            </div>
 
-            <div id="plan-empresarial" class="plan-content">
-                <div class="services-container">
-                    <div class="service-column">
-                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
-                        <ul class="service-list">
-                            <li>Velación en sala premium por 48 horas</li>
-                            <li>Ataúd de madera fina</li>
-                            <li>Arreglos florales múltiples</li>
-                            <li>Servicio de cafetería completo</li>
-                            <li>Trámites legales completos</li>
-                            <li>Traslado en carroza especial</li>
-                            <li>Servicio de música en vivo</li>
-                        </ul>
-                        <div class="service-gallery">
-                            <img src="imgs/index/sala-memorial.jpg" alt="Sala de velación memorial"
-                                class="gallery-image">
-                            <img src="imgs/index/sala-serenity.jpg" alt="Área de descanso serenity"
-                                class="gallery-image">
-                        </div>
+                <div class="comparison-result" id="comparisonResult">
+                    <div class="plan-comparison" id="comparison1">
+                        <h3 id="planTitle1"></h3>
+                        <div class="service-type" id="serviceType1"></div>
+                        <div id="planContent1"></div>
                     </div>
-                    <div class="divider-line"></div>
-                    <div class="service-column right">
-                        <h3 class="service-title">Servicio a Domicilio</h3>
-                        <ul class="service-list">
-                            <li>Velación en el hogar por 48 horas</li>
-                            <li>Ataúd de madera fina</li>
-                            <li>Arreglos florales múltiples</li>
-                            <li>Servicio de cafetería completo</li>
-                            <li>Acondicionamiento completo del espacio</li>
-                            <li>Equipo de sonido profesional</li>
-                            <li>Asistencia 24/7</li>
-                        </ul>
+
+                    <div class="plan-comparison" id="comparison2">
+                        <h3 id="planTitle2"></h3>
+                        <div class="service-type" id="serviceType2"></div>
+                        <div id="planContent2"></div>
                     </div>
                 </div>
-                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
             </div>
 
-            <div id="plan-platino" class="plan-content">
-                <div class="services-container">
-                    <div class="service-column">
-                        <h3 class="service-title">Servicio en Nuestras Instalaciones</h3>
-                        <ul class="service-list">
-                            <li>Velación en sala VIP por 72 horas</li>
-                            <li>Ataúd de lujo importado</li>
-                            <li>Decoración floral exclusiva</li>
-                            <li>Servicio de catering gourmet</li>
-                            <li>Gestión legal completa</li>
-                            <li>Carroza de lujo</li>
-                            <li>Servicio de música y video</li>
-                            <li>Coordinador personal</li>
-                        </ul>
-                        <div class="service-gallery">
-                            <img src="imgs/index/sala-memorial.jpg" alt="Sala de velación memorial"
-                                class="gallery-image">
-                            <img src="imgs/index/sala-serenity.jpg" alt="Área de descanso serenity"
-                                class="gallery-image">
-                        </div>
-                    </div>
-                    <div class="divider-line"></div>
-                    <div class="service-column right">
-                        <h3 class="service-title">Servicio a Domicilio</h3>
-                        <ul class="service-list">
-                            <li>Velación en el hogar por 72 horas</li>
-                            <li>Ataúd de lujo importado</li>
-                            <li>Decoración floral exclusiva</li>
-                            <li>Servicio de catering gourmet</li>
-                            <li>Transformación completa del espacio</li>
-                            <li>Equipo audiovisual profesional</li>
-                            <li>Servicio de seguridad</li>
-                            <li>Coordinador personal 24/7</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="extras.html#cotizador"><button class="quote-btn">Cotiza Ya</button></a>
-            </div>
+            <a href="extras.html#cotizador"><button class="final-quote-btn">Cotiza Ya</button></a>
         </div>
     </section>
 
