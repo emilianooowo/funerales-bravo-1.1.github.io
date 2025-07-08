@@ -46,16 +46,16 @@ const titleObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.section-title').forEach(el => titleObserver.observe(el));
 
 const galleryData = [
-    { src: 'imgs/cremapets/urna-gato-1.webp' },
-    { src: 'imgs/cremapets/urna-gato-2.webp' },
-    { src: 'imgs/cremapets/urna-gato-3.webp' },
-    { src: 'imgs/cremapets/urna-perro-1.webp' },
-    { src: 'imgs/cremapets/urna-perro-2.webp' },
-    { src: 'imgs/cremapets/urna-perro-3.webp' },
-    { src: 'imgs/cremapets/urna-perro-4.webp' },
-    { src: 'imgs/cremapets/urna-perro-5.webp' },
-    { src: 'imgs/cremapets/urna-perro-6.webp' },
-    { src: 'imgs/cremapets/urna-perro-7.webp' },
+    { src: 'assets/imgs/cremapets/urna-gato-1.webp' },
+    { src: 'assets/imgs/cremapets/urna-gato-2.webp' },
+    { src: 'assets/imgs/cremapets/urna-gato-3.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-1.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-2.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-3.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-4.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-5.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-6.webp' },
+    { src: 'assets/imgs/cremapets/urna-perro-7.webp' },
 ];
 
 const galleryGrid = document.getElementById('galleryGrid');

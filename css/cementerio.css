@@ -164,7 +164,7 @@ header {
 .main-section {
     background-image:
         linear-gradient(to top, transparent, rgb(52, 41, 30)),
-        url('../imgs/cementerio/title-cementerio.png');
+        url('../assets/imgs/cementerio/title-cementerio.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,7 +194,7 @@ header {
 
 
 .main-title {
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     position: relative;
     opacity: 0;
     transform: translateY(50px);
@@ -214,7 +214,7 @@ header {
 }
 
 .subtitle {
-    margin: 20px 0;
+    margin: 10px 0;
     opacity: 0;
     transform: translateY(-30px);
     animation: slideDownFade 0.8s ease-out 0.3s forwards;
@@ -244,7 +244,7 @@ header {
 .services-image {
     flex: 1;
     height: 650px;
-    background: url('../imgs/cementerio/cementerio-0.webp');
+    background: url('../assets/imgs/cementerio/cementerio-0.webp');
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease;
@@ -365,7 +365,7 @@ header {
 .info-image {
     width: 100%;
     height: 500px;
-    background: url(../imgs/cementerio/col-0.webp);
+    background: url(../assets/imgs/cementerio/col-0.webp);
     background-size: cover;
     background-position: center;
 }

@@ -1,14 +1,14 @@
 const galleryData = [
-    { src: 'imgs/cementerio/cementerio-1.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/cementerio-2.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/cementerio-3.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/cementerio-4.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/col-0.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/col-1.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/eco-0.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/eco-1.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/eco-2.webp', title: 'cementerio' },
-    { src: 'imgs/cementerio/nicho.webp', title: 'cementerio' }
+    { src: 'assets/imgs/cementerio/cementerio-1.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/cementerio-2.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/cementerio-3.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/cementerio-4.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/col-0.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/col-1.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/eco-0.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/eco-1.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/eco-2.webp', title: 'cementerio' },
+    { src: 'assets/imgs/cementerio/nicho.webp', title: 'cementerio' }
 ];
 
 const galleryGrid = document.getElementById('galleryGrid');

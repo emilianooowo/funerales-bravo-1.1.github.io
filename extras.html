@@ -7,7 +7,7 @@
     <title>Extras - Funerales Bravo</title>
     <link rel="shortcut icon" href="shared/logos/logo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/extras.css">
-    <link rel="stylesheet" href="shared/global.css">
+    <link rel="stylesheet" href="assets/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -22,7 +22,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <a href="index.html">Inicio</a>
-            <a href="prevision.html"> Servicios funerarios</a>
+            <a href="cementerio.html"> Cementerio</a>
             <a href="cremapets.html"> Cremapets</a>
             <a href="extras.html#promociones">Promociones</a>
             <a href="extras.html#cotizador"> Cotizador</a>
@@ -41,34 +41,31 @@
     <header>
         <div class="header-main">
             <div class="logo-header">
-                <img src="shared/logos/logo-header.webp" alt="Funeraria Logo">
+                <a href="index.html">
+                    <img src="assets/logos/logo-header-blanco.webp" alt="Funeraria Logo">
+                </a>
             </div>
 
             <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="prevision.html">Servicios funerarios</a></li>
-                    <li><a href="cremapets.html" class="cremapets-link">Cremapets</a></li>
-                    <li><a href="cementerio.html">Cementerio Bravo</a></li>
-                    <li><a href="extras.html#promociones">Promociones</a></li>
-                    <li><a href="extras.html#cotizador">Cotizador</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+                <button class="menu-pc-toggle" id="menuToggle">
+                    <span class="menu-pc-bar"></span>
+                    <span class="menu-pc-bar"></span>
+                    <span class="menu-pc-bar"></span>
+                </button>
 
-            <div class="social-icons">
-                <a href="https://www.instagram.com/funerales_bravo/" target="_blank" class="instagram"
-                    title="Instagram">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/FuneralesBravoTapachula/" target="_blank" class="facebook"
-                    title="Facebook">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="https://wa.me/529622361377" class="whatsapp" title="WhatsApp">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-            </div>
+                <div class="menu-pc-dropdown" id="menuDropdown">
+                    <ul class="menu-pc-list">
+                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
+                        <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
+                        <li class="menu-pc-item"><a href="cremapets.html"
+                                class="menu-pc-link cremapets-link">Cremapets</a></li>
+                        <li class="menu-pc-item"><a href="extras.html#promociones" class="menu-pc-link">Promociones</a>
+                        </li>
+                        <li class="menu-pc-item"><a href="extras.html#cotizador" class="menu-pc-link">Cotizador</a></li>
+                        <li class="menu-pc-item"><a href="index.html#contacto" class="menu-pc-link">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -92,22 +89,40 @@
 
                 <div class="cotizador-resumen">
                     <h3>Resumen de Cotización</h3>
+
                     <div class="cotizador-resumen-item">
-                        <strong>Plan Seleccionado:</strong> <span id="plan-seleccionado">--Ninguno--</span>
+                        <strong>Plan Seleccionado:</strong>
+                        <span id="plan-seleccionado">--Ninguno--</span>
                     </div>
+
                     <div class="cotizador-resumen-item">
-                        <strong>Costo Total:</strong>
-                        <span id="costo-total">$0 MXN</span>
-                        <span id="precio-original" class="precio-original" style="display:none;">$0 MXN</span>
+                        <strong>Costo del Plan:</strong>
+                        <span id="precio-original" class="precio-original" style="opacity:0.8;">$0 MXN</span>
                     </div>
-                    <p class="cotizador-descuento" id="mensaje-descuento" style="display:none;">
-                        10&nbsp;% de descuento aplicado
+
+                    <p class="cotizador-descuento" id="mensaje-descuento"
+                        style="display: none; color: red; margin-bottom: 5px;">
+                        10% de descuento aplicado
                     </p>
+
                     <div class="cotizador-resumen-item">
-                        <strong>Anticipo:</strong> <span id="anticipo-monto">$0 MXN</span>
+                        <strong>Costo con Descuento:</strong>
+                        <span id="costo-total">$0 MXN</span>
                     </div>
+
                     <div class="cotizador-resumen-item">
-                        <strong>Mensualidad:</strong> <span id="mensualidad">$0 MXN</span>
+                        <strong>Anticipo:</strong>
+                        <span id="anticipo-monto">--</span>
+                    </div>
+
+                    <div class="cotizador-resumen-item">
+                        <strong>Meses Sin Intereses:</strong>
+                        <span id="meses-sin-intereses">--</span>
+                    </div>
+
+                    <div class="cotizador-resumen-item">
+                        <strong>Mensualidad:</strong>
+                        <span id="mensualidad">$0 MXN</span>
                     </div>
                 </div>
             </div>
@@ -117,21 +132,19 @@
                     <label for="anticipo-porcentaje">Porcentaje de Anticipo:</label>
                     <select id="anticipo-porcentaje">
                         <option value="">--Ninguno--</option>
-                        <option value="5000">$5,000.00 MXN (mínimo)</option>
-                        <option value="10000">$10,000.00 MXN</option>
-                        <option value="15000">$15,000.00 MXN</option>
-                        <option value="20000">$20,000.00 MXN</option>
-                        <option value="25000">$25,000.00 MXN</option>
-                        <option value="30000">$30,000.00 MXN</option>
-                        <option value="35000">$35,000.00 MXN</option>
-                        <option value="40000">$40,000.00 MXN</option>
-                        <option value="45000">$45,000.00 MXN</option>
-                        <option value="50000">$50,000.00 MXN</option>
+                        <option value="20">20%</option>
+                        <option value="30">30%</option>
+                        <option value="40">40%</option>
+                        <option value="50">50%</option>
+                        <option value="60">60%</option>
+                        <option value="70">70%</option>
+                        <option value="80">80%</option>
+                        <option value="90">90%</option>
                     </select>
                 </div>
 
                 <div class="cotizador-opcion">
-                    <label for="meses-pago">Meses para Pagar:</label>
+                    <label for="meses-pago">Meses a Pagar:</label>
                     <select id="meses-pago">
                         <option value="">--Ninguno--</option>
                         <option value="12">12 meses</option>

@@ -1,18 +1,25 @@
 :root {
   --color-cafe-oscuro: rgb(52, 41, 30);
   --color-beige-1: rgb(244, 234, 219);
-  --color-beige-2: #E8DDCC;
   --color-dorado: #b4873a;
   --color-azul-mascotas: rgb(9, 99, 216);
 
   --fuente-principal: 'Trajan Pro Regular', sans-serif;
+  --fuente-secundaria: 'EBGaramond Medium', sans-serif;
 }
 
 @font-face {
   font-family: 'Trajan Pro Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Trajan Pro Regular'), url('../shared/fonts/TrajanPro-Regular.woff') format('woff');
+  src: local('Trajan Pro Regular'), url('../assets/fonts/TrajanPro-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EBGaramond Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('EBGaramond Medium'), url('../assets/fonts/EBGaramond-Medium.woff2') format('woff2');
 }
 
 *,
@@ -45,10 +52,11 @@ h3 {
 p,
 li,
 a,
-span {
-  font-family: var(--fuente-principal);
-  font-size: .975rem;
-  line-height: 1.2;
+span,
+li {
+  font-family: var(--fuente-secundaria);
+  font-size: 1.15rem;
+  line-height: 1.4;
 }
 
 a {

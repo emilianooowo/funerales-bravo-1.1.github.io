@@ -158,7 +158,7 @@ header {
 .main-section {
     background-image:
         linear-gradient(to top, transparent, rgba(9, 99, 216)),
-        url('../imgs/cremapets/title-cremapets.png');
+        url('../assets/imgs/cremapets/title-cremapets.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

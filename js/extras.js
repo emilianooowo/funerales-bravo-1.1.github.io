@@ -33,28 +33,36 @@ document.getElementById('anticipo-porcentaje').addEventListener('change', calcul
 document.getElementById('meses-pago').addEventListener('change', calcularCotizacion);
 
 function calcularCotizacion() {
-
     if (!planSeleccionado || !precioConDescuento) return;
 
-    const anticipoMonto = parseInt(
-        document.getElementById('anticipo-porcentaje').value) || 0;
+    const porcentajeAnticipo = parseInt(document.getElementById('anticipo-porcentaje').value) || 0;
+    const mesesPago = parseInt(document.getElementById('meses-pago').value) || 0;
 
-    const mesesPago = parseInt(
-        document.getElementById('meses-pago').value) || 0;
+    const anticipoMonto = Math.round((precioConDescuento * porcentajeAnticipo) / 100);
+    const montoRestante = Math.max(precioConDescuento - anticipoMonto, 0);
+    const mensualidad = (mesesPago > 0 && montoRestante > 0) ? montoRestante / mesesPago : 0;
+
+    // Actualizar resumen
+    document.getElementById('precio-original').textContent =
+        `$${precioBase.toLocaleString('es-MX')} MXN`;
+    document.getElementById('precio-original').style.opacity = '0.5';
+    document.getElementById('precio-original').style.display = 'inline';
+
+    document.getElementById('mensaje-descuento').style.display = 'block';
+
+    document.getElementById('costo-total').textContent =
+        `$${precioConDescuento.toLocaleString('es-MX')} MXN`;
 
     document.getElementById('anticipo-monto').textContent =
-        `$${anticipoMonto.toLocaleString('es-MX')} MXN`;
+        `${porcentajeAnticipo}% ($${anticipoMonto.toLocaleString('es-MX')} MXN)`;
 
-    const montoRestante = Math.max(precioConDescuento - anticipoMonto, 0);
+    document.getElementById('mensualidad').textContent =
+        mesesPago > 0 ? `$${mensualidad.toLocaleString('es-MX')} MXN / mes` : '$0 MXN';
+    document.getElementById('meses-sin-intereses').textContent =
+        mesesPago > 0 ? `${mesesPago} meses` : '--';
 
-    if (mesesPago > 0 && montoRestante > 0) {
-        const mensualidad = montoRestante / mesesPago;
-        document.getElementById('mensualidad').textContent =
-            `$${mensualidad.toLocaleString('es-MX')} MXN`;
-    } else {
-        document.getElementById('mensualidad').textContent = '$0 MXN';
-    }
 }
+
 
 function mostrarPopup() {
     if (!planSeleccionado) {
@@ -79,31 +87,55 @@ function cerrarPopup() {
 }
 
 function enviarCotizacion() {
+    const porcentajeAnticipo = parseInt(document.getElementById('anticipo-porcentaje').value) || 0;
+    const mesesPago = parseInt(document.getElementById('meses-pago').value) || 0;
+
+    const anticipoMonto = Math.round((precioConDescuento * porcentajeAnticipo) / 100);
+    const montoRestante = Math.max(precioConDescuento - anticipoMonto, 0);
+    const mensualidad = (mesesPago > 0 && montoRestante > 0)
+        ? Math.round(montoRestante / mesesPago)
+        : 0;
+
+    const nombre = document.getElementById('nombre-completo').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+
     const datosFormspree = {
+        nombre_completo: nombre,
+        correo: correo,
+        telefono: telefono,
         plan: planSeleccionado,
-        precio_base: precioBase,
-        precio_con_descuento: precioConDescuento,
-        anticipo_monto: document.getElementById('anticipo-porcentaje').value,
-        meses_pago: document.getElementById('meses-pago').value,
-        nombre_completo: document.getElementById('nombre-completo').value,
-        correo: document.getElementById('correo').value,
-        telefono: document.getElementById('telefono').value
+        precio_base: precioBase.toLocaleString('es-MX'),
+        precio_con_descuento: precioConDescuento.toLocaleString('es-MX'),
+        anticipo_porcentaje: `${porcentajeAnticipo}%`,
+        anticipo_monto: anticipoMonto.toLocaleString('es-MX'),
+        meses_pago: mesesPago,
+        mensualidad: mensualidad.toLocaleString('es-MX')
     };
 
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = 'https://formspree.io/mvgrobjn';
+    form.action = 'https://formspree.io/f/xovwokkk';
+    form.style.display = 'none';
 
-    Object.keys(datosFormspree).forEach(key => {
+    Object.entries(datosFormspree).forEach(([key, value]) => {
         const input = document.createElement('input');
         input.type = 'hidden';
         input.name = key;
-        input.value = datosFormspree[key];
+        input.value = value;
         form.appendChild(input);
     });
 
+    const replyTo = document.createElement('input');
+    replyTo.type = 'hidden';
+    replyTo.name = '_replyto';
+    replyTo.value = correo;
+    form.appendChild(replyTo);
+
     document.body.appendChild(form);
     form.submit();
+
+    setTimeout(() => form.remove(), 1000);
 }
 
 const toggleBtn = document.getElementById('toggleCalendar');
@@ -225,6 +257,63 @@ document.addEventListener('DOMContentLoaded', function () {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- MENÚ PC ---
+    const menuToggle = document.getElementById('menuToggle');
+    const menuDropdown = document.getElementById('menuDropdown');
+
+    function openMenuPC() {
+        if (menuToggle) menuToggle.classList.add('active');
+        if (menuDropdown) menuDropdown.classList.add('active');
+    }
+
+    function closeMenuPC() {
+        if (menuToggle) menuToggle.classList.remove('active');
+        if (menuDropdown) menuDropdown.classList.remove('active');
+    }
+
+    function toggleMenuPC(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isActive = menuToggle && menuToggle.classList.contains('active');
+        isActive ? closeMenuPC() : openMenuPC();
+    }
+
+    if (menuToggle && menuDropdown) {
+        // Click en el botón
+        menuToggle.addEventListener('click', toggleMenuPC);
+
+        // Tecla Escape
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuToggle.classList.contains('active')) {
+                closeMenuPC();
+            }
+        });
+
+        // Click en enlaces del menú
+        document.querySelectorAll('.menu-pc-link').forEach(link => {
+            link.addEventListener('click', closeMenuPC);
+        });
+
+        // Click en enlaces dentro del dropdown
+        menuDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenuPC);
+        });
+
+        // Clic fuera del menú
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+                closeMenuPC();
+            }
+        });
+    } else {
+        console.error('Elementos del menú PC no encontrados:', {
+            menuToggle: !!menuToggle,
+            menuDropdown: !!menuDropdown
         });
     }
 });

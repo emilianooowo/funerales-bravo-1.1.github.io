@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- MENÚ PC ---
     const menuToggle = document.getElementById('menuToggle');
     const menuDropdown = document.getElementById('menuDropdown');
 
-    // Debug: Verificar si los elementos existen
     console.log('Menu PC Elements:', {
         menuToggle: menuToggle,
         menuDropdown: menuDropdown
@@ -35,21 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Inicializar menú PC solo si los elementos existen
     if (menuToggle && menuDropdown) {
         console.log('Inicializando menú PC');
 
-        // Event listener para el botón toggle
         menuToggle.addEventListener('click', toggleMenuPC);
 
-        // Cerrar con tecla Escape
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && menuToggle.classList.contains('active')) {
                 closeMenuPC();
             }
         });
 
-        // Cerrar menú al hacer clic en los enlaces
         document.querySelectorAll('.menu-pc-link').forEach(link => {
             link.addEventListener('click', () => {
                 console.log('Clic en enlace del menú PC');
@@ -57,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // También cerrar al hacer clic en enlaces dentro del dropdown
         if (menuDropdown) {
             menuDropdown.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
@@ -67,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Cerrar menú al hacer clic fuera del menú
         document.addEventListener('click', (e) => {
             if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
                 closeMenuPC();
@@ -80,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- MENÚ MÓVIL ---
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -100,16 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- GALERÍA ---
     const galleryData = [
-        { src: 'imgs/cementerio/urna-b-1.webp', title: 'urna basica 1' },
-        { src: 'imgs/cementerio/urna-p-1.webp', title: 'urna personalizada 2' },
-        { src: 'imgs/cementerio/urna-p-2.webp', title: 'urna personalizada 3' },
-        { src: 'imgs/cementerio/urna-p-3.webp', title: 'urna personalizada  4' },
-        { src: 'imgs/cementerio/urna-p-4.webp', title: 'urna personalizada 5' },
-        { src: 'imgs/cementerio/urna-p-5.webp', title: 'urna personalizada 6' },
-        { src: 'imgs/cementerio/urna-p-6.webp', title: 'urna personalizada 7' },
-        { src: 'imgs/cementerio/urna-p-7.webp', title: 'urna personalizada 8' },
+        { src: 'assets/imgs/cementerio/urna-b-1.webp', title: 'urna basica 1' },
+        { src: 'assets/imgs/cementerio/urna-p-1.webp', title: 'urna personalizada 2' },
+        { src: 'assets/imgs/cementerio/urna-p-2.webp', title: 'urna personalizada 3' },
+        { src: 'assets/imgs/cementerio/urna-p-3.webp', title: 'urna personalizada  4' },
+        { src: 'assets/imgs/cementerio/urna-p-4.webp', title: 'urna personalizada 5' },
+        { src: 'assets/imgs/cementerio/urna-p-5.webp', title: 'urna personalizada 6' },
+        { src: 'assets/imgs/cementerio/urna-p-6.webp', title: 'urna personalizada 7' },
+        { src: 'assets/imgs/cementerio/urna-p-7.webp', title: 'urna personalizada 8' },
     ];
 
     const galleryGrid = document.getElementById('galleryGrid');
@@ -219,8 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Plan Básico Empresarial",
             included: [
                 "Féretro Básico (madera forrado de tela, metálico y madera con herrajes básico)",
-                "Barra de alimentos: 100 pzas. de pan tradicional",
-                "1 arreglo floral natural"
+                "Barra de alimentos: 100 pzas. de pan",
+                "1 arreglo floral"
             ],
             instalaciones: [
                 "Salas de velación por 24 hrs.",
@@ -228,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Barra de Bebidas ilimitadas (agua, café, té y refresco)"
             ],
             domicilio: [
-                "+1 biombo al kit de velación",
+                "Se agrega 1 biombo al kit de velación",
                 "2 kilos de café, 1 kilo de azúcar, préstamo de 1 cafetera 24 hrs",
                 "50 sillas de madera"
             ]
@@ -237,22 +227,21 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Plan Platino",
             included: [
                 "Féretro de Madera con herrajes (3 opciones a elegir)",
-                "2 Arreglos Floral natural",
-                "Formato de Certificado Médico Cuando el familiar fallece en domicilio",
+                "2 Arreglos Floral",
                 "Placa memorial Qr",
-                "Barra de Alimentos limitados: 200 pzas. Pan tradicional, 150 bocadillos rellenos de jamón y queso"
+                "Barra de Alimentos limitados: 200 pzas. Pan, 150 bocadillos"
             ],
             instalaciones: [
                 "Salas de velación por 24 hrs.",
                 "Personal de apoyo en sala",
-                "+ alfombra y 4 Cirios al kit de velación",
+                "Alfombra y 4 Cirios se agregan al kit de velación",
                 "Barra de Bebidas Ilimitadas (agua, café, té y refresco)"
             ],
             domicilio: [
                 "1 Carpa por 24 Horas, 100 Sillas por 24 Horas",
                 "1 Cafetera por 24 Horas, 2 Kilos de Café, 2 Kilos de Azúcar, 100 Vasos Desechables",
                 "1 Paquete de Refrescos Desechables de 2 Litros (12 piezas)",
-                "+ Alfombra y 1 biombo al kit de velacion"
+                "Alfombra y 1 biombo se agrega al kit de velacion",
             ]
         },
         diamante: {
@@ -260,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
             included: [
                 "Féretro de Madera de lujo barnizado con herrajes",
                 "Corona funebre",
-                "Formato Certificado Médico Cuando el familiar fallece en domicilio",
                 "Placa memorial Qr",
                 "Lámpara de onix memorial",
                 "Vehículo para Traslado de Ofrendas Florales"
@@ -268,23 +256,21 @@ document.addEventListener('DOMContentLoaded', () => {
             instalaciones: [
                 "Salas de velación por 24 hrs",
                 "Personal de Apoyo en Sala",
-                "Habitación de Reposo (referencia: hotel kamico)",
-                "+ floreros al kit de velación",
+                "Habitación de Reposo (hotel kamico)",
+                "Arreglo floral se agrega al kit de velación",
                 "Barra de Bebidas Ilimitadas (agua, café, Té y refresco)",
-                "Barra de alimentos limitados (300 pzas pan tradicional, y 200 bocadillos rellenos de jamón y queso)"
+                "Barra de alimentos limitados (300 pzas pan, y 200 bocadillos)"
             ],
             domicilio: [
                 "2 Carpa por 24 Horas, 150 Sillas por 24 Horas",
                 "2 Cafetera por 24 Horas, 3 Kilos de Café, 4 Kilos de Azúcar",
                 "2 Paquete de Refrescos (12 pzas de 2 lts.)",
-                "+ Alfombra y 1 biombo al kit de velación",
-                "Barra de alimentos limitados (300 pzas pan tradicional, y 100 bocadillos rellenos de jamón y queso)",
+                "Alfombra y 1 biombo se agrega al kit de velacion",
+                "Barra de alimentos limitados (300 pzas pan, y 100 bocadillos)",
                 "200 Vasos Desechables"
             ]
         }
     };
-
-    const disclaimer = "IMPORTANTE A TOMAR EN CUENTA: SI LA PERSONA A LA CUAL FUE DADA EL SERVICIO FALLECE AL PASAR 6 MESES CON 1 DÍA DESPUÉS DE CONTRATAR ESTE PLAN EL 50% DE LA DEUDA RESTANTE PASA A PAGARSE DE CONTADO Y EL OTRO 50% SE PAGA EN UN PLAZO DE 6 MESES.";
 
     function updateComparison() {
         const plan1 = document.getElementById('plan1').value;
@@ -303,12 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const comparison1 = document.getElementById('comparison1');
         const comparison2 = document.getElementById('comparison2');
 
-        // Plan 1
         document.getElementById('planTitle1').textContent = planData[plan1].title;
         document.getElementById('serviceType1').textContent = service1 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
         document.getElementById('planContent1').innerHTML = generatePlanContent(plan1, service1);
 
-        // Plan 2
         document.getElementById('planTitle2').textContent = planData[plan2].title;
         document.getElementById('serviceType2').textContent = service2 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
         document.getElementById('planContent2').innerHTML = generatePlanContent(plan2, service2);
@@ -318,21 +302,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generatePlanContent(plan, service) {
         const data = planData[plan];
-        let content = '<h4 style="color: #000; margin-bottom: 15px;">Servicios Incluidos:</h4>';
+        let content = `<h4 class="titulo-plan">Servicios <span class="plan-elegido">incluidos</span> en el <span class="plan-elegido"> ${data.title}</span>:</h4>`;
         content += '<ul class="service-list">';
         data.included.forEach(item => {
             content += `<li>${item}</li>`;
         });
         content += '</ul>';
 
-        content += `<h4 style="color: #000; margin-bottom: 15px;">Adicional ${service === 'instalaciones' ? 'en instalaciones' : 'a domicilio'}:</h4>`;
+        content += `<h4 style="color: #000; margin-bottom: 15px;"><span class="plan-elegido">Adicional</span> ${service === 'instalaciones' ? 'en instalaciones' : 'a domicilio'}:</h4>`;
         content += '<ul class="service-list">';
         data[service].forEach(item => {
             content += `<li>${item}</li>`;
         });
         content += '</ul>';
-
-        content += `<p class="disclaimer">${disclaimer}</p>`;
 
         return content;
     }
