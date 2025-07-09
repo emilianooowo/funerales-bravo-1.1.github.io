@@ -69,155 +69,157 @@
     </header>
 
     <section class="main-section">
-        <div class="container">
-            <div class="logo-main"><img src="assets/logos/cremapets-logo-blanco.webp" alt=""></div>
-            <h1 class="main-title">Cremapets Baravo</h1>
-            <h3 class="subtitle">Servicio exclusivo de cremación de mascotas</h3>
-            <p class="description">
-                Descubre nuestros planes diseñados para brindar una despedida digna, amorosa y respetuosa a tu compañero
-                de vida.
-                Ofrecemos atención personalizada, urnas conmemorativas y un entorno tranquilo donde honrar su memoria
-                con el respeto que merece.
-            </p>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-main">
+                    <img src="assets/logos/cremapets-logo-blanco.webp" alt="Logo Cementerio Bravo">
+                </div>
+                <h1 class="welcome-message">Cremapets Bravo</h1>
+            </div>
+            <h3 class="welcome-message">Conoce los planes en cremación de mascotas</h3>
+        </div>
     </section>
 
     <section class="cremation-section">
         <h1 class="section-title">Planes</h1>
 
-        <div class="plans-buttons">
-            <button class="plan-button basic" onclick="showPlan('basic')">Plan Básico</button>
-            <button class="plan-button premium" onclick="showPlan('premium')">Plan Premium</button>
-            <button class="plan-button deluxe" onclick="showPlan('deluxe')">Plan Deluxe</button>
-        </div>
+        <div class="plans-container">
+            <div class="plans-sidebar">
+                <button class="plan-button basic" onclick="showPlan('basic')">Plan Básico</button>
+                <button class="plan-button premium" onclick="showPlan('premium')">Plan Premium</button>
+                <button class="plan-button deluxe" onclick="showPlan('deluxe')">Plan Deluxe</button>
+            </div>
 
-        <div class="plan-content basic" id="basic">
-            <div class="plan-layout">
-                <div class="plan-includes">
-                    <h2>¿Qué incluye?</h2>
-                    <ul>
-                        <li>Servicio de cremación</li>
-                        <li>Bolsa artesanal de yute</li>
-                    </ul>
-                    <h2>No incluye</h2>
-                    <ul>
-                        <li>Urna</li>
-                        <li>Certificado de cremación</li>
-                        <li>Fotografías ni documentación</li>
-                        <li>No aplica recolección a domicilio</li>
-                        <li>La entrega de cenizas se realizará
-                            en la funeraria</li>
-                    </ul>
+            <div class="plans-content">
+                <div class="plan-content basic" id="basic">
+                    <h2 class="plan-title basic">Plan Básico</h2>
+                    <div class="plan-layout">
+                        <div class="plan-includes">
+                            <h3 class="includes basic">¿Qué incluye?</h3>
+                            <ul>
+                                <li>Servicio de cremación</li>
+                                <li>Bolsa artesanal de yute</li>
+                            </ul>
+                            <h3 class="includes basic">No incluye</h3>
+                            <ul>
+                                <li>Urna</li>
+                                <li>Certificado de cremación</li>
+                                <li>Fotografías ni documentación</li>
+                                <li>No aplica recolección a domicilio</li>
+                                <li>La entrega de cenizas se realizará en la funeraria</li>
+                            </ul>
+                        </div>
+                        <div class="plan-prices">
+                            <h3>Precios</h3>
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>Peso</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hasta 10 kilos</td>
+                                        <td class="price">$1,500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 11 a 20 kilos</td>
+                                        <td class="price">$2,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 21 a 30 kilos</td>
+                                        <td class="price">$3,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 31 a 40 kilos</td>
+                                        <td class="price">$3,900.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 41 a 60 kilos</td>
+                                        <td class="price">$4,900.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="gallery">
+                            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop"
+                                alt="Urna básica" onclick="openLightbox(this.src)">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=200&fit=crop"
+                                alt="Certificado" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
                 </div>
-                <div class="plan-prices">
-                    <h2>Precios</h2>
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Peso</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> Hasta 10 kilos</td>
-                                <td class="price"> $ 1,500.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 11 a 20 kilos</td>
-                                <td class="price">$ 2,000.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 21 a 30 kilos</td>
-                                <td class="price">$ 3,200.0</td>
-                            </tr>
-                            <tr>
-                                <td> De 31 a 40 kilos</td>
-                                <td class="price">$ 3,900.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 41 a 60 kilos</td>
-                                <td class="price">$ 4,900.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop"
-                    alt="Urna básica" onclick="openLightbox(this.src)">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=200&fit=crop"
-                    alt="Certificado" onclick="openLightbox(this.src)">
-            </div>
-        </div>
 
-        <div class="plan-content premium" id="premium">
-            <div class="plan-layout">
-                <div class="plan-includes">
-                    <h2>¿Qué incluye?</h2>
-                    <ul>
-                        <li>Servicio de cremación</li>
-                        <li>Traslado local (7 am - 8 pm)</li>
-                        <li>Urna básica de madera, personalizada</li>
-                        <li>Certificado de cremación</li>
-                        <li>Fotografía con dedicatoria</li>
-                        <li>Documentación impresa</li>
-                        <li>Entrega al día siguiente
-                            en nuestras instalaciones</li>
-                    </ul>
+                <div class="plan-content premium" id="premium">
+                    <h2 class="plan-title premium">Plan Premium</h2>
+                    <div class="plan-layout">
+                        <div class="plan-includes">
+                            <h3 class="includes premium">¿Qué incluye?</h3>
+                            <ul>
+                                <li>Servicio de cremación</li>
+                                <li>Traslado local (7 am - 8 pm)</li>
+                                <li>Urna básica de madera, personalizada</li>
+                                <li>Certificado de cremación</li>
+                                <li>Fotografía con dedicatoria</li>
+                                <li>Documentación impresa</li>
+                                <li>Entrega al día siguiente en nuestras instalaciones</li>
+                            </ul>
+                        </div>
+                        <div class="plan-prices">
+                            <h3>Precios</h3>
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>Peso</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hasta 10 kilos</td>
+                                        <td class="price">$2,100.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 11 a 20 kilos</td>
+                                        <td class="price">$2,700.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 21 a 30 kilos</td>
+                                        <td class="price">$3,800.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>De 31 a 40 kilos</td>
+                                        <td class="price">$4,500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Más de 41 kilos</td>
+                                        <td class="price">$5,500.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="gallery">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop"
+                                alt="Urna premium" onclick="openLightbox(this.src)">
+                            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop"
+                                alt="Placa conmemorativa" onclick="openLightbox(this.src)">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=200&fit=crop"
+                                alt="Huella mascota" onclick="openLightbox(this.src)">
+                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=300&h=200&fit=crop"
+                                alt="Álbum recuerdos" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
                 </div>
-                <div class="plan-prices">
-                    <h2>Precios</h2>
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Peso</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> Hasta 10 kilos</td>
-                                <td class="price">$ 2,100.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 11 a 20 kilos</td>
-                                <td class="price">$ 2,700.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 21 a 30 kilos</td>
-                                <td class="price">$ 3,800.00</td>
-                            </tr>
-                            <tr>
-                                <td> De 31 a 40 kilos</td>
-                                <td class="price">$ 4,500.00</td>
-                            </tr>
-                            <tr>
-                                <td> Más de 41 kilos</td>
-                                <td class="price">$ 5,500.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop"
-                    alt="Urna premium" onclick="openLightbox(this.src)">
-                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop"
-                    alt="Placa conmemorativa" onclick="openLightbox(this.src)">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=200&fit=crop"
-                    alt="Huella mascota" onclick="openLightbox(this.src)">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=300&h=200&fit=crop"
-                    alt="Álbum recuerdos" onclick="openLightbox(this.src)">
-                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=300&h=200&fit=crop"
-                    alt="Servicio premium" onclick="openLightbox(this.src)">
-            </div>
-        </div>
 
-        <div class="plan-content deluxe" id="deluxe">
-            <div class="coming-soon">
-                <h3>Próximamente</h3>
-                <p>Estamos trabajando en nuestro plan más exclusivo. Pronto tendrás más detalles sobre nuestro Plan
-                    Deluxe.</p>
+                <div class="plan-content deluxe" id="deluxe">
+                    <h2 class="plan-title deluxe">Plan Deluxe</h2>
+                    <div class="coming-soon">
+                        <h3>Próximamente</h3>
+                        <p>Estamos trabajando en nuestro plan más exclusivo. Pronto tendrás más detalles sobre nuestro
+                            Plan Deluxe.</p>
+                    </div>
+                </div>
             </div>
         </div>
 

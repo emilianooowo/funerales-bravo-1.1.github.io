@@ -5,7 +5,7 @@
 }
 
 header {
-    background-color: rgb(52, 41, 30);
+    background-color: #1b1b1b;
     color: white;
     padding: 5px;
     position: sticky;
@@ -162,71 +162,52 @@ header {
 }
 
 .main-section {
-    background-image:
-        linear-gradient(to top, transparent, rgb(52, 41, 30)),
-        url('../assets/imgs/cementerio/title-cementerio.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    min-height: 80vh;
+    width: 100%;
 }
 
-.logo-main {
-    position: relative;
+.header-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 40px 80px;
+    background: url(../assets/imgs/cementerio/cementerio-title.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
 }
 
 .logo-main img {
-    height: 180px;
-    max-width: 90%;
+    height: 150px;
     object-fit: contain;
 }
 
-
-.main-title {
-    margin-bottom: 15px;
-    position: relative;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideUpFade 0.8s ease-out forwards;
+.welcome-message {
+    color: #fff;
 }
 
-.main-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 0;
-    height: 1.5px;
-    background: var(--color-dorado);
-    transform: translateX(-50%);
-    animation: expandLine 0.8s ease-out 0.5s forwards;
-}
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
 
-.subtitle {
-    margin: 10px 0;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: slideDownFade 0.8s ease-out 0.3s forwards;
-}
+    .logo-section {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.description {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 50px;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: slideDownFade 0.8s ease-out 0.6s forwards;
+    .welcome-message {
+        font-size: 1.2rem;
+    }
 }
 
 .services-section {
@@ -291,10 +272,11 @@ header {
     .services-container {
         flex-direction: column;
         gap: 40px;
+        padding: 10px;
     }
 
     .services-image {
-        height: 300px;
+        height: 100px;
     }
 
     .service-item {
@@ -409,39 +391,6 @@ header {
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        padding: 40px 20px;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .logo-container {
-        justify-content: center;
-    }
-
-    .logo img {
-        height: 180px;
-    }
-
-    .welcome-content {
-        text-align: center;
-    }
-
-    .welcome-title {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
-    .welcome-description,
-    .cta-text {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
     .info-container {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -453,7 +402,7 @@ header {
     }
 
     .info-content {
-        text-align: center;
+        text-align: left;
     }
 
     .info-image {
@@ -482,7 +431,7 @@ header {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 5px;
     opacity: 0;
     transform: translateY(20px);
