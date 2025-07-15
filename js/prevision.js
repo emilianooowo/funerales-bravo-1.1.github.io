@@ -72,25 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-
     const galleryData = [
         { src: 'assets/imgs/cementerio/urna-b-1.webp', title: 'urna basica 1' },
         { src: 'assets/imgs/cementerio/urna-p-1.webp', title: 'urna personalizada 2' },
@@ -241,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "1 Carpa por 24 Horas, 100 Sillas por 24 Horas",
                 "1 Cafetera por 24 Horas, 2 Kilos de Café, 2 Kilos de Azúcar, 100 Vasos Desechables",
                 "1 Paquete de Refrescos Desechables de 2 Litros (12 piezas)",
-                "Alfombra y 1 biombo se agrega al kit de velacion",
+                "Alfombra y 1 biombo se agrega al kit de velacion"
             ]
         },
         diamante: {
@@ -272,34 +253,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    function updateComparison() {
-        const plan1 = document.getElementById('plan1').value;
-        const service1 = document.getElementById('service1').value;
-        const plan2 = document.getElementById('plan2').value;
-        const service2 = document.getElementById('service2').value;
+    // Variables para almacenar las selecciones
+    let selectedPlans = { 1: null, 2: null };
+    let selectedServices = { 1: null, 2: null };
 
-        if (plan1 && service1 && plan2 && service2) {
-            showComparison(plan1, service1, plan2, service2);
+    // Función para manejar la selección de planes
+    function handlePlanSelection(button, plan, group) {
+        // Remover clase active de otros botones del mismo grupo
+        document.querySelectorAll(`.plan-button[data-group="${group}"]`).forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Agregar clase active al botón seleccionado
+        button.classList.add('active');
+        selectedPlans[group] = plan;
+
+        updateComparison();
+    }
+
+    // Función para manejar la selección de servicios
+    function handleServiceSelection(button, service, group) {
+        // Remover clase active de otros botones del mismo grupo
+        document.querySelectorAll(`.service-button[data-group="${group}"]`).forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Agregar clase active al botón seleccionado
+        button.classList.add('active');
+        selectedServices[group] = service;
+
+        updateComparison();
+    }
+
+    // Función para actualizar la comparación
+    function updateComparison() {
+        if (selectedPlans[1] && selectedServices[1] && selectedPlans[2] && selectedServices[2]) {
+            showComparison(selectedPlans[1], selectedServices[1], selectedPlans[2], selectedServices[2]);
         } else {
-            document.getElementById('comparisonResult').classList.remove('active');
+            const comparisonResult = document.getElementById('comparisonResult');
+            if (comparisonResult) {
+                comparisonResult.classList.remove('active');
+            }
         }
     }
 
+    // Función para mostrar la comparación
     function showComparison(plan1, service1, plan2, service2) {
-        const comparison1 = document.getElementById('comparison1');
-        const comparison2 = document.getElementById('comparison2');
+        const planTitle1 = document.getElementById('planTitle1');
+        const serviceType1 = document.getElementById('serviceType1');
+        const planContent1 = document.getElementById('planContent1');
+        const planTitle2 = document.getElementById('planTitle2');
+        const serviceType2 = document.getElementById('serviceType2');
+        const planContent2 = document.getElementById('planContent2');
+        const comparisonResult = document.getElementById('comparisonResult');
 
-        document.getElementById('planTitle1').textContent = planData[plan1].title;
-        document.getElementById('serviceType1').textContent = service1 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
-        document.getElementById('planContent1').innerHTML = generatePlanContent(plan1, service1);
+        if (planTitle1) planTitle1.textContent = planData[plan1].title;
+        if (serviceType1) serviceType1.textContent = service1 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
+        if (planContent1) planContent1.innerHTML = generatePlanContent(plan1, service1);
 
-        document.getElementById('planTitle2').textContent = planData[plan2].title;
-        document.getElementById('serviceType2').textContent = service2 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
-        document.getElementById('planContent2').innerHTML = generatePlanContent(plan2, service2);
+        if (planTitle2) planTitle2.textContent = planData[plan2].title;
+        if (serviceType2) serviceType2.textContent = service2 === 'instalaciones' ? 'En Instalaciones' : 'A Domicilio';
+        if (planContent2) planContent2.innerHTML = generatePlanContent(plan2, service2);
 
-        document.getElementById('comparisonResult').classList.add('active');
+        if (comparisonResult) comparisonResult.classList.add('active');
     }
 
+    // Función para generar el contenido del plan
     function generatePlanContent(plan, service) {
         const data = planData[plan];
         let content = `<h4 class="titulo-plan">Servicios <span class="plan-elegido">incluidos</span> en el <span class="plan-elegido"> ${data.title}</span>:</h4>`;
@@ -319,9 +338,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return content;
     }
 
-    // Event listeners
-    document.getElementById('plan1').addEventListener('change', updateComparison);
-    document.getElementById('service1').addEventListener('change', updateComparison);
-    document.getElementById('plan2').addEventListener('change', updateComparison);
-    document.getElementById('service2').addEventListener('change', updateComparison);
+    // Función para inicializar los event listeners
+    function initializeEventListeners() {
+        // Botones de planes
+        document.querySelectorAll('.plan-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const plan = this.dataset.plan;
+                const group = this.dataset.group;
+                handlePlanSelection(this, plan, group);
+            });
+        });
+
+        // Botones de servicios
+        document.querySelectorAll('.service-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const service = this.dataset.service;
+                const group = this.dataset.group;
+                handleServiceSelection(this, service, group);
+            });
+        });
+    }
+
+    // Ejecutar la inicialización
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeEventListeners);
+    } else {
+        initializeEventListeners();
+    }
 });

@@ -1,6 +1,5 @@
 header {
-    background-color: #1b1b1b;
-    color: white;
+    background: #fff;
     padding: 5px;
     position: sticky;
     top: 0;
@@ -33,7 +32,7 @@ header {
 .menu-pc-bar {
     width: 20px;
     height: 1.5px;
-    background-color: white;
+    background-color: var(--color-azul-mascotas);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -155,52 +154,32 @@ header {
     }
 }
 
-.main-section {
-    width: 100%;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 80px;
-    background: url(../assets/imgs/cremapets/title-cremapets.webp);
-    background-position: top;
-    background-repeat: no-repeat;
+.hero-section {
+    height: 40vh;
+    background-image: url('../assets/imgs/cremapets/title-cremapets.webp');
     background-size: cover;
-}
-
-.logo-section {
+    background-position: center;
     display: flex;
     align-items: center;
-    gap: 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 80px;
     color: #fff;
 }
 
-.logo-main img {
-    height: 150px;
-    object-fit: contain;
-}
-
-.welcome-message{
-    color: #fff;
+.hero-titulo {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-        text-align: center;
+    .hero-titulo {
+        font-size: 2.5rem;
     }
 
-    .logo-section {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .welcome-message {
-        font-size: 1.2rem;
+    .hero-descripcion {
+        font-size: 1.1rem;
     }
 }
 
@@ -340,7 +319,7 @@ header {
     background-color: #784935;
 }
 
-.includes.premium{
+.includes.premium {
     background-color: rgb(90, 155, 212);
 }
 

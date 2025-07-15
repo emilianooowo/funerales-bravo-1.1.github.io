@@ -1,0 +1,135 @@
+body {
+    background: #000;
+}
+
+.contacto-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.contacto-titulo {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.contacto-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.telefonos-columna h3 {
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.telefono-item {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+.numero,
+.correo,
+.direccion a{
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.numero:hover, .correo:hover{
+    text-decoration: underline;
+}
+
+.telefono-disclaimer {
+    color: var(--color-azul-mascotas);
+}
+
+.telefono-disclaimer-prevision {
+    color: var(--color-dorado);
+}
+
+.telefono-item strong {
+    color: #ffffff;
+}
+
+.direccion-columna h3 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.correo-item,
+.direccion-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, .8);
+}
+
+.correo-item strong,
+.direccion-item strong {
+    color: #ffffff;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 30px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    transition: background .3s ease;
+}
+
+.map-btn:hover {
+    background: #3a3a3a;
+}
+
+.mapa-container {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+}
+
+.mapa-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #333333 0%, #555555 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc;
+    font-size: 1.2rem;
+    border: 2px dashed #666666;
+}
+
+@media (max-width: 768px) {
+    .contacto-titulo {
+        font-size: 2.5rem;
+    }
+
+    .contacto-info {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contacto-section {
+        padding: 30px 15px;
+    }
+
+    .mapa-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto-titulo {
+        font-size: 2rem;
+    }
+
+    .contacto-descripcion {
+        font-size: 1rem;
+    }
+}

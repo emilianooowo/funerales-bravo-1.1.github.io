@@ -5,8 +5,7 @@
 }
 
 header {
-    background-color: #1b1b1b;
-    color: white;
+    background: #fff;
     padding: 5px;
     position: sticky;
     top: 0;
@@ -39,7 +38,7 @@ header {
 .menu-pc-bar {
     width: 20px;
     height: 1.5px;
-    background-color: white;
+    background-color: var(--color-cafe-oscuro);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -161,52 +160,72 @@ header {
     }
 }
 
-.main-section {
-    width: 100%;
-}
-
-.header-content {
+.hero-section {
+    height: 40vh;
+    background-image: url('../assets/imgs/cementerio/cementerio-title.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 40px 80px;
-    background: url(../assets/imgs/cementerio/cementerio-title.png);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: #fff;
+    position: relative;
 }
 
-.logo-section {
+.hero-content-with-logo {
     display: flex;
     align-items: center;
     gap: 20px;
-    color: #fff;
+    padding: 40px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
-.logo-main img {
-    height: 150px;
+.hero-logo {
+    width: auto;
+    height: 200px;
     object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 8px;
+    padding: 10px;
 }
 
-.welcome-message {
-    color: #fff;
+.hero-content {
+    max-width: 600px;
+    flex: 1;
 }
 
 @media (max-width: 768px) {
-    .header-content {
+    .hero-content-with-logo {
         flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
+        align-items: center;
         text-align: center;
+        padding: 20px;
     }
 
-    .logo-section {
-        flex-direction: column;
-        gap: 10px;
+    .hero-logo {
+        width: 80px;
+        height: 120px;
+        margin-bottom: 20px;
     }
 
-    .welcome-message {
-        font-size: 1.2rem;
+    .hero-descripcion {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .hero-content-with-logo {
+        padding: 15px;
+    }
+
+    .hero-descripcion {
+        font-size: 0.9rem;
     }
 }
 

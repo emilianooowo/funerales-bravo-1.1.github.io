@@ -37,16 +37,20 @@ body {
 h1 {
   font-size: 2rem;
   font-family: var(--fuente-principal);
+  font-weight: 300;
 }
 
 h2 {
   font-size: 1.7rem;
   font-family: var(--fuente-principal);
+  font-weight: 300;
 }
 
 h3 {
   font-size: 1.4rem;
   font-family: var(--fuente-principal);
+  font-weight: 300;
+
 }
 
 p,
@@ -55,8 +59,9 @@ a,
 span,
 li {
   font-family: var(--fuente-secundaria);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.4;
+  font-weight: lighter;
 }
 
 a {
@@ -68,8 +73,8 @@ a {
 .hamburger-btn {
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 40px;
+  right: 20px;
   z-index: 1001;
   width: 40px;
   height: 40px;
@@ -107,13 +112,13 @@ a {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1000;
   width: fit-content;
   height: 100vh;
   padding: 80px 30px 30px;
   background: #1b1b1b;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.3s ease;
 }
 
@@ -167,7 +172,7 @@ a {
 }
 
 footer {
-  background: #1b1b1b;
+  background: #111111;
   color: white;
   padding: 50px 0 20px;
 }

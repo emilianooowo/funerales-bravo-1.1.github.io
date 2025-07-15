@@ -1,176 +1,74 @@
-header {
-    background-color: #1b1b1b;
-    color: white;
-    padding: 5px;
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-}
-
-.header-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo-header img {
-    height: 50px;
-    width: auto;
-}
-
-.menu-pc-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    background: none;
-    border: none;
-    z-index: 1001;
-}
-
-.menu-pc-bar {
-    width: 20px;
-    height: 1.5px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-.menu-pc-toggle.active .menu-pc-bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-pc-toggle.active .menu-pc-bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-pc-toggle.active .menu-pc-bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-.menu-pc-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 150px;
-    background-color: #333;
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transform: translateY(-60px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.menu-pc-dropdown.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-pc-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-pc-item {
-    border-bottom: 1px solid #878787;
-}
-
-.menu-pc-item:last-child {
-    border-bottom: none;
-}
-
-.menu-pc-link {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    transition: background-color 0.3s ease;
-}
-
-.menu-pc-link:hover {
-    background-color: #000000;
-}
-
-.menu-pc-link.cremapets-link:hover {
-    background-color: var(--color-azul-mascotas);
-    color: #fff;
+body {
+    background: #000;
 }
 
 .cotizador-section {
-    min-height: 100vh;
-    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .cotizador-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 30px 20px; 
 }
 
 .cotizador-titulo {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 4rem;
 }
 
 .cotizador-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
-    margin-bottom: 10px;
 }
 
 .cotizador-planes {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
+}
+
+.cotizador-planes h2 {
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .cotizador-plan-btn {
-    background-color: var(--color-dorado);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 1.2em;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    padding: 15px 20px;
+    font-size: 1em;
     cursor: pointer;
     text-align: center;
     font-family: var(--fuente-principal);
+    font-weight: 300;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .cotizador-plan-btn:hover {
-    background-color: var(--color-cafe-oscuro);
+    color: #fff;
+    background-color: #444444;
 }
 
 .cotizador-plan-btn.selected {
-    background-color: #27ae60;
-}
-
-.cotizador-resumen {
-    background-color: white;
-    padding: 10px;
-    height: fit-content;
-}
-
-.cotizador-resumen h3 {
-    margin-bottom: 5px;
-}
-
-.cotizador-resumen-item {
-    margin-bottom: 5px;
-}
-
-.cotizador-resumen-item strong {
-    color: #27ae60;
+    background-color: var(--color-dorado);
+    color: #fff;
+    border-color: var(--color-dorado);
 }
 
 .cotizador-opciones {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cotizador-opciones h2 {
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .cotizador-opcion {
@@ -179,64 +77,124 @@ header {
 }
 
 .cotizador-opcion label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-weight: 300;
+    font-size: 1.1em;
+    color: #ccc;
 }
 
 .cotizador-opcion select {
-    padding: 12px;
-    border-radius: 5px;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
     font-size: 1em;
     font-family: var(--fuente-principal);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: #fff;
 }
 
-.cotizador-contacto {
+.cotizador-opcion select option {
+    background-color: #333;
+    color: #fff;
+}
+
+.cotizador-opcion select:focus {
+    border-bottom-color: var(--color-dorado);
+}
+
+.cotizador-resumen {
+    background-color: #dddddd;
     padding: 30px;
+    height: fit-content;
 }
 
-.cotizador-contacto h3 {
-    margin-bottom: 10px;
+.cotizador-resumen h3 {
+    margin-bottom: 25px;
+    font-weight: 300;
     font-size: 1.5em;
 }
 
+.cotizador-resumen-item {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cotizador-descuento {
+    margin-top: 5px;
+}
+
+.precio-original {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.cotizador-contacto-wrapper {
+    grid-column: 1 / 2;
+    margin-top: 20px;
+}
+
+.cotizador-contacto h3 {
+    margin-bottom: 25px;
+    color: #fff;
+}
+
 .cotizador-contacto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.cotizador-contacto-full {
-    grid-column: 1 / -1;
-}
-
 .cotizador-contacto input {
-    border-radius: 5px;
-    border: 1px solid #000;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
     width: 100%;
-    padding: 10px;
+    padding: 12px 0;
     font-size: 1em;
     font-family: var(--fuente-principal);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: #fff;
+}
+
+.cotizador-contacto input:focus {
+    border-bottom-color: var(--color-dorado);
+}
+
+.cotizador-contacto input::placeholder {
+    color: #888;
 }
 
 .cotizador-contacto label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
 .cotizador-enviar-btn {
-    background-color: var(--color-dorado);
+    background-color: #7a7a7a;
     font-family: var(--fuente-principal);
     color: white;
     border: none;
-    padding: 15px 20px;
+    padding: 15px 40px;
     font-size: 1rem;
+    font-weight: 300;
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    width: 100%;
 }
 
 .cotizador-enviar-btn:hover {
-    background-color: #27ae60;
+    background-color: var(--color-dorado);
 }
 
 .cotizador-popup {
@@ -245,7 +203,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
     align-items: center;
@@ -254,24 +212,24 @@ header {
 
 .cotizador-popup-content {
     background-color: white;
-    padding: 40px;
+    padding: 50px;
     text-align: center;
     max-width: 500px;
     margin: 20px;
+    border: 1px solid #f0f0f0;
 }
 
 .cotizador-popup-content h3 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 1.5em;
+    font-weight: 300;
 }
 
 .cotizador-popup-content p {
-    margin-bottom: 30px;
-}
-
-.cotizador-descuento {
-    margin-top: 5px;
-    color: #ff1900;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
 }
 
 .cotizador-popup-buttons {
@@ -281,239 +239,50 @@ header {
 }
 
 .cotizador-popup-btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border: 1px solid transparent;
+    background: transparent;
     font-size: 1em;
     cursor: pointer;
     font-family: var(--fuente-principal);
+    font-weight: 300;
+    transition: all 0.3s ease;
 }
 
 .cotizador-popup-btn.acepto {
-    background-color: #27ae60;
+    background-color: #333;
     color: white;
-    transition: transform 0.1s ease;
 }
 
-.cotizador-popup-btn.acepto:active {
-    transform: scale(0.95);
+.cotizador-popup-btn.acepto:hover {
+    background-color: var(--color-dorado);
 }
 
 .cotizador-popup-btn.cancelar {
-    background-color: #95a5a6;
-    color: white;
+    color: #666;
+}
+
+.cotizador-popup-btn.cancelar:hover {
+    border-color: #000;
+    color: #333;
 }
 
 @media (max-width: 768px) {
+    .cotizador-section {
+        padding: 10px 5px;
+    }
+
     .cotizador-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    .cotizador-opciones {
-        grid-template-columns: 1fr;
+    .cotizador-titulo {
+        font-size: 2.5rem;
     }
 
-    .cotizador-contacto-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cotizador-popup-buttons {
-        flex-direction: column;
-    }
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    min-height: 100vh;
-}
-
-.encabezado {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.main-title {
-    text-align: center;
-    margin: 0 auto;
-}
-
-.subtitle {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.calendar-button-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.calendar-button {
-    border: none;
-    background: var(--color-dorado);
-    color: white;
-    padding: 20px 15px;
-    font-size: 1.2em;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    border-radius: 5px;
-}
-
-.calendar-section {
-    padding: 40px;
-    margin-bottom: 30px;
-    display: none;
-    animation: slideDown .8s ease-out;
-}
-
-.calendar-section.active {
-    display: block;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.calendar-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.calendar-image img {
-    max-width: 100%;
-    height: 600px;
-}
-
-.action-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.action-btn {
-    padding: 15px 35px;
-    border: none;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--fuente-principal);
-}
-
-.download-btn {
-    background: var(--color-dorado);
-    color: white;
-}
-
-.share-btn {
-    background: black;
-    color: white;
-}
-
-.promotions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    margin-top: 40px;
-    gap: 10px;
-}
-
-.promotion-card h4 {
-    margin-bottom: 25px;
-    text-align: center;
-    gap: 12px;
-}
-
-.seasonal-promotions h4 {
-    color: var(--color-dorado);
-}
-
-.promotion-item {
-    padding: 10px;
-}
-
-.promotion-item h5 {
-    margin-bottom: 10px;
-}
-
-.promotion-item p {
-    margin-bottom: 15px;
-}
-
-.promotion-discount {
-    padding: 8px 15px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    color: white;
-}
-
-.promotion-discount {
-    background: black;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
-    .encabezado {
-        padding: 30px 20px;
-    }
-
-    .main-title {
-        font-size: 2em;
-    }
-
-    .calendar-button {
-        padding: 15px 35px;
-        font-size: 1.2em;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .action-btn {
-        width: 200px;
-        justify-content: center;
-    }
-
-    .nav-btn {
-        width: 160px;
-        justify-content: center;
-        margin-bottom: 10px;
-        padding: 12px 20px;
-    }
-
-    .promotions-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .promotion-card {
-        padding: 25px;
+    .cotizador-contacto-wrapper {
+        grid-column: 1;
+        margin-top: 30px;
     }
 }
