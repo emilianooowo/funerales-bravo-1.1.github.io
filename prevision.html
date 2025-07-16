@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios funerarios</title>
-    <link rel="icon" href="assets/logos/logo-icono.ico" type="image/x-icon">
+    <link rel="icon" href="assets/logos/bravo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/prevision.css">
     <link rel="stylesheet" href="assets/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
 </head>
 
 <body>
@@ -38,182 +37,320 @@
         </div>
     </div>
 
-    <header>
+    <header id="dynamicHeader">
         <div class="header-main">
             <div class="logo-header">
                 <a href="index.html">
-                    <img src="assets/logos/logo-header-simple.jpg" alt="Funeraria Logo">
+                    <img src="assets/logos/logo-header-simple.jpg" alt="Funeraria Logo" id="logoImg">
                 </a>
             </div>
 
-            <nav>
+            <div class="menu-toggle-wrapper">
                 <button class="menu-pc-toggle" id="menuToggle">
                     <span class="menu-pc-bar"></span>
                     <span class="menu-pc-bar"></span>
                     <span class="menu-pc-bar"></span>
                 </button>
+            </div>
+        </div>
 
-                <div class="menu-pc-dropdown" id="menuDropdown">
-                    <ul class="menu-pc-list">
-                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
-                        <li class="menu-pc-item"><a href="cremapets.html"
-                                class="menu-pc-link cremapets-link">Cremapets</a></li>
-                        <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
-                        <li class="menu-pc-item"><a href="extras.html" class="menu-pc-link">Cotizador</a></li>
-                        <li class="menu-pc-item"><a href="contacto.html" class="menu-pc-link">Contacto</a></li>
-                    </ul>
-                </div>
-            </nav>
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="menu-pc-dropdown" id="menuDropdown">
+            <button class="close-menu" id="closeMenu">&times;</button>
+
+            <ul class="menu-pc-list">
+                <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
+                <li class="menu-pc-item"><a href="cremapets.html" class="menu-pc-link">Cremapets</a></li>
+                <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
+                <li class="menu-pc-item"><a href="extras.html" class="menu-pc-link">Cotizador</a></li>
+                <li class="menu-pc-item"><a href="contacto.html" class="menu-pc-link">Contacto</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="main-section fondo-brillante">
+    <section class="main-section">
         <div class="container">
-            <h1 class="main-title">SERVICIOS FUNERARIOS</h1>
+            <div class="hero-content">
+                <h1 class="main-title">SERVICIOS FUNERARIOS</h1>
+                <p class="hero-paragraph">
+                    Brindamos acompañamiento y apoyo en los momentos más difíciles,
+                    con servicios profesionales y comprensivos que honran la memoria
+                    de sus seres queridos con dignidad y respeto.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="funeral-section" id="planes">
-        <div class="planes-contenido">
-            <div class="section-header">
-                <h1 class="section-title">Planes de velación</h1>
-                <div class="title-line"></div>
-                <div class="section-description">
-                    <h2>Nuestros servicios se ofrecen de dos formas para adaptarse a sus necesidades:</h2>
-                    <ul class="service-list booboo">
-                        <li>En nuestras instalaciones </li>
-                        <li>En la comodidad de su domicilio</li>
+    <section class="planes">
+        <div class="container">
+            <div class="velacion-intro">
+                <h1>NUESTROS PLANES DE VELACIÓN</h1>
+                <p>Ofrecemos diferentes opciones para que puedas elegir el servicio que mejor se adapte a las
+                    necesidades de tu familia en este momento tan importante.</p>
+            </div>
+
+            <div class="services-layout">
+                <div class="info-general">
+                    <h2>Todos los planes (a domicilio o en las instalaciones) incluyen:</h2>
+                    <ul>
+                        <li>Trámite para el Acta de Defunción y orden de inhumación</li>
+                        <li>Certificado Médico Cuando el familiar fallece en domicilio</li>
+                        <li>Preparado Estético y embalsamado del Ser Amado</li>
+                        <li>Obituario digital y recuerdo a la memoria</li>
+                        <li>Servicio de Carroza para traslados y Cortejo Fúnebre</li>
+                        <li>1 Kit de Velación (Cristo, 4 Candelabros, 1 Base para Féretro por 24 Horas)</li>
                     </ul>
                 </div>
-                <h3 class="service-title">Todos los planes (a domicilio o en las instalaciones) incluyen:</h3>
-                <ul class="service-list booboo">
-                    <li>Trámite para el Acta de Defunción y orden de inhumación</li>
-                    <li>Certificado Médico Cuando el familiar fallece en domicilio</li>
-                    <li>Féretro (varía según el plan)</li>
-                    <li>Preparado Estético y embalsamado del Ser Amado</li>
-                    <li>Obituario digital y recuerdo a la memoria</li>
-                    <li>Servicio de Carroza para traslados y Cortejo Fúnebre</li>
-                    <li>1 Kit de Velación (Cristo, 4 Candelabros, 1 Base para Féretro por 24 Horas)</li>
+
+                <div class="cards-grid">
+                    <div class="service-card">
+                        <h3>Básico Empresarial</h3>
+                        <ul>
+                            <li>Féretro Básico (madera forrado de tela, metálico y madera con herrajes básico)</li>
+                            <li>Barra de alimentos: 100 pzas. de pan</li>
+                            <li>1 arreglo floral</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Platino</h3>
+                        <ul>
+                            <li>Féretro de Madera con herrajes (3 opciones a elegir)</li>
+                            <li>2 Arreglos Floral</li>
+                            <li>Placa memorial QR</li>
+                            <li>Barra de Alimentos limitados: 200 pzas. Pan, 150 bocadillos</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Diamante</h3>
+                        <ul>
+                            <li>Féretro de Madera de lujo barnizado con herrajes</li>
+                            <li>Corona fúnebre</li>
+                            <li>Placa memorial QR</li>
+                            <li>Lámpara de ónix memorial</li>
+                            <li>Vehículo para Traslado de Ofrendas Florales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparar">
+        <div class="container">
+            <div class="comparar-intro">
+                <h1>COMPARA NUESTROS PLANES</h1>
+                <p>Elige el que más se adecue a tus necesidades. Selecciona el mismo o
+                    dos planes diferentes y el tipo de servicio (instalaciones o domicilio) para ver una comparación
+                    detallada.
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Básico empresarial</h3>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-buttons">
+                                <button class="plan-btn active" onclick="showPlanDetails('basic', 'instalaciones')">En
+                                    Instalaciones</button>
+                                <button class="plan-btn" onclick="showPlanDetails('basic', 'domicilio')">A
+                                    Domicilio</button>
+                            </div>
+                            <div class="plan-details active" id="basic-instalaciones">
+                                <ul>
+                                    <li>Salas de velación por 24 hrs.</li>
+                                    <li>Personal de Apoyo en Sala</li>
+                                    <li>Barra de Bebidas ilimitadas (agua, café, té y refresco)</li>
+                                </ul>
+                            </div>
+
+                            <div class="plan-details" id="basic-domicilio">
+                                <ul>
+                                    <li>Se agrega 1 biombo al kit de velación</li>
+                                    <li>2 kilos de café, 1 kilo de azúcar, préstamo de 1 cafetera 24 hrs</li>
+                                    <li>50 sillas de madera</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Platino</h3>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-buttons">
+                                <button class="plan-btn active"
+                                    onclick="showPlanDetails('intermediate', 'instalaciones')">En Instalaciones</button>
+                                <button class="plan-btn" onclick="showPlanDetails('intermediate', 'domicilio')">A
+                                    Domicilio</button>
+                            </div>
+                            <div class="plan-details active" id="intermediate-instalaciones">
+                                <ul>
+                                    <li>Salas de velación por 24 hrs.</li>
+                                    <li>Personal de apoyo en sala</li>
+                                    <li>Alfombra y 4 Cirios se agregan al kit de velación</li>
+                                    <li>Barra de Bebidas Ilimitadas (agua, café, té y refresco)</li>
+                                </ul>
+                            </div>
+                            <div class="plan-details" id="intermediate-domicilio">
+                                <ul>
+                                    <li>1 Carpa por 24 Horas, 100 Sillas por 24 Horas</li>
+                                    <li>1 Cafetera por 24 Horas, 2 Kilos de Café, 2 Kilos de Azúcar, 100 Vasos
+                                        Desechables</li>
+                                    <li>1 Paquete de Refrescos Desechables de 2 Litros (12 piezas)</li>
+                                    <li>Alfombra y 1 biombo se agrega al kit de velación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Diamante</h3>
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-buttons">
+                                <button class="plan-btn active" onclick="showPlanDetails('premium', 'instalaciones')">En
+                                    Instalaciones</button>
+                                <button class="plan-btn" onclick="showPlanDetails('premium', 'domicilio')">A
+                                    Domicilio</button>
+                            </div>
+                            <div class="plan-details active" id="premium-instalaciones">
+                                <ul>
+                                    <li>Salas de velación por 24 hrs</li>
+                                    <li>Personal de Apoyo en Sala</li>
+                                    <li>Habitación de Reposo (hotel Kamico)</li>
+                                    <li>Arreglo floral se agrega al kit de velación</li>
+                                    <li>Barra de Bebidas Ilimitadas (agua, café, té y refresco)</li>
+                                    <li>Barra de alimentos limitados (300 pzas pan, y 200 bocadillos)</li>
+                                </ul>
+                            </div>
+                            <div class="plan-details" id="premium-domicilio">
+                                <ul>
+                                    <li>2 Carpas por 24 Horas, 150 Sillas por 24 Horas</li>
+                                    <li>2 Cafeteras por 24 Horas, 3 Kilos de Café, 4 Kilos de Azúcar</li>
+                                    <li>2 Paquetes de Refrescos (12 pzas de 2 lts.)</li>
+                                    <li>Alfombra y 1 biombo se agrega al kit de velación</li>
+                                    <li>Barra de alimentos limitados (300 pzas pan, y 100 bocadillos)</li>
+                                    <li>200 Vasos Desechables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="inmediato">
+        <div class="container">
+            <p>¿Necesitas el servicio de inmediato? Llámanos ahora o contáctanos directamente.</p>
+            <a href="tel:+123456789" class="cta-btn">Contactar Ahora</a>
+        </div>
+    </section>
+
+    <section class="prevision">
+        <div class="container">
+            <div class="features-container">
+                <div class="features-text">
+                    <h1>PREVISIÓN FUNERARIA</h1>
+                    <h2>¿En qué consiste?</h2>
+                    <p>Contratar un Plan de Previsión Funeraria le permite planificar con tiempo el tipo de servicio que desea recibir, evitando
+                        decisiones apresuradas y gastos inesperados en un momento difícil. Este tipo de plan le
+                        brinda tranquilidad emocional al saber que todo estará resuelto cuando se necesite, y le permite
+                        transmitir esa calma a sus seres queridos.
+                    </p>
+                    <h3>Otros beneficios importantes:</h3>
+                    <ul class="lista-beneficios">
+                        <li>Transferible a familiares o amigos sin perder validez</li>
+                        <li>Vitalicio: el servicio no expira y queda activo de por vida</li>
+                        <li>Atención y asesoría personalizada antes, durante y después del servicio</li>
+                        <li>Disponibilidad las 24 horas todos los días del año</li>
+                        <li>Posibilidad de elegir entre servicio a domicilio o en sala de velación</li>
+                    </ul>
+                </div>
+                <div class="features-grid-container">
+                    <h2>Beneficios</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon"> <i class="bi bi-wallet2"></i></div>
+                            <h4>Ahorro</h4>
+                            <p>Permite reducir hasta un 50% en comparación con un servicio de
+                                uso inmediato</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"> <i class="bi bi-shield-check"></i></div>
+                            <h4>Cobertura total</h4>
+                            <p>Incluye todos los servicios necesarios</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"> <i class="bi bi-sliders"></i></div>
+                            <h4>Personalización</h4>
+                            <p>El plan se adapta a sus necesidades, con opciones
+                                flexibles de pago</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"> <i class="bi bi-cash-coin"></i></div>
+                            <h4>Inversión segura</h4>
+                            <p>El precio se congela al momento de contratar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-bottom">
+                <a href="extras.html" class="cta-btn">Cotiza ahora</a>
+                <h3>¿Deseas planificar con tranquilidad y a tu medida?
+                    Cotiza tu plan funerario ahora y recibe una propuesta personalizada según tus necesidades</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-wrapper">
+            <div class="content-left">
+                <h1>CREMACIÓN O ENTIERRO?</h1>
+                <p>Decidir entre cremación o entierro es una de las decisiones más personales que podemos tomar.
+                    Factores como el costo, las creencias religiosas, las preferencias familiares y el tipo de homenaje
+                    deseado influyen en esta elección.
+                    <br> <br>
+                    Comprender las diferencias y beneficios de cada opción con anticipación puede ayudarle a tomar una
+                    decisión informada, evitando que su familia enfrente estrés o confusión en momentos difíciles.
+                </p>
+                <ul class="content-list">
+                    <li>Es un proceso sencillo, rápido y con un costo más accesible que la inhumación.</li>
+                    <li>Las cenizas pueden ser depositadas en un cementerio, iglesia o incluso en el hogar.</li>
+                    <li>Permite que varios miembros de la familia conserven una parte como homenaje.</li>
+                    <li>Las urnas ocupan menos espacio, facilitando su resguardo en un sitio especial.</li>
+                    <li>Los servicios funerarios pueden realizarse en una fecha posterior, permitiendo que familiares o
+                        amigos que viven lejos puedan acompañar la despedida.</li>
                 </ul>
             </div>
-    </section>
-
-    <section class="beneficios">
-        <div class="beneficios-contenido">
-            <h2 class="features-subtitle">Beneficios:</h2>
-
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="bi bi-wallet2"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Ahorro</h3>
-                        <p class="feature-description"> Permite reducir hasta un 50% en comparación con un servicio de
-                            uso inmediato.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Cobertura total</h3>
-                        <p class="feature-description"> Incluye todos los servicios necesarios.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="bi bi-sliders"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Personalización</h3>
-                        <p class="feature-description">El plan se adapta a sus necesidades, con opciones
-                            flexibles de pago.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="bi bi-cash-coin"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Inversión segura</h3>
-                        <p class="feature-description"> El precio se congela al momento de contratar.</p>
-                    </div>
-                </div>
+            <div class="content-right">
+                <img src="assets/imgs/cementerio/col-1.webp" alt="Servicios funerarios" class="content-image">
+                <div class="gradient-overlay"></div>
             </div>
         </div>
     </section>
 
-    <div class="comparison-container">
-        <div class="comparison-intro">
-            <h2>Compara nuestros planes</h2>
-            <p>Elige el que más se adecue a tus necesidades. Selecciona el mismo o
-                dos planes diferentes y el tipo de servicio (instalaciones o domicilio) para ver una comparación
-                detallada.</p>
-        </div>
-
-        <div class="comparison-selectors">
-            <div class="selector-group">
-                <h4>Primer Plan</h4>
-                <div class="plan-buttons">
-                    <button class="plan-button" data-plan="basico" data-group="1">Básico Empresarial</button>
-                    <button class="plan-button" data-plan="platino" data-group="1">Platino</button>
-                    <button class="plan-button" data-plan="diamante" data-group="1">Diamante</button>
-                </div>
-                <div class="service-buttons">
-                    <button class="service-button" data-service="instalaciones" data-group="1">En instalaciones</button>
-                    <button class="service-button" data-service="domicilio" data-group="1">A domicilio</button>
-                </div>
-            </div>
-
-            <div class="selector-group">
-                <h4>Segundo Plan</h4>
-                <div class="plan-buttons">
-                    <button class="plan-button" data-plan="basico" data-group="2">Básico Empresarial</button>
-                    <button class="plan-button" data-plan="platino" data-group="2">Platino</button>
-                    <button class="plan-button" data-plan="diamante" data-group="2">Diamante</button>
-                </div>
-                <div class="service-buttons">
-                    <button class="service-button" data-service="instalaciones" data-group="2">En instalaciones</button>
-                    <button class="service-button" data-service="domicilio" data-group="2">A domicilio</button>
-                </div>
+    <section class="gallery-section">
+        <div class="gallery-content">
+            <h1 class="gallery-title">Urnas personalizadas</h1>
+            <div class="gallery-grid" id="galleryGrid">
             </div>
         </div>
+    </section>
 
-        <div class="comparison-result" id="comparisonResult">
-            <div class="plan-comparison" id="comparison1">
-                <h3 id="planTitle1"></h3>
-                <div class="service-type" id="serviceType1"></div>
-                <div id="planContent1"></div>
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <div class="lightbox-main">
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+                <img class="lightbox-image" id="lightboxImage" src="" alt="">
+                <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
             </div>
-
-            <div class="plan-comparison" id="comparison2">
-                <h3 id="planTitle2"></h3>
-                <div class="service-type" id="serviceType2"></div>
-                <div id="planContent2"></div>
-            </div>
-        </div>
-
-        <a href="extras.html#cotizador" class="final-quote-btn">Cotiza Ya</a>
-    </div>
-
-    <div class="gallery-container">
-        <h1 class="gallery-title">Urnas personalizadas</h1>
-
-        <div class="gallery-grid show" id="galleryGrid">
-            <div class="loading">Cargando imágenes...</div>
-        </div>
-
-        <div id="lightboxOverlay" class="lightbox-overlay hidden">
-            <span id="lightboxClose" class="lightbox-close">&times;</span>
-            <img id="lightboxImage" class="lightbox-image" src="" alt="">
-            <div class="lightbox-nav">
-                <button id="prevBtn">&#10094;</button>
-                <button id="nextBtn">&#10095;</button>
+            <div class="lightbox-thumbnails" id="lightboxThumbnails">
             </div>
         </div>
     </div>
