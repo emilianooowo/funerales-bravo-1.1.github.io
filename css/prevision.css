@@ -1,6 +1,10 @@
+body {
+    background: #f4f4f4;
+}
+
 header {
-    background: #fff;
-    padding: 5px;
+    background: #f4f4f4;
+    padding: 5px 50px;
     position: sticky;
     top: 0;
     z-index: 1001;
@@ -10,8 +14,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo-header img {
@@ -52,10 +54,9 @@ header {
 .menu-pc-dropdown {
     position: absolute;
     top: 100%;
-    right: 150px;
-    background-color: #333;
+    right: 50px;
+    background-color: #1b1b1b;
     min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transform: translateY(-60px);
     opacity: 0;
     visibility: hidden;
@@ -84,15 +85,15 @@ header {
 }
 
 .menu-pc-link {
+    color: #fff;
     display: block;
-    color: white;
     text-decoration: none;
     padding: 15px 20px;
     transition: background-color 0.3s ease;
 }
 
 .menu-pc-link:hover {
-    background-color: #000000;
+    background-color: #6c6c6c;
 }
 
 .menu-pc-link.cremapets-link:hover {
@@ -100,22 +101,21 @@ header {
     color: #fff;
 }
 
-.main-section {
-    height: 40vh;
-    background-image: url('../assets/imgs/inicio/title-prevision.webp');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 80px;
+.fondo-brillante {
+    background: #1b1b1b;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.main-title {
+    margin: 0;
     color: #fff;
 }
 
 .main-title {
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideUpFade 0.8s ease-out forwards;
+    font-size: 3rem;
+    margin: 0;
 }
 
 .beneficios {
@@ -167,12 +167,6 @@ header {
     color: var(--color-dorado);
 }
 
-@keyframes slideUpFade {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @media (max-width: 768px) {
     .main-title {
@@ -422,7 +416,9 @@ header {
 
 
 @media (max-width: 768px) {
-    .funeral-section, .beneficios{
+
+    .funeral-section,
+    .beneficios {
         padding: 10px;
     }
 
