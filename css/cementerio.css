@@ -553,11 +553,11 @@ header {
 }
 
 .telefonos-columna h3 {
-    margin: 30px 0;
+    margin-top: 40px;
 }
 
 .telefono-item {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     font-size: 1.2rem;
     color: #1e1e1e;
 }

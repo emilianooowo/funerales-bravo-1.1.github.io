@@ -1,172 +1,113 @@
-function showPlan(planType) {
-    const plans = document.querySelectorAll('.plan-content');
-    plans.forEach(plan => plan.classList.remove('active'));
 
-    const buttons = document.querySelectorAll('.plan-button');
-    buttons.forEach(button => button.classList.remove('active'));
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    document.getElementById(planType).classList.add('active');
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
 
-    document.querySelector(`.plan-button.${planType}`).classList.add('active');
-}
-
-function openLightbox(imageSrc) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    lightboxImg.src = imageSrc;
-    lightbox.style.display = 'block';
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
-}
-
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-        closeLightbox();
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
     }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    showPlan('basic');
-    showGallery();
-});
+    const header = document.getElementById('dynamicHeader');
+    const logoImg = document.getElementById('logoImg');
 
-const titleObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            titleObserver.unobserve(entry.target);
+    const logoClaro = 'assets/logos/logo-header-simple-black.webp';
+    const logoOscuro = 'assets/logos/logo-header-simple-black.webp';
+
+    let ticking = false;
+
+    function updateHeader() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 400) {
+            header.classList.add('scrolled');
+            logoImg.src = logoOscuro;
+        } else {
+            header.classList.remove('scrolled');
+            logoImg.src = logoClaro;
         }
-    });
-}, { threshold: 0.2 });
 
-document.querySelectorAll('.section-title').forEach(el => titleObserver.observe(el));
-
-const galleryData = [
-    { src: 'assets/imgs/cremapets/urna-gato-1.webp' },
-    { src: 'assets/imgs/cremapets/urna-gato-2.webp' },
-    { src: 'assets/imgs/cremapets/urna-gato-3.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-1.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-2.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-3.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-4.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-5.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-6.webp' },
-    { src: 'assets/imgs/cremapets/urna-perro-7.webp' },
-];
-
-const galleryGrid = document.getElementById('galleryGrid');
-let currentImages = galleryData;
-let currentIndex = 0;
-
-function showGallery() {
-    galleryGrid.classList.remove('show');
-
-    setTimeout(() => {
-        galleryGrid.innerHTML = '';
-
-        currentImages.forEach((item, index) => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${item.src}" alt="${item.title}" loading="lazy">
-                <div class="item-title">${item.title}</div>
-            `;
-
-            galleryItem.addEventListener('click', () => {
-                openLightbox(index);
-            });
-
-            galleryGrid.appendChild(galleryItem);
-
-            observer.observe(galleryItem);
-        });
-
-        galleryGrid.classList.add('show');
-    }, 250);
-}
-
-function preloadImages() {
-    galleryData.forEach(item => {
-        const img = new Image();
-        img.src = item.src;
-    });
-}
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.4
-});
-
-function openLightbox(index) {
-    currentIndex = index;
-    document.getElementById('lightboxImage').src = currentImages[currentIndex].src;
-    document.getElementById('lightboxOverlay').classList.remove('hidden');
-}
-
-function closeLightbox() {
-    document.getElementById('lightboxOverlay').classList.add('hidden');
-}
-
-function showPrev() {
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    document.getElementById('lightboxImage').src = currentImages[currentIndex].src;
-}
-
-function showNext() {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    document.getElementById('lightboxImage').src = currentImages[currentIndex].src;
-}
-
-document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-document.getElementById('prevBtn').addEventListener('click', showPrev);
-document.getElementById('nextBtn').addEventListener('click', showNext);
-
-document.addEventListener('keydown', (e) => {
-    const overlayVisible = !document.getElementById('lightboxOverlay').classList.contains('hidden');
-    if (!overlayVisible) return;
-
-    if (e.key === 'Escape') {
-        closeLightbox();
-    } else if (e.key === 'ArrowLeft') {
-        showPrev();
-    } else if (e.key === 'ArrowRight') {
-        showNext();
+        ticking = false;
     }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    updateHeader();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const menuDropdown = document.getElementById('menuDropdown');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    console.log('Menu PC Elements:', {
+        menuToggle: menuToggle,
+        menuDropdown: menuDropdown,
+        closeMenu: closeMenu
+    });
 
     function openMenuPC() {
+        console.log('Abriendo menú PC');
         if (menuToggle) menuToggle.classList.add('active');
         if (menuDropdown) menuDropdown.classList.add('active');
+        if (menuOverlay) menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenuPC() {
+        console.log('Cerrando menú PC');
         if (menuToggle) menuToggle.classList.remove('active');
         if (menuDropdown) menuDropdown.classList.remove('active');
+        if (menuOverlay) menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
 
     function toggleMenuPC(e) {
         e.preventDefault();
         e.stopPropagation();
+
         const isActive = menuToggle && menuToggle.classList.contains('active');
-        isActive ? closeMenuPC() : openMenuPC();
+        console.log('Toggle menú PC - Estado actual:', isActive);
+
+        if (isActive) {
+            closeMenuPC();
+        } else {
+            openMenuPC();
+        }
     }
 
     if (menuToggle && menuDropdown) {
+        console.log('Inicializando menú PC');
+
         menuToggle.addEventListener('click', toggleMenuPC);
+
+        if (closeMenu) {
+            closeMenu.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                closeMenuPC();
+            });
+        }
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && menuToggle.classList.contains('active')) {
@@ -175,18 +116,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.querySelectorAll('.menu-pc-link').forEach(link => {
-            link.addEventListener('click', closeMenuPC);
+            link.addEventListener('click', () => {
+                console.log('Clic en enlace del menú PC');
+                closeMenuPC();
+            });
         });
 
-        menuDropdown.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenuPC);
-        });
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', closeMenuPC);
+        }
 
         document.addEventListener('click', (e) => {
-            if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+            if (!menuToggle.contains(e.target) &&
+                !menuDropdown.contains(e.target) &&
+                menuToggle.classList.contains('active')) {
                 closeMenuPC();
             }
         });
+
     } else {
         console.error('Elementos del menú PC no encontrados:', {
             menuToggle: !!menuToggle,
