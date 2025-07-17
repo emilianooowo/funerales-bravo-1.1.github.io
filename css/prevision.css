@@ -324,7 +324,6 @@ header {
 .feature-name {
     padding: 20px 25px;
     color: #000;
-    font-size: 1.2rem;
 }
 
 .plan-cell {
@@ -341,7 +340,7 @@ header {
 
 .plan-detail {
     color: #000;
-    font-size: 1.2rem;
+    font-size: .95rem;
 }
 
 @media (max-width: 768px) {
