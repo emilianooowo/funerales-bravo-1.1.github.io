@@ -43,7 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
         'assets/imgs/inicio/img-galeria-5.webp',
         'assets/imgs/inicio/img-galeria-6.webp',
         'assets/imgs/inicio/img-galeria-7.webp',
-        'assets/imgs/inicio/img-galeria-8.webp'
+        'assets/imgs/inicio/img-galeria-8.webp',
+        'assets/imgs/inicio/ins-1952.webp',
+        'assets/imgs/inicio/ins_1969.webp',
+        'assets/imgs/inicio/ins_2019.webp',
+        'assets/imgs/inicio/ins-2025.webp'
     ];
 
     const thumbnailUrls = imageUrls.map(url => url.replace('w=800&h=800', 'w=200&h=200'));

@@ -41,7 +41,7 @@
         <div class="header-main">
             <div class="logo-header">
                 <a href="index.html">
-                    <img src="assets/logos/logo-header-simple.jpg" alt="Funeraria Logo">
+                    <img src="assets/logos/logo-header-simple-white.webp" alt="Funeraria Logo">
                 </a>
             </div>
 
@@ -169,7 +169,28 @@
         <i class="bi bi-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <script src="js/extras.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (hamburgerBtn && mobileMenu) {
+                hamburgerBtn.addEventListener('click', () => {
+                    hamburgerBtn.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.querySelectorAll('.mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerBtn.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cementerio Bravo</title>
-    <link rel="icon" href="assets/logos/cementerio-logo-cafe.ico" type="image/x-icon">
+    <link rel="icon" href="assets/logos/bravo-icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/cementerio.css">
     <link rel="stylesheet" href="assets/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <a href="index.html">Inicio</a>
-            <a href="prevision.html"> Servicios funerarios</a>
+            <a href="cementerio.html"> Cementerio</a>
             <a href="cremapets.html"> Cremapets</a>
             <a href="extras.html#promociones">Promociones</a>
             <a href="extras.html#cotizador"> Cotizador</a>
@@ -37,140 +38,132 @@
         </div>
     </div>
 
-    <header>
+    <header id="dynamicHeader">
         <div class="header-main">
             <div class="logo-header">
                 <a href="index.html">
-                    <img src="assets/logos/logo-header.webp" alt="Funeraria Logo">
+                    <img src="assets/logos/logo-header-simple-black.webp" alt="Funeraria Logo" id="logoImg">
                 </a>
             </div>
 
-            <nav>
+            <div class="menu-toggle-wrapper">
                 <button class="menu-pc-toggle" id="menuToggle">
                     <span class="menu-pc-bar"></span>
                     <span class="menu-pc-bar"></span>
                     <span class="menu-pc-bar"></span>
                 </button>
+            </div>
+        </div>
 
-                <div class="menu-pc-dropdown" id="menuDropdown">
-                    <ul class="menu-pc-list">
-                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
-                        <li class="menu-pc-item"><a href="prevision.html" class="menu-pc-link">Servicios funerarios</a>
-                        </li>
-                        <li class="menu-pc-item"><a href="cremapets.html"
-                                class="menu-pc-link cremapets-link">Cremapets</a></li>
-                        <li class="menu-pc-item"><a href="extras.html#promociones" class="menu-pc-link">Promociones</a>
-                        </li>
-                        <li class="menu-pc-item"><a href="extras.html#cotizador" class="menu-pc-link">Cotizador</a></li>
-                        <li class="menu-pc-item"><a href="contacto.html" class="menu-pc-link">Contacto</a></li>
-                    </ul>
-                </div>
-            </nav>
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="menu-pc-dropdown" id="menuDropdown">
+            <button class="close-menu" id="closeMenu">&times;</button>
+
+            <ul class="menu-pc-list">
+                <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
+                <li class="menu-pc-item"><a href="cremapets.html" class="menu-pc-link">Cremapets</a></li>
+                <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
+                <li class="menu-pc-item"><a href="extras.html" class="menu-pc-link">Cotizador</a></li>
+                <li class="menu-pc-item"><a href="contacto.html" class="menu-pc-link">Contacto</a></li>
+            </ul>
         </div>
     </header>
-
-    <section class="hero-section">
-        <div class="hero-content-with-logo">
-            <img src="assets/logos/cementerio-logo-blanco.webp" alt="Logo Cementerio Bravo" class="hero-logo">
+    <section class="main-section">
+        <div class="main-content">
             <div class="hero-content">
-                <p class="hero-descripcion">
-                    Un lugar de descanso en armonía con la naturaleza. Nuestro cementerio ecológico ofrece un entorno
-                    tranquilo, digno y respetuoso, donde cada despedida honra la vida con conciencia ambiental.
+                <img src="assets/logos/cementerio-logo-blanco.webp" alt="Logo" class="hero-logo">
+                <h1 class="main-title">BIENVENIDO A NUESTRO CEMENTERIO BRAVO</h1>
+                <p class="hero-paragraph">
+                    En Cementerio Bravo, comprendemos lo importante que es encontrar un lugar digno y tranquilo para
+                    honrar a tus seres queridos.
+                    Te invitamos a conocer nuestros espacios con toda confianza; estamos aquí para acompañarte y
+                    brindarte el apoyo que necesitas en cada paso.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="services-section">
-        <div class="services-container">
-            <div class="services-image"></div>
-            <div class="services-content">
-                <div class="service-item">
-                    <h2 class="service-title">PLAN DE PREVISIÓN CON NICHO</h2>
-                    <p class="service-description">
-                        Se planta un árbol y alrededor se destinan cuatro nichos individuales para la inhumación de
-                        seres queridos.
-                        <br><br>Una opción pensada para quienes desean dejar un legado significativo y compartido.
-                    </p>
+    <section class="cemetery-spaces">
+        <h1 class="section-title">NUESTROS ESPACIOS</h1>
+
+        <div class="spaces-cards">
+            <div class="space-card mural" data-space="mural">
+                <div class="card-content">
+                    <h2 class="card-title">Columbario</h2>
+                    <button class="cta-button">Conocer Más</button>
                 </div>
-                <div class="service-item">
-                    <h2 class="service-title">PLAN DE PREVISIÓN ECOLOGICO</h2>
-                    <p class="service-description">
-                        Incluye el entierro tradicional con una lápida conmemorativa. <br><br>Es un plan que combina
-                        sencillez, respeto y permanencia,
-                        brindando un espacio digno para la memoria de quienes partieron.
-                    </p>
+            </div>
+
+            <div class="space-card jardin" data-space="jardin">
+                <div class="card-content">
+                    <h2 class="card-title">Jardín</h2>
+                    <button class="cta-button">Conocer Más</button>
                 </div>
+            </div>
+
+            <div class="space-card nicho" data-space="nicho">
+                <div class="card-content">
+                    <h2 class="card-title">Nicho Ecológico</h2>
+                    <button class="cta-button">Conocer Más</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="space-content" class="space-content">
+            <div id="content-grid" class="content-grid">
             </div>
         </div>
     </section>
 
-    <section class="info-section">
-        <div class="info-container">
-            <div class="info-content">
-                <h1 class="info-title">PLAN DE PREVISIÓN DE COLUMBARIO</h1>
-                <div class="animated-line"></div>
-                <p class="info-description">
-                    Espacio adecuado para el resguardo de una urna donde se contienen las cenizas de una persona
-                    fallecida y cremada, el columbario esta empotrado sobre un muro al aire libre.
-                </p>
-                <ul class="info-features">
-                    <li>Titulo de propiedad a perpetuidad</li>
-                    <li>Personal de servicio en instalaciones</li>
-                    <li>Servicio básico de cafetería</li>
-                    <li>Vigilancia las 24 horas</li>
-                    <li>Amplios jardines y cómodas áreas para su tranquiliadad</li>
-                    <li>Capilla privada (PROXIMAMENTE)</li>
-                </ul>
-            </div>
-            <div class="info-image"></div>
-        </div>
-    </section>
-
-    <div class="gallery-container">
-        <h1 class="gallery-title">GALERIA</h1>
-
-        <div class="gallery-grid show" id="galleryGrid">
-            <div class="loading">Cargando imágenes...</div>
-        </div>
-
-        <div id="lightboxOverlay" class="lightbox-overlay hidden">
-            <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <div id="lightbox" class="lightbox">
+        <button id="lightboxClose" class="lightbox-close">&times;</button>
+        <div class="lightbox-content">
             <img id="lightboxImage" class="lightbox-image" src="" alt="">
-            <div class="lightbox-nav">
-                <button id="prevBtn">&#10094;</button>
-                <button id="nextBtn">&#10095;</button>
+            <div class="lightbox-controls">
+                <button id="lightboxPrev" class="lightbox-btn">‹</button>
+                <button id="lightboxNext" class="lightbox-btn">›</button>
             </div>
+            <div id="lightboxThumbnails" class="lightbox-thumbnails"></div>
         </div>
     </div>
 
-    <section class="ubicacion-section">
-        <h1 class="ubicacion-title">Ubicación de nuestro cementerio</h1>
-
-        <div class="ubicacion-container">
-            <div class="ubicacion-content">
-                <div class="direccion-info">
-                    <h3>Visítanos</h3>
-                    <p class="direccion-texto">
-                        Calle Ciprés 1, Jardines de<br>
-                        Chiapas, Tapachula, Chiapas.<br>
-                        (Atrás del Hospital COFAT)<br>
-                    </p>
-
-                    <div class="contacto-info">
-                        <div class="contacto-item">
-                            <span class="contacto-icon"><i class="bi bi-clock"></i></span>
-                            <span>Lun - Dom: 8:00 AM - 6:00 PM</span>
+    <section class="contacto-section">
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h1>Ubicación y contacto</h1>
+                <div class="telefonos-columna">
+                    <h3>Teléfono</h3>
+                    <div class="telefono-item">
+                        <strong>Lic. Citlaly Cobros Bravo</strong>
+                        <div class="numero">
+                            <a href="tel:+529621877187"> +52 962 187 7187</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="mapa-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7709.637170243955!2d-92.2572217243106!3d14.94719720314663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e098354f488a1%3A0xa4ee8abcd762cf77!2sBrave%20Cemetery!5e0!3m2!1sen!2smx!4v1750277544074!5m2!1sen!2smx"
-                        style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="direccion-columna">
+                    <h3>Visítanos</h3>
+                    <div class="direccion-item">
+                        <strong>Dirección:</strong><br><br>
+                        <div class="direccion">
+                            Calle Ciprés 1, Jardines de<br>
+                            Chiapas, Tapachula, Chiapas.<br><br>
+                            (Referencia: Atrás del Hospital COFAT)
+                        </div>
+                        <a class="map-btn" href="https://maps.app.goo.gl/jW45FEdwa1goDtLh7" target="_blank"
+                            rel="noopener noreferrer">
+                            Abrir en Mapas
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Columna derecha (mapa) -->
+            <div class="mapa-container">
+                <iframe class="mapa-placeholder"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15419.29258704682!2d-92.25938895317223!3d14.946943226176085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e098354f488a1%3A0xa4ee8abcd762cf77!2sBrave%20Cemetery!5e0!3m2!1sen!2smx!4v1752784134346!5m2!1sen!2smx"
+                    style="border: none;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -183,7 +176,7 @@
 
             <div class="footer-section">
                 <h3>Navegación</h3>
-                <p><a href="prevision.html">Servicios funerarios</a></p>
+                <p><a href="prevision.html">Previsión Funeraria</a></p>
                 <p><a href="cementerio.html">Cremación de Mascotas</a></p>
                 <p><a href="cementerio.html">Cementerio</a></p>
                 <p> <a href="extras.html#promociones">Calendario promocional</a></p>

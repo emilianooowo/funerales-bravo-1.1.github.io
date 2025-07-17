@@ -39,11 +39,9 @@
 
     <header class="header" id="dynamicHeader">
         <div class="header-content">
-            <a href="index.html">
-                <div class="logo-header">
-                    <img id="logoImg" src="assets/logos/logo-header-simple.jpg" alt="Logo">
-                </div>
-            </a>
+            <div class="logo-header">
+                <img id="logoImg" src="assets/logos/logo-header-simple.jpg" alt="Logo">
+            </div>
             <nav class="nav-links">
                 <a href="prevision.html">Servicios funerarios</a>
                 <a href="cremapets.html">Cremapets</a>
@@ -77,6 +75,9 @@
     <section class="about-section">
         <div class="about-container">
             <div class="about-contenido">
+                <div class="about-imagen">
+                    <img src="assets/imgs/inicio/ins-2025.webp" alt="Sobre nosotros">
+                </div>
                 <div class="about-texto">
                     <h1 class="about-titulo">SOBRE NOSOTROS</h1>
                     <p class="about-descripcion">
@@ -86,15 +87,10 @@
                         persona.
                     </p>
                 </div>
-
-                <div class="about-imgs">
-                    <img src="assets/imgs/inicio/ins-1952.webp" alt="Institución 1952">
-                    <img src="assets/imgs/inicio/ins_1969.webp" alt="Institución 1969">
-                    <img src="assets/imgs/inicio/ins_2019.webp" alt="Institución 2019">
-                </div>
             </div>
         </div>
     </section>
+
 
     <section class="servicios-section">
         <div class="servicios-content">
@@ -107,21 +103,27 @@
                             <div class="servicio-imagen">
                                 <img src="assets/imgs/inicio/prevision.webp" alt="Ícono de servicios funerarios">
                             </div>
-                            <h3 class="servicio-titulo">Servicios funerarios</h3>
+                            <div class="servicio-titulo-container">
+                                <h3 class="servicio-titulo">Servicios funerarios</h3>
+                                <a href="prevision.html" class="servicio-cta">
+                                    Más información
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
                         </div>
-                        <p class="servicio-descripcion">
-                            Velaciones, traslados locales, precio congelado, condonación de saldo en caso de accidentes.
-                        </p>
-                        <div class="servicio-etiquetas">
-                            <span class="etiqueta">Previsión funeraria</span>
-                            <span class="etiqueta">Uso inmediato</span>
-                            <span class="etiqueta">Cremación</span>
+
+                        <div class="servicio-content-wrapper">
+                            <p class="servicio-descripcion">
+                                Velaciones, traslados locales, precio congelado, condonación de saldo en caso de
+                                accidentes.
+                            </p>
+                            <div class="servicio-etiquetas">
+                                <span class="etiqueta">Previsión funeraria</span>
+                                <span class="etiqueta">Uso inmediato</span>
+                                <span class="etiqueta">Cremación</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="prevision.html" class="servicio-cta">
-                        Más información
-                        <span class="arrow">→</span>
-                    </a>
                 </div>
 
                 <div class="servicio-item">
@@ -130,21 +132,26 @@
                             <div class="servicio-imagen">
                                 <img src="assets/imgs/inicio/cementerio.webp" alt="">
                             </div>
-                            <h3 class="servicio-titulo">Cementerio privado</h3>
+                            <div class="servicio-titulo-container">
+                                <h3 class="servicio-titulo">Cementerio privado</h3>
+                                <a href="cementerio.html" class="servicio-cta">
+                                    Más información
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
                         </div>
-                        <p class="servicio-descripcion">
-                            Conoce nuestro cementerio ecologico y privado con espacios para el descanso eterno tipo:
-                        </p>
-                        <div class="servicio-etiquetas">
-                            <span class="etiqueta">Mural</span>
-                            <span class="etiqueta">Nichos</span>
-                            <span class="etiqueta">Ecologico</span>
+
+                        <div class="servicio-content-wrapper">
+                            <p class="servicio-descripcion">
+                                Conoce nuestro cementerio ecologico y privado con espacios para el descanso eterno tipo:
+                            </p>
+                            <div class="servicio-etiquetas">
+                                <span class="etiqueta">Mural</span>
+                                <span class="etiqueta">Nichos</span>
+                                <span class="etiqueta">Ecologico</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="cementerio.html" class="servicio-cta">
-                        Más información
-                        <span class="arrow">→</span>
-                    </a>
                 </div>
 
                 <div class="servicio-item">
@@ -153,20 +160,25 @@
                             <div class="servicio-imagen">
                                 <img src="assets/imgs/inicio/huella.webp" alt="">
                             </div>
-                            <h3 class="servicio-titulo">Cremación de mascotas</h3>
+                            <div class="servicio-titulo-container">
+                                <h3 class="servicio-titulo">Cremación de mascotas</h3>
+                                <a href="cremapets.html" class="servicio-cta">
+                                    Más información
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
                         </div>
-                        <p class="servicio-descripcion">
-                            Servicio exclusivo de cremación para mascotas de funerales bravo.
-                        </p>
-                        <div class="servicio-etiquetas">
-                            <span class="etiqueta">Urnas personalizadas</span>
-                            <span class="etiqueta">Recogida a domicilio</span>
+
+                        <div class="servicio-content-wrapper">
+                            <p class="servicio-descripcion">
+                                Servicio exclusivo de cremación para mascotas de funerales bravo.
+                            </p>
+                            <div class="servicio-etiquetas">
+                                <span class="etiqueta">Urnas personalizadas</span>
+                                <span class="etiqueta">Recogida a domicilio</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="cremapets.html" class="servicio-cta">
-                        Más información
-                        <span class="arrow">→</span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -174,7 +186,7 @@
 
     <section class="gallery-section">
         <div class="gallery-content">
-            <h1 class="gallery-title">Nuestra Galería</h1>
+            <h1 class="gallery-title">GALERÍA</h1>
             <div class="gallery-grid" id="galleryGrid">
             </div>
         </div>
