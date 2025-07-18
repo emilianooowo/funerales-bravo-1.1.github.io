@@ -37,39 +37,22 @@
         </div>
     </div>
 
-    <header>
-        <div class="header-main">
-            <div class="logo-header">
-                <a href="index.html">
-                    <img src="assets/logos/logo-header-simple-white.webp" alt="Funeraria Logo">
-                </a>
-            </div>
-
-            <nav>
-                <button class="menu-pc-toggle" id="menuToggle">
-                    <span class="menu-pc-bar"></span>
-                    <span class="menu-pc-bar"></span>
-                    <span class="menu-pc-bar"></span>
-                </button>
-
-                <div class="menu-overlay" id="menuOverlay"></div>
-
-                <div class="menu-pc-dropdown" id="menuDropdown">
-                    <button class="close-menu" id="closeMenu">&times;</button>
-
-                    <ul class="menu-pc-list">
-                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
-                        <li class="menu-pc-item"><a href="prevision.html" class="menu-pc-link">Servicios funerarios</a></li>
-                        <li class="menu-pc-item"><a href="cremapets.html"
-                                class="menu-pc-link cremapets-link">Cremapets</a></li>
-                        <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
-                        <li class="menu-pc-item"><a href="contacto.html" class="menu-pc-link">Contacto</a></li>
-                    </ul>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html">
+                <div class="logo-header">
+                    <img id="logoImg" src="assets/logos/logo-header-simple-white.webp" alt="Logo">
                 </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="prevision.html">Servicios funerarios</a>
+                <a href="cremapets.html">Cremapets</a>
+                <a href="cementerio.html">Cementerio</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
-
 
     <section class="cotizador-section" id="cotizador">
         <div class="cotizador-container">
@@ -119,37 +102,30 @@
 
                 <div class="cotizador-resumen">
                     <h3>Resumen de Cotización</h3>
-
                     <div class="cotizador-resumen-item">
                         <strong>Plan Seleccionado:</strong>
                         <span id="plan-seleccionado">--Ninguno--</span>
                     </div>
-
                     <div class="cotizador-resumen-item">
                         <strong>Costo del Plan Original:</strong>
                         <span id="precio-original" class="precio-original">$0 MXN</span>
                     </div>
-
                     <p class="cotizador-descuento" id="mensaje-descuento"
                         style="display: none; color: red; margin: 10px 0;">
                         10% de descuento aplicado
                     </p>
-
                     <div class="cotizador-resumen-item">
                         <strong>Costo del plan Actual:</strong>
                         <span id="costo-total">$0 MXN</span>
                     </div>
-
                     <div class="cotizador-resumen-item">
                         <strong>Anticipo:</strong>
                         <span id="anticipo-monto">--</span>
                     </div>
-
                     <div class="cotizador-resumen-item">
                         <strong>Meses Sin Intereses:</strong>
                         <span id="meses-sin-intereses">--</span>
                     </div>
-
                     <div class="cotizador-resumen-item">
                         <strong>Mensualidad:</strong>
                         <span id="mensualidad">$0 MXN</span>
@@ -184,8 +160,7 @@
     <div class="cotizador-popup" id="cotizador-popup">
         <div class="cotizador-popup-content">
             <h3>Confirmar Envío</h3>
-            <p>¿Está seguro de que desea enviar esta cotización? Nos pondremos en contacto con usted a la brevedad.
-            </p>
+            <p>¿Está seguro de que desea enviar esta cotización? Nos pondremos en contacto con usted a la brevedad.</p>
             <div class="cotizador-popup-buttons">
                 <button class="cotizador-popup-btn acepto" onclick="enviarCotizacion()">Estoy de Acuerdo</button>
                 <button class="cotizador-popup-btn cancelar" onclick="cerrarPopup()">Cancelar</button>
@@ -222,11 +197,6 @@
             <p>&copy; 2025 Funerales Bravo. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
-        aria-label="Chatea con nosotros por WhatsApp">
-        <i class="bi bi-whatsapp" aria-hidden="true"></i>
-    </a>
 
     <script src="js/extras.js"></script>
 </body>

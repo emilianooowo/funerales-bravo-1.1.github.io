@@ -37,35 +37,19 @@
         </div>
     </div>
 
-    <header>
-        <div class="header-main">
-            <div class="logo-header">
-                <a href="index.html">
-                    <img src="assets/logos/logo-header-simple-white.webp" alt="Funeraria Logo">
-                </a>
-            </div>
-
-            <nav>
-                <button class="menu-pc-toggle" id="menuToggle">
-                    <span class="menu-pc-bar"></span>
-                    <span class="menu-pc-bar"></span>
-                    <span class="menu-pc-bar"></span>
-                </button>
-
-                <div class="menu-overlay" id="menuOverlay"></div>
-
-                <div class="menu-pc-dropdown" id="menuDropdown">
-                    <button class="close-menu" id="closeMenu">&times;</button>
-
-                    <ul class="menu-pc-list">
-                        <li class="menu-pc-item"><a href="index.html" class="menu-pc-link">Inicio</a></li>
-                        <li class="menu-pc-item"><a href="prevision.html" class="menu-pc-link">Servicios funerarios</a></li>
-                        <li class="menu-pc-item"><a href="cremapets.html"
-                                class="menu-pc-link cremapets-link">Cremapets</a></li>
-                        <li class="menu-pc-item"><a href="cementerio.html" class="menu-pc-link">Cementerio</a></li>
-                        <li class="menu-pc-item"><a href="extras.html" class="menu-pc-link">Cotizador</a></li>
-                    </ul>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html">
+                <div class="logo-header">
+                    <img id="logoImg" src="assets/logos/logo-header-simple-white.webp" alt="Logo">
                 </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="prevision.html">Servicios funerarios</a>
+                <a href="cremapets.html">Cremapets</a>
+                <a href="cementerio.html">Cementerio</a>
+                <a href="extras.html">Cotizador</a>
             </nav>
         </div>
     </header>
@@ -162,11 +146,6 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/529622361377" class="whatsapp-float" target="_blank"
-        aria-label="Chatea con nosotros por WhatsApp">
-        <i class="bi bi-whatsapp" aria-hidden="true"></i>
-    </a>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -185,94 +164,6 @@
                         mobileMenu.classList.remove('active');
                         document.body.style.overflow = '';
                     });
-                });
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const menuDropdown = document.getElementById('menuDropdown');
-            const menuOverlay = document.getElementById('menuOverlay');
-            const closeMenu = document.getElementById('closeMenu');
-
-            console.log('Menu PC Elements:', {
-                menuToggle: menuToggle,
-                menuDropdown: menuDropdown,
-                closeMenu: closeMenu
-            });
-
-            function openMenuPC() {
-                console.log('Abriendo menú PC');
-                if (menuToggle) menuToggle.classList.add('active');
-                if (menuDropdown) menuDropdown.classList.add('active');
-                if (menuOverlay) menuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenuPC() {
-                console.log('Cerrando menú PC');
-                if (menuToggle) menuToggle.classList.remove('active');
-                if (menuDropdown) menuDropdown.classList.remove('active');
-                if (menuOverlay) menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            function toggleMenuPC(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const isActive = menuToggle && menuToggle.classList.contains('active');
-                console.log('Toggle menú PC - Estado actual:', isActive);
-
-                if (isActive) {
-                    closeMenuPC();
-                } else {
-                    openMenuPC();
-                }
-            }
-
-            if (menuToggle && menuDropdown) {
-                console.log('Inicializando menú PC');
-
-                menuToggle.addEventListener('click', toggleMenuPC);
-
-                if (closeMenu) {
-                    closeMenu.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeMenuPC();
-                    });
-                }
-
-                document.addEventListener('keydown', (event) => {
-                    if (event.key === 'Escape' && menuToggle.classList.contains('active')) {
-                        closeMenuPC();
-                    }
-                });
-
-                document.querySelectorAll('.menu-pc-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        console.log('Clic en enlace del menú PC');
-                        closeMenuPC();
-                    });
-                });
-
-                if (menuOverlay) {
-                    menuOverlay.addEventListener('click', closeMenuPC);
-                }
-
-                document.addEventListener('click', (e) => {
-                    if (!menuToggle.contains(e.target) &&
-                        !menuDropdown.contains(e.target) &&
-                        menuToggle.classList.contains('active')) {
-                        closeMenuPC();
-                    }
-                });
-
-            } else {
-                console.error('Elementos del menú PC no encontrados:', {
-                    menuToggle: !!menuToggle,
-                    menuDropdown: !!menuDropdown
                 });
             }
         });
