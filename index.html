@@ -39,21 +39,25 @@
 
     <header class="header" id="dynamicHeader">
         <div class="header-content">
-            <div class="logo-header">
-                <img id="logoImg" src="assets/logos/logo-header-simple-black.webp" alt="Logo">
+            <div class="logo-nav-container">
+                <div class="logo-header">
+                    <img id="logoImg" src="assets/logos/logo-header-simple-black.webp" alt="Logo">
+                </div>
+                <nav class="nav-links">
+                    <a href="prevision.html">Servicios funerarios</a>
+                    <a href="cremapets.html">Cremapets</a>
+                    <a href="cementerio.html">Cementerio</a>
+                    <a href="extras.html">Cotizador</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
             </div>
-            <nav class="nav-links">
-                <a href="prevision.html">Servicios funerarios</a>
-                <a href="cremapets.html">Cremapets</a>
-                <a href="cementerio.html">Cementerio</a>
-                <a href="extras.html">Cotizador</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
             <div class="emergency-contact">
-                <a href="tel:+529626252967" class="emergency-number">Emergencias: +52 962 625 2967</a>
+                <span class="emergency-text">Emergencias:</span>
+                <a href="tel:+529626252967" class="emergency-number">+52 962 625 2967</a>
             </div>
         </div>
     </header>
+
 
     <section class="hero" id="inicio">
         <div class="hero-content">
@@ -72,25 +76,19 @@
         </div>
     </section>
 
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-contenido">
-                <div class="about-imagen">
-                    <img src="assets/imgs/inicio/ins-2025.webp" alt="Sobre nosotros">
-                </div>
-                <div class="about-texto">
-                    <h1 class="about-titulo">SOBRE NOSOTROS</h1>
-                    <p class="about-descripcion">
-                        Somos una agencia funeraria moderna y certificada, con más de 70 años de experiencia ofreciendo
-                        servicios integrales en el ramo funerario. A lo largo de nuestra historia, hemos acompañado a
-                        las familias con respeto, profesionalismo y un firme compromiso con la dignidad de cada
-                        persona.
-                    </p>
-                </div>
+    <section class="sobre-nosotros">
+        <div class="container">
+            <div class="image-container"></div>
+            <div class="content">
+                <h1 class="minimal-scale">Sobre Nosotros</h1>
+                <p class="description">
+                    Somos una agencia funeraria moderna y certificada, con más de 70 años de experiencia ofreciendo
+                    servicios integrales en el ramo funerario. A lo largo de nuestra historia, hemos acompañado a las
+                    familias con respeto, profesionalismo y un firme compromiso con la dignidad de cada persona.
+                </p>
             </div>
         </div>
     </section>
-
 
     <section class="servicios-section">
         <div class="servicios-content">
@@ -98,11 +96,8 @@
 
             <div class="servicios-container">
                 <div class="servicio-item">
-                    <div>
+                    <div class="servicio-content">
                         <div class="servicio-header">
-                            <div class="servicio-imagen">
-                                <img src="assets/imgs/inicio/prevision.webp" alt="Ícono de servicios funerarios">
-                            </div>
                             <div class="servicio-titulo-container">
                                 <h3 class="servicio-titulo">Servicios funerarios</h3>
                                 <a href="prevision.html" class="servicio-cta">
@@ -120,18 +115,14 @@
                             <div class="servicio-etiquetas">
                                 <span class="etiqueta">Previsión funeraria</span>
                                 <span class="etiqueta">Uso inmediato</span>
-                                <span class="etiqueta">Cremación</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="servicio-item">
-                    <div>
+                    <div class="servicio-content">
                         <div class="servicio-header">
-                            <div class="servicio-imagen">
-                                <img src="assets/imgs/inicio/cementerio.webp" alt="">
-                            </div>
                             <div class="servicio-titulo-container">
                                 <h3 class="servicio-titulo">Cementerio privado</h3>
                                 <a href="cementerio.html" class="servicio-cta">
@@ -155,11 +146,8 @@
                 </div>
 
                 <div class="servicio-item">
-                    <div>
+                    <div class="servicio-content">
                         <div class="servicio-header">
-                            <div class="servicio-imagen">
-                                <img src="assets/imgs/inicio/huella.webp" alt="">
-                            </div>
                             <div class="servicio-titulo-container">
                                 <h3 class="servicio-titulo">Cremación de mascotas</h3>
                                 <a href="cremapets.html" class="servicio-cta">

@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('dynamicHeader');
-    const logoImg = document.getElementById('logoImg');
-
-    const logoBlanco = 'assets/logos/logo-header-simple-black.webp';
-    const logoNegro = 'assets/logos/logo-header-simple-black.webp';
-
     let ticking = false;
 
     function updateHeader() {
@@ -12,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (scrollTop > 400) {
             header.classList.add('scrolled');
-            logoImg.src = logoNegro;
         } else {
             header.classList.remove('scrolled');
-            logoImg.src = logoBlanco;
         }
 
         ticking = false;
