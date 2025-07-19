@@ -4,25 +4,35 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 5px 50px;
+    padding: 3px 0;
     transition: all 0.3s ease;
     background: transparent;
 }
 
 .header.scrolled {
-    background: rgba(0, 0, 0);
+    background: rgb(52, 41, 30, .8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
 }
 
 .header-content {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .logo-header img {
     width: auto;
-    height: 50px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -30,9 +40,6 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -67,25 +74,19 @@
 }
 
 .emergency-text {
-    font-size: 12px;
     margin-bottom: 2px;
+    color: #fff;
+    font-size: 14px;
 }
 
 .emergency-number {
+    font-style: italic;
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .emergency-number:hover {
-    color: var(--color-dorado);
-}
-
-.header.scrolled .emergency-number {
-    color: #fff;
-}
-
-.header.scrolled .emergency-number:hover {
     color: var(--color-dorado);
 }
 
@@ -194,7 +195,6 @@
 }
 
 .cemetery-spaces {
-    background: #f4f4f4;
     padding: 60px 20px;
 }
 
@@ -212,7 +212,7 @@
 
 .space-card {
     position: relative;
-    height: 300px;
+    height: 250px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-size: cover;
@@ -245,7 +245,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: #fff;
     z-index: 2;
 }
 
@@ -254,8 +254,8 @@
 }
 
 .cta-button {
-    background: var(--color-cafe-oscuro);
-    color: white;
+    background: #fff;
+    color: var(--color-cafe-oscuro);
     padding: 10px 20px;
     border: none;
     font-size: 1.2rem;

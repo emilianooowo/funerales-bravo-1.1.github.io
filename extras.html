@@ -37,20 +37,24 @@
         </div>
     </div>
 
-    <header class="header">
+    <header class="header" id="dynamicHeader">
         <div class="header-content">
-            <a href="index.html">
+            <div class="logo-nav-container">
                 <div class="logo-header">
                     <img id="logoImg" src="assets/logos/logo-header-simple-white.webp" alt="Logo">
                 </div>
-            </a>
-            <nav class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="prevision.html">Servicios funerarios</a>
-                <a href="cremapets.html">Cremapets</a>
-                <a href="cementerio.html">Cementerio</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
+                <nav class="nav-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="prevision.html">Servicios funerarios</a>
+                    <a href="cremapets.html"> Cremapets</a>
+                    <a href="cementerio.html"> Cementerio</a>
+                    <a href="contacto.html"> Contacto</a>
+                </nav>
+            </div>
+            <div class="emergency-contact">
+                <span class="emergency-text">Emergencias:</span>
+                <a href="tel:+529626252967" class="emergency-number">+52 962 625 2967</a>
+            </div>
         </div>
     </header>
 
@@ -58,100 +62,103 @@
         <div class="cotizador-container">
             <h1 class="cotizador-titulo">Cotizador</h1>
             <div class="cotizador-grid">
-                <div class="cotizador-planes">
-                    <h2>Seleccione su Plan</h2>
-                    <button class="cotizador-plan-btn" data-plan="basico" data-precio="28000">
-                        Plan Básico Empresarial<br>$28,000 MXN
-                    </button>
-                    <button class="cotizador-plan-btn" data-plan="platino" data-precio="38000">
-                        Plan Platino<br>$38,000 MXN
-                    </button>
-                    <button class="cotizador-plan-btn" data-plan="diamante" data-precio="52000">
-                        Plan Diamante<br>$52,000 MXN
-                    </button>
-                </div>
-
-                <div class="cotizador-opciones">
-                    <h2>Opciones de Pago</h2>
-                    <div class="cotizador-opcion">
-                        <label for="anticipo-porcentaje">Anticipo:</label>
-                        <select id="anticipo-porcentaje">
-                            <option value="">--Ninguno--</option>
-                            <option value="20">20%</option>
-                            <option value="30">30%</option>
-                            <option value="40">40%</option>
-                            <option value="50">50%</option>
-                            <option value="60">60%</option>
-                            <option value="70">70%</option>
-                            <option value="80">80%</option>
-                            <option value="90">90%</option>
-                        </select>
+                <div class="cotizador-izquierda">
+                    <div class="cotizador-planes">
+                        <h2>Seleccione su Plan</h2>
+                        <button class="cotizador-plan-btn" data-plan="basico" data-precio="28000">
+                            Plan Básico Empresarial<br>$28,000 MXN
+                        </button>
+                        <button class="cotizador-plan-btn" data-plan="platino" data-precio="38000">
+                            Plan Platino<br>$38,000 MXN
+                        </button>
+                        <button class="cotizador-plan-btn" data-plan="diamante" data-precio="52000">
+                            Plan Diamante<br>$52,000 MXN
+                        </button>
                     </div>
 
-                    <div class="cotizador-opcion">
-                        <label for="meses-pago">Meses Sin Intereses</label>
-                        <select id="meses-pago">
-                            <option value="">--Ninguno--</option>
-                            <option value="12">12 meses</option>
-                            <option value="24">24 meses</option>
-                            <option value="36">36 meses</option>
-                            <option value="48">48 meses</option>
-                        </select>
-                    </div>
-                </div>
+                    <div class="cotizador-opciones">
+                        <h2>Opciones de Pago</h2>
+                        <div class="cotizador-opcion">
+                            <label for="anticipo-porcentaje">Anticipo:</label>
+                            <select id="anticipo-porcentaje">
+                                <option value="">--Ninguno--</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+                                <option value="60">60%</option>
+                                <option value="70">70%</option>
+                                <option value="80">80%</option>
+                                <option value="90">90%</option>
+                            </select>
+                        </div>
 
-                <div class="cotizador-resumen">
-                    <h3>Resumen de Cotización</h3>
-                    <div class="cotizador-resumen-item">
-                        <strong>Plan Seleccionado:</strong>
-                        <span id="plan-seleccionado">--Ninguno--</span>
-                    </div>
-                    <div class="cotizador-resumen-item">
-                        <strong>Costo del Plan Original:</strong>
-                        <span id="precio-original" class="precio-original">$0 MXN</span>
-                    </div>
-                    <p class="cotizador-descuento" id="mensaje-descuento"
-                        style="display: none; color: red; margin: 10px 0;">
-                        10% de descuento aplicado
-                    </p>
-                    <div class="cotizador-resumen-item">
-                        <strong>Costo del plan Actual:</strong>
-                        <span id="costo-total">$0 MXN</span>
-                    </div>
-                    <div class="cotizador-resumen-item">
-                        <strong>Anticipo:</strong>
-                        <span id="anticipo-monto">--</span>
-                    </div>
-                    <div class="cotizador-resumen-item">
-                        <strong>Meses Sin Intereses:</strong>
-                        <span id="meses-sin-intereses">--</span>
-                    </div>
-                    <div class="cotizador-resumen-item">
-                        <strong>Mensualidad:</strong>
-                        <span id="mensualidad">$0 MXN</span>
-                    </div>
-                </div>
-
-                <div class="cotizador-contacto-wrapper">
-                    <div class="cotizador-contacto">
-                        <h3>Información de Contacto</h3>
-                        <div class="cotizador-contacto-grid">
-                            <div>
-                                <label for="nombre-completo">Nombre Completo:</label>
-                                <input type="text" id="nombre-completo" placeholder="Ingrese su nombre completo"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="correo">Correo Electrónico:</label>
-                                <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
-                            </div>
-                            <div>
-                                <label for="telefono">Teléfono Celular:</label>
-                                <input type="tel" id="telefono" placeholder="962 123 45678" required>
-                            </div>
+                        <div class="cotizador-opcion">
+                            <label for="meses-pago">Meses Sin Intereses</label>
+                            <select id="meses-pago">
+                                <option value="">--Ninguno--</option>
+                                <option value="12">12 meses</option>
+                                <option value="24">24 meses</option>
+                                <option value="36">36 meses</option>
+                                <option value="48">48 meses</option>
+                            </select>
                         </div>
                     </div>
-                    <button class="cotizador-enviar-btn" onclick="mostrarPopup()">Enviar Cotización</button>
+                </div>
+
+                <div class="cotizador-derecha">
+                    <div class="cotizador-resumen">
+                        <h3>Resumen de Cotización</h3>
+                        <div class="cotizador-resumen-item">
+                            <strong>Plan Seleccionado:</strong>
+                            <span id="plan-seleccionado">--Ninguno--</span>
+                        </div>
+                        <div class="cotizador-resumen-item">
+                            <strong>Costo del Plan Original:</strong>
+                            <span id="precio-original" class="precio-original">$0 MXN</span>
+                        </div>
+                        <p class="cotizador-descuento" id="mensaje-descuento" style="display: none; color: red;">
+                            10% de descuento aplicado
+                        </p>
+                        <div class="cotizador-resumen-item">
+                            <strong>Costo del plan Actual:</strong>
+                            <span id="costo-total">$0 MXN</span>
+                        </div>
+                        <div class="cotizador-resumen-item">
+                            <strong>Anticipo:</strong>
+                            <span id="anticipo-monto">--</span>
+                        </div>
+                        <div class="cotizador-resumen-item">
+                            <strong>Meses Sin Intereses:</strong>
+                            <span id="meses-sin-intereses">--</span>
+                        </div>
+                        <div class="cotizador-resumen-item">
+                            <strong>Mensualidad:</strong>
+                            <span id="mensualidad">$0 MXN</span>
+                        </div>
+                    </div>
+
+                    <div class="cotizador-contacto-wrapper">
+                        <div class="cotizador-contacto">
+                            <h3>Información de Contacto</h3>
+                            <div class="cotizador-contacto-grid">
+                                <div>
+                                    <label for="nombre-completo">Nombre Completo:</label>
+                                    <input type="text" id="nombre-completo" placeholder="Ingrese su nombre completo"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="correo">Correo Electrónico:</label>
+                                    <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+                                </div>
+                                <div>
+                                    <label for="telefono">Teléfono Celular:</label>
+                                    <input type="tel" id="telefono" placeholder="962 123 45678" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="cotizador-enviar-btn" onclick="mostrarPopup()">Enviar Cotización</button>
+                    </div>
                 </div>
             </div>
         </div>

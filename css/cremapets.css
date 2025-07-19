@@ -4,25 +4,35 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 5px 50px;
+    padding: 3px 0;
     transition: all 0.3s ease;
     background: transparent;
 }
 
 .header.scrolled {
-    background: var(--color-azul-mascotas);
+    background: rgb(9, 99, 216, .8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
 }
 
 .header-content {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .logo-header img {
     width: auto;
-    height: 50px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -30,9 +40,6 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -67,25 +74,19 @@
 }
 
 .emergency-text {
-    font-size: 12px;
     margin-bottom: 2px;
+    color: #fff;
+    font-size: 14px;
 }
 
 .emergency-number {
+    font-style: italic;
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .emergency-number:hover {
-    color: var(--color-dorado);
-}
-
-.header.scrolled .emergency-number {
-    color: #fff;
-}
-
-.header.scrolled .emergency-number:hover {
     color: var(--color-dorado);
 }
 

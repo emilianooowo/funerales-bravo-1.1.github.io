@@ -2,25 +2,34 @@ body {
     background: #f4f4f4;
 }
 
-header {
+.header {
     position: sticky;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 5px 50px;
+    padding: 3px 0;
     background: #f4f4f4;
 }
 
 .header-content {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.logo-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .logo-header img {
     width: auto;
-    height: 50px;
+    height: 40px;
+    transition: all 0.3s ease;
     object-fit: contain;
 }
 
@@ -28,24 +37,65 @@ header {
     display: flex;
     align-items: center;
     gap: 30px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-links a {
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
     color: #000;
+    font-weight: 500;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 1.5px;
+    width: 100%;
+    background-color: var(--color-dorado);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.emergency-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.emergency-text {
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.emergency-number {
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.emergency-number:hover {
+    color: var(--color-dorado);
 }
 
 .contacto-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 60px 20px;
 }
 
 .contacto-titulo {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 30px;
 }
 
@@ -53,7 +103,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .telefonos-columna h3 {
@@ -63,18 +113,23 @@ header {
 .telefono-item {
     margin-bottom: 30px;
     font-size: 1.2rem;
-    color: #1e1e1e;
 }
 
-.numero,
-.correo,
-.direccion a {
-    margin: 10px 0;
+.telefono-item strong {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.numero {
+    margin: 0;
+}
+
+.numero a {
     text-decoration: none;
+    color: inherit;
 }
 
-.numero:hover,
-.correo:hover {
+.numero a:hover {
     text-decoration: underline;
 }
 
@@ -87,19 +142,43 @@ header {
 }
 
 .direccion-columna h3 {
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.correo-item,
+.direccion-columna h4 {
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.correo-item {
+    margin-bottom: 30px;
+}
+
 .direccion-item {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.correo {
+    margin: 15px 0;
+}
+
+.direccion {
+    margin: 15px 0;
+}
+
+.correo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.correo a:hover {
+    text-decoration: underline;
 }
 
 .map-btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 10px 30px;
+    padding: 5px 20px;
     background: transparent;
     text-decoration: none;
     border: 1px solid #000;
@@ -107,7 +186,7 @@ header {
 }
 
 .map-btn:hover {
-    background: #dadada;
+    background: #dedede;
 }
 
 .mapa-container {
@@ -121,30 +200,36 @@ header {
 }
 
 @media (max-width: 768px) {
+    .contacto-section {
+        padding: 40px 15px;
+    }
+
     .contacto-titulo {
         font-size: 2.5rem;
+        margin-bottom: 30px;
     }
 
     .contacto-info {
         grid-template-columns: 1fr;
         gap: 30px;
+        margin-bottom: 40px;
     }
 
-    .contacto-section {
-        padding: 30px 15px;
+    .telefonos-columna h3,
+    .direccion-columna h3 {
+        margin-bottom: 20px;
+    }
+
+    .telefono-item {
+        margin-bottom: 20px;
+    }
+
+    .correo-item,
+    .direccion-item {
+        margin-bottom: 20px;
     }
 
     .mapa-container {
         height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contacto-titulo {
-        font-size: 2rem;
-    }
-
-    .contacto-descripcion {
-        font-size: 1rem;
     }
 }
