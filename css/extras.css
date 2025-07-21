@@ -1,7 +1,3 @@
-body {
-    background: #f4f4f4;
-}
-
 .header {
     position: sticky;
     top: 0;
@@ -9,7 +5,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 3px 0;
-    background: #f4f4f4;
+    background: #fff;
 }
 
 .header-content {
@@ -183,7 +179,7 @@ body {
 }
 
 .cotizador-resumen {
-    background-color: #fff;
+    background: #e1e1e1;
     padding: 30px;
     height: fit-content;
     margin-bottom: 30px;
@@ -271,7 +267,6 @@ body {
     background-color: var(--color-dorado);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .cotizador-section {
         padding: 40px 15px;

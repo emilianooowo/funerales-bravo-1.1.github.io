@@ -213,7 +213,7 @@
 }
 
 .plan-card {
-    background: #f3f3f3;
+    background-color: rgb(126, 118, 160, 0.4);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -279,6 +279,81 @@
 .coming-soon h3 {
     color: rgb(168, 127, 215);
     margin-bottom: 15px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.table-title {
+    text-align: center;
+    padding: 30px 20px 20px;
+    background-color: rgb(126, 118, 160, 0.4);
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plan-header {
+    color: #fff;
+    padding: 16px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.plan-header.basic {
+    background-color: #784935;
+}
+
+.plan-header.premium {
+    background-color: rgb(90, 155, 212);
+}
+
+.plan-header.deluxe {
+    background-color: rgb(168, 127, 215);
+}
+
+.weight-cell {
+    background-color: rgb(126, 118, 160, 0.4);
+    padding: 16px 20px;
+    font-weight: 500;
+    border-right: 1px solid #e9ecef;
+}
+
+.price-cell {
+    padding: 16px 20px;
+    text-align: center;
+    border-right: 1px solid #e9ecef;
+}
+
+.price-cell.basic .price-amount {
+    color: #784935;
+}
+
+.price-cell.premium .price-amount {
+    color: rgb(90, 155, 212);
+}
+
+@media (max-width: 768px) {
+    .table-title {
+        font-size: 20px;
+        padding: 20px 15px 15px;
+    }
+
+    .plan-header,
+    .weight-cell,
+    .price-cell {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .price-amount {
+        font-size: 16px;
+    }
 }
 
 .catalog-section {

@@ -99,20 +99,20 @@
         </div>
 
         <div id="space-content" class="space-content">
-            <div id="content-grid" class="content-grid">
-            </div>
+            <div id="content-grid" class="content-grid"></div>
         </div>
     </section>
 
-    <div id="lightbox" class="lightbox">
-        <button id="lightboxClose" class="lightbox-close">&times;</button>
+    <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
-            <img id="lightboxImage" class="lightbox-image" src="" alt="">
-            <div class="lightbox-controls">
-                <button id="lightboxPrev" class="lightbox-btn">‹</button>
-                <button id="lightboxNext" class="lightbox-btn">›</button>
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <div class="lightbox-main">
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+                <img class="lightbox-image" id="lightboxImage" src="" alt="">
+                <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
             </div>
-            <div id="lightboxThumbnails" class="lightbox-thumbnails"></div>
+            <div class="lightbox-thumbnails" id="lightboxThumbnails">
+            </div>
         </div>
     </div>
 

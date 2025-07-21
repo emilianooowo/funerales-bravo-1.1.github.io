@@ -177,23 +177,6 @@
 
 })();
 
-function showPlanDetails(plan, type) {
-    const planDetails = document.querySelectorAll(`#${plan}-instalaciones, #${plan}-domicilio`);
-    planDetails.forEach(detail => {
-        detail.classList.remove('active');
-    });
-
-    document.getElementById(`${plan}-${type}`).classList.add('active');
-
-    const planButtons = document.querySelectorAll(`#${plan}-instalaciones, #${plan}-domicilio`).forEach(detail => {
-        const card = detail.closest('.plan-card');
-        const buttons = card.querySelectorAll('.plan-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-    });
-
-    event.target.classList.add('active');
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
