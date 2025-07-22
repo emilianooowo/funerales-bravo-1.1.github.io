@@ -117,7 +117,7 @@
 }
 
 .hero-content {
-    padding: 0 4rem;
+    transform: translateY(20px);
 }
 
 .hero-text {

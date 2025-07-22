@@ -61,9 +61,9 @@ a,
 span,
 li {
   font-family: var(--fuente-secundaria);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   line-height: 1.6;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 a {
