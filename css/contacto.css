@@ -40,7 +40,6 @@
     transition: all 0.3s ease;
     position: relative;
     color: #000;
-    font-weight: 500;
 }
 
 .nav-links a::after {
@@ -50,7 +49,7 @@
     left: 0;
     height: 1.5px;
     width: 100%;
-    background-color: var(--color-dorado);
+    background-color: #000;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -69,13 +68,13 @@
 
 .emergency-text {
     margin-bottom: 2px;
-    color: #fff;
+    color: #000;
     font-size: 14px;
 }
 
 .emergency-number {
     font-style: italic;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -175,14 +174,15 @@
 .map-btn {
     display: inline-block;
     padding: 5px 20px;
-    background: transparent;
+    background: #fff;
     text-decoration: none;
-    border: 1px solid #000;
-    transition: background .3s ease;
+    color: #000;
+    border: 1px solid rgb(0, 0, 0, .1);
+    transition: all .3s ease;
 }
 
 .map-btn:hover {
-    background: #dedede;
+    border-color: #000;
 }
 
 .mapa-container {

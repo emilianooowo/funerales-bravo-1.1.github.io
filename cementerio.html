@@ -40,13 +40,12 @@
         <div class="header-content">
             <div class="logo-nav-container">
                 <div class="logo-header">
-                    <img id="logoImg" src="assets/logos/logo-header-simple-black.webp" alt="Logo">
+                    <img id="logoImg" src="assets/logos/logo-header-simple-white.webp" alt="Logo">
                 </div>
                 <nav class="nav-links">
                     <a href="index.html">Inicio</a>
                     <a href="prevision.html"> Servicios funerarios</a>
                     <a href="cremapets.html"> Cremapets</a>
-                    <a href="extras.html"> Cotizador</a>
                     <a href="contacto.html"> Contacto</a>
                 </nav>
             </div>
@@ -61,60 +60,97 @@
         <div class="main-content">
             <div class="hero-content">
                 <img src="assets/logos/cementerio-logo-blanco.webp" alt="Logo" class="hero-logo">
-                <h1 class="main-title">BIENVENIDO</h1>
                 <p class="hero-paragraph">
-                    En Cementerio Bravo, comprendemos lo importante que es encontrar un lugar digno y tranquilo para
-                    honrar a tus seres queridos.
-                    Te invitamos a conocer nuestros espacios con toda confianza; estamos aquí para acompañarte y
+                    Estamos aquí para acompañarte y
                     brindarte el apoyo que necesitas en cada paso.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="cemetery-spaces">
-        <h1 class="section-title">NUESTROS ESPACIOS</h1>
-
-        <div class="spaces-cards">
-            <div class="space-card mural" data-space="mural">
-                <div class="card-content">
-                    <h2 class="card-title">Columbario</h2>
-                    <button class="cta-button">Conocer Más</button>
-                </div>
+    <section class="cemetery-section">
+        <div class="space-item nicho-ecologico">
+            <div class="space-content">
+                <h1 class="space-title">Nicho Ecológico</h1>
+                <p class="space-description">
+                    Nuestros nichos ecológicos ofrecen una alternativa sostenible: en lugar de lápida, se planta un
+                    árbol conmemorativo rodeado de hasta cuatro espacios para descanso eterno. Es una opción simbólica y
+                    respetuosa con la naturaleza, distinta a los jardines tradicionales.</p>
             </div>
-
-            <div class="space-card jardin" data-space="jardin">
-                <div class="card-content">
-                    <h2 class="card-title">Jardín</h2>
-                    <button class="cta-button">Conocer Más</button>
+            <div class="image-gallery">
+                <div class="main-image-container">
+                    <img src="assets/imgs/cementerio/nicho-4.webp" alt="Imagen principal nicho ecológico"
+                        class="main-image" id="main-nicho">
                 </div>
-            </div>
-
-            <div class="space-card nicho" data-space="nicho">
-                <div class="card-content">
-                    <h2 class="card-title">Nicho Ecológico</h2>
-                    <button class="cta-button">Conocer Más</button>
+                <div class="thumbnails">
+                    <img src="assets/imgs/cementerio/nicho-4.webp" alt="Nicho ecológico 1" class="thumbnail active"
+                        data-main="assets/imgs/cementerio/nicho-4.webp">
+                    <img src="assets/imgs/cementerio/nicho-0.webp" alt="Nicho ecológico 2" class="thumbnail"
+                        data-main="assets/imgs/cementerio/nicho-0.webp">
+                    <img src="assets/imgs/cementerio/nicho-1.webp" alt="Nicho ecológico 3" class="thumbnail"
+                        data-main="assets/imgs/cementerio/nicho-1.webp">
+                    <img src="assets/imgs/cementerio/nicho-3.webp" alt="Nicho ecológico 4" class="thumbnail"
+                        data-main="assets/imgs/cementerio/nicho-3.webp">
                 </div>
             </div>
         </div>
 
-        <div id="space-content" class="space-content">
-            <div id="content-grid" class="content-grid"></div>
+        <div class="space-item jardin">
+            <div class="space-content">
+                <h1 class="space-title">Jardín</h1>
+                <p class="space-description">
+                    El espacio tipo jardín está destinado a la inhumación tradicional, ofreciendo un entorno armonioso y
+                    digno para honrar a quienes ya no están. Es una opción que brinda un lugar permanente donde las
+                    familias pueden recordar, visitar y acompañar en la distancia.
+                </p>
+            </div>
+            <div class="image-gallery">
+                <div class="main-image-container">
+                    <img src="assets/imgs/cementerio/cementerio-0.webp" alt="Imagen principal jardín" class="main-image"
+                        id="main-jardin">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/imgs/cementerio/cementerio-0.webp" alt="Jardín 1" class="thumbnail active"
+                        data-main="assets/imgs/cementerio/cementerio-0.webp">
+                    <img src="assets/imgs/cementerio/cementerio-2.webp" alt="Jardín 2" class="thumbnail"
+                        data-main="assets/imgs/cementerio/cementerio-2.webp">
+                    <img src="assets/imgs/cementerio/cementerio-3.webp" alt="Jardín 3" class="thumbnail"
+                        data-main="assets/imgs/cementerio/cementerio-3.webp">
+                    <img src="assets/imgs/cementerio/cementerio-4.webp" alt="Jardín 4" class="thumbnail"
+                        data-main="assets/imgs/cementerio/cementerio-4.webp">
+                    <img src="assets/imgs/cementerio/cementerio-5.webp" alt="Jardín 5" class="thumbnail"
+                        data-main="assets/imgs/cementerio/cementerio-5.webp">
+                    <img src="assets/imgs/cementerio/cementerio-6.webp" alt="Jardín 6" class="thumbnail"
+                        data-main="assets/imgs/cementerio/cementerio-6.webp">
+                </div>
+            </div>
+        </div>
+
+        <div class="space-item columbario">
+            <div class="space-content">
+                <h1 class="space-title">Columbario</h1>
+                <p class="space-description">
+                    El columbario es un espacio especialmente diseñado para conservar las cenizas de tus seres queridos
+                    en un ambiente digno, tranquilo y seguro. Es una alternativa práctica y respetuosa que permite
+                    rendir homenaje en un lugar permanente y accesible para la familia.
+                </p>
+            </div>
+            <div class="image-gallery">
+                <div class="main-image-container">
+                    <img src="assets/imgs/cementerio/col-0.webp" alt="Imagen principal columbario" class="main-image"
+                        id="main-columbario">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/imgs/cementerio/col-0.webp" alt="Columbario 1" class="thumbnail active"
+                        data-main="assets/imgs/cementerio/col-0.webp">
+                    <img src="assets/imgs/cementerio/col-1.webp" alt="Columbario 2" class="thumbnail"
+                        data-main="assets/imgs/cementerio/col-1.webp">
+                    <img src="assets/imgs/cementerio/col-2.webp" alt="Columbario 3" class="thumbnail"
+                        data-main="assets/imgs/cementerio/col-2.webp">
+                </div>
+            </div>
         </div>
     </section>
-
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">&times;</button>
-            <div class="lightbox-main">
-                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
-                <img class="lightbox-image" id="lightboxImage" src="" alt="">
-                <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
-            </div>
-            <div class="lightbox-thumbnails" id="lightboxThumbnails">
-            </div>
-        </div>
-    </div>
 
     <section class="contacto-section">
         <div class="contacto-container">
@@ -132,11 +168,12 @@
                 <div class="direccion-columna">
                     <h3>Visítanos</h3>
                     <div class="direccion-item">
-                        <strong>Dirección:</strong><br><br>
+                        <p>Dirección:</p>
                         <div class="direccion">
-                            Calle Ciprés 1, Jardines de<br>
-                            Chiapas, Tapachula, Chiapas.<br><br>
-                            (Referencia: Atrás del Hospital COFAT)
+                            <p>Calle Ciprés 1, Jardines de<br>
+                                Chiapas, Tapachula, Chiapas.<br>
+                                (Referencia: Atrás del Hospital COFAT)
+                            </p>
                         </div>
                         <a class="map-btn" href="https://maps.app.goo.gl/jW45FEdwa1goDtLh7" target="_blank"
                             rel="noopener noreferrer">
