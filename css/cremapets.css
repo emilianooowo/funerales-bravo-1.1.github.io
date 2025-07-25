@@ -84,7 +84,7 @@
 .main-section {
     position: relative;
     height: 50vh;
-    background-image: url('../assets/imgs/cremapets/header.jpg');
+    background-image: url('../assets/imgs/cremapets/crem-header.webp');
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -138,7 +138,7 @@
     .main-section {
         height: auto;
         padding: 80px 0 60px;
-        background-image: url('../assets/imgs/cremapets/header.jpg');
+        background-image: url('../assets/imgs/cremapets/crem-header.webp');
         background-position: 50% 50%;
     }
 
@@ -164,7 +164,7 @@
 }
 
 .cremation-section {
-    padding: 60px 20px;
+    padding: 120px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -227,7 +227,6 @@
     padding: 8px 0;
     position: relative;
     padding-left: 20px;
-    font-size: 0.95rem;
 }
 
 .plan-includes li:before {

@@ -2,14 +2,14 @@
     'use strict';
 
     const imageUrls = [
-        'assets/imgs/cementerio/urna-b-1.webp',
-        'assets/imgs/cementerio/urna-p-1.webp',
-        'assets/imgs/cementerio/urna-p-2.webp',
-        'assets/imgs/cementerio/urna-p-3.webp',
-        'assets/imgs/cementerio/urna-p-4.webp',
-        'assets/imgs/cementerio/urna-p-5.webp',
-        'assets/imgs/cementerio/urna-p-6.webp',
-        'assets/imgs/cementerio/urna-p-7.webp',
+        'assets/imgs/servicios/urna-b-1.webp',
+        'assets/imgs/servicios/urna-p-1.webp',
+        'assets/imgs/servicios/urna-p-2.webp',
+        'assets/imgs/servicios/urna-p-3.webp',
+        'assets/imgs/servicios/urna-p-4.webp',
+        'assets/imgs/servicios/urna-p-5.webp',
+        'assets/imgs/servicios/urna-p-6.webp',
+        'assets/imgs/servicios/urna-p-7.webp',
     ];
 
     const thumbnailUrls = imageUrls.map(url => url.replace('w=800&h=800', 'w=200&h=200'));
@@ -63,16 +63,16 @@
 
             const img = item.querySelector('img');
 
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries) => {
+            if ('IntersectionObservicioser' in window) {
+                const imageObservicioser = new IntersectionObservicioser((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             lazyLoadImage(entry.target, item);
-                            imageObserver.unobserve(entry.target);
+                            imageObservicioser.unobserviciose(entry.target);
                         }
                     });
                 });
-                imageObserver.observe(img);
+                imageObservicioser.observiciose(img);
             } else {
                 lazyLoadImage(img, item);
             }

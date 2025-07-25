@@ -83,22 +83,98 @@
     color: var(--color-dorado);
 }
 
+.main-section {
+    position: relative;
+    height: 50vh;
+    background-image: url('../assets/imgs/servicios/ext-cont-header.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.main-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+.main-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-content {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-paragraph {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+@media (max-width: 992px) {
+    .main-section {
+        height: 40vh;
+        background-position: 50% 40%;
+        background-attachment: scroll;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-section {
+        height: auto;
+        padding: 80px 0 60px;
+        background-image: url('../assets/imgs/servicios/ext-cont-header.webp');
+        background-position: 50% 50%;
+    }
+
+    .hero-content {
+        max-width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-section {
+        padding: 60px 0 40px;
+        background-size: cover;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-paragraph {
+        font-size: .95rem;
+    }
+}
+
 .contacto-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
 }
 
-.contacto-titulo {
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
 .contacto-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin-bottom: 60px;
 }
 
 .telefonos-columna h3 {
@@ -137,12 +213,10 @@
 }
 
 .direccion-columna h3 {
-    font-weight: bold;
     margin-bottom: 30px;
 }
 
 .direccion-columna h4 {
-    font-weight: bold;
     margin: 15px 0;
 }
 

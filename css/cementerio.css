@@ -84,7 +84,7 @@
 .main-section {
     position: relative;
     height: 50vh;
-    background-image: url('../assets/imgs/cementerio/header.jpg');
+    background-image: url('../assets/imgs/cementerio/cem-header.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -138,7 +138,7 @@
     .main-section {
         height: auto;
         padding: 80px 0 60px;
-        background-image: url('../assets/imgs/cementerio/header.jpg');
+        background-image: url('../assets/imgs/cementerio/cem-header.webp');
         background-position: 50% 50%;
     }
 

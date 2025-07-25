@@ -25,6 +25,7 @@
 .logo-header img {
     width: auto;
     height: 40px;
+    transition: all 0.3s ease;
     object-fit: contain;
 }
 
@@ -39,7 +40,6 @@
     transition: all 0.3s ease;
     position: relative;
     color: #000;
-    font-weight: 500;
 }
 
 .nav-links a::after {
@@ -49,7 +49,7 @@
     left: 0;
     height: 1.5px;
     width: 100%;
-    background-color: var(--color-dorado);
+    background-color: #000;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -68,13 +68,13 @@
 
 .emergency-text {
     margin-bottom: 2px;
-    color: #fff;
+    color: #000;
     font-size: 14px;
 }
 
 .emergency-number {
     font-style: italic;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -83,15 +83,92 @@
     color: var(--color-dorado);
 }
 
+.main-section {
+    position: relative;
+    height: 50vh;
+    background-image: url('../assets/imgs/servicios/ext-cont-header.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.main-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+.main-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-content {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-paragraph {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+@media (max-width: 992px) {
+    .main-section {
+        height: 40vh;
+        background-position: 50% 40%;
+        background-attachment: scroll;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-section {
+        height: auto;
+        padding: 80px 0 60px;
+        background-image: url('../assets/imgs/servicios/ext-cont-header.webp');
+        background-position: 50% 50%;
+    }
+
+    .hero-content {
+        max-width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-section {
+        padding: 60px 0 40px;
+        background-size: cover;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-paragraph {
+        font-size: .95rem;
+    }
+}
+
 .cotizador-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
-}
-
-.cotizador-titulo {
-    margin-bottom: 30px;
-    font-size: 3rem;
 }
 
 .cotizador-grid {
