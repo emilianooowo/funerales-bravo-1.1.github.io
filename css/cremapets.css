@@ -1,19 +1,12 @@
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 3px 0;
-    transition: all 0.3s ease;
-    background: transparent;
-}
-
-.header.scrolled {
-    background: rgb(9, 99, 216, .8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
+    transition: all 1s ease;
+    background: #fff;
 }
 
 .header-content {
@@ -31,22 +24,20 @@
 }
 
 .logo-header img {
-    width: auto;
-    height: 40px;
+    height: 45px;
     object-fit: contain;
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 
 .nav-links a {
+    color: #000;
+    position: relative;
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
-    color: #fff;
 }
 
 .nav-links a::after {
@@ -56,7 +47,7 @@
     left: 0;
     height: 1.5px;
     width: 100%;
-    background-color: var(--color-dorado);
+    background-color: #000;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -75,13 +66,13 @@
 
 .emergency-text {
     margin-bottom: 2px;
-    color: #fff;
+    color: #000;
     font-size: 14px;
 }
 
 .emergency-number {
     font-style: italic;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -92,11 +83,10 @@
 
 .main-section {
     position: relative;
-    height: 70vh;
-    min-height: 400px;
-    background-image: url('../assets/imgs/cremapets/cremapets-hero.webp');
+    height: 50vh;
+    background-image: url('../assets/imgs/cremapets/header.jpg');
     background-size: cover;
-    background-position: 0 50%;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -105,7 +95,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -115,32 +105,20 @@
 }
 
 .main-content {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }
 
 .hero-content {
-    max-width: 600px;
     color: #fff;
-    text-align: right;
-}
-
-.hero-logo {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.main-title {
-    font-size: 2.5rem;
+    text-align: center;
 }
 
 .hero-paragraph {
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
@@ -160,22 +138,13 @@
     .main-section {
         height: auto;
         padding: 80px 0 60px;
-        background-image: url('../assets/imgs/cremapets/cremapets-hero.webp');
+        background-image: url('../assets/imgs/cremapets/header.jpg');
         background-position: 50% 50%;
     }
 
     .hero-content {
-        max-width: 100%;
+        max-width: 80%;
         text-align: center;
-    }
-
-    .main-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-paragraph {
-        margin: 15px auto;
-        max-width: 90%;
     }
 }
 
@@ -195,33 +164,41 @@
 }
 
 .cremation-section {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-title {
+.services-info {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .plans-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.services-description {
+    margin: 30px 0;
 }
 
 .plan-card {
-    background-color: rgb(126, 118, 160, 0.4);
+    background-color: rgba(214, 214, 214, 0.3);
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
 }
 
 .plan-header {
-    padding: 15px;
     color: white;
     text-align: center;
+    padding: 20px;
 }
 
 .plan-header.basic {
@@ -232,16 +209,8 @@
     background-color: rgb(90, 155, 212);
 }
 
-.plan-header.deluxe {
-    background-color: rgb(168, 127, 215);
-}
-
-.plan-title {
-    margin-bottom: 10px;
-}
-
 .plan-content {
-    padding: 30px;
+    padding: 25px;
 }
 
 .plan-includes h3 {
@@ -251,12 +220,14 @@
 .plan-includes ul {
     list-style: none;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .plan-includes li {
     padding: 8px 0;
     position: relative;
     padding-left: 20px;
+    font-size: 0.95rem;
 }
 
 .plan-includes li:before {
@@ -267,67 +238,58 @@
     font-weight: bold;
 }
 
-.plan-includes li:last-child {
-    border-bottom: none;
-}
-
-.coming-soon {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.coming-soon h3 {
-    color: rgb(168, 127, 215);
-    margin-bottom: 15px;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
+.pricing-section {
+    margin-top: 60px;
 }
 
 .table-title {
     text-align: center;
-    padding: 30px 20px 20px;
-    background-color: rgb(126, 118, 160, 0.4);
+    padding: 30px 20px 40px;
+}
+
+.table-responsive {
+    overflow-x: auto;
 }
 
 .price-table {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.plan-header {
+.price-table thead .plan-header {
     color: #fff;
     padding: 16px 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 300;
     text-align: center;
 }
 
-.plan-header.basic {
+.price-table .plan-header.basic {
     background-color: #784935;
 }
 
-.plan-header.premium {
+.price-table .plan-header.premium {
     background-color: rgb(90, 155, 212);
 }
 
-.plan-header.deluxe {
-    background-color: rgb(168, 127, 215);
-}
-
 .weight-cell {
-    background-color: rgb(126, 118, 160, 0.4);
-    padding: 16px 20px;
+    text-align: center;
+    background-color: rgba(214, 214, 214, 0.3);
+    padding: 15px 10px;
     font-weight: 500;
-    border-right: 1px solid #e9ecef;
 }
 
 .price-cell {
-    padding: 16px 20px;
+    padding: 15px 10px;
     text-align: center;
-    border-right: 1px solid #e9ecef;
+}
+
+.price-cell:last-child {
+    border-right: none;
 }
 
 .price-cell.basic .price-amount {
@@ -338,21 +300,49 @@
     color: rgb(90, 155, 212);
 }
 
+.price-table tbody tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+.price-table tbody tr:hover {
+    background-color: rgba(126, 118, 160, 0.1);
+}
+
 @media (max-width: 768px) {
-    .table-title {
-        font-size: 20px;
-        padding: 20px 15px 15px;
+    .services-info {
+        text-align: center;
+        margin-bottom: 40px;
     }
 
-    .plan-header,
+    .plans-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .services-title {
+        font-size: 1.8rem;
+    }
+
+    .services-description {
+        font-size: 1rem;
+    }
+
+    .table-title {
+        font-size: 1.5rem;
+    }
+
+    .price-table {
+        font-size: 0.9rem;
+    }
+
+    .price-table thead .plan-header {
+        font-size: 1.1rem;
+        padding: 12px 8px;
+    }
+
     .weight-cell,
     .price-cell {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-
-    .price-amount {
-        font-size: 16px;
+        padding: 10px 5px;
     }
 }
 
@@ -369,7 +359,7 @@
 
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
@@ -379,30 +369,33 @@
     transition: transform 0.3s ease;
 }
 
-.urn-item.basic {
-    background-color: rgb(126, 118, 160, 0.4);
-    border: 2px solid #7E76A0;
+.urn-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
 }
 
 .urn-image img {
-    width: auto;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 100%;
+    height: 100%;
+    object-position: 50% 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .urn-name {
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .urn-price {
-    color: #2c2938;
     margin-bottom: 10px;
 }
 
 .urn-disclaimer {
     color: #fff;
     background-color: var(--color-azul-mascotas);
-    padding: 5px 10px;
+    padding: 10px 20px;
     display: inline-block;
 }
 
@@ -416,7 +409,16 @@
     }
 
     .catalog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
+    }
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .price-table {
+        min-width: 850px;
     }
 }

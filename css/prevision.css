@@ -1,19 +1,12 @@
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 3px 0;
-    transition: all 0.3s ease;
-    background: transparent;
-}
-
-.header.scrolled {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
+    transition: all 1s ease;
+    background: #fff;
 }
 
 .header-content {
@@ -31,24 +24,20 @@
 }
 
 .logo-header img {
-    width: auto;
-    height: 40px;
-    transition: all 0.3s ease;
+    height: 45px;
     object-fit: contain;
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 
 .nav-links a {
+    color: #000;
+    position: relative;
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
-    color: #fff;
-    font-weight: 500;
 }
 
 .nav-links a::after {
@@ -58,7 +47,7 @@
     left: 0;
     height: 1.5px;
     width: 100%;
-    background-color: var(--color-dorado);
+    background-color: #000;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -77,13 +66,13 @@
 
 .emergency-text {
     margin-bottom: 2px;
-    color: #fff;
+    color: #000;
     font-size: 14px;
 }
 
 .emergency-number {
     font-style: italic;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -94,11 +83,10 @@
 
 .main-section {
     position: relative;
-    height: 60vh;
-    min-height: 400px;
-    background-image: url('../assets/imgs/inicio/img-galeria-8.webp');
+    height: 50vh;
+    background-image: url('../assets/imgs/inicio/header0.jpg');
     background-size: cover;
-    background-position: 0 50%;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -107,7 +95,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -117,44 +105,21 @@
 }
 
 .main-content {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }
 
 .hero-content {
-    max-width: 600px;
     color: #fff;
-    text-align: right;
-}
-
-.main-title {
-    font-size: 2.5rem;
+    text-align: center;
 }
 
 .hero-paragraph {
+    font-size: 1.5rem;
     margin: 10px 0;
-}
-
-.service-options {
-    list-style: none;
-    padding: 0;
-    margin: 1em 0;
-}
-
-.cta-link {
-    color: var(--color-dorado);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
-}
-
-.cta-link:hover {
-    border-color: currentColor;
 }
 
 @media (max-width: 992px) {
@@ -173,24 +138,13 @@
     .main-section {
         height: auto;
         padding: 80px 0 60px;
-        background-image:
-            linear-gradient(to right, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .4) 60%, transparent 100%),
-            url('../assets/imgs/inicio/img-galeria-8.webp');
+        background-image: url('../assets/imgs/inicio/header0.jpg');
         background-position: 50% 50%;
     }
 
     .hero-content {
-        max-width: 100%;
+        max-width: 80%;
         text-align: center;
-    }
-
-    .main-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-paragraph {
-        margin: 15px auto;
-        max-width: 90%;
     }
 }
 

@@ -83,8 +83,8 @@
 
 .main-section {
     position: relative;
-    height: 60vh;
-    background-image: url('../assets/imgs/inicio/header2.jpg');
+    height: 50vh;
+    background-image: url('../assets/imgs/cementerio/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -113,15 +113,8 @@
 }
 
 .hero-content {
-    max-width: 500px;
     color: #fff;
     text-align: center;
-}
-
-.hero-logo {
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 10px;
 }
 
 .hero-paragraph {
@@ -145,7 +138,7 @@
     .main-section {
         height: auto;
         padding: 80px 0 60px;
-        background-image: url('../assets/imgs/inicio/header2.jpg');
+        background-image: url('../assets/imgs/cementerio/header.jpg');
         background-position: 50% 50%;
     }
 
@@ -185,7 +178,7 @@
 
 .space-content {
     flex: 1;
-    padding: 40px;
+    padding: 20px;
 }
 
 .space-title {
@@ -196,8 +189,7 @@
     flex: 1;
     display: flex;
     align-items: stretch;
-    padding: 20px;
-    gap: 20px;
+    gap: 10px;
     height: 100%;
 }
 
@@ -206,7 +198,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9fa;
     min-height: 450px;
 }
 
