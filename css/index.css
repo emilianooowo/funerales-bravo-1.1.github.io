@@ -167,6 +167,10 @@
 }
 
 .servicios-principales {
+    background: #f3f3f3;
+}
+
+.servicios-contenido {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 20px;
@@ -449,7 +453,7 @@
     transition: filter 0.3s ease;
 }
 
-.espacio-imagen:hover  {
+.espacio-imagen:hover {
     filter: brightness(0.9);
 }
 
