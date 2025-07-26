@@ -86,7 +86,7 @@
     height: 50vh;
     background-image: url('../assets/imgs/cremapets/crem-header.webp');
     background-size: cover;
-    background-position: bottom;
+    background-position: 0 40%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
